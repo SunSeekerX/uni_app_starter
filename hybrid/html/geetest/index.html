@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>极验接入</title>
+    <style type="text/css">
+      body{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      /* .btn-list {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: flex-start;
+        align-items: center;
+      } */
+
+      #geetest {
+        height: 42px;
+      }
+
+      .btn {
+        display: block;
+        margin: 20px auto;
+        padding: 5px;
+        background-color: #007aff;
+        border: 0;
+        color: #ffffff;
+        height: 40px;
+        width: 200px;
+      }
+
+      .btn-red {
+        background-color: #dd524d;
+      }
+
+      .btn-yellow {
+        background-color: #f0ad4e;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="geetest"></div>
+    <div class="btn-list">
+      <!-- <div id="geetest"></div> -->
+      <!-- <button class="btn" type="button" data-action="navigateTo">navigateTo</button>
+      <button class="btn" type="button" data-action="redirectTo">redirectTo</button>
+      <button class="btn" type="button" data-action="navigateBack">navigateBack</button>
+      <button class="btn" type="button" data-action="reLaunch">reLaunch</button>
+      <button class="btn" type="button" data-action="switchTab">switchTab</button> -->
+    </div>
+    <!-- <p class="desc">网页向应用发送消息。注意：小程序端应用会在此页面后退时接收到消息。</p>
+
+    <div class="btn-list">
+      <button class="btn btn-red" type="button" id="postMessage">postMessage</button>
+    </div> -->
+
+    <script src="../js/gt.js"></script>
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <!-- uni 的 SDK -->
+    <!-- <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script> -->
+    <script src="../js/uni.webview.1.5.2.js"></script>
+    <script type="text/javascript">
+      // 等待UniAppJSBridgeReady才能使用uni对象
+      document.addEventListener('UniAppJSBridgeReady', function() {
+        uni.getEnv(function(res) {
+          if (res.plus) {
+            console.log('当前环境为【5+App】');
+          } else if (res.miniprogram) {
+            console.log('当前环境为【微信小程序】');
+          } else if (res.h5) {
+            console.log('当前环境为【h5】');
+          }
+        });
+
+        // 请求初始化极验的参数
+        $.ajax('http://dev.entry.bandex.lvyii.com/user/startCaptchaServlet', {
+          method: 'GET',
+          data: {
+            source: 'pc'
+          },
+          dataType: 'json',
+          success(res) {
+            // 请检测data的数据结构， 保证data.gt, data.challenge, data.success有值
+            initGeetest({
+              // 以下配置参数来自服务端 SDK
+              
+              // 	验证 id，极验后台申请得到
+              gt: res.gt,
+              
+              // 验证流水号，服务端 SDK 向极验服务器申请得到
+              challenge: res.challenge,
+              
+              // 极验API服务器是否宕机（即处于 failback 状态）
+              offline: !res.success,
+              
+              // 宕机情况下使用，表示验证是 3.0 还是 2.0，3.0 的 sdk 该字段为 true
+              new_captcha: true,
+              
+              // 浮动式
+              product: 'float'
+            }, function(captchaObj) {
+              // 将验证按钮插入到宿主页面中captchaBox元素内
+              captchaObj.appendTo("#geetest");
+              
+              // 这里可以调用验证实例 captchaObj 的实例方法
+              captchaObj
+              .onReady(function() {
+                // 极验初始化成功
+              })
+              .onSuccess(function(e) {
+                const validateRes = captchaObj.getValidate()
+
+                
+                // 极验验证成功，发送给组件
+                uni.postMessage({
+                  data: {
+                    success: true,
+                    res: validateRes
+                  }
+                });
+              }).onError(function() {
+                // 极验验证失败
+              })
+            })
+          },
+          error(e) {
+            console.log(e);
+          }
+        })
+
+        // document.querySelector('.btn-list').addEventListener('click', function(evt) {
+        //   var target = evt.target;
+        //   if (target.tagName === 'BUTTON') {
+        //     var action = target.getAttribute('data-action');
+        //     switch (action) {
+        //       case 'switchTab':
+        //         uni.switchTab({
+        //           url: '/pages/tabBar/API/API'
+        //         });
+        //         break;
+        //       case 'reLaunch':
+        //         uni.reLaunch({
+        //           url: '/pages/tabBar/API/API'
+        //         });
+        //         break;
+        //       case 'navigateBack':
+        //         uni.navigateBack({
+        //           delta: 1
+        //         });
+        //         break;
+        //       default:
+        //         uni[action]({
+        //           url: '/pages/component/button/button'
+        //         });
+        //         break;
+        //     }
+        //   }
+        // });
+
+        // document.querySelector("#postMessage").addEventListener('click', function() {
+        //   uni.postMessage({
+        //     data: {
+        //       action: 'message'
+        //     }
+        //   });
+        // })
+      });
+    </script>
+  </body>
+</html>

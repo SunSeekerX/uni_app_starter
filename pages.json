@@ -1,0 +1,21 @@
+{
+  "pages": [{
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app-starter"
+      }
+    },
+    {
+      "path": "pages/geetest/geetest",
+      "style": {
+        "navigationBarTitleText": "极验接入"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "uni-app-starter",
+    "navigationBarBackgroundColor": "#007AFF",
+    "backgroundColor": "#FFFFFF"
+  }
+}

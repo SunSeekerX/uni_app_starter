@@ -1,0 +1,14 @@
+@import "./css/font.css";
+@import "./css/layout.css";
+@import "./css/padding.css";
+@import "./css/margin.css";
+@import "./css/other.css";
+@import "./css/border.css";
+/* @import "./css/color.css"; */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
