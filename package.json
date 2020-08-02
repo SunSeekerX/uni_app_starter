@@ -41,5 +41,8 @@
       "eslint --ext",
       "git add"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
   }
 }

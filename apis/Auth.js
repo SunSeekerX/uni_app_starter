@@ -6,11 +6,26 @@
  * @LastEditTime: 2020-06-04 15:24:52
  */
 
-import { defauleRequest as request } from '@/utils/request/index'
+import {
+  defauleRequest as request
+} from '@/utils/request/index'
 
 export default {
+  // 初始化极验
+  initGeetest() {
+    return request({
+      url: '/user/startCaptchaServlet',
+      method: 'GET',
+      params: {
+        source: 'pc'
+      }
+    })
+  },
+
   // 微信登录
-  wxLogin({ code }) {
+  wxLogin({
+    code
+  }) {
     return request({
       url: '/appletLogin/login',
       method: 'post',
@@ -21,7 +36,11 @@ export default {
   },
 
   // 账号密码或验证码登录
-  login({ phone, password, captcha }) {
+  login({
+    phone,
+    password,
+    captcha
+  }) {
     return request({
       url: '/appletLogin',
       method: 'POST',
@@ -45,7 +64,12 @@ export default {
   },
 
   // 护士注册
-  register({ mobile, password, openId, code }) {
+  register({
+    mobile,
+    password,
+    openId,
+    code
+  }) {
     return request({
       url: '/nurse/registry',
       method: 'POST',
@@ -63,7 +87,9 @@ export default {
   },
 
   // 护士注册验证码
-  registerVeCode({ mobile }) {
+  registerVeCode({
+    mobile
+  }) {
     return request({
       url: '/nurse/sendRegistryVerifyCode',
       method: 'POST',
@@ -75,11 +101,21 @@ export default {
   },
 
   // 护士绑定信息
-  apply({ name, jobNo, deptId, type }) {
+  apply({
+    name,
+    jobNo,
+    deptId,
+    type
+  }) {
     return request({
       url: '/nurse/apply',
       method: 'POST',
-      data: { name, jobNo, deptId, type },
+      data: {
+        name,
+        jobNo,
+        deptId,
+        type
+      },
     })
   },
 }

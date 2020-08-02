@@ -6,7 +6,10 @@
  * @LastEditTime: 2020-06-06 22:01:03
 -->
 <template>
-  <view class="container"><view @tap="router('/pages/geetest/geetest')" class="item">极验验证</view></view>
+  <view class="container">
+    <view @tap="router('/pages/geetest/geetest')" class="item">极验验证</view>
+    <view @tap="router('/pages/tradingview/tradingview')" class="item">Tradingview</view>
+   </view>
 </template>
 
 <script>

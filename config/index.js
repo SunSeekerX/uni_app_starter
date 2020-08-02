@@ -7,6 +7,6 @@
  */
 
 // 默认的baseurl
-export const DEFAULT_BASE_API = 'http://47.113.106.139:8188'
+export const DEFAULT_BASE_API = 'http://dev.entry.bandex.lvyii.com'
 // 热更新的baseurl
 export const UPDATE_BASE_API = 'http://10.10.10.1:3000'

@@ -1,5 +1,6 @@
 {
-  "pages": [{
+  "pages": [
+    {
       "path": "pages/index/index",
       "style": {
         "navigationBarTitleText": "uni-app-starter"
@@ -10,6 +11,10 @@
       "style": {
         "navigationBarTitleText": "极验接入"
       }
+    },
+    {
+      "path": "pages/tradingview/tradingview",
+      "style": {}
     }
   ],
   "globalStyle": {
