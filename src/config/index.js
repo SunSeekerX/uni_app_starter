@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-05-19 09:19:37
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-05 20:07:38
+ * @LastEditTime: 2020-11-05 20:45:19
  */
 
 import * as cdev from './cdev.config'
@@ -41,7 +41,7 @@ class Config {
   }
 
   // 取值
-  get(key) {
+  static get(key) {
     return this.config[key]
   }
 }
