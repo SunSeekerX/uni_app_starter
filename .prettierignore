@@ -2,11 +2,3 @@
 src/unpackage
 # 忽略uni-app官方的组件库错误和警告，官方的竟然通不过...
 src/components/uni-**
-# 
-src/App.vue
-
-src/utils/js_sdk/**
-src/utils/pushy/**
-src/utils/core/jsencrypt.min.js
-src/mypUI/**
-

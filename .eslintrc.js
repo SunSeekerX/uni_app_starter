@@ -3,22 +3,22 @@
  * @author: SunSeekerX
  * @Date: 2020-04-18 11:43:35
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-02 18:18:16
+ * @LastEditTime: 2020-09-14 17:40:37
  */
 
 module.exports = {
   root: true,
   env: {
     browser: true,
-    es6: true,
     node: true,
   },
   // 配置js全局变量，因为是uni-app，全局的uni是不需要引入的，还有5+的plus对象
   globals: {
     uni: 'readonly',
     plus: 'readonly',
+    wx: 'readonly',
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended'],
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
   parserOptions: {
     parser: 'babel-eslint',
   },
@@ -46,7 +46,7 @@ module.exports = {
     'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/no-v-html': 'off',
     'accessor-pairs': 2,
-    
+
     'block-spacing': [2, 'always'],
     'brace-style': [
       2,
@@ -67,7 +67,13 @@ module.exports = {
     curly: [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    eqeqeq: ['warn', 'always', { null: 'ignore' }],
+    eqeqeq: [
+      'warn',
+      'always',
+      {
+        null: 'ignore',
+      },
+    ],
     'generator-star-spacing': [
       2,
       {
@@ -123,7 +129,7 @@ module.exports = {
     'no-mixed-spaces-and-tabs': 1,
     'no-multi-spaces': 2,
     'no-multi-str': 2,
-    
+
     'no-native-reassign': 2,
     'no-negated-in-lhs': 2,
     'no-new-object': 2,
@@ -204,7 +210,7 @@ module.exports = {
         after: true,
       },
     ],
-    
+
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 1,
     'space-unary-ops': [
@@ -221,8 +227,6 @@ module.exports = {
     'yield-star-spacing': [2, 'both'],
     yoda: [2, 'never'],
     'prefer-const': 2,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    
     'array-bracket-spacing': [2, 'never'],
     'no-prototype-builtins': 0,
     // 自定义开始
@@ -238,7 +242,8 @@ module.exports = {
     'no-multiple-empty-lines': 0,
     'spaced-comment': 0,
     'space-before-function-paren': 0,
-	'arrow-spacing': 0,
-	'object-curly-spacing': 0,
+    'arrow-spacing': 0,
+    'object-curly-spacing': 0,
+    'vue/custom-event-name-casing': 0,
   },
 }
