@@ -1,6 +1,5 @@
 .DS_Store
 node_modules/
-unpackage/
 dist/
 
 # local env files
@@ -22,8 +21,8 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# another files
+# Another files
 package-lock.json
 yarn.lock
-src/unpackage/release/
-src/unpackage/debug/
+unpackage/release/
+unpackage/debug/

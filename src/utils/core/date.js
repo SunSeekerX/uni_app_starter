@@ -29,30 +29,14 @@ export function getFormatDate(date, dateType) {
   }
 
   const dateText =
-    dateObj.getFullYear() +
-    '年' +
-    (dateObj.getMonth() + 1) +
-    '月' +
-    dateObj.getDate() +
-    '日'
+    dateObj.getFullYear() + '年' + (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日'
   switch (dateType) {
     case 'yyyy-mm-dd':
       return (
-        dateObj.getFullYear() +
-        '年' +
-        (dateObj.getMonth() + 1) +
-        '月' +
-        dateObj.getDate() +
-        '日'
+        dateObj.getFullYear() + '年' + (dateObj.getMonth() + 1) + '月' + dateObj.getDate() + '日'
       )
     case 'yyyy.mm.dd':
-      return (
-        dateObj.getFullYear() +
-        '.' +
-        (dateObj.getMonth() + 1) +
-        '.' +
-        dateObj.getDate()
-      )
+      return dateObj.getFullYear() + '.' + (dateObj.getMonth() + 1) + '.' + dateObj.getDate()
     case 'yyyy-mm-dd MM:mm:ss':
       return (
         dateObj.getFullYear() +

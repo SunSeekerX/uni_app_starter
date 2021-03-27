@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-18 11:43:35
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-09-14 17:40:37
+ * @LastEditTime: 2021-03-27 14:28:26
  */
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  // 配置js全局变量，因为是uni-app，全局的uni是不需要引入的，还有5+的plus对象
+  // uni-app 内可以直接访问的全局变量
   globals: {
     uni: 'readonly',
     plus: 'readonly',
@@ -67,13 +67,7 @@ module.exports = {
     curly: [2, 'multi-line'],
     'dot-location': [2, 'property'],
     'eol-last': 2,
-    eqeqeq: [
-      'warn',
-      'always',
-      {
-        null: 'ignore',
-      },
-    ],
+    eqeqeq: ['warn', 'always', { null: 'ignore' }],
     'generator-star-spacing': [
       2,
       {
@@ -227,9 +221,11 @@ module.exports = {
     'yield-star-spacing': [2, 'both'],
     yoda: [2, 'never'],
     'prefer-const': 2,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+
     'array-bracket-spacing': [2, 'never'],
     'no-prototype-builtins': 0,
-    // 自定义开始
+    // Custom start
     'vue/html-indent': 0,
     'vue/html-closing-bracket-newline': 0,
     'vue/html-self-closing': 0,

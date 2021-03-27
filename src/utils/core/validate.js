@@ -32,9 +32,7 @@ export function isCardNo(card) {
  * 验证电子邮箱格式
  */
 export function isEmail(value) {
-  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(
-    value,
-  )
+  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(value)
 }
 
 export function isName(str) {

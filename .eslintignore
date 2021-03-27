@@ -1,12 +1,15 @@
+# 忽略 uni-app 官方的组件库
+src/components/uni-*
+# 忽略 nvue 组件库
+src/components-nvue/
+# 忽略原生插件
+nativeplugins/
 # 忽略打包的文件
-src/unpackage
-# 忽略uni-app官方的组件库错误和警告，官方的竟然通不过...
-src/components/uni-**
-# 
-src/App.vue
+src/unpackage/
+# 忽略静态文件
+src/static/
+# 忽略第三方库文件
+src/utils/libs/
 
-src/utils/js_sdk/**
-src/utils/pushy/**
-src/utils/core/jsencrypt.min.js
+# 忽略 mypui 组件库
 src/mypUI/**
-

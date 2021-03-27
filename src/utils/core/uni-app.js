@@ -10,8 +10,8 @@ export function toast(msg, options) {
         title: msg,
         duration: 2000,
       },
-      options,
-    ),
+      options
+    )
   )
 }
 
@@ -115,7 +115,7 @@ export function previewImage(arr, index) {
     urls: arr,
     longPressActions: {
       itemList: ['发送给朋友', '保存图片'],
-      success: function (data) {
+      success: function(data) {
         // 用户点击保存图片按钮
         if (data.tapIndex === 1) {
           console.log(arr[data.index])
@@ -142,16 +142,16 @@ export function previewImage(arr, index) {
             type: 2, //0	图文	 1 纯文字 2	纯图片 3	音乐 4 视频 5 小程序
             scene: 'WXSceneSession',
             imageUrl: arr[data.index],
-            success: res => {
+            success: (res) => {
               console.log(res)
             },
-            fail: res => {
+            fail: (res) => {
               console.log(res)
             },
           })
         }
       },
-      fail: function (err) {
+      fail: function(err) {
         console.log(err.errMsg)
       },
     },

@@ -4,7 +4,9 @@ src/components-nvue/
 nativeplugins/
 src/res/
 src/static/
+
 # 忽略打包的文件
 src/unpackage/
 src/utils/libs/
 src/mypUI/
+src/common/scss/markrgba-css/
