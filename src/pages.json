@@ -1,14 +1,86 @@
 {
-	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app-starter"
-		}
-	}],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app-starter",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "easycom": {
+    "^cn-(.*)": "@/components-nvue/cn-$1/cn-$1.vue",
+    "^c-(.*)": "@/components/c-$1/c-$1.vue"
+  },
+  "pages": [{
+    "path": "pages/home/home",
+    "style": {
+      "navigationBarTitleText": "首页"
+    }
+  }, {
+    "path": "pages/module/module",
+    "style": {
+      "navigationBarTitleText": "组件",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/tools/tools",
+    "style": {
+      "navigationBarTitleText": "工具",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/me/me",
+    "style": {
+      "navigationBarTitleText": "我的",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/tools/log/log",
+    "style": {
+      "navigationBarTitleText": "LogUtils",
+      "enablePullDownRefresh": false
+    }
+
+  }    ,{
+            "path" : "pages/module/mono-font/mono-font",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app-starter",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#8894AB",
+    "selectedColor": "#2979ff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/module/module",
+        "iconPath": "static/images/tabbar/module.png",
+        "selectedIconPath": "static/images/tabbar/module_selected.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/tools/tools",
+        "iconPath": "static/images/tabbar/tools.png",
+        "selectedIconPath": "static/images/tabbar/tools_selected.png",
+        "text": "工具"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "static/images/tabbar/me.png",
+        "selectedIconPath": "static/images/tabbar/me_selected.png",
+        "text": "我的"
+      }
+    ]
+  }
 }

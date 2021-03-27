@@ -1,7 +1,11 @@
 /**
- * @name:
+ * @name: 测试环境变量
  * @author: SunSeekerX
- * @Date: 2020-11-05 20:03:22
+ * @Date: 2021-03-27 14:59:03
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-05 20:03:38
+ * @LastEditTime: 2021-03-27 15:04:01
  */
+
+export default {
+  BASE_URL: 'https://stage.example.com',
+}

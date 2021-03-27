@@ -3,50 +3,40 @@
  * @author: SunSeekerX
  * @Date: 2020-05-19 09:19:37
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-05 20:45:19
+ * @LastEditTime: 2021-03-27 15:16:00
  */
 
-import * as cdev from './cdev.config'
-import * as stage from './stage.config'
+import constant from './constant'
+import { defaultEnv } from './default'
+import dev from './cdev.config'
+import stage from './stage.config'
+import online from './online.config'
 
-class Config {
-  config = {}
-  // constructor() {
-  //   switch (ENV) {
-  //     case 'cdev':
-  //       this.config = cdev
-  //       break
-  //     case 'stage':
-  //       this.config = stage
-  //       break
-  //     default:
-  //       this.config = cdev
-  //       break
-  //   }
-  // }
-
-  // 设置环境
-  static _setEnv(env) {
-    switch (env) {
-      case 'cdev':
-        this.config = cdev
-        break
-      case 'stage':
-        this.config = stage
-        break
-      default:
-        this.config = cdev
-        break
-    }
-  }
-
-  // 取值
-  static get(key) {
-    return this.config[key]
-  }
+export const envs = {
+  dev,
+  stage,
+  online,
 }
 
-// 设置环境
-Config._setEnv('cdev')
+// 默认的环境变量
+export let ENV = defaultEnv
+// 本地的环境变量
+export const appEnv = uni.getStorageSync(constant.appEnv)
+// 如果本地有环境变量，优先使用本地环境变量
+if (Object.keys(envs).includes(appEnv)) {
+  ENV = appEnv
+}
 
-export default Config
+/**
+ * @name 获取环境变量的值
+ * @param {String} key - 变量的 key 值
+ */
+export default function getEnv(key) {
+  const val = envs[ENV][key]
+  if (![null, undefined].includes(val)) {
+    return val
+  } else {
+    console.error(`ENV: Cannot get the ${key} value!`)
+    return null
+  }
+}

@@ -1,0 +1,30 @@
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-09 21:06:43
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-10 09:57:39
+ */
+
+@for $i from 0 through 750 {
+  /* height (0~750)px */
+  .h-#{$i} {
+    height: $i + px;
+  }
+
+  /* height (0~750)rpx */
+  .h-#{$i}r {
+    height: $i + rpx;
+  }
+}
+
+/* #ifndef APP-NVUE */
+
+/* height (0~100)% */
+@for $i from 0 through 100 {
+  .h-#{$i}p {
+    height: $i * 1%;
+  }
+}
+
+/* #endif */

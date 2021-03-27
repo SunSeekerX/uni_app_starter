@@ -1,4 +1,11 @@
 /**
+ * @name 获取主题模式
+ */
+export function getUIStyle() {
+  return plus.navigator.getUIStyle()
+}
+
+/**
  * @param { String } msg 需要显示的消息
  * @param { Object } options 配置,同uni-app官网
  */
@@ -29,9 +36,9 @@ export function router(options = {}) {
     // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
     delta: 1,
     // 窗口显示的动画效果
-    // animationType: 'pop-in',
+    animationType: 'pop-in',
     // 窗口动画持续时间，单位为 ms
-    // animationDuration: 300,
+    animationDuration: 300,
     // 接口调用成功的回调函数
     // success() {},
     // 接口调用失败的回调函数
@@ -51,8 +58,8 @@ export function router(options = {}) {
       // 保留当前页面，跳转到应用内的某个页面
       uni.navigateTo({
         url: config.url,
-        // animationType: config.animationType,
-        // animationDuration: config.animationDuration,
+        animationType: config.animationType,
+        animationDuration: config.animationDuration,
         fail: config.fail,
       })
       break
@@ -92,6 +99,104 @@ export function router(options = {}) {
 
     default:
       break
+  }
+}
+
+/**
+ * @name 复制文字
+ * @param {String} text
+ */
+export function copy(value) {
+  // #ifndef H5
+  uni.setClipboardData({
+    data: value,
+    complete() {
+      uni.hideToast()
+    },
+  })
+  // #endif
+  // #ifdef H5
+  // console.warn('H5 不支持uni-app 复制api， 请使用其他方式实现！')
+  if (!value) {
+    this.fail(this.t('TRX_BANLANCES_LACKING'))
+  }
+  const s = document.createElement('input')
+  s.value = value
+  document.body.appendChild(s)
+  s.select()
+
+  if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+    s.contentEditable = 'true'
+    s.readOnly = false
+    const range = document.createRange()
+    range.selectNodeContents(s)
+    const sel = window.getSelection()
+    sel.removeAllRanges()
+    sel.addRange(range)
+    s.setSelectionRange(0, 999999)
+  }
+
+  try {
+    document.execCommand('copy')
+    console.warn('Copied Success!')
+  } catch (err) {
+    console.warn('Copy error!')
+  }
+  s.remove()
+  // #endif
+}
+
+/**
+ * 设置粘贴板数据
+ * @param {String} text 要设置的字符串
+ * 如果未设置参数，则清空数据
+ */
+export function setClipboardText(text) {
+  // #ifndef H5
+  try {
+    var os = plus.os.name
+    text = text || ''
+    if (os == 'iOS') {
+      // var UIPasteboard  = plus.ios.importClass('UIPasteboard');
+      // var pasteboard = UIPasteboard.generalPasteboard();
+      // pasteboard.setValueforPasteboardType(text, 'public.utf8-plain-text');
+      var pasteboard = plus.ios.invoke('UIPasteboard', 'generalPasteboard')
+      plus.ios.invoke(
+        pasteboard,
+        'setValue:forPasteboardType:',
+        text,
+        'public.utf8-plain-text'
+      )
+    } else {
+      var main = plus.android.runtimeMainActivity()
+      // var Context = plus.android.importClass('android.content.Context');
+      // var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
+      var clip = main.getSystemService('clipboard')
+      plus.android.invoke(clip, 'setText', text)
+    }
+  } catch (e) {
+    console.error('error @setClipboardText!!')
+  }
+  // #endif
+}
+
+export function getClipboardText() {
+  try {
+    var os = plus.os.name
+    if (os == 'iOS') {
+      var pasteboard = plus.ios.invoke('UIPasteboard', 'generalPasteboard')
+      return plus.ios.invoke(
+        pasteboard,
+        'valueForPasteboardType:',
+        'public.utf8-plain-text'
+      )
+    } else {
+      var main = plus.android.runtimeMainActivity()
+      var clip = main.getSystemService('clipboard')
+      return plus.android.invoke(clip, 'getText')
+    }
+  } catch (e) {
+    console.error('error @getClipboardText!!')
   }
 }
 

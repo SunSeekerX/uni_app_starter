@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 19:26:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-05 20:43:28
+ * @LastEditTime: 2021-03-27 14:52:11
  */
 
 /**
@@ -22,7 +22,7 @@ Vue.config.productionTip = false
 import App from './App'
 import store from './store/index'
 // 工具包
-import * as util from './util/index'
+import * as util from './utils/index'
 // 项目配置
 import config from './config/index'
 
