@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:11:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-27 16:52:35
+ * @LastEditTime: 2021-04-03 17:40:49
 -->
 
 <script>
@@ -22,4 +22,10 @@ export default {
 
 <style lang="scss">
 @import '~@/common/scss/markrgba-css/index.scss'; /* Some magic css */
+
+/* #ifndef APP-NVUE */
+// uview
+@import 'uview-ui/index.scss';
+
+/* #endif */
 </style>
