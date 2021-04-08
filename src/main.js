@@ -26,7 +26,7 @@ import store from './store/index'
 import * as util from './utils/index'
 // 项目配置
 import config from './config/index'
-// 产量
+// 常量
 import constant from './config/constant'
 
 /**
