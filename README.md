@@ -14,6 +14,10 @@
 - 大量多端统一的业务组件：自写大量多端通用的业务组件，减少寻找轮子，造轮子的时间。
 - 完美：尽量做到 **no warning, no error.**
 
+## 项目说明
+
+> 因为是 Uni-app 项目全局引入了 [uview](https://www.uviewui.com/) 组件库，可以说是目前最好看最好用的组件库了。
+
 ## 问题解决
 
 1. 运行到小程序模拟器出现 `Cannot read property 'mark' of undefined` ?
