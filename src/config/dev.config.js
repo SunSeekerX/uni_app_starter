@@ -8,4 +8,6 @@
 
 export default {
   BASE_URL: 'https://dev.example.com',
+  // 币安 base url
+  BIANCE_BASE_URL: 'https://fapi.binance.com',
 }

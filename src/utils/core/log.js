@@ -3,12 +3,12 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 15:17:20
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-27 16:11:04
+ * @LastEditTime: 2021-05-17 16:42:28
  */
 
-import constant from '@/config/constant'
+import { appName } from '@/config/constant'
 
-const name = `%c ${constant.appName}: >>> `
+const name = `%c ${appName}: >>> `
 
 export function error() {
   // eslint-disable-next-line no-console

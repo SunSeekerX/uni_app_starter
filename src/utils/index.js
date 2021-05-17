@@ -8,9 +8,9 @@
 
 import * as ValidateUtil from './core/validate'
 import * as DateUtil from './core/date'
-import * as logUtil from './core/log'
+import * as LogUtil from './core/log'
 
-export { ValidateUtil, DateUtil, logUtil }
+export { ValidateUtil, DateUtil, LogUtil }
 
 export * from './core/uni-app'
 
@@ -97,4 +97,11 @@ export function removeEmptyKey(obj = {}) {
     }
   }
   return obj
+}
+
+// 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
+export function addUnit(value = 'auto', rpx = false) {
+  value = String(value)
+  // 用uView内置验证规则中的number判断是否为数值
+  return ValidateUtil.number(value) ? `${value}${rpx ? 'rpx' : 'px'}` : value
 }

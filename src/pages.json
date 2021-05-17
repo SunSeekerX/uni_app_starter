@@ -37,25 +37,28 @@
       "enablePullDownRefresh": false
     }
 
-  }    ,{
-            "path" : "pages/module/mono-font/mono-font",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/projects/projects",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+  }, {
+    "path": "pages/module/mono-font/mono-font",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/projects/projects",
+    "style": {
+      "navigationBarTitleText": "",
+      "enablePullDownRefresh": false
+    }
+
+  }, {
+    "path": "pages/projects/biance-rate/biance-rate",
+    "style": {
+      "navigationBarTitleText": "币安资金费率",
+      "enablePullDownRefresh": true
+    }
+
+  }],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app-starter",

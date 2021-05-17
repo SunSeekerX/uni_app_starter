@@ -18,6 +18,40 @@
 
 > 因为是 Uni-app 项目全局引入了 [uview](https://www.uviewui.com/) 组件库，可以说是目前最好看最好用的组件库了。
 
+### 组件
+
+#### `c-icon` nvue
+
+自定义图标组件，支持 nvue。nvue 需要配置 `icons.js`，需要配合 `iconfont` 进行使用。
+
+**基本使用**
+
+```html
+<template>
+  <c-icon name="iconqiehuanyuyan" size="18"></c-icon>
+</template>
+```
+
+**Props**
+
+| 属性名 | 说明                | 类型             | 默认值  | 可选值       | 平台差异说明                                                                          |
+| :----- | :------------------ | :--------------- | :------ | :----------- | :------------------------------------------------------------------------------------ |
+| name   | 图标名              | String           | -       | -            | -                                                                                     |
+| size   | 字体图标大小        | String \| Number | inherit | -            | -                                                                                     |
+| width  | 宽度                | String \| Number | auto    | -            | -                                                                                     |
+| height | 高度                | String \| Number | auto    | -            | -                                                                                     |
+| color  | 颜色                | String           | #333333 | -            | -                                                                                     |
+| rpx    | 是否使用 rpx 单位？ | Boolean          | false   | false / true | -                                                                                     |
+| bubble | 是否阻止事件冒泡？  | Boolean          | false   | false / true | 只在 Nvue 生效，H5 阻止事件冒泡需要在组件外套一个 view 将点击事件加到外部的 view 上面 |
+
+**Events**
+
+| 事件名 | 说明      | 回调参数 |
+| :----- | :-------- | :------- |
+| click  | icon 点击 | -        |
+
+###
+
 ## 问题解决
 
 1. 运行到小程序模拟器出现 `Cannot read property 'mark' of undefined` ?

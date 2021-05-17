@@ -15,6 +15,8 @@ import Vuex from 'vuex'
 /**
  * @name 引入文件
  */
+import theme from './modules/theme'
+import getters from './getters'
 
 /**
  * @name 挂载全局组件和安装插件
@@ -22,11 +24,25 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {},
+  strict: process.env.NODE_ENV !== 'production',
 
-  state: {},
+  modules: {
+    theme,
+  },
 
-  mutations: {},
+  state: {
+    // App 系统信息
+    systemInfo: {},
+  },
+
+  mutations: {
+    // Update system info
+    UPDATE_SYSTEM_INFO(state) {
+      state.systemInfo = uni.getSystemInfoSync()
+    },
+  },
 
   actions: {},
+
+  getters,
 })

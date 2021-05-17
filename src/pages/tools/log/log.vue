@@ -14,13 +14,13 @@ export default {
   },
   methods: {
     onLogError() {
-      this.$util.logUtil.error('error')
+      this.$util.LogUtil.error('error')
     },
     onLog() {
-      this.$util.logUtil.log('log')
+      this.$util.LogUtil.log('log')
     },
     onLogWarn() {
-      this.$util.logUtil.warn('warn')
+      this.$util.LogUtil.warn('warn')
     },
   },
 }

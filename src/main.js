@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 19:26:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-04-03 18:05:03
+ * @LastEditTime: 2021-05-17 16:41:19
  */
 
 /**
@@ -11,6 +11,7 @@
  */
 import Vue from 'vue'
 import uView from 'uview-ui'
+import dayjs from 'dayjs'
 
 /**
  * @name 依赖设置
@@ -27,7 +28,9 @@ import * as util from './utils/index'
 // 项目配置
 import config from './config/index'
 // 常量
-import constant from './config/constant'
+import * as constant from './config/constant'
+// Api
+import * as api from './apis'
 
 /**
  * @name 挂载全局组件和安装插件
@@ -41,6 +44,8 @@ Vue.prototype.$util = util
 Vue.prototype.$store = store
 Vue.prototype.$config = config
 Vue.prototype.$constant = constant
+Vue.prototype.$api = api
+Vue.prototype.$dayjs = dayjs
 
 App.mpType = 'app'
 

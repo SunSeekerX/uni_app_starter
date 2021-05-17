@@ -3,12 +3,12 @@
  * @author: SunSeekerX
  * @Date: 2020-05-19 09:19:37
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-04-03 18:06:25
+ * @LastEditTime: 2021-05-17 16:43:29
  */
 
-import constant from './constant'
+import { appEnv } from './constant'
 import { defaultEnv } from './default'
-import dev from './cdev.config'
+import dev from './dev.config'
 import stage from './stage.config'
 import online from './online.config'
 
@@ -21,10 +21,10 @@ export const envs = {
 // 默认的环境变量
 export let ENV = defaultEnv
 // 本地的环境变量
-export const appEnv = uni.getStorageSync(constant.appEnv)
+export const appEnvLocal = uni.getStorageSync(appEnv)
 // 如果本地有环境变量，优先使用本地环境变量
-if (Object.keys(envs).includes(appEnv)) {
-  ENV = appEnv
+if (Object.keys(envs).includes(appEnvLocal)) {
+  ENV = appEnvLocal
 }
 
 /**
