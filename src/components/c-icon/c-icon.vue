@@ -14,7 +14,7 @@
   <!-- #endif -->
 
   <!-- #ifndef APP-NVUE -->
-  <svg v-if="svg" :style="iconStyle" class="c-icon-svg" aria-hidden="true">
+  <svg v-if="isUseSvg" :style="iconStyle" class="c-icon-svg" aria-hidden="true">
     <use :xlink:href="`#${name}`"></use>
   </svg>
   <text
@@ -33,7 +33,9 @@ import icons from './icons'
 import base64ttf from './base64ttf'
 // #endif
 
+// #ifdef H5
 import './iconfont-svg'
+// #endif
 import { addUnit } from '@/utils/index'
 
 export default {
@@ -84,7 +86,7 @@ export default {
 
   computed: {
     iconStyle() {
-      if (this.svg) {
+      if (this.isUseSvg) {
         let condition = null
         if (this.size === 'inherit') {
           condition = {
@@ -110,6 +112,16 @@ export default {
           'line-height': addUnit(this.height, this.rpx),
         }
       }
+    },
+
+    isUseSvg() {
+      // #ifdef H5
+      return this.svg
+      // #endif
+
+      // #ifndef H5
+      return false
+      // #endif
     },
   },
 

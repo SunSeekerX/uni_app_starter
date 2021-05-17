@@ -7,7 +7,7 @@
 -->
 
 <template>
-  <view>
+  <view class="content">
     <!-- 环境切换 -->
     <u-button @click="state.isShowEnvActionSheet = true">
       {{ `环境切换，当前环境：${debug_env}` }}
@@ -25,12 +25,28 @@
       :list="envList"
       v-model="state.isShowEnvActionSheet"
     ></u-action-sheet>
+
+    <!-- 项目菜单 -->
+    <view class="menu">
+      <view
+        @tap="onGetUpdate"
+        class="item dp-f jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-3"
+        style="background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);"
+      >
+        <text class="c-f">检查更新</text>
+        <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
+      </view>
+    </view>
   </view>
 </template>
 
 <script>
+// #ifdef APP-PLUS
+import pushy from '@/utils/pushy/index'
+// #endif
 import { envs } from '@/config/index'
 import { ENV as debug_env } from '@/config/index'
+
 const envList = []
 for (const env of Object.keys(envs)) {
   envList.push({
@@ -71,6 +87,22 @@ export default {
       // #endif
       // #ifdef APP-PLUS
       plus.runtime.restart()
+      // #endif
+    },
+    // 检查更新
+    async onGetUpdate() {
+      // #ifndef APP-PLUS
+      this.$util.toast('请在App端检查更新哦~')
+      // #endif
+      // #ifdef APP-PLUS
+      if (plus.runtime.appid !== 'HBuilder') {
+        // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
+        // 检查更新
+        const res = await pushy.getUpdate()
+        this.$util.toast(res.message)
+      } else {
+        this.$util.toast('自定义基座才能检查更新哦~')
+      }
       // #endif
     },
   },

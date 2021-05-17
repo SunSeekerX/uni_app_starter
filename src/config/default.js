@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 15:00:32
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-27 15:09:23
+ * @LastEditTime: 2021-05-17 21:25:33
  */
 
 import { THEMES } from './constant'
@@ -14,7 +14,7 @@ export const themeModel = THEMES.LIGHT
 /**
  * @name 默认环境
  */
-export const defaultEnv = 'cdev'
+export const defaultEnv = 'dev'
 
 /**
  * @name 是否显示环境切换功能

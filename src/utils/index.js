@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 20:22:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-27 17:00:25
+ * @LastEditTime: 2021-05-17 23:38:28
  */
 
 import * as ValidateUtil from './core/validate'
@@ -56,7 +56,7 @@ export function randomNum(minNum, maxNum) {
  * v-for的时候,推荐使用后端返回的id而不是循环的index
  * @param {Number} len uuid的长度
  * @param {Boolean} firstU 将返回的首字母置为"u"
- * @param {Nubmer} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制
+ * @param {Number} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制
  */
 export function guid(len = 32, radix = null) {
   const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(

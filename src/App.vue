@@ -3,17 +3,28 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:11:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 15:14:10
+ * @LastEditTime: 2021-05-18 00:06:08
 -->
 
 <script>
 import { mapMutations } from 'vuex'
+// #ifdef APP-PLUS
+import pushy from '@/utils/pushy/index'
+// #endif
 
 export default {
   onLaunch: function() {
     this.$util.LogUtil.log('App Launch')
     // 更新 App info
     this.UPDATE_SYSTEM_INFO()
+
+    // #ifdef APP-PLUS
+    if (plus.runtime.appid !== 'HBuilder') {
+      // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
+      // 检查更新
+      pushy.getUpdate()
+    }
+    // #endif
   },
   onShow: function() {
     this.$util.LogUtil.log('App Show')

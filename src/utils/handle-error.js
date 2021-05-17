@@ -3,10 +3,10 @@
  * @author SunSeekerX
  * @time 2019-11-27 15:18:44
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-09-11 11:07:44
+ * @LastEditTime: 2021-05-17 23:34:44
  */
 
-import { toast } from './index'
+import { toast, LogUtil } from './index'
 import errCode from './err-code'
 
 /**
@@ -16,18 +16,12 @@ import errCode from './err-code'
  * @returns void
  */
 function handleApiRequestException(res) {
-  console.warn('Capture request exception >>>', res)
+  LogUtil.warn('Capture request exception >>>', res)
 
-  if (res.message === '401') {
-    toast('登录过期，请重新登录')
-  } else if (Object.keys(errCode).includes(res.code)) {
+  if (Object.keys(errCode).includes(res.code)) {
     toast(errCode[res.code])
-  } else if (res.msg) {
-    toast(res.msg)
-  } else if (res.errMsg === 'request:fail' || res.status === 500) {
-    toast('网络错误')
   } else {
-    console.warn('未知错误类型 >>>', res)
+    toast(res.msg)
   }
 }
 
@@ -38,7 +32,7 @@ function handleApiRequestException(res) {
  * @returns void
  */
 function handleWebSocketException(e) {
-  console.error(e)
+  LogUtil.error(e)
 }
 
 /**
@@ -48,15 +42,15 @@ function handleWebSocketException(e) {
  * @returns void
  */
 function handleApplicationException(e) {
-  console.error(e)
+  LogUtil.error(e)
 }
 
 /**
- * @name Hanle when request result success no true
+ * @name Handle when request result success no true
  * @param { String } msg tips message
  */
 function handleRequestFail(res) {
-  console.warn('Capture request fail >>>', res)
+  LogUtil.warn('Capture request fail >>>', res)
   if (Object.keys(errCode).includes(res.code)) {
     toast(errCode[res.code])
   } else {

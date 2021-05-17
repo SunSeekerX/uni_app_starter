@@ -1,3 +1,10 @@
+<!--
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2021-05-17 21:08:55
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-05-17 23:37:20
+-->
 <template>
   <view class="content">
     <view class="dp-f jc-sb ai-c h-34">
@@ -37,11 +44,15 @@ export default {
   methods: {
     // 获取资金费率
     async onGetPremiumIndex() {
-      const res = await this.$api.Biance.premiumIndex()
-      this.premiumList = res
-      uni.stopPullDownRefresh()
-      this.$util.toast('更新成功')
-      // console.log(res)
+      try {
+        const res = await this.$api.Biance.premiumIndex()
+        this.premiumList = res
+        this.$util.toast('更新成功')
+      } catch (error) {
+        this.$handleError.handleApiRequestException(error)
+      } finally {
+        uni.stopPullDownRefresh()
+      }
     },
   },
   onLoad() {

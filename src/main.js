@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 19:26:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 16:41:19
+ * @LastEditTime: 2021-05-17 23:36:16
  */
 
 /**
@@ -23,14 +23,11 @@ Vue.config.productionTip = false
  */
 import App from './App'
 import store from './store/index'
-// 工具包
-import * as util from './utils/index'
-// 项目配置
-import config from './config/index'
-// 常量
-import * as constant from './config/constant'
-// Api
-import * as api from './apis'
+import * as util from './utils/index' // 工具包
+import config from './config/index' // 项目配置
+import * as constant from './config/constant' // 常量
+import * as api from './apis' // Api
+import * as handleError from './utils/handle-error' // 错误处理
 
 /**
  * @name 挂载全局组件和安装插件
@@ -45,6 +42,7 @@ Vue.prototype.$store = store
 Vue.prototype.$config = config
 Vue.prototype.$constant = constant
 Vue.prototype.$api = api
+Vue.prototype.$handleError = handleError
 Vue.prototype.$dayjs = dayjs
 
 App.mpType = 'app'
