@@ -29,6 +29,14 @@
         <text class="c-f">{{ item.name }}</text>
         <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
       </view>
+
+      <view
+        class="item dp-f jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-6"
+        style="border: solid 1px #eee; box-shadow: 0 2px 5px rgba(0, 0, 0, .1);"
+      >
+        <text class="c-6">检查更新</text>
+        <c-icon color="#666666" name="icon-gengduo" size="16"></c-icon>
+      </view>
     </view>
   </view>
 </template>
