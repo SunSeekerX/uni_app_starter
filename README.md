@@ -18,6 +18,13 @@
 
 > 因为是 Uni-app 项目全局引入了 [uview](https://www.uviewui.com/) 组件库，可以说是目前最好看最好用的组件库了。
 
+### 组件库
+
+目前项目内导入了两个组件库
+
+1. [uview](https://www.uviewui.com/)
+2. [mypUI](https://mypui.fekit.cn/doc/guide/index.html)
+
 ### 组件
 
 #### `c-icon` nvue

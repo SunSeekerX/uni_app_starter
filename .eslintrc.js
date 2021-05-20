@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-18 11:43:35
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-27 14:28:26
+ * @LastEditTime: 2021-05-20 18:08:52
  */
 
 module.exports = {
@@ -17,6 +17,7 @@ module.exports = {
     uni: 'readonly',
     plus: 'readonly',
     wx: 'readonly',
+    getApp: 'readonly',
   },
   extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
   parserOptions: {

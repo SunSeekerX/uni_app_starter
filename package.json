@@ -66,6 +66,7 @@
     "@dcloudio/uni-stat": "2.0.0-31920210428001",
     "@limm/markrgba-css": "^0.6.0",
     "@limm/uni-pushy-client": "^0.2.1",
+    "@mypui/myp-ui": "^2.9.2",
     "@vue/shared": "^3.0.11",
     "core-js": "^3.12.1",
     "dayjs": "^1.10.4",

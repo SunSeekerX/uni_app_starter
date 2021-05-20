@@ -11,6 +11,8 @@ import setNavThemeMixin from './set-tabbar-theme'
 import tabbarVibrating from './tabbar-vibrating'
 import setNavTitleMixin from './set-nav-title'
 import systemInfo from './system-info'
+// Nvue 获取 globalData
+import nvueGetGlobalData from './nvue-get-global-data'
 
 export {
   setTabbarThemeMixin,
@@ -18,4 +20,5 @@ export {
   tabbarVibrating,
   setNavTitleMixin,
   systemInfo,
+  nvueGetGlobalData,
 }

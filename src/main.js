@@ -24,10 +24,10 @@ Vue.config.productionTip = false
 import App from './App'
 import store from './store/index'
 import * as util from './utils/index' // 工具包
-import config from './config/index' // 项目配置
 import * as constant from './config/constant' // 常量
 import * as api from './apis' // Api
 import * as handleError from './utils/handle-error' // 错误处理
+import getEnv from './config/index'
 
 /**
  * @name 挂载全局组件和安装插件
@@ -39,11 +39,11 @@ Vue.use(uView)
  */
 Vue.prototype.$util = util
 Vue.prototype.$store = store
-Vue.prototype.$config = config
 Vue.prototype.$constant = constant
 Vue.prototype.$api = api
 Vue.prototype.$handleError = handleError
 Vue.prototype.$dayjs = dayjs
+Vue.prototype.$getEnv = getEnv
 
 App.mpType = 'app'
 
