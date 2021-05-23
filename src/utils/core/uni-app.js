@@ -22,13 +22,20 @@ export function toast(msg, options) {
   )
 }
 
+// 是否正在跳转
+let _isRouting = false
 /**
  * @name uni-app 路由封装
  * @param { Object } options
  * @returns void
  */
 export function router(options = {}) {
-  const config = {
+  if (_isRouting) {
+    return
+  }
+  // 正在跳转
+  _isRouting = true
+  const _config = {
     // 页面路径
     url: '',
     // 跳转类型
@@ -46,54 +53,70 @@ export function router(options = {}) {
       console.warn(e)
     },
     // 接口调用结束的回调函数（调用成功、失败都会执行）
-    // complete() {},
+    complete() {
+      _isRouting = false
+    },
   }
 
   // 合并参数
-  Object.assign(config, options)
+  Object.assign(_config, options)
 
-  // 判断跳转类型
-  switch (config.type) {
+  const {
+    url,
+    animationType,
+    animationDuration,
+    fail,
+    complete,
+    delta,
+    type,
+  } = _config
+
+  switch (type) {
     case 'navigateTo':
       // 保留当前页面，跳转到应用内的某个页面
       uni.navigateTo({
-        url: config.url,
-        animationType: config.animationType,
-        animationDuration: config.animationDuration,
-        fail: config.fail,
+        url,
+        animationType,
+        animationDuration,
+        fail,
+        complete,
       })
       break
 
     case 'redirectTo':
       // 关闭当前页面，跳转到应用内的某个页面
       uni.redirectTo({
-        url: config.url,
-        fail: config.fail,
+        url,
+        fail,
+        complete,
       })
       break
 
     case 'reLaunch':
       // 关闭所有页面，打开到应用内的某个页面
       uni.reLaunch({
-        url: config.url,
-        fail: config.fail,
+        url,
+        fail,
+        complete,
       })
       break
 
     case 'switchTab':
       // 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
       uni.switchTab({
-        url: config.url,
-        fail: config.fail,
+        url,
+        fail,
+        complete,
       })
       break
 
     case 'navigateBack':
       // 关闭当前页面，返回上一页面或多级页面
       uni.navigateBack({
-        delta: config.delta,
-        animationDuration: config.animationDuration,
-        fail: config.fail,
+        delta,
+        animationDuration,
+        fail,
+        complete,
       })
       break
 

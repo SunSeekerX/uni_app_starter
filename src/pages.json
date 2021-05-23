@@ -5,61 +5,87 @@
     "^c-(.*)": "@/components/c-$1/c-$1.vue",
     "myp-(.*)": "@/mypUI/myp-$1/myp-$1.vue"
   },
-  "pages": [{
-    "path": "pages/home/home",
-    "style": {
-      "navigationBarTitleText": "首页"
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/module/module",
+      "style": {
+        "navigationBarTitleText": "组件",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tools/tools",
+      "style": {
+        "navigationBarTitleText": "工具",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/me/me",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tools/log/log",
+      "style": {
+        "navigationBarTitleText": "LogUtils",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/module/mono-font/mono-font",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/projects/projects",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/projects/biance-rate/biance-rate",
+      "style": {
+        "navigationBarTitleText": "币安资金费率",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/projects/pionex/index/index",
+      "style": {
+        "navigationBarTitleText": "Pionex",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/projects/pionex/splash/splash",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
     }
-  }, {
-    "path": "pages/module/module",
-    "style": {
-      "navigationBarTitleText": "组件",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/tools/tools",
-    "style": {
-      "navigationBarTitleText": "工具",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/me/me",
-    "style": {
-      "navigationBarTitleText": "我的",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/tools/log/log",
-    "style": {
-      "navigationBarTitleText": "LogUtils",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/module/mono-font/mono-font",
-    "style": {
-      "navigationBarTitleText": "",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/projects/projects",
-    "style": {
-      "navigationBarTitleText": "",
-      "enablePullDownRefresh": false
-    }
-
-  }, {
-    "path": "pages/projects/biance-rate/biance-rate",
-    "style": {
-      "navigationBarTitleText": "币安资金费率",
-      "enablePullDownRefresh": true
-    }
-
-  }],
+      ,{
+            "path" : "pages/module/icon/icon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app-starter",
@@ -72,7 +98,8 @@
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tabbar/home.png",
         "selectedIconPath": "static/images/tabbar/home_selected.png",

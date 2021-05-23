@@ -160,8 +160,6 @@ export default {
 /* #ifndef APP-NVUE */
 @import './iconfont.css'; /* Iconfont */
 
-/* #endif */
-
 .c-icon-svg {
   width: 1em;
   height: 1em;
@@ -169,6 +167,8 @@ export default {
   vertical-align: -0.15em;
   fill: currentColor;
 }
+
+/* #endif */
 
 .c-icon {
   font-family: iconfont;

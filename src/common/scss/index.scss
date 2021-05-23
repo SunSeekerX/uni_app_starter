@@ -1,16 +1,10 @@
+/* #ifndef APP-NVUE */
 image {
   will-change: transform;
 }
 
+/* #endif */
+
 .content {
   padding: $page-vertical-padding $page-horizontal-padding 0;
-}
-
-// svg 字体图标
-.c-icon {
-  width: 1em;
-  height: 1em;
-  overflow: hidden;
-  vertical-align: -0.15em;
-  fill: currentColor;
 }

@@ -1,27 +1,27 @@
 <template>
   <view>
     <!-- 轮播图 -->
-    <view class="swiper-wrap">
+    <view class="pt-r pt-10 w-750r">
       <!-- 背景色 -->
-      <view class="swiper-background" :style="{ backgroundColor: swiperBackground }"></view>
+      <view class="swiper-background w-750r" :style="{ backgroundColor: swiperBackground }"></view>
       <swiper
-        class="swiper w-750r br-6"
+        class="swiper w-750r"
         style="height: 393.75rpx;"
         circular
+        autoplay
+        :interval="5000"
         :indicator-dots="false"
         @change="onSwiperChange"
       >
-        <swiper-item v-for="item of bannerList" :key="item.url" class="swiper-item">
-          <image class="swiper-img" :src="item.url"></image>
+        <swiper-item v-for="item of bannerList" :key="item.url">
+          <image style="height: 393.75rpx;" class="w-700r ml-25r mr-25r br-6" :src="item.url"></image>
         </swiper-item>
-        <!-- <swiper-item class="swiper-item">
-          <image src="/static/images/home/2.jpg"></image>
-        </swiper-item> -->
       </swiper>
 
       <!-- 自定义swiper指示器 -->
-      <view class="swiper-dots dp-f">
-        <text class="num">{{ swiperCurrent + 1 }}</text> <text class="sign">/</text>
+      <view class="swiper-dots dp-f fd-r ai-c fs-12 c-f">
+        <text class="num">{{ swiperCurrent + 1 }}</text>
+        <text class="sign c-f fs-11">&#47;</text>
         <text class="num">{{ bannerList.length }}</text>
       </view>
     </view>
@@ -37,19 +37,11 @@
               url: item.url,
             })
           "
-          class="item fd-r jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-3"
+          class="item fd-r jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-6"
           :style="`background-image: ${item.backgroundImage};`"
         >
-          <text class="c-f">{{ item.name }}</text>
+          <text class="c-f fs-14">{{ item.name }}</text>
           <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
-        </view>
-
-        <view
-          class="item fd-r jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-6"
-          style="border: solid 1px #eee; box-shadow: 0 2px 5px rgba(0, 0, 0, .1);"
-        >
-          <text class="c-6">检查更新</text>
-          <c-icon color="#666666" name="icon-gengduo" size="16"></c-icon>
         </view>
       </view>
     </view>
@@ -89,12 +81,17 @@ export default {
         {
           name: '币安资金费率',
           url: '/pages/projects/biance-rate/biance-rate',
-          backgroundImage: 'linear-gradient( 135deg, #52E5E7 10%, #130CB7 100%)',
+          backgroundImage: 'linear-gradient( to right, #52E5E7, #130CB7)',
         },
         {
           name: '币安资金费率测试',
           url: '/pages/projects/biance-rate/biance-rate',
-          backgroundImage: 'linear-gradient( 135deg, #FEB692 10%, #EA5455 100%)',
+          backgroundImage: 'linear-gradient( to right, #65FDF0, #1D6FA3)',
+        },
+        {
+          name: 'Pionex',
+          url: '/pages/projects/pionex/splash/splash',
+          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
         },
       ],
     }
@@ -102,7 +99,6 @@ export default {
 
   methods: {
     onSwiperChange(e) {
-      console.log(123123)
       const index = e.detail.current
       this.swiperCurrent = index
       this.swiperBackground = this.bannerList[index].background
@@ -112,45 +108,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.swiper-wrap {
-  position: relative;
-  padding-top: 10px;
-}
 .swiper-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 393.75rpx;
-  // transition: 0.4s;
   transition-property: background-color;
   transition-duration: 0.3s;
   transition-delay: 0s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.swiper-item {
-  height: 393.75rpx;
-  padding: 0 $page-horizontal-padding;
-}
-
-.swiper-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-}
-
 .swiper-dots {
-  flex-direction: row;
   position: absolute;
   left: 60rpx;
   bottom: 15rpx;
-  width: 72rpx;
+  // width: 72rpx;
   height: 36rpx;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAABkCAYAAADDhn8LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTk4MzlBNjE0NjU1MTFFOUExNjRFQ0I3RTQ0NEExQjMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTk4MzlBNjA0NjU1MTFFOUExNjRFQ0I3RTQ0NEExQjMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Q0E3RUNERkE0NjExMTFFOTg5NzI4MTM2Rjg0OUQwOEUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E3RUNERkI0NjExMTFFOTg5NzI4MTM2Rjg0OUQwOEUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Gh5BPAAACTUlEQVR42uzcQW7jQAwFUdN306l1uWwNww5kqdsmm6/2MwtVCp8CosQtP9vg/2+/gY+DRAMBgqnjIp2PaCxCLLldpPARRIiFj1yBbMV+cHZh9PURRLQNhY8kgWyL/WDtwujjI8hoE8rKLqb5CDJaRMJHokC6yKgSCR9JAukmokIknCQJpLOIrJFwMsBJELFcKHwM9BFkLBMKFxNcBCHlQ+FhoocgpVwwnv0Xn30QBJGMC0QcaBVJiAMiec/dcwKuL4j1QMsVCXFAJE4s4NQA3K/8Y6DzO4g40P7UcmIBJxbEesCKWBDg8wWxHrAiFgT4fEGsB/CwIhYE+AeBAAdPLOcV8HRmWRDAiQVcO7GcV8CLM8uCAE4sQCDAlHcQ7x+ABQEEAggEEAggEEAggEAAgQACASAQQCCAQACBAAIBBAIIBBAIIBBAIABe4e9iAe/xd7EAJxYgEGDeO4j3EODp/cOCAE4sYMyJ5cwCHs4rCwI4sYBxJ5YzC84rCwKcXxArAuthQYDzC2JF0H49LAhwYUGsCFqvx5EF2T07dMaJBetx4cRyaqFtHJ8EIhK0i8OJBQxcECuCVutxJhCRoE0cZwMRyRcFefa/ffZBVPogePihhyCnbBhcfMFFEFM+DD4m+ghSlgmDkwlOgpAl4+BkkJMgZdk4+EgaSCcpVX7bmY9kgXQQU+1TgE0c+QJZUUz1b2T4SBbIKmJW+3iMj2SBVBWz+leVfCQLpIqYbp8b85EskIxyfIOfK5Sf+wiCRJEsllQ+oqEkQfBxmD8BBgA5hVjXyrBNUQAAAABJRU5ErkJggg==);
-  /* #ifndef APP-NVUE */
-  background-size: 100% 100%;
-  /* #endif */
 }
 .num {
   width: 36upx;
@@ -160,15 +135,6 @@ export default {
   color: #fff;
   text-align: center;
   line-height: 36upx;
-}
-
-.sign {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  line-height: 36upx;
-  font-size: 12upx;
-  color: #fff;
-  transform: translateX(-50%);
+  background-color: rgba(0,0,0,.3);
 }
 </style>
