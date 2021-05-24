@@ -1,9 +1,9 @@
 /**
- * @name:
+ * @name: 请求对象
  * @author: SunSeekerX
  * @Date: 2020-05-19 14:38:47
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:31:09
+ * @LastEditTime: 2021-05-24 16:22:41
  */
 
 import Request from './core/request-class'
