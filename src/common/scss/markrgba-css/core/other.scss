@@ -83,6 +83,13 @@
   /* #endif */
 }
 
+/* z-index（1~100） */
+@for $i from 1 through 100 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+}
+
 /* #ifdef APP-NVUE */
 
 /* lines（1~100） */

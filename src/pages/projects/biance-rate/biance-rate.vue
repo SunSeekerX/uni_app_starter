@@ -3,33 +3,40 @@
  * @author: SunSeekerX
  * @Date: 2021-05-17 21:08:55
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:37:20
+ * @LastEditTime: 2021-05-25 16:38:43
 -->
 <template>
   <view class="content">
-    <view class="dp-f jc-sb ai-c h-34">
-      <text class="fw-b fs-16">下次资金费率时间</text>
-      <text class="fs-16">{{
-        premiumList.length
-          ? $dayjs(premiumList[0].nextFundingTime).format($constant.dayjsFormat)
-          : '更新中...'
-      }}</text>
-    </view>
+    <c-fixed-box :rpx="false">
+      <view class="w-750r pl-25r pr-25r">
+        <u-search placeholder="日照香炉生紫烟" v-model="keyword"></u-search>
+
+        <view class="dp-f jc-sb ai-c h-34">
+          <text class="fw-b fs-16">下次资金费率时间</text>
+          <text class="fs-16">{{
+            premiumList.length ? $dayjs(premiumList[0].nextFundingTime).format($constant.dayjsFormat) : '更新中...'
+          }}</text>
+        </view>
+
+        <view> </view>
+      </view>
+    </c-fixed-box>
 
     <view class="menu">
-      <view v-if="premiumList.length">
-        <view
-          v-for="item of premiumList"
-          :key="item.symbol"
-          class="item dp-f jc-sb ai-c h-34"
-          style="border-bottom: solid 1px #eee;"
-        >
-          <text class="fw-b fs-16">{{ item.symbol }}</text>
-          <text class="fs-16">{{ item.lastFundingRate }}</text>
+      <uni-transition :duration="800" ref="ani" :mode-class="['fade', 'slide-bottom']" :show="state.isShow">
+        <view v-if="premiumList.length">
+          <view
+            v-for="item of premiumList"
+            :key="item.symbol"
+            class="item dp-f jc-sb ai-c h-34"
+            style="border-bottom: solid 1px #eee;"
+          >
+            <text class="fw-b fs-16">{{ item.symbol }}</text> <text class="fs-16">{{ item.lastFundingRate }}</text>
+          </view>
         </view>
-      </view>
 
-      <c-empty v-else />
+        <c-empty v-else />
+      </uni-transition>
     </view>
   </view>
 </template>
@@ -38,7 +45,13 @@
 export default {
   data() {
     return {
+      state: {
+        isShow: true,
+      },
+      // 交易对列表
       premiumList: [],
+      // 搜索关键词
+      keyword: '',
     }
   },
   methods: {
