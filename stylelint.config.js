@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-13 13:33:20
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-01-19 20:12:14
+ * @LastEditTime: 2021-05-26 18:08:09
  */
 
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
     'unit-no-unknown': [
       true,
       {
-        ignoreUnits: ['rpx'],
+        ignoreUnits: ['rpx', 'upx'],
       },
     ],
     'selector-pseudo-element-no-unknown': [
@@ -75,6 +75,7 @@ module.exports = {
           'uni-textarea',
           'uni-page-body',
           'uni-input',
+          'weixin-parse-template',
         ],
       },
     ],

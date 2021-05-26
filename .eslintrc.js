@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-18 11:43:35
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-20 18:08:52
+ * @LastEditTime: 2021-05-26 17:15:37
  */
 
 module.exports = {
@@ -242,5 +242,6 @@ module.exports = {
     'arrow-spacing': 0,
     'object-curly-spacing': 0,
     'vue/custom-event-name-casing': 0,
+    'prettier/prettier': 0,
   },
 }

@@ -5,8 +5,7 @@
     "^c-(.*)": "@/components/c-$1/c-$1.vue",
     "myp-(.*)": "@/mypUI/myp-$1/myp-$1.vue"
   },
-  "pages": [
-    {
+  "pages": [{
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
@@ -48,58 +47,91 @@
       }
     },
     {
-      "path": "pages/projects/projects",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
-      "path": "pages/projects/biance-rate/biance-rate",
+      "path": "apps/biance-rate/biance-rate",
       "style": {
         "navigationBarTitleText": "币安资金费率",
         "enablePullDownRefresh": true
       }
     },
+
+    /*-------------pionex start-------------*/
     {
-      "path": "pages/projects/pionex/index/index",
+      "path": "apps/pionex/index/index",
       "style": {
         "navigationBarTitleText": "Pionex",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/projects/pionex/splash/splash",
+      "path": "apps/pionex/splash/splash",
       "style": {
         "navigationStyle": "custom",
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
-    }
-      ,{
-            "path" : "pages/module/icon/icon",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
+    },
+    /*-------------pionex end-------------*/
+
+    {
+      "path": "pages/module/icon/icon",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+
+    /*-------------cnode start-------------*/
+    // 首页
+    {
+      "path": "apps/cnode/pages/index/index",
+      "style": {
+        "enablePullDownRefresh": true,
+        "navigationBarTextStyle": "white",
+        "app-plus": {
+          "titleNView": {
+            "backgroundColor": "#444444",
+            "titleText": "CNode",
+            "titleColor": "#ffffff",
+            "type": "default"
+          },
+          "bounce": "none"
         }
-    ],
+      }
+    },
+    // 详情界面
+    {
+      "path": "apps/cnode/pages/topic-details/topic-details",
+      "style": {
+        "navigationBarTextStyle": "white",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": {
+            "backgroundColor": "#444444",
+            "titleText": "CNode details",
+            "type": "default"
+          }
+        }
+      }
+    }
+    /*-------------cnode end-------------*/
+
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app-starter",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
-    "pageOrientation": "portrait"
+    "pageOrientation": "portrait",
+    "app-plus": {
+      "bounce": "none"
+    }
   },
   "tabBar": {
     "color": "#8894AB",
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tabbar/home.png",
         "selectedIconPath": "static/images/tabbar/home_selected.png",

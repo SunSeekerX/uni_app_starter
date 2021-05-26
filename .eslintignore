@@ -13,3 +13,6 @@ src/utils/libs/
 
 # 忽略 mypui 组件库
 src/mypUI/**
+
+# Cnode 需要
+gaoyia-parse

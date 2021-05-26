@@ -3,7 +3,7 @@
     <!-- 内容占位区域 -->
     <view
       :style="{
-        height: contentHeight,
+        height: addUnit(height, rpx),
         backgroundColor: background,
       }"
       class="content-placing"
@@ -12,8 +12,8 @@
     <!-- 内容显示区域 -->
     <view
       :style="{
-        height: contentHeight,
-        top: addUnit(contentTop, rpx),
+        height: addUnit(height, rpx),
+        top: addUnit(top, rpx),
         bottom: addUnit(bottom, rpx),
         left: addUnit(left, rpx),
         right: addUnit(right, rpx),
@@ -28,50 +28,39 @@
 
 <script>
 import { addUnit } from '@/utils/index'
-import { systemInfo } from '@/utils/mixin/index'
 export default {
   name: 'c-fixed-box',
-  mixins: [systemInfo],
-  computed: {
-    contentHeight() {
-      return addUnit(this.height, this.rpx)
-    },
-
-    contentTop() {
-      return this.top ? this.top : this.systemInfo.windowTop
-    },
-  },
   props: {
     // 内容高度
     height: {
       type: [Number, String],
       required: false,
-      default: '100%',
+      default: 'auto',
     },
 
     // 内容高度
     top: {
-      type: Number,
+      type: [Number, String],
       required: false,
-      default: 0,
+      default: 'auto',
     },
 
     bottom: {
-      type: Number,
+      type: [Number, String],
       required: false,
-      default: 0,
+      default: 'auto',
     },
 
     left: {
-      type: Number,
+      type: [Number, String],
       required: false,
-      default: 0,
+      default: 'auto',
     },
 
     right: {
-      type: Number,
+      type: [Number, String],
       required: false,
-      default: 0,
+      default: 'auto',
     },
 
     // 是否使用 rpx 单位
@@ -90,19 +79,11 @@ export default {
   methods: {
     addUnit,
   },
-  mounted() {
-    console.log(this.systemInfo)
-  },
 }
 </script>
 
 <style lang="scss" scoped>
 .content-placing {
   z-index: -1;
-}
-
-.content {
-  // position: fixed;
-  // z-index: 1;
 }
 </style>

@@ -3,14 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 20:22:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:38:28
+ * @LastEditTime: 2021-05-26 14:31:40
  */
 
 import * as ValidateUtil from './core/validate'
-import * as DateUtil from './core/date'
 import * as LogUtil from './core/log'
 
-export { ValidateUtil, DateUtil, LogUtil }
+export { ValidateUtil, LogUtil }
 
 export * from './core/uni-app'
 
@@ -59,9 +58,7 @@ export function randomNum(minNum, maxNum) {
  * @param {Number} radix 生成uuid的基数(意味着返回的字符串都是这个基数),2-二进制,8-八进制,10-十进制,16-十六进制
  */
 export function guid(len = 32, radix = null) {
-  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split(
-    ''
-  )
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('')
   const uuid = []
   radix = radix || chars.length
 

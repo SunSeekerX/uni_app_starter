@@ -61,15 +61,7 @@ export function router(options = {}) {
   // 合并参数
   Object.assign(_config, options)
 
-  const {
-    url,
-    animationType,
-    animationDuration,
-    fail,
-    complete,
-    delta,
-    type,
-  } = _config
+  const { url, animationType, animationDuration, fail, complete, delta, type } = _config
 
   switch (type) {
     case 'navigateTo':
@@ -132,17 +124,17 @@ export function router(options = {}) {
 export function copy(value) {
   // #ifndef H5
   uni.setClipboardData({
-    data: value,
+    data: String(value),
     complete() {
       uni.hideToast()
     },
   })
   // #endif
+
+  /**
+   * H5 实现
+   */
   // #ifdef H5
-  // console.warn('H5 不支持uni-app 复制api， 请使用其他方式实现！')
-  if (!value) {
-    this.fail(this.t('TRX_BANLANCES_LACKING'))
-  }
   const s = document.createElement('input')
   s.value = value
   document.body.appendChild(s)
@@ -170,118 +162,32 @@ export function copy(value) {
 }
 
 /**
- * 设置粘贴板数据
- * @param {String} text 要设置的字符串
- * 如果未设置参数，则清空数据
+ * 打开链接
+ * @param { String } url 要跳转的地址
+ * @param { Object } options 配置
  */
-export function setClipboardText(text) {
-  // #ifndef H5
-  try {
-    var os = plus.os.name
-    text = text || ''
-    if (os == 'iOS') {
-      // var UIPasteboard  = plus.ios.importClass('UIPasteboard');
-      // var pasteboard = UIPasteboard.generalPasteboard();
-      // pasteboard.setValueforPasteboardType(text, 'public.utf8-plain-text');
-      var pasteboard = plus.ios.invoke('UIPasteboard', 'generalPasteboard')
-      plus.ios.invoke(
-        pasteboard,
-        'setValue:forPasteboardType:',
-        text,
-        'public.utf8-plain-text'
-      )
-    } else {
-      var main = plus.android.runtimeMainActivity()
-      // var Context = plus.android.importClass('android.content.Context');
-      // var clip = main.getSystemService(Context.CLIPBOARD_SERVICE);
-      var clip = main.getSystemService('clipboard')
-      plus.android.invoke(clip, 'setText', text)
-    }
-  } catch (e) {
-    console.error('error @setClipboardText!!')
+export function openUrl(
+  url,
+  options = {
+    h5Inside: false,
+    appInside: true,
+  }
+) {
+  const { h5Inside = false, appInside = true } = options
+  const encodeUrl = encodeURI(decodeURIComponent(url))
+  // #ifdef APP-PLUS
+  if (appInside) {
+    plus.runtime.openWeb(encodeUrl)
+  } else {
+    plus.runtime.openURL(encodeUrl)
   }
   // #endif
-}
 
-export function getClipboardText() {
-  try {
-    var os = plus.os.name
-    if (os == 'iOS') {
-      var pasteboard = plus.ios.invoke('UIPasteboard', 'generalPasteboard')
-      return plus.ios.invoke(
-        pasteboard,
-        'valueForPasteboardType:',
-        'public.utf8-plain-text'
-      )
-    } else {
-      var main = plus.android.runtimeMainActivity()
-      var clip = main.getSystemService('clipboard')
-      return plus.android.invoke(clip, 'getText')
-    }
-  } catch (e) {
-    console.error('error @getClipboardText!!')
+  // #ifdef H5
+  if (h5Inside) {
+    window.open(encodeUrl)
+  } else {
+    window.open(encodeUrl, 'target', '')
   }
-}
-
-/**
- * @name uni-app previewImage封装
- * @param Array arr 预览图片的数组 必须要传
- * @param Number index 作为预览图片首张索引值 可以不传
- */
-export function previewImage(arr, index) {
-  if (arr.length === 0 || !Array.isArray(arr)) {
-    uni.showToast({
-      icon: 'none',
-      title: 'previewImage数组不能为空',
-      duration: 2000,
-    })
-    console.error('previewImage数组不能为空')
-    return
-  }
-  uni.previewImage({
-    current: index,
-    urls: arr,
-    longPressActions: {
-      itemList: ['发送给朋友', '保存图片'],
-      success: function(data) {
-        // 用户点击保存图片按钮
-        if (data.tapIndex === 1) {
-          console.log(arr[data.index])
-          uni.saveImageToPhotosAlbum({
-            filePath: arr[data.index],
-            success: () => {
-              uni.showToast({
-                icon: 'none',
-                title: '保存成功',
-                duration: 2000,
-              })
-            },
-            fail: () => {
-              uni.showToast({
-                icon: 'none',
-                title: '保存失败',
-                duration: 2000,
-              })
-            },
-          })
-        } else if (data.tapIndex === 0) {
-          uni.share({
-            provider: 'weixin',
-            type: 2, //0	图文	 1 纯文字 2	纯图片 3	音乐 4 视频 5 小程序
-            scene: 'WXSceneSession',
-            imageUrl: arr[data.index],
-            success: (res) => {
-              console.log(res)
-            },
-            fail: (res) => {
-              console.log(res)
-            },
-          })
-        }
-      },
-      fail: function(err) {
-        console.log(err.errMsg)
-      },
-    },
-  })
+  // #endif
 }

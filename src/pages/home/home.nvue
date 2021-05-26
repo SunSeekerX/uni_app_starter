@@ -80,18 +80,18 @@ export default {
       menuList: [
         {
           name: '币安资金费率',
-          url: '/pages/projects/biance-rate/biance-rate',
+          url: '/apps/biance-rate/biance-rate',
           backgroundImage: 'linear-gradient( to right, #52E5E7, #130CB7)',
         },
         {
-          name: '币安资金费率测试',
-          url: '/pages/projects/biance-rate/biance-rate',
-          backgroundImage: 'linear-gradient( to right, #65FDF0, #1D6FA3)',
+          name: 'Pionex',
+          url: '/apps/pionex/index/index',
+          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
         },
         {
-          name: 'Pionex',
-          url: '/pages/projects/pionex/splash/splash',
-          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
+          name: 'Cnode',
+          url: '/apps/cnode/pages/index/index',
+          backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
         },
       ],
     }

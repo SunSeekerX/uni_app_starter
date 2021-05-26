@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:11:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-18 00:06:08
+ * @LastEditTime: 2021-05-26 15:56:53
 -->
 
 <script>
@@ -26,7 +26,7 @@ export default {
     $getEnv: null,
     $handleError: null,
   },
-  onLaunch: function() {
+  onLaunch: function () {
     this.$util.LogUtil.log('App Launch')
     // 更新 App info
     this.UPDATE_SYSTEM_INFO()
@@ -48,10 +48,10 @@ export default {
     this.handleAppPlus()
     // #endif
   },
-  onShow: function() {
+  onShow: function () {
     this.$util.LogUtil.log('App Show')
   },
-  onHide: function() {
+  onHide: function () {
     this.$util.LogUtil.log('App Hide')
   },
   methods: {
@@ -91,6 +91,9 @@ export default {
 /* #ifndef APP-NVUE */
 // uview
 @import 'uview-ui/index.scss';
+
+// CNode 需要
+@import '~@/apps/cnode/components/feng-parse/parse.css';
 
 /* #endif */
 </style>

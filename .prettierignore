@@ -16,3 +16,6 @@ src/mypUI/**
 
 # 临时忽略
 iconfont-svg.js
+
+# Cnode 需要
+gaoyia-parse

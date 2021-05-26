@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-05-26 16:15:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-06 11:34:18
+ * @LastEditTime: 2021-05-26 14:31:50
  */
 
 /**
@@ -32,13 +32,7 @@ export function isCardNo(card) {
  * 验证电子邮箱格式
  */
 export function isEmail(value) {
-  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(
-    value
-  )
-}
-
-export function isName(str) {
-  return /^[\u4E00-\u9FA5]{2,4}$/.test(str)
+  return /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/.test(value)
 }
 
 /**
@@ -46,4 +40,11 @@ export function isName(str) {
  */
 export function number(value) {
   return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(value)
+}
+
+/**
+ * 验证是否为一个 url 地址
+ */
+export function isUrl(value) {
+  return /^(?:(?:https?|ftp):\/\/)?(?:[\da-z.-]+)\.(?:[a-z.]{2,6})(?:\/\w\.-]*)*\/?/.test(value)
 }

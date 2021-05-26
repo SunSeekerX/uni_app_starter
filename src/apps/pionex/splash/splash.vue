@@ -8,17 +8,9 @@
 
 <template>
   <view class="content dp-f jc-c ai-c">
-    <uni-transition
-      :duration="800"
-      ref="ani"
-      :mode-class="['fade', 'slide-bottom']"
-      :show="state.isShowSplash"
-    >
+    <uni-transition :duration="800" ref="ani" :mode-class="['fade', 'slide-bottom']" :show="state.isShowSplash">
       <view class="dp-f fd-c">
-        <image
-          class="w-120 h-120 br-6"
-          src="/static/images/projects/pionex/logo.jpg"
-        ></image>
+        <image class="w-120 h-120 br-6" src="/static/images/projects/pionex/logo.jpg"></image>
         <text class="c-6 fs-14 mt-12">全国首家量化交易所</text>
       </view>
     </uni-transition>
