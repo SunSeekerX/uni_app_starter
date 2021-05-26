@@ -11,7 +11,7 @@
         },
         "usingComponents" : true,
         "splashscreen" : {
-            "alwaysShowBeforeRender" : true,
+            "alwaysShowBeforeRender" : false,
             "waiting" : true,
             "autoclose" : true,
             "delay" : 0
@@ -42,7 +42,8 @@
                     "<uses-feature android:name=\"android.hardware.camera\"/>",
                     "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
             },
             "ios" : {},
             "sdkConfigs" : {
@@ -83,7 +84,8 @@
             "splashscreen" : {
                 "androidStyle" : "common"
             }
-        }
+        },
+        "nvueLaunchMode" : ""
     },
     "quickapp" : {},
     "mp-weixin" : {

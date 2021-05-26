@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       state: {
-        isShow: false,
+        isShow: true,
       },
       // 交易对列表
       premiumList: [],
@@ -73,7 +73,7 @@ export default {
     // 获取资金费率
     async onGetPremiumIndex() {
       try {
-        this.state.isShow = false
+        // this.state.isShow = false
         const res = await this.$api.Biance.premiumIndex()
         if (res.length) {
           for (const item of res) {
@@ -91,7 +91,7 @@ export default {
       } catch (error) {
         this.$handleError.handleApiRequestException(error)
       } finally {
-        this.state.isShow = true
+        // this.state.isShow = true
         uni.stopPullDownRefresh()
       }
     },
