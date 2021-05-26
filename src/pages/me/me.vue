@@ -20,23 +20,38 @@
       @cancel="state.isShowEnvChangeModal = false"
       @confirm="onConfirmEnvChange"
     ></u-modal>
-    <u-action-sheet
-      @click="onConfirmSelectEnv"
-      :list="envList"
-      v-model="state.isShowEnvActionSheet"
-    ></u-action-sheet>
+    <u-action-sheet @click="onConfirmSelectEnv" :list="envList" v-model="state.isShowEnvActionSheet"></u-action-sheet>
 
     <!-- 项目菜单 -->
     <view class="menu">
       <view
         @tap="onGetUpdate"
         class="item dp-f jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-6"
-        style="border: solid 1px #eee; box-shadow: 0 2px 5px rgba(0, 0, 0, .1);"
+        style="border: solid 1px #eee; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);"
       >
         <text class="c-6">检查更新</text>
         <c-icon color="#666666" name="icon-gengduo" size="16"></c-icon>
       </view>
     </view>
+
+    <!-- 项目版本 -->
+    <!-- #ifdef APP-PLUS -->
+    <view class="infomation">
+      <view class="title">App 版本</view> <view>{{ appInfo.nativeVersion }}</view>
+    </view>
+    <view class="infomation">
+      <view class="title">版本号</view>
+      <view>Build:{{ appInfo.nativeVersionCode }}</view>
+    </view>
+    <view class="infomation">
+      <view class="title">资源版本</view>
+      <view>{{ appInfo.wgtVersion }}</view>
+    </view>
+    <view class="infomation">
+      <view class="title">版本号</view>
+      <view>{{ debug_env }}:{{ appInfo.wgtVersionCode }}</view>
+    </view>
+    <!-- #endif -->
   </view>
 </template>
 
@@ -68,6 +83,10 @@ export default {
       envList,
       // 已选环境
       selectedEnv: '',
+      // #ifdef APP-PLUS
+      // App 信息
+      appInfo: {},
+      // #endif
     }
   },
   methods: {
@@ -105,6 +124,11 @@ export default {
       }
       // #endif
     },
+  },
+  async onLoad() {
+    // #ifdef APP-PLUS
+    this.appInfo = await pushy.getInfo()
+    // #endif
   },
 }
 </script>

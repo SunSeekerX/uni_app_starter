@@ -2,8 +2,8 @@
     "name" : "Uni-app-starter",
     "appid" : "__UNI__BD3090A",
     "description" : "一切伟大的行动和思想,都有一个微不足道的开始。",
-    "versionName" : "1.0.0",
-    "versionCode" : 1000,
+    "versionName" : "1.0.1",
+    "versionCode" : 1001,
     "transformPx" : false,
     "app-plus" : {
         "compatible" : {
