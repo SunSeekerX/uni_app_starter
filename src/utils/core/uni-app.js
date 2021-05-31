@@ -1,13 +1,24 @@
 /**
- * @name 获取主题模式
+ * @name: uni-app 方法封装
+ * @author: SunSeekerX
+ * @Date: 2021-03-27 14:11:53
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-05-31 10:41:39
+ */
+
+/**
+ * 获取主题模式
+ * @returns { string } - 返回当前系统使用的外观样式
  */
 export function getUIStyle() {
   return plus.navigator.getUIStyle()
 }
 
 /**
- * @param { String } msg 需要显示的消息
- * @param { Object } options 配置,同uni-app官网
+ * uni-app toast 提示
+ * @param { string } msg 需要显示的消息
+ * @param { Object } options 参数配置,同uni-app官网
+ * @returns { null }
  */
 export function toast(msg, options) {
   uni.showToast(
@@ -25,9 +36,16 @@ export function toast(msg, options) {
 // 是否正在跳转
 let _isRouting = false
 /**
- * @name uni-app 路由封装
- * @param { Object } options
- * @returns void
+ * uni-app 路由封装
+ * @param { Object } options - 参数配置
+ * @param { string } options.url - uni-app 页面地址
+ * @param { string } [options.type='navigateTo'] - 跳转类型
+ * @param { string } [options.delta=1] - 返回的页面数，如果 delta 大于现有页面数，则返回到首页
+ * @param { string } [options.animationType='pop-in'] - 窗口显示的动画效果
+ * @param { string } [options.animationDuration=300] - 窗口动画持续时间，单位为 ms
+ * @param { function } [options.fail=cb] - 失败回调
+ * @param { function } [options.complete=cb] - 完成回调
+ * @returns { null }
  */
 export function router(options = {}) {
   if (_isRouting) {
@@ -118,15 +136,28 @@ export function router(options = {}) {
 }
 
 /**
- * @name 复制文字
- * @param {String} text
+ * uni-app 复制文字方法
+ * @param { string } value - 需要复制的内容
+ * @param { Object } [options] - 参数配置
+ * @param { string } [options.msg=''] - 复制完成提示文字
+ * @returns { null }
  */
-export function copy(value) {
+export function copy(value, options) {
+  const config = Object.assign(
+    {
+      msg: '',
+    },
+    options
+  )
+  const { msg } = config
   // #ifndef H5
   uni.setClipboardData({
     data: String(value),
     complete() {
       uni.hideToast()
+      if (msg) {
+        toast(msg)
+      }
     },
   })
   // #endif
@@ -153,27 +184,33 @@ export function copy(value) {
 
   try {
     document.execCommand('copy')
-    console.warn('Copied Success!')
+    // console.warn('Copied Success!')
+    if (msg) {
+      toast(msg)
+    }
   } catch (err) {
-    console.warn('Copy error!')
+    console.error('Copy error!', err)
   }
   s.remove()
   // #endif
 }
 
 /**
- * 打开链接
- * @param { String } url 要跳转的地址
- * @param { Object } options 配置
+ * uni-app 打开链接
+ * @param { string } url - 要跳转的地址
+ * @param { Object } [options] - 参数配置
+ * @param { boolean } [options.h5Inside=false] - H5 是否在当前窗口打开链接
+ * @param { boolean } [options.appInside=true] - App 是否使用内部的浏览器打开链接
  */
-export function openUrl(
-  url,
-  options = {
-    h5Inside: false,
-    appInside: true,
-  }
-) {
-  const { h5Inside = false, appInside = true } = options
+export function openUrl(url, options) {
+  const config = Object.assign(
+    {
+      h5Inside: false,
+      appInside: true,
+    },
+    options
+  )
+  const { h5Inside, appInside } = config
   const encodeUrl = encodeURI(decodeURIComponent(url))
   // #ifdef APP-PLUS
   if (appInside) {
