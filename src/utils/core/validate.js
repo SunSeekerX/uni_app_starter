@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-05-26 16:15:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 14:31:50
+ * @LastEditTime: 2021-06-01 10:11:25
  */
 
 /**
@@ -44,7 +44,9 @@ export function number(value) {
 
 /**
  * 验证是否为一个 url 地址
+ * @param { string } value - 需要验证的地址字符串
+ * @returns { boolean }
  */
 export function isUrl(value) {
-  return /^(?:(?:https?|ftp):\/\/)?(?:[\da-z.-]+)\.(?:[a-z.]{2,6})(?:\/\w\.-]*)*\/?/.test(value)
+  return /^(?:(?:https?|ftp):\/\/)?(?:[\da-z.-]+)\.(?:[a-z.]{2,6})(?:\/\w\.-]*)*\/?/.test(String(value))
 }
