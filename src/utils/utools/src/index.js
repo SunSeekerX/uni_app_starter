@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 11:21:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-02 18:03:59
+ * @LastEditTime: 2021-06-03 00:13:02
  */
 
 // 时间格式化
@@ -14,11 +14,15 @@ import * as uniApp from './core/uni-app'
 import Request from './core/request/request-class'
 // Encode
 import * as EncodeUtil from './core/encode'
+// Encrypt
+import * as EncryptUtil from './core/encrypt'
+// version
+import { version } from '../package.json'
 
 /**
  * 导出
  */
-export { dayjs, Request, EncodeUtil }
+export { dayjs, Request, EncodeUtil, EncryptUtil, version }
 // 导出 uni-app 方法封装
 export * from './core/uni-app'
 
@@ -34,4 +38,8 @@ export default {
   Request,
   // Encode
   EncodeUtil,
+  // Encrypt
+  EncryptUtil,
+  // 版本号
+  version,
 }

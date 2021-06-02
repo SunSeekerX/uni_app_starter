@@ -1,3 +1,10 @@
+<!--
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2021-05-26 19:34:37
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-06-02 19:52:03
+-->
 <template>
   <view>
     <!-- 轮播图 -->
@@ -6,7 +13,7 @@
       <view class="swiper-background w-750r" :style="{ backgroundColor: swiperBackground }"></view>
       <swiper
         class="swiper w-750r"
-        style="height: 393.75rpx;"
+        style="height: 393.75rpx"
         circular
         autoplay
         :interval="5000"
@@ -14,7 +21,7 @@
         @change="onSwiperChange"
       >
         <swiper-item v-for="item of bannerList" :key="item.url">
-          <image style="height: 393.75rpx;" class="w-700r ml-25r mr-25r br-6" :src="item.url"></image>
+          <image style="height: 393.75rpx" class="w-700r ml-25r mr-25r br-6" :src="item.url"></image>
         </swiper-item>
       </swiper>
 
@@ -37,10 +44,20 @@
               url: item.url,
             })
           "
-          class="item fd-r jc-sb ai-c h-44 mt-12 pl-12 pr-12 br-6"
+          class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
           :style="`background-image: ${item.backgroundImage};`"
         >
-          <text class="c-f fs-14">{{ item.name }}</text>
+          <view class="dp-f fd-c f-1">
+            <view class="item fd-r jc-sb ai-c lh-34">
+              <text class="c-f fs-16 fw-b">{{ item.name }}</text>
+            </view>
+            
+            <!-- 描述 -->
+            <view class="description mt-6">
+              <text class="description-text">{{ item.description }}</text>
+            </view>
+          </view>
+        
           <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
         </view>
       </view>
@@ -80,16 +97,19 @@ export default {
       menuList: [
         {
           name: '币安资金费率',
+          description: '查看资金费率小项目',
           url: '/apps/biance-rate/biance-rate',
           backgroundImage: 'linear-gradient( to right, #52E5E7, #130CB7)',
         },
         {
           name: 'Pionex',
+          description: '想开发静态页面的项目',
           url: '/apps/pionex/index/index',
           backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
         },
         {
           name: 'Cnode',
+          description: '刚刚接触 uni-app 不久的开发的项目，整合进来了。',
           url: '/apps/cnode/pages/index/index',
           backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
         },
@@ -135,6 +155,18 @@ export default {
   color: #fff;
   text-align: center;
   line-height: 36upx;
-  background-color: rgba(0,0,0,.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.description{
+  // background-color: rgba(255, 255, 255, 0.3);
+  // border-radius: 6px;
+  // padding: 12px;
+}
+.description-text{
+  font-size: 12px;
+  // text-align: center;
+  color: #fff;
+  // word-break: break-all;
 }
 </style>

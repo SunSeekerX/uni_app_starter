@@ -16,3 +16,7 @@ src/mypUI/**
 
 # Cnode 需要
 feng-parse
+
+# temp
+src/utils/utools/**
+
