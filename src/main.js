@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 19:26:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:36:16
+ * @LastEditTime: 2021-06-02 18:06:53
  */
 
 /**
@@ -23,11 +23,15 @@ Vue.config.productionTip = false
  */
 import App from './App'
 import store from './store/index'
+import utools from './utils/utools/index' // utools
 import * as util from './utils/index' // 工具包
 import * as constant from './config/constant' // 常量
 import * as api from './apis' // Api
 import * as handleError from './utils/handle-error' // 错误处理
 import getEnv from './config/index'
+
+console.log(utools)
+import './utils/utools/test/index'
 
 /**
  * @name 挂载全局组件和安装插件
@@ -38,6 +42,7 @@ Vue.use(uView)
  * @name 挂载原型属性
  */
 Vue.prototype.$util = util
+Vue.prototype.$utools = utools
 Vue.prototype.$store = store
 Vue.prototype.$constant = constant
 Vue.prototype.$api = api

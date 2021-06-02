@@ -3,10 +3,10 @@
  * @author: SunSeekerX
  * @Date: 2020-05-19 14:38:47
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-24 16:22:41
+ * @LastEditTime: 2021-06-02 17:22:18
  */
 
-import Request from './core/request-class'
+import { Request } from '@/utils/utools/index'
 import { LogUtil } from '@/utils/index'
 
 /**

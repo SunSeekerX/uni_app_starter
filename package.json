@@ -71,6 +71,7 @@
     "core-js": "^3.12.1",
     "dayjs": "^1.10.4",
     "flyio": "^0.6.14",
+    "js-base64": "^3.6.1",
     "regenerator-runtime": "^0.13.7",
     "uview-ui": "^1.8.4",
     "vue": "^2.6.12",

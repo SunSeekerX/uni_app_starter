@@ -1,0 +1,12 @@
+{
+  "name": "utools",
+  "version": "0.0.1",
+  "description": "uni-app 开发工具包。",
+  "main": "index.js",
+  "author": "limm",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.10.5",
+    "js-base64": "^3.6.1"
+  }
+}
