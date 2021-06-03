@@ -6,7 +6,8 @@
  * @LastEditTime: 2021-06-03 00:51:23
  */
 
-import { Request } from '@/utils/utools/lib/bundle.esm'
+// import { Request } from '@/utils/utools/lib/bundle.esm'
+import Request from '@/utils/utools/src/core/request/request-class'
 import { LogUtil } from '@/utils/index'
 
 /**

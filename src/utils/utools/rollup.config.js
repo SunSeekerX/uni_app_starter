@@ -3,14 +3,14 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 00:12:38
+ * @LastEditTime: 2021-06-03 23:49:47
  */
 
 import typescript from '@rollup/plugin-typescript'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
-import filesize from 'rollup-plugin-filesize'
+import fileSize from 'rollup-plugin-filesize'
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
@@ -21,12 +21,8 @@ if(typeof window !== 'undefined') {
 }`
 
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: [
-    // {
-    //   file: 'esm/bundle.esm.js',
-    //   format: 'esm',
-    // },
     {
       file: pkg.main,
       format: 'cjs',
@@ -44,7 +40,7 @@ export default {
       footer,
     },
   ],
-  plugins: [typescript(), nodeResolve(), json(), filesize(), terser(), commonjs()],
+  plugins: [typescript(), nodeResolve(), json(), fileSize(), terser(), commonjs()],
   watch: {
     include: ['src/**'],
     exclude: 'node_modules/**',

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 00:47:26
+ * @LastEditTime: 2021-06-03 22:37:52
  */
 
 import ShowToastOptions = UniApp.ShowToastOptions
@@ -23,8 +23,8 @@ export function getUIStyle(): string {
  * @param { Object } options 参数配置,同uni-app官网
  * @returns { null }
  */
-export function toast(msg: string, options: ShowToastOptions) {
-  delete options.title
+export function toast(msg: string, options?: ShowToastOptions) {
+  options?.title && delete options.title
   uni.showToast(
     Object.assign(
       {
@@ -52,13 +52,13 @@ let _isRouting = false
  * @param { function } [options.complete=cb] - 完成回调
  * @returns { null }
  */
-export function route(options = {}) {
+export function route(options: UniRouteOptions) {
   if (_isRouting) {
     return
   }
   // 正在跳转
   _isRouting = true
-  const _config = {
+  const _config: UniRouteOptions = {
     // 页面路径
     url: '',
     // 跳转类型
@@ -130,8 +130,6 @@ export function route(options = {}) {
       uni.navigateBack({
         delta,
         animationDuration,
-        fail,
-        complete,
       })
       break
 
@@ -147,8 +145,8 @@ export function route(options = {}) {
  * @param { string } [options.msg=''] - 复制完成提示文字
  * @returns { null }
  */
-export function copy(value, options) {
-  const config = Object.assign(
+export function copy(value: string | number, options: UniCopyOptions) {
+  const config: UniCopyOptions = Object.assign(
     {
       msg: '',
     },
@@ -172,7 +170,7 @@ export function copy(value, options) {
    */
   // #ifdef H5
   const s = document.createElement('input')
-  s.value = value
+  s.value = String(value)
   document.body.appendChild(s)
   s.select()
 
@@ -182,8 +180,8 @@ export function copy(value, options) {
     const range = document.createRange()
     range.selectNodeContents(s)
     const sel = window.getSelection()
-    sel.removeAllRanges()
-    sel.addRange(range)
+    sel && sel.removeAllRanges()
+    sel && sel.addRange(range)
     s.setSelectionRange(0, 999999)
   }
 
@@ -207,8 +205,8 @@ export function copy(value, options) {
  * @param { boolean } [options.h5Inside=false] - H5 是否在当前窗口打开链接
  * @param { boolean } [options.appInside=true] - App 是否使用内部的浏览器打开链接
  */
-export function openUrl(url, options) {
-  const config = Object.assign(
+export function openUrl(url: string, options?: UniOpenUrlOptions) {
+  const config: UniOpenUrlOptions = Object.assign(
     {
       h5Inside: false,
       appInside: true,
