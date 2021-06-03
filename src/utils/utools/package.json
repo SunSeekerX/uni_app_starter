@@ -2,6 +2,8 @@
   "name": "utools",
   "version": "0.0.1",
   "description": "uni-app 开发工具包。",
+  "license": "MIT",
+  "author": "limm",
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
   "browser": "lib/bundle.browser.js",
@@ -10,10 +12,9 @@
     "serve": "rollup -c --watch",
     "build": "rollup -c",
     "p": "npm publish --access=public",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "pkg:sort": "npx sort-package-json"
   },
-  "author": "limm",
-  "license": "MIT",
   "dependencies": {
     "dayjs": "^1.10.5",
     "js-base64": "^3.6.1",
@@ -31,6 +32,7 @@
     "rollup": "^2.50.5",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-terser": "^7.0.2",
+    "sort-package-json": "^1.50.0",
     "typescript": "^4.3.2"
   }
 }
