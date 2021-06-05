@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 23:49:47
+ * @LastEditTime: 2021-06-05 23:52:06
  */
 
 import typescript from '@rollup/plugin-typescript'
@@ -23,22 +23,22 @@ if(typeof window !== 'undefined') {
 export default {
   input: 'src/index.ts',
   output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      footer,
-    },
+    // {
+    //   file: pkg.main,
+    //   format: 'cjs',
+    //   footer,
+    // },
     {
       file: pkg.module,
       format: 'esm',
       footer,
     },
-    {
-      file: pkg.browser,
-      format: 'umd',
-      name: 'utools',
-      footer,
-    },
+    // {
+    //   file: pkg.browser,
+    //   format: 'umd',
+    //   name: 'utools',
+    //   footer,
+    // },
   ],
   plugins: [typescript(), nodeResolve(), json(), fileSize(), terser(), commonjs()],
   watch: {
