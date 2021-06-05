@@ -45,7 +45,9 @@
     "lint:eslint": "eslint --fix --ext \"src/**/*.{vue,less,css,scss}\"",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "up": "yarn upgrade-interactive"
+    "lint:lint-staged": "lint-staged",
+    "up": "yarn upgrade-interactive",
+    "prepare": "husky install"
   },
   "repository": "https://github.com/SunSeekerX/uni-app-starter",
   "author": "SunSeekerX",
@@ -69,15 +71,15 @@
     "@mypui/myp-ui": "^2.9.2",
     "@vue/shared": "^3.0.11",
     "core-js": "^3.12.1",
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.10.5",
     "flyio": "^0.6.14",
     "regenerator-runtime": "^0.13.7",
     "uview-ui": "^1.8.4",
-    "vue": "^2.6.12",
+    "vue": "^2.6.13",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@dcloudio/types": "2.2.5",
+    "@dcloudio/types": "2.2.7",
     "@dcloudio/uni-automator": "2.0.0-31920210514002",
     "@dcloudio/uni-cli-shared": "2.0.0-31920210514002",
     "@dcloudio/uni-migration": "2.0.0-31920210514002",
@@ -93,28 +95,23 @@
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.3",
-    "eslint": "^7.27.0",
+    "eslint": "^7.26.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.9.0",
-    "husky": "^4.3.8",
-    "jest": "^26.6.3",
+    "husky": "^6.0.0",
+    "jest": "^27.0.4",
     "lint-staged": "^11.0.0",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
     "prettier": "2.3.0",
-    "sass": "^1.34.0",
+    "sass": "^1.34.1",
     "sass-loader": "^10.2.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
     "vue-template-compiler": "^2.6.12"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "browserslist": [
     "Android >= 4",
