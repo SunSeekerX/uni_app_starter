@@ -3,46 +3,47 @@
  * @author: SunSeekerX
  * @Date: 2021-05-17 21:08:55
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-04 16:09:43
+ * @LastEditTime: 2021-06-06 13:10:03
  */
 
 import RequestSuccessCallbackResult = UniApp.RequestSuccessCallbackResult
 import RequestOptions = UniApp.RequestOptions
 import UploadFileOption = UniApp.UploadFileOption
 
-interface RequestConfigHeader {}
-
 /**
  * 创建请求对象 config
  */
 interface CreateRequestConfig {
-  header?: RequestConfigHeader
+  header?: any
   baseUrl: string
   sslVerify?: boolean
   withCredentials?: boolean
 }
 
-interface RequestConfig extends CreateRequestConfig {
-  url?: string
+interface RequestConfig {
+  header?: any
+  url: string
   /**
    * 默认为 GET
    * 可以是：OPTIONS，GET，HEAD，POST，PUT，DELETE，TRACE，CONNECT
    */
   method: 'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT'
-  data?: any
+  data: any
+  sslVerify?: boolean
+  withCredentials?: boolean
 }
+
 interface UploadConfig {
   header?: any
-  baseUrl: string
-  method?: 'UPLOAD'
+  url: string
 }
 
 interface ValidateStatus {
   (statusCode: number): boolean
 }
 
-interface RequestBeforeFun {
-  (config: RequestConfig): RequestConfig
+interface RequestBeforeFun<T> {
+  (config: T): T
 }
 
 interface RequestCompleteFun {
@@ -62,8 +63,6 @@ export default class Request {
   constructor(config: CreateRequestConfig) {
     this.config = Object.assign(
       {
-        header: {},
-        baseUrl: '',
         sslVerify: false,
       },
       config
@@ -71,7 +70,7 @@ export default class Request {
   }
 
   interceptor = {
-    request: (cb: RequestBeforeFun) => {
+    request: (cb: RequestBeforeFun<unknown>) => {
       cb && (this.requestBeforeFun = cb)
     },
     response: (cb: RequestCompleteFun, ecb: RequestFailFun) => {
@@ -99,7 +98,7 @@ export default class Request {
   }
 
   // 请求拦截器
-  requestBeforeFun = (config: RequestConfig) => config
+  requestBeforeFun: RequestBeforeFun<unknown> = (config) => config
   // 响应拦截器
   requestComFun = (response: RequestSuccessCallbackResult) => response
   // 错误响应拦截器
@@ -112,17 +111,21 @@ export default class Request {
    */
   async request(options: RequestConfig) {
     return new Promise(async (resolve, reject) => {
-      options.baseUrl = this.config.baseUrl
+      // options.baseUrl = this.config.baseUrl
+      const { sslVerify } = this.config
       options.header = Object.assign(options.header || {}, this.config.header)
+      if (options.sslVerify === undefined) {
+        options.sslVerify = sslVerify as boolean
+      }
       // 请求之前处理参数
-      const handleRe = await this.requestBeforeFun(options)
+      const handleRe = (await this.requestBeforeFun(options)) as RequestConfig
       // 请求参数
       const _config: RequestOptions = {
-        url: `${handleRe.baseUrl}${handleRe.url}`,
+        url: `${this.config.baseUrl}${handleRe.url}`,
         data: handleRe.data,
         method: handleRe.method,
         // #ifdef APP-PLUS
-        sslVerify: !!handleRe.sslVerify,
+        sslVerify: handleRe.sslVerify,
         // #endif
         // #ifdef H5
         withCredentials: !!handleRe.withCredentials,
@@ -157,13 +160,12 @@ export default class Request {
    */
   async upload(options: UploadConfig) {
     return new Promise((resolve, reject) => {
-      options.baseUrl = this.config.baseUrl
+      // options.baseUrl = this.config.baseUrl
       options.header = Object.assign(options.header || {}, this.config.header)
 
       delete options.header['content-type']
       delete options.header['Content-Type']
       delete options.header['Content-type']
-      delete options.method
       // 请求之前处理参数
       // const handleRe = this.reqInterceptor(options)
       const handleRe = this.requestBeforeFun(options)
