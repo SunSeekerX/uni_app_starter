@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-05-17 21:08:55
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-06 13:10:03
+ * @LastEditTime: 2021-06-08 17:30:48
  */
 
 import RequestSuccessCallbackResult = UniApp.RequestSuccessCallbackResult
@@ -36,6 +36,7 @@ interface RequestConfig {
 interface UploadConfig {
   header?: any
   url: string
+  fileType?: 'image' | 'video' | 'audio'
 }
 
 interface ValidateStatus {
@@ -125,7 +126,7 @@ export default class Request {
         data: handleRe.data,
         method: handleRe.method,
         // #ifdef APP-PLUS
-        sslVerify: handleRe.sslVerify,
+        sslVerify: handleRe.sslVerify as boolean,
         // #endif
         // #ifdef H5
         withCredentials: !!handleRe.withCredentials,
@@ -168,12 +169,12 @@ export default class Request {
       delete options.header['Content-type']
       // 请求之前处理参数
       // const handleRe = this.reqInterceptor(options)
-      const handleRe = this.requestBeforeFun(options)
+      const handleRe = this.requestBeforeFun(options) as UploadConfig
       // 请求参数
       const _config: UploadFileOption = {
-        url: `${handleRe.baseUrl}${handleRe.url}`,
+        url: `${this.config.baseUrl}${handleRe.url}`,
         // #ifdef MP-ALIPAY
-        fileType: handleRe.fileType,
+        fileType: handleRe.fileType as 'image' | 'video' | 'audio',
         // #endif
         filePath: handleRe.filePath,
         name: handleRe.name,
