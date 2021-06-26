@@ -112,8 +112,25 @@
           }
         }
       }
-    }
+    },
     /*-------------cnode end-------------*/
+    
+    /*-------------jd-ck start-------------*/
+    {
+      "path": "apps/pionex/index/index",
+      "style": {
+        "navigationBarTitleText": "Pionex",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/jd-ck/index/index",
+      "style": {
+        "navigationBarTitleText": "Jd-ck",
+        "enablePullDownRefresh": false
+      }
+    }
+    /*-------------jd-ck end-------------*/
 
   ],
   "globalStyle": {
