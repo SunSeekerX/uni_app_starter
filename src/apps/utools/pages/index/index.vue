@@ -1,11 +1,3 @@
-<!--
- * @name: tools
- * @author: SunSeekerX
- * @Date: 2021-03-27 23:41:33
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-01 23:35:21
--->
-
 <template>
   <view>
     <view class="content">
@@ -46,30 +38,27 @@ export default {
     return {
       // 菜单列表
       /*
-      渐变色：https://webkul.github.io/coolhue/
-      */
+        渐变色：https://webkul.github.io/coolhue/
+        */
       menuList: [
         {
-          name: 'utools',
-          description: '适合 uni-app 开发的工具包',
-          url: '/apps/utools/pages/index/index',
+          name: 'encode',
+          description: '编码解码相关',
+          url: '/apps/utools/pages/encode/encode',
           backgroundImage: 'linear-gradient( to right, #70F570, #49C628)',
         },
         {
-          name: 'log',
-          description: 'log小工具',
-          url: '/pages/tools/log/log',
+          name: 'encrypt',
+          description: '加密解密相关',
+          url: '/pages/tools/encrypt/encrypt',
           backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
         },
       ],
     }
   },
+
   methods: {
-    toLog() {
-      this.$util.router({
-        url: '/pages/tools/log/log',
-      })
-    },
+    name() {},
   },
 }
 </script>

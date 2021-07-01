@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-05 23:52:06
+ * @LastEditTime: 2021-07-02 01:10:29
  */
 
 import typescript from '@rollup/plugin-typescript'
@@ -40,7 +40,7 @@ export default {
     //   footer,
     // },
   ],
-  plugins: [typescript(), nodeResolve(), json(), fileSize(), terser(), commonjs()],
+  plugins: [typescript(), json(), nodeResolve(), fileSize(), terser(), commonjs()],
   watch: {
     include: ['src/**'],
     exclude: 'node_modules/**',

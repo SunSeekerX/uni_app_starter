@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-05-26 19:34:37
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-02 19:52:03
+ * @LastEditTime: 2021-07-01 23:35:42
 -->
 <template>
   <view>
@@ -113,12 +113,12 @@ export default {
           url: '/apps/cnode/pages/index/index',
           backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
         },
-        {
-          name: 'Jd-ck',
-          description: '我永远喜欢京东~',
-          url: '/apps/jd-ck/index/index',
-          backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
-        },
+        // {
+        //   name: 'Jd-ck',
+        //   description: '我永远喜欢京东~',
+        //   url: '/apps/jd-ck/index/index',
+        //   backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
+        // },
       ],
     }
   },

@@ -114,7 +114,7 @@
       }
     },
     /*-------------cnode end-------------*/
-    
+
     /*-------------jd-ck start-------------*/
     {
       "path": "apps/pionex/index/index",
@@ -129,8 +129,47 @@
         "navigationBarTitleText": "Jd-ck",
         "enablePullDownRefresh": false
       }
-    }
+    },
     /*-------------jd-ck end-------------*/
+
+    /*-------------utools start-------------*/
+    {
+      "path": "apps/utools/pages/index/index",
+      "style": {
+        "navigationBarTitleText": "utools",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/utools/pages/encode/encode",
+      "style": {
+        "navigationBarTitleText": "encode",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/utools/pages/encrypt/encrypt",
+      "style": {
+        "navigationBarTitleText": "encrypt",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/utools/pages/uni-app/uni-app",
+      "style": {
+        "navigationBarTitleText": "uni-app",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/utools/pages/validate/validate",
+      "style": {
+        "navigationBarTitleText": "validate",
+        "enablePullDownRefresh": false
+      }
+    }
+    /*-------------utools end-------------*/
+
 
   ],
   "globalStyle": {
