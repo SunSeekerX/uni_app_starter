@@ -31,7 +31,7 @@ import * as api from './apis' // Api
 import * as handleError from './utils/handle-error' // 错误处理
 import getEnv from './config/index'
 
-import './utils/utools/test/index'
+// import './utils/utools/test/index'
 
 /**
  * @name 挂载全局组件和安装插件

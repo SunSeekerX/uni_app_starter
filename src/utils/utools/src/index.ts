@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:00:14
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-02 01:16:34
+ * @LastEditTime: 2021-07-03 12:55:55
  */
 
 // 时间格式化
@@ -32,7 +32,7 @@ export { dayjs, ValidateUtil, EncodeUtil, EncryptUtil }
 // 导出 uni-app 方法封装
 export * from './core/uni-app'
 
-export default {
+const utools = {
   // uni-app 方法直接调用
   ...uniApp,
   // 时间处理
@@ -46,3 +46,5 @@ export default {
   // 版本号
   version,
 }
+
+export default utools
