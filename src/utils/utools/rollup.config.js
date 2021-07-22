@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-22 17:46:08
+ * @LastEditTime: 2021-07-22 20:41:33
  */
 
 import typescript from '@rollup/plugin-typescript'
@@ -23,11 +23,11 @@ if(typeof window !== 'undefined') {
 export default {
   input: 'src/index.ts',
   output: [
-    // {
-    //   file: pkg.main,
-    //   format: 'cjs',
-    //   footer,
-    // },
+    {
+      file: pkg.main,
+      format: 'cjs',
+      footer,
+    },
     {
       file: pkg.module,
       format: 'esm',
@@ -45,14 +45,14 @@ export default {
     json(),
     nodeResolve(),
     fileSize(),
-    terser({
-      compress: {
-        defaults: false,
-      },
-      format: {
-        comments: true,
-      },
-    }),
+    // terser({
+    //   compress: {
+    //     defaults: false,
+    //   },
+    //   format: {
+    //     comments: true,
+    //   },
+    // }),
     commonjs(),
   ],
   watch: {

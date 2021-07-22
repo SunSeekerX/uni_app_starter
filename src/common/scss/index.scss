@@ -5,6 +5,10 @@ image {
 
 /* #endif */
 
+* {
+  box-sizing: border-box;
+}
+
 .content {
-  padding: $page-vertical-padding $page-horizontal-padding 0;
+  padding: $page-vertical-padding $page-horizontal-padding 40px;
 }

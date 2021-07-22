@@ -3,3 +3,4 @@ lib/**
 types/**
 # temp
 src/**
+dist/**

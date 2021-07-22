@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 17:52:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-22 17:57:16
+ * @LastEditTime: 2021-07-22 23:38:42
  */
 
 import { encode, decode } from 'js-base64'
@@ -38,7 +38,7 @@ export function base64Encode2String(val: string): string {
 
 /**
  * base64 解码
- * @param {string} val - 需要解码的内容
+ * @param {string} val - 需要 base64 解码的内容
  * @returns { string }
  */
 export function base64Decode(val: string): string {

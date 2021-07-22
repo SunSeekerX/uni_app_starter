@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 19:26:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 00:51:06
+ * @LastEditTime: 2021-07-22 20:36:29
  */
 
 /**
@@ -24,7 +24,7 @@ Vue.config.productionTip = false
 import App from './App'
 import store from './store/index'
 // import utools from './utils/utools/index' // utools
-import utools from './utils/utools/lib/bundle.esm' // utools
+import utools from './utils/utools/dist/bundle.esm' // utools
 import * as util from './utils/index' // 工具包
 import * as constant from './config/constant' // 常量
 import * as api from './apis' // Api

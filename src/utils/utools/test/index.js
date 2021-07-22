@@ -1,15 +1,16 @@
 /**
- * @name:
+ *
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:04:22
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 23:52:55
+ * @LastEditTime: 2021-07-22 20:32:01
  */
-import utools from '../lib/bundle.esm' // utools
+
+import utools from '../lib/bundle.esm.js' // utools
 
 console.log('utools>>>', utools)
 
-import { EncodeUtil, EncryptUtil } from '../lib/bundle.esm'
+import { EncodeUtil, EncryptUtil } from '../lib/bundle.esm.js'
 
 // ------EncodeUtil------
 const encodeStr = '测试123123》》'
