@@ -1,9 +1,9 @@
 /**
- * @name:
+ * rollup 打包配置
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-02 01:10:29
+ * @LastEditTime: 2021-07-22 17:46:08
  */
 
 import typescript from '@rollup/plugin-typescript'
@@ -40,7 +40,21 @@ export default {
     //   footer,
     // },
   ],
-  plugins: [typescript(), json(), nodeResolve(), fileSize(), terser(), commonjs()],
+  plugins: [
+    typescript(),
+    json(),
+    nodeResolve(),
+    fileSize(),
+    terser({
+      compress: {
+        defaults: false,
+      },
+      format: {
+        comments: true,
+      },
+    }),
+    commonjs(),
+  ],
   watch: {
     include: ['src/**'],
     exclude: 'node_modules/**',

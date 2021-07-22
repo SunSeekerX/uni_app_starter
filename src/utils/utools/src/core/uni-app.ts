@@ -1,9 +1,9 @@
 /**
- * @name:
+ * uni-app api 二次封装
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-02 00:34:44
+ * @LastEditTime: 2021-07-22 18:02:13
  */
 
 import ShowToastOptions = UniApp.ShowToastOptions
@@ -143,7 +143,7 @@ export function route(options: UniRouteOptions) {
  * @param { string } value - 需要复制的内容
  * @param { Object } [options] - 参数配置
  * @param { string } [options.msg=''] - 复制完成提示文字
- * @returns { null }
+ * @returns { void }
  */
 export function copy(value: string | number, options: UniCopyOptions) {
   const config: UniCopyOptions = Object.assign(
@@ -187,7 +187,6 @@ export function copy(value: string | number, options: UniCopyOptions) {
 
   try {
     document.execCommand('copy')
-    // console.warn('Copied Success!')
     if (msg) {
       toast(msg)
     }

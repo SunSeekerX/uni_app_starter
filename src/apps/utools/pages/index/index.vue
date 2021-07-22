@@ -45,6 +45,12 @@ export default {
           name: 'encode',
           description: '编码解码相关',
           url: '/apps/utools/pages/encode/encode',
+          backgroundImage: 'linear-gradient( to right, #F05F57, #360940)',
+        },
+        {
+          name: 'uni-app',
+          description: 'uni-app 相关',
+          url: '/apps/utools/pages/uni-app/uni-app',
           backgroundImage: 'linear-gradient( to right, #70F570, #49C628)',
         },
         {

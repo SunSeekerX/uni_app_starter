@@ -1,9 +1,9 @@
 /**
- * @name: 编码解码相关
+ * 编码解码相关
  * @author: SunSeekerX
  * @Date: 2021-06-02 17:52:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-02 00:21:18
+ * @LastEditTime: 2021-07-22 17:57:16
  */
 
 import { encode, decode } from 'js-base64'
