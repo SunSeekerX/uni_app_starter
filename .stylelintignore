@@ -13,3 +13,7 @@ src/common/scss/markrgba-css/
 
 # Cnode 需要
 feng-parse
+
+# Temp
+src/utools
+src/components/c-icon

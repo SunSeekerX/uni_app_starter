@@ -7,7 +7,7 @@
  */
 
 // import { Request } from '@/utils/utools/lib/bundle.esm'
-import Request from '@/utils/utools/src/core/request/request-class'
+import Request from '@/utools/src/core/request/request-class'
 import { LogUtil } from '@/utils/index'
 
 /**
