@@ -1,52 +1,57 @@
 @font-face {
-  font-family: 'iconfont'; /* Project id 2552854 */
-  src: url('iconfont.woff2?t=1621239466224') format('woff2');
+  font-family: "iconfont"; 
+  src: url('iconfont.woff2?t=1627007287308') format('woff2');
 }
 
 .iconfont {
-  font-family: 'iconfont' !important;
+  font-family: "iconfont" !important;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-style: normal;
 }
 
+.icon-fl-xinxi::before {
+  content: "\e633";
+}
+
 .icon-kong::before {
-  content: '\e600';
+  content: "\e600";
 }
 
 .icon-changyongshili::before {
-  content: '\e63f';
+  content: "\e63f";
 }
 
 .icon-tool::before {
-  content: '\e606';
+  content: "\e606";
 }
 
 .icon-zujian::before {
-  content: '\e730';
+  content: "\e730";
 }
 
 .icon-daimashili::before {
-  content: '\e62c';
+  content: "\e62c";
 }
 
 .icon-hanshu::before {
-  content: '\e623';
+  content: "\e623";
 }
 
 .icon-wode::before {
-  content: '\e626';
+  content: "\e626";
 }
 
 .icon-shouye::before {
-  content: '\ee12';
+  content: "\ee12";
 }
 
 .icon-yingyong::before {
-  content: '\e6e6';
+  content: "\e6e6";
 }
 
 .icon-gengduo::before {
-  content: '\e65f';
+  content: "\e65f";
 }
+

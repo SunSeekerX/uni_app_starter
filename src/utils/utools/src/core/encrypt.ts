@@ -3,10 +3,11 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 19:13:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 23:46:14
+ * @LastEditTime: 2021-07-23 14:14:47
  */
 
 import md5 from 'md5'
+import CryptoJS from 'crypto-js'
 
 /**
  * md5 加密
@@ -15,4 +16,12 @@ import md5 from 'md5'
  */
 export function encryptMD5(val: string): string {
   return md5(val)
+}
+
+export function encryptSHA1(val: string) {
+  return CryptoJS.SHA1(val)
+}
+
+export function encryptSHA1ToString(val: string): string {
+  return CryptoJS.SHA1(val).toString()
 }

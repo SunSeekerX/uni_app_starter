@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-02-02 20:07:38
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-14 02:17:09
+ * @LastEditTime: 2021-07-23 10:30:54
 -->
 
 <template>
@@ -120,6 +120,7 @@ export default {
       // #endif
 
       // #ifndef H5
+      // eslint-disable-next-line no-unreachable
       return false
       // #endif
     },

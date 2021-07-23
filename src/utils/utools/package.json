@@ -16,6 +16,7 @@
     "pkg:sort": "npx sort-package-json"
   },
   "dependencies": {
+    "crypto-js": "^4.1.1",
     "dayjs": "^1.10.6",
     "js-base64": "^3.6.1",
     "md5": "^2.3.0"
@@ -26,8 +27,9 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.2",
     "@rollup/plugin-typescript": "^8.2.3",
+    "@types/crypto-js": "^4.0.2",
     "@types/md5": "^2.3.1",
-    "@types/node": "^16.4.0",
+    "@types/node": "^16.4.1",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.31.0",

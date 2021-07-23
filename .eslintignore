@@ -17,6 +17,7 @@ src/mypUI/**
 # Cnode 需要
 feng-parse
 
-# temp
+# Temp
 src/utils/utools/**
+src/components/c-icon
 

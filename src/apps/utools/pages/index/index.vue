@@ -42,21 +42,21 @@ export default {
         */
       menuList: [
         {
-          name: 'encode',
-          description: '编码解码相关',
-          url: '/apps/utools/pages/encode/encode',
-          backgroundImage: 'linear-gradient( to right, #F05F57, #360940)',
-        },
-        {
           name: 'uni-app',
           description: 'uni-app 相关',
           url: '/apps/utools/pages/uni-app/uni-app',
           backgroundImage: 'linear-gradient( to right, #70F570, #49C628)',
         },
         {
+          name: 'encode',
+          description: '编码解码相关',
+          url: '/apps/utools/pages/encode/encode',
+          backgroundImage: 'linear-gradient( to right, #F05F57, #360940)',
+        },
+        {
           name: 'encrypt',
           description: '加密解密相关',
-          url: '/pages/tools/encrypt/encrypt',
+          url: '/apps/utools/pages/encrypt/encrypt',
           backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
         },
       ],
