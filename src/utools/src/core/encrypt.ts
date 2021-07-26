@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 19:13:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-24 14:27:42
+ * @LastEditTime: 2021-07-26 11:47:34
  */
 
 import md5 from 'md5'
@@ -52,4 +52,23 @@ export function encryptSHA256(val: string): CryptoJS.lib.WordArray {
  */
 export function encryptSHA256ToString(val: string): string {
   return encryptSHA256(val).toString()
+}
+
+
+/**
+ * SHA512 加密
+ * @param { string } val - 需要加密的数据
+ * @returns { any }
+ */
+ export function encryptSHA512(val: string): CryptoJS.lib.WordArray {
+  return CryptoJS.SHA512(val)
+}
+
+/**
+ * SHA512 加密
+ * @param { string } val - 需要加密的数据
+ * @returns { string } string
+ */
+export function encryptSHA51ToString(val: string): string {
+  return encryptSHA512(val).toString()
 }
