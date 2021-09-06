@@ -1,3 +1,10 @@
+<!--
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2021-09-06 14:22:51
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-09-06 17:10:34
+-->
 <template>
   <view>
     <view class="content">
@@ -57,7 +64,13 @@ export default {
           name: 'encrypt',
           description: '加密解密相关',
           url: '/apps/utools/pages/encrypt/encrypt',
-          backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
+          backgroundImage: 'linear-gradient( to right, #FFAA85, #B3315F;',
+        },
+        {
+          name: 'validate',
+          description: '正则验证相关',
+          url: '/apps/utools/pages/validate/validate',
+          backgroundImage: 'linear-gradient( to right, #97ABFF, #123597);',
         },
       ],
     }

@@ -3,83 +3,65 @@
  * @author: SunSeekerX
  * @Date: 2021-07-01 23:39:11
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-23 10:34:47
+ * @LastEditTime: 2021-09-06 17:17:11
 -->
 
 <template>
   <view class="page">
-    <!-- 内容输出区域 -->
-    <view class="console" @tap="$utools.copy(consoleObj.res, { msg: '复制成功' })">
-      <text class="output">{{ consoleObj.res }}</text>
-    </view>
+    <AppOutput :output="consoleObj.res" />
 
-    <!-- 操作区域 -->
-    <view class="operation">
-      <!-- 操作标题 -->
-      <view class="h-33 c-3 dp-f ai-c">
-        <text class="fs-16">📌 URL 编码 </text>
-        <c-icon class="ml-6" name="icon-fl-xinxi" color="#ffffff" size="24" :svg="false"></c-icon>
-      </view>
-
-      <!-- 操作块 -->
-      <label>
-        <text class="label">请输入需要 URL 编码的内容</text>
-        <textarea class="content-input" v-model="encodeText" maxlength="-1" type="text" />
-      </label>
-      <button type="primary" @tap="onEncode" class="content-button dp-fc">URL 编码: urlEncode(val: string)</button>
-
-      <view class="dp-f fd-c">
-        <text class="fs-12">解码为可识别的 url 链接</text>
-        <radio-group @change="onRadioChange">
-          <radio value="true" :checked="isUrl">true</radio>
-          <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
-        </radio-group>
-      </view>
-      <label>
-        <text class="label">请输入需要 URL 解码的内容</text>
-
-        <textarea class="content-input" v-model="decodeText" maxlength="-1" type="text" />
-      </label>
-      <button type="primary" @tap="onDecode" class="content-button dp-fc">
-        URL 解码 - urlDecode(val: string, [url: boolean = true])
-      </button>
-
-      <!-- 操作标题 -->
-      <view class="h-33 c-3 dp-f ai-c mt-18">
-        <text class="title fs-16">📌 base64 编码</text>
-        <c-icon class="ml-6" name="icon-fl-xinxi" color="#ffffff" size="24" :svg="false"></c-icon>
-      </view>
-
-      <label>
-        <text class="label">请输入需要 base64 编码的内容</text>
-        <textarea class="content-input" v-model="encodeTextBase64" maxlength="-1" type="text" />
-      </label>
-      <button type="primary" @tap="onEncodeBase64" class="content-button dp-fc">
-        base64 编码: base64Encode2String(val: string)
-      </button>
-      <label>
-        <text class="label">请输入需要 base64 解码的内容</text>
-        <textarea class="content-input" v-model="decodeTextBase64" maxlength="-1" type="text" />
-      </label>
-      <button type="primary" @tap="onDecodeBase64" class="content-button dp-fc">
-        base64 解码: base64Decode(val: string)
-      </button>
-    </view>
-
-    <!-- 说明区域 -->
-    <!-- <view class="description">
-      <view class="title">说明</view>
-      <view class="text"
-        >有些时候 Url 发送给后台需要进行编码防止在传输过程中被转码，后台返回无法使用，这个过程是需要前端独立完成的。 像
-        IOS 设备打开 Url 的 （plus.runtime.openURL、plus.runtime.openWeb ）是不支持类似
-        "https://doc.yoouu.cn/basic/resource/#📌-开源软件" 这种 Url 打开的，必须要先经过编码才可以。</view
+    <AppOperationContent name="URL 编码">
+      <!-- urlEncode -->
+      <AppOperation
+        operation-name="请输入需要 URL 编码的内容"
+        v-model="encodeText"
+        button-text="URL 编码: urlEncode(val: string)"
+        @onTap="onEncode"
+      />
+      <!-- urlDecode -->
+      <AppOperation
+        operation-name="请输入需要 URL 解码的内容"
+        v-model="decodeText"
+        button-text="URL 解码 - urlDecode(val: string, [url: boolean = true])"
+        @onTap="onDecode"
       >
-    </view> -->
+        <template slot="params">
+          <text class="fs-12">解码为 ios 可识别的 url 链接</text>
+          <radio-group @change="onRadioChange">
+            <radio value="true" :checked="isUrl">true</radio>
+            <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
+          </radio-group>
+        </template>
+      </AppOperation>
+    </AppOperationContent>
+
+    <AppOperationContent name="base64 编码">
+      <!-- base64Encode2String -->
+      <AppOperation
+        operation-name="请输入需要 base64 编码的内容"
+        v-model="encodeTextBase64"
+        button-text="base64 编码: base64Encode2String(val: string)"
+        @onTap="onEncodeBase64"
+      />
+      <!-- base64Decode -->
+      <AppOperation
+        operation-name="请输入需要 base64 解码的内容"
+        v-model="decodeTextBase64"
+        button-text="base64 解码: base64Decode(val: string)"
+        @onTap="onDecodeBase64"
+      />
+    </AppOperationContent>
   </view>
 </template>
 
 <script>
+import AppOutput from '../../components/app-output/app-output'
+import AppOperationContent from '../../components/app-operation-content/app-operation-content'
+import AppOperation from '../../components/app-operation/app-operation'
+
 export default {
+  components: { AppOutput, AppOperationContent, AppOperation },
+  
   data() {
     return {
       encodeText: 'https://doc.yoouu.cn/basic/resource/#📌-开源软件',
@@ -98,51 +80,55 @@ export default {
 
   methods: {
     onEncode() {
-      const { encodeText } = this
+      const { encodeText, $utools } = this
       if (encodeText) {
         this.consoleObj = {
           time: new Date().getTime(),
           res: this.$utools.EncodeUtil.urlEncode(encodeText),
         }
+        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('清输入需要编码的内容！')
+        this.$utools.toast('请输入需要编码的内容！')
       }
     },
 
     onDecode() {
-      const { decodeText } = this
+      const { decodeText, $utools } = this
       if (decodeText) {
         const decodeTextStr = this.$utools.EncodeUtil.urlDecode(decodeText, this.isUrl)
         this.consoleObj = {
           time: new Date().getTime(),
           res: decodeTextStr,
         }
+        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
         this.$utools.toast('解码的内容为空！')
       }
     },
 
     onEncodeBase64() {
-      const { encodeTextBase64 } = this
+      const { encodeTextBase64, $utools } = this
       if (encodeTextBase64) {
         const encodeTextStr = this.$utools.EncodeUtil.base64Encode2String(encodeTextBase64)
         this.consoleObj = {
           time: new Date().getTime(),
           res: encodeTextStr,
         }
+        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('清输入需要编码的内容！')
+        this.$utools.toast('请输入需要编码的内容！')
       }
     },
 
     onDecodeBase64() {
-      const { decodeTextBase64 } = this
+      const { decodeTextBase64, $utools } = this
       if (decodeTextBase64) {
         const decodeTextStr = this.$utools.EncodeUtil.base64Decode(decodeTextBase64)
         this.consoleObj = {
           time: new Date().getTime(),
           res: decodeTextStr,
         }
+        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
         this.$utools.toast('解码的内容为空！')
       }
@@ -160,5 +146,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/apps/utools/common/scss/index.scss';
+@import '../../common/styles/index.scss';
 </style>

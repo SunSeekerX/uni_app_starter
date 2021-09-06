@@ -1,0 +1,25 @@
+{
+  "name": "utools-doc",
+  "version": "1.0.0",
+  "description": "doc for utools.",
+  "main": "index.js",
+  "author": "SunSeekerX",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:lint-staged": "lint-staged",
+    "gc": "git add -A && git-cz && git pull && git push",
+    "pkg:sort": "npx sort-package-json",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
+    "vuepress": "^1.8.2",
+    "vuepress-theme-hope": "^1.20.2"
+  }
+}

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-22 18:02:13
+ * @LastEditTime: 2021-09-06 17:46:18
  */
 
 import ShowToastOptions = UniApp.ShowToastOptions
@@ -145,7 +145,7 @@ export function route(options: UniRouteOptions) {
  * @param { string } [options.msg=''] - 复制完成提示文字
  * @returns { void }
  */
-export function copy(value: string | number, options: UniCopyOptions) {
+export function copy(value: string | number, options: UniCopyOptions): void {
   const config: UniCopyOptions = Object.assign(
     {
       msg: '',

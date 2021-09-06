@@ -3,13 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:00:14
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-03 12:55:55
+ * @LastEditTime: 2021-09-06 17:44:19
  */
 
 // 时间格式化
 import dayjs from 'dayjs'
 // uni-app
-import * as uniApp from './core/uni-app'
+import * as UniAppUtil from './core/uni-app'
 // Validate
 import * as ValidateUtil from './core/validate'
 // Encode
@@ -34,7 +34,8 @@ export * from './core/uni-app'
 
 const utools = {
   // uni-app 方法直接调用
-  ...uniApp,
+  ...UniAppUtil,
+  UniAppUtil,
   // 时间处理
   dayjs,
   // Validate
