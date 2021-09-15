@@ -20,6 +20,9 @@
         type="text"
       />
     </label>
+		
+		<!-- 内容显示 -->
+		<slot name="content"/>
 
     <!-- 参数设置 -->
     <view class="dp-f fd-c">

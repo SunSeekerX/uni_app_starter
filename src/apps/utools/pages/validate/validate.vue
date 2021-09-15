@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-09-06 14:22:51
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 17:40:12
+ * @LastEditTime: 2021-09-15 10:38:46
 -->
 
 <template>
@@ -59,7 +59,7 @@ export default {
 
       isMobilePhoneText: '13800000000',
       isIDCardText: '110101200112128361',
-      isEmailText: 'exanple@gmail.com',
+      isEmailText: 'example@gmail.com',
       isUrlText: 'https://www.google.com/',
     }
   },

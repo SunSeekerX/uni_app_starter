@@ -1,9 +1,9 @@
 /**
- * @name: utools 入口
+ * Utools 入口
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:00:14
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 17:44:19
+ * @LastEditTime: 2021-09-15 10:44:12
  */
 
 // 时间格式化
