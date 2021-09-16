@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 根组件
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:11:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 15:56:53
+ * @LastEditTime: 2021-09-16 22:58:37
 -->
 
 <script>
@@ -16,7 +16,7 @@ import pushy from '@/utils/pushy/index'
 
 export default {
   /**
-   * @name nvue 界面全局数据，非nvue 使用 this
+   * nvue 界面全局数据，非nvue 使用 this
    */
   globalData: {
     $util: null,
@@ -26,7 +26,7 @@ export default {
     $getEnv: null,
     $handleError: null,
   },
-  onLaunch: function () {
+  onLaunch() {
     this.$util.LogUtil.log('App Launch')
     // 更新 App info
     this.UPDATE_SYSTEM_INFO()
@@ -48,10 +48,10 @@ export default {
     this.handleAppPlus()
     // #endif
   },
-  onShow: function () {
+  onShow() {
     this.$util.LogUtil.log('App Show')
   },
-  onHide: function () {
+  onHide() {
     this.$util.LogUtil.log('App Hide')
   },
   methods: {

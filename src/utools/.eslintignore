@@ -1,6 +1,5 @@
 test/**
 lib/**
 types/**
-# temp
-src/**
-dist/**
+src/libs
+

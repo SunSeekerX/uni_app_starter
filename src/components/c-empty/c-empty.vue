@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-02-02 14:16:14
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 17:03:08
+ * @LastEditTime: 2021-09-16 23:04:13
 -->
 
 <template>
@@ -24,24 +24,13 @@
 
     <!-- #ifdef APP-NVUE -->
     <view
-      :style="
-        `height: ${comHeight}px; flex-direction: column; align-items: center; justify-content: center; background-color: ${backgroundColor ||
-          themeVal('colorContentBg')};`
-      "
+      :style="`height: ${comHeight}px; flex-direction: column; align-items: center; justify-content: center; background-color: ${
+        backgroundColor || themeVal('colorContentBg')
+      };`"
     >
-      <c-icon
-        :name="icon"
-        size="66"
-        :color="color || themeVal('colorInfoDisabled')"
-      ></c-icon>
+      <c-icon :name="icon" size="66" :color="color || themeVal('colorInfoDisabled')"></c-icon>
 
-      <text
-        :style="
-          `font-size: 12px; color: ${color || themeVal('colorInfoDisabled')};`
-        "
-        class="c-9 "
-        >空空如也</text
-      >
+      <text :style="`font-size: 12px; color: ${color || themeVal('colorInfoDisabled')};`" class="c-9">空空如也</text>
     </view>
     <!-- #endif -->
   </view>
@@ -49,10 +38,6 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex'
-// #ifdef APP-NVUE
-// eslint-disable-next-line no-undef
-const globalData = getApp().globalData
-// #endif
 
 // 默认颜色
 const defaultColor = '#DC316C'
@@ -141,12 +126,5 @@ export default {
       }
     },
   },
-  // #ifdef APP-NVUE
-  data() {
-    return {
-      globalData,
-    }
-  },
-  // #endif
 }
 </script>

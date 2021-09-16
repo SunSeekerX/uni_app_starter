@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-05-26 19:34:37
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-01 23:35:42
+ * @LastEditTime: 2021-09-16 23:08:40
 -->
 <template>
   <view>
@@ -66,12 +66,15 @@
 </template>
 
 <script>
-import { nvueGetGlobalData } from '@/utils/mixin/index'
+// import { nvueGetGlobalData } from '@/utils/mixin/index'
 export default {
-  mixins: [nvueGetGlobalData],
+  // mixins: [nvueGetGlobalData],
 
   data() {
+    
     return {
+      globalData: null,
+      
       // 轮播图背景色
       swiperBackground: 'rgb(12,12,12)',
 
@@ -122,7 +125,11 @@ export default {
       ],
     }
   },
-
+  
+  created() {
+    this.globalData = getApp({allowDefault: true}).globalData
+  },
+  
   methods: {
     onSwiperChange(e) {
       const index = e.detail.current

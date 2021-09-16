@@ -8,19 +8,32 @@
 
 import { appName } from '@/config/constant'
 
-const name = `%c ${appName}: >>> `
-
 export function error() {
-  // eslint-disable-next-line no-console
-  console.error(name, 'color: #fff;background-color: #fa3534;', ...arguments)
+  // #ifndef APP-PLUS
+  console.error(`%c ${appName}: >>> `, 'color: #fff;background-color: #fa3534;', ...arguments)
+  // #endif
+
+  // #ifdef APP-PLUS
+  console.error(`${appName}: >>> `, ...arguments)
+  // #endif
 }
 
 export function log() {
-  // eslint-disable-next-line no-console
-  console.log(name, 'color: #fff;background-color: #19be6b;', ...arguments)
+  // #ifndef APP-PLUS
+  console.log(`%c ${appName}: >>> `, 'color: #fff;background-color: #19be6b;', ...arguments)
+  // #endif
+
+  // #ifdef APP-PLUS
+  console.log(`${appName}: >>> `, ...arguments)
+  // #endif
 }
 
 export function warn() {
-  // eslint-disable-next-line no-console
-  console.warn(name, 'color: #fff;background-color: #ff9900;', ...arguments)
+  // #ifndef APP-PLUS
+  console.warn(`%c ${appName}: >>> `, 'color: #fff; background-color: #ff9900;', ...arguments)
+  // #endif
+
+  // #ifdef APP-PLUS
+  console.warn(`${appName}: >>> `, ...arguments)
+  // #endif
 }
