@@ -3,13 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 19:13:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 23:22:01
+ * @LastEditTime: 2021-09-16 18:18:06
  */
 
 import md5 from 'md5'
 import CryptoJS from 'crypto-js'
-// import { JSEncrypt } from 'jsencrypt'
-// import type { IJSEncryptOptions } from 'jsencrypt/lib/JSEncrypt'
+import { JSEncrypt } from 'jsencrypt'
+import type { IJSEncryptOptions } from 'jsencrypt/lib/JSEncrypt'
 
 /**
  * md5 加密
@@ -78,45 +78,48 @@ export function encryptSHA512ToString(val: string): string {
  * RSA 加密
  * @return { string | boolean } the signature encoded in base64
  */
-// interface GetRSAEnCryptorOptions {
-//   publicKey?: string
-//   privateKey?: string
-// }
+interface GetRSAEnCryptorOptions {
+  publicKey?: string
+  privateKey?: string
+}
 
-// export function getRSAEnCryptor(options: IJSEncryptOptions | undefined, initOptions?: GetRSAEnCryptorOptions) {
-//   const cryptor = new JSEncrypt(options)
-//   if (initOptions?.publicKey) {
-//     cryptor.setPublicKey(initOptions.publicKey)
-//   }
-//   if (initOptions?.privateKey) {
-//     cryptor.setPrivateKey(initOptions.privateKey)
-//   }
-//   return cryptor
-// }
+export function getRSAEnCryptor(
+  options: IJSEncryptOptions | undefined,
+  initOptions?: GetRSAEnCryptorOptions
+): JSEncrypt {
+  const cryptor = new JSEncrypt(options)
+  if (initOptions?.publicKey) {
+    cryptor.setPublicKey(initOptions.publicKey)
+  }
+  if (initOptions?.privateKey) {
+    cryptor.setPrivateKey(initOptions.privateKey)
+  }
+  return cryptor
+}
 
-// export function encryptRSA2Base64(data: string, publicKey: string): string | boolean {
-//   const encryptor = new JSEncrypt()
-//   encryptor.setPublicKey(publicKey)
-//   return encryptor.encrypt(data)
-// }
-// export function encryptRSA2Base64Plain(data: string, encryptor: JSEncrypt): string | boolean {
-//   if (encryptor.getPublicKey()) {
-//     return encryptor.encrypt(data)
-//   }
-//   throw new Error('No public key!')
-// }
+export function encryptRSA2Base64(data: string, publicKey: string): string | boolean {
+  const encryptor = new JSEncrypt()
+  encryptor.setPublicKey(publicKey)
+  return encryptor.encrypt(data)
+}
+export function encryptRSA2Base64Plain(data: string, encryptor: JSEncrypt): string | boolean {
+  if (encryptor.getPublicKey()) {
+    return encryptor.encrypt(data)
+  }
+  throw new Error('No public key!')
+}
 
 /**
  * RSA 解密
  */
-// export function decryptRSABase64(data: string, privateKey: string) {
-//   const encryptor = new JSEncrypt()
-//   encryptor.setPrivateKey(privateKey)
-//   return encryptor.decrypt(data)
-// }
-// export function decryptRSABase64Plain(data: string, encryptor: JSEncrypt): string | boolean {
-//   if (encryptor.getPrivateKey()) {
-//     return encryptor.decrypt(data)
-//   }
-//   throw new Error('No private key!')
-// }
+export function decryptRSABase64(data: string, privateKey: string): string | false {
+  const encryptor = new JSEncrypt()
+  encryptor.setPrivateKey(privateKey)
+  return encryptor.decrypt(data)
+}
+export function decryptRSABase64Plain(data: string, encryptor: JSEncrypt): string | boolean {
+  if (encryptor.getPrivateKey()) {
+    return encryptor.decrypt(data)
+  }
+  throw new Error('No private key!')
+}
