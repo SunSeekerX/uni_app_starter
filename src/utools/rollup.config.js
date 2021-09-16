@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 18:42:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-22 20:41:33
+ * @LastEditTime: 2021-09-17 00:17:14
  */
 
 import typescript from '@rollup/plugin-typescript'
@@ -11,7 +11,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 import fileSize from 'rollup-plugin-filesize'
-import { terser } from 'rollup-plugin-terser'
+// import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
 // 一段自定义的内容，以下内容会添加到打包结果中
@@ -23,11 +23,11 @@ if(typeof window !== 'undefined') {
 export default {
   input: 'src/index.ts',
   output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      footer,
-    },
+    // {
+    //   file: pkg.main,
+    //   format: 'cjs',
+    //   footer,
+    // },
     {
       file: pkg.module,
       format: 'esm',
