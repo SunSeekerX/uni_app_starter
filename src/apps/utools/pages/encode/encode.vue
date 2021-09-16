@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-01 23:39:11
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 17:17:11
+ * @LastEditTime: 2021-09-16 15:48:16
 -->
 
 <template>
@@ -27,7 +27,7 @@
       >
         <template slot="params">
           <text class="fs-12">解码为 ios 可识别的 url 链接</text>
-          <radio-group @change="onRadioChange">
+          <radio-group class="fs-12" @change="onRadioChange">
             <radio value="true" :checked="isUrl">true</radio>
             <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
           </radio-group>
@@ -61,7 +61,7 @@ import AppOperation from '../../components/app-operation/app-operation'
 
 export default {
   components: { AppOutput, AppOperationContent, AppOperation },
-  
+
   data() {
     return {
       encodeText: 'https://doc.yoouu.cn/basic/resource/#📌-开源软件',

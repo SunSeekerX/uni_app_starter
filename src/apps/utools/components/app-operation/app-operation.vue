@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 操作
  * @author: SunSeekerX
  * @Date: 2021-09-06 16:09:39
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 16:39:39
+ * @LastEditTime: 2021-09-16 17:30:08
 -->
 
 <template>
@@ -20,17 +20,19 @@
         type="text"
       />
     </label>
-		
-		<!-- 内容显示 -->
-		<slot name="content"/>
+
+    <!-- 内容显示 -->
+    <!-- <slot name="content" /> -->
 
     <!-- 参数设置 -->
-    <view class="dp-f fd-c">
+    <!-- <view class="dp-f fd-c">
       <slot name="params" />
-    </view>
-    
+    </view> -->
+
+    <slot />
+
     <!-- 确认 -->
-    <button type="primary" @tap="$emit('onTap')" class="content-button dp-fc mb-15">{{ buttonText }}</button>
+    <!-- <button type="primary" @tap="$emit('onTap')" class="content-button dp-fc mb-15">{{ buttonText }}</button> -->
   </view>
 </template>
 
@@ -60,10 +62,10 @@ export default {
       default: '',
     },
     // 按钮文本
-    buttonText: {
-      type: String,
-      required: true,
-    },
+    // buttonText: {
+    //   type: String,
+    //   required: true,
+    // },
   },
 }
 </script>
@@ -76,7 +78,7 @@ export default {
 .content-input {
   width: 720rpx;
   height: 66px;
-  padding: 12px 6px;
+  padding: 6px;
   margin-top: 6px;
   font-size: 12px;
   border: solid 1px #eee;
@@ -91,6 +93,7 @@ export default {
   height: 33px;
   margin-top: 12px;
   font-size: 12px;
+  line-height: normal;
   border-radius: 3px;
 }
 </style>

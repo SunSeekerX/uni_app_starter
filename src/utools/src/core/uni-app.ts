@@ -3,10 +3,8 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 17:46:18
+ * @LastEditTime: 2021-09-16 18:29:16
  */
-
-import ShowToastOptions = UniApp.ShowToastOptions
 
 /**
  * 获取主题模式
@@ -23,7 +21,7 @@ export function getUIStyle(): string {
  * @param { Object } options 参数配置,同uni-app官网
  * @returns { null }
  */
-export function toast(msg: string, options?: ShowToastOptions) {
+export function toast(msg: string, options?: UniApp.ShowToastOptions): void {
   options?.title && delete options.title
   uni.showToast(
     Object.assign(
@@ -52,7 +50,7 @@ let _isRouting = false
  * @param { function } [options.complete=cb] - 完成回调
  * @returns { null }
  */
-export function route(options: UniRouteOptions) {
+export function route(options: UniRouteOptions): void {
   if (_isRouting) {
     return
   }
@@ -204,7 +202,7 @@ export function copy(value: string | number, options: UniCopyOptions): void {
  * @param { boolean } [options.h5Inside=false] - H5 是否在当前窗口打开链接
  * @param { boolean } [options.appInside=true] - App 是否使用内部的浏览器打开链接
  */
-export function openUrl(url: string, options?: UniOpenUrlOptions) {
+export function openUrl(url: string, options?: UniOpenUrlOptions): void {
   const config: UniOpenUrlOptions = Object.assign(
     {
       h5Inside: false,

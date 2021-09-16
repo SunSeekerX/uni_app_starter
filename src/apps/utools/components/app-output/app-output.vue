@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 操作输出
  * @author: SunSeekerX
  * @Date: 2021-09-06 16:05:46
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-06 16:14:34
+ * @LastEditTime: 2021-09-16 18:21:06
 -->
 
 <template>
@@ -18,7 +18,7 @@ export default {
   name: 'AppOutput',
   props: {
     output: {
-      type: String,
+      type: [String, Boolean, Object, null, undefined],
       required: true,
     },
   },
