@@ -3,37 +3,14 @@
  * @author: SunSeekerX
  * @Date: 2020-11-05 20:22:23
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 14:31:40
+ * @LastEditTime: 2021-09-17 21:31:01
  */
 
-import * as ValidateUtil from './core/validate'
-import * as LogUtil from './core/log'
+import { ValidateUtil, LogUtil } from '@/utools'
+import { appName } from '@/config/constant'
+LogUtil.setName(appName)
 
-export { ValidateUtil, LogUtil }
-
-export * from './core/uni-app'
-
-/**
- * @name 获取url参数
- * @param {string} url
- */
-export function getUrlParams(url) {
-  const obj = {}
-  const index = url.indexOf('?') // 看url有没有参数
-  const params = url.substr(index + 1) // 截取url参数部分 id = 1 & type = 2
-
-  if (index !== -1) {
-    // 有参数时
-    const parr = params.split('&') // 将参数分割成数组 ["id = 1 ", " type = 2"]
-    for (const i of parr) {
-      // 遍历数组
-      const arr = i.split('=') // 1） i id = 1   arr = [id, 1]  2）i type = 2  arr = [type, 2]
-      obj[arr[0]] = arr[1] // obj[arr[0]] = id, obj.id = 1   obj[arr[0]] = type, obj.type = 2
-    }
-  }
-
-  return obj
-}
+export { LogUtil }
 
 // 生成从minNum到maxNum的随机数
 export function randomNum(minNum, maxNum) {
@@ -99,6 +76,5 @@ export function removeEmptyKey(obj = {}) {
 // 添加单位，如果有rpx，%，px等单位结尾或者值为auto，直接返回，否则加上rpx单位结尾
 export function addUnit(value = 'auto', rpx = false) {
   value = String(value)
-  // 用uView内置验证规则中的number判断是否为数值
-  return ValidateUtil.number(value) ? `${value}${rpx ? 'rpx' : 'px'}` : value
+  return ValidateUtil.isNumber(value) ? `${value}${rpx ? 'rpx' : 'px'}` : value
 }

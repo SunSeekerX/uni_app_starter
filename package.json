@@ -45,6 +45,10 @@
     "lint:eslint": "eslint --fix --ext \"src/**/*.{vue,less,css,scss}\"",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "dev:h5-dev": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve --mode dev",
+    "dev:h5-prod": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve --mode prod",
+    "build:h5-dev": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build --mode dev",
+    "build:h5-prod": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build --mode prod",
     "lint:lint-staged": "lint-staged",
     "up": "yarn upgrade-interactive",
     "prepare": "husky install"
@@ -82,6 +86,7 @@
     "@dcloudio/types": "*",
     "@dcloudio/uni-automator": "2.0.0-32220210818002",
     "@dcloudio/uni-cli-shared": "2.0.0-32220210818002",
+    "@dcloudio/uni-i18n": "^2.0.0-32220210818002",
     "@dcloudio/uni-migration": "2.0.0-32220210818002",
     "@dcloudio/uni-template-compiler": "2.0.0-32220210818002",
     "@dcloudio/vue-cli-plugin-hbuilderx": "2.0.0-32220210818002",

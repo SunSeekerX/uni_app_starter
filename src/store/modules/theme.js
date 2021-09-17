@@ -1,29 +1,22 @@
 /**
- * @name: Theme module
+ * Theme module
  * @author: SunSeekerX
  * @Date: 2021-01-06 17:26:49
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-01-26 20:44:53
+ * @LastEditTime: 2021-09-17 20:12:54
  */
 
 import dark from '@/common/js/theme/dark'
 import light from '@/common/js/theme/light'
-import {
-  THEMES,
-  STORAGE_APP_THEME,
-  STORAGE_APP_THEME_MODEL,
-} from '@/config/constant'
-import { getUIStyle } from '@/utils/index'
+import { THEMES, STORAGE_APP_THEME, STORAGE_APP_THEME_MODEL } from '@/config/constant'
+import { getUIStyle } from '@/utools'
 import { themeModel as defaultThemeModel } from '@/config/default'
 
 let appTheme = uni.getStorageSync(STORAGE_APP_THEME)
 let appThemeModel = uni.getStorageSync(STORAGE_APP_THEME_MODEL)
 
 function getH5Theme() {
-  if (
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  ) {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     return THEMES.DARK
   } else {
     return THEMES.LIGHT

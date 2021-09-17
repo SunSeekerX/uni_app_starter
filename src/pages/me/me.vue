@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-03-27 16:24:58
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-04-03 18:05:35
+ * @LastEditTime: 2021-09-17 21:50:01
 -->
 
 <template>
@@ -111,16 +111,16 @@ export default {
     // 检查更新
     async onGetUpdate() {
       // #ifndef APP-PLUS
-      this.$util.toast('请在App端检查更新哦~')
+      this.$utools.toast('请在App端检查更新哦~')
       // #endif
       // #ifdef APP-PLUS
       if (plus.runtime.appid !== 'HBuilder') {
         // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
         // 检查更新
         const res = await pushy.getUpdate()
-        this.$util.toast(res.message)
+        this.$utools.toast(res.message)
       } else {
-        this.$util.toast('自定义基座才能检查更新哦~')
+        this.$utools.toast('自定义基座才能检查更新哦~')
       }
       // #endif
     },

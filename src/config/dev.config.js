@@ -1,9 +1,9 @@
 /**
- * @name: 开发环境变量
+ * 开发环境变量
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:58:39
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 17:57:56
+ * @LastEditTime: 2021-09-17 21:33:16
  */
 
 export default {

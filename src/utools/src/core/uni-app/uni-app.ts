@@ -3,15 +3,10 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 17:27:49
+ * @LastEditTime: 2021-09-17 19:57:30
  */
 
-/**
- * uni-app 请求类
- */
-import { Request } from './request/request-class'
-import type { UniRouteOptions, UniCopyOptions, UniOpenUrlOptions } from '../interface'
-export { Request }
+import type { UniRouteOptions, UniCopyOptions, UniOpenUrlOptions } from './interface'
 
 /**
  * 获取主题模式

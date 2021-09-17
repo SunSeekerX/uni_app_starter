@@ -1,5 +1,5 @@
 /**
- * @name: 该文件用户配置在 nvue 下 iconfont 组件的图标
+ * 该文件用户配置在 nvue 下 iconfont 组件的图标
  * @author: SunSeekerX
  * @Date: 2020-10-12 18:15:51
  * @LastEditors: SunSeekerX

@@ -1,5 +1,5 @@
 /**
- * @name: 测试环境变量
+ * 测试环境变量
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:59:03
  * @LastEditors: SunSeekerX

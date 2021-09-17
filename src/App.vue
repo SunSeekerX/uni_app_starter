@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:11:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 22:58:37
+ * @LastEditTime: 2021-09-17 21:30:11
 -->
 
 <script>
@@ -25,6 +25,7 @@ export default {
     $dayjs: null,
     $getEnv: null,
     $handleError: null,
+    $utools: null,
   },
   onLaunch() {
     this.$util.LogUtil.log('App Launch')
@@ -65,6 +66,7 @@ export default {
       this.globalData.$getEnv = this.$getEnv
       this.globalData.$dayjs = this.$dayjs
       this.globalData.$handleError = this.$handleError
+      this.globalData.$utools = this.$utools
     },
 
     // App 端启动需要的操作

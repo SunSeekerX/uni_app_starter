@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-05-26 13:48:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 16:07:14
+ * @LastEditTime: 2021-09-17 20:13:47
 -->
 
 <template>
@@ -100,9 +100,9 @@ export default {
     }
   },
   methods: {
-    navigate(href, e) {
-      if (this.$util.ValidateUtil.isUrl(href)) {
-        this.$util.openUrl(href)
+    navigate(href) {
+      if (this.$utools.ValidateUtil.isUrl(href)) {
+        this.$utools.openUrl(href)
       }
     },
     // 获取话题详情
@@ -112,11 +112,11 @@ export default {
         if (res.success) {
           this.topic = this.handleTopicDetailFilter(res.data)
         } else {
-          this.$util.toast('request api error')
+          this.$utools.toast('request api error')
         }
       } catch (e) {
         console.log(e)
-        this.$util.toast(e.message)
+        this.$utools.toast(e.message)
       } finally {
         // Stop pull down refresh
         uni.stopPullDownRefresh()

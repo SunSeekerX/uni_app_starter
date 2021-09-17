@@ -1,9 +1,9 @@
 <!--
- * @name: tools
+ * tools
  * @author: SunSeekerX
  * @Date: 2021-03-27 23:41:33
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-01 23:35:21
+ * @LastEditTime: 2021-09-17 21:49:01
 -->
 
 <template>
@@ -15,7 +15,7 @@
           v-for="item of menuList"
           :key="item.name"
           @tap="
-            $util.router({
+            $utools.route({
               url: item.url,
             })
           "
@@ -55,21 +55,8 @@ export default {
           url: '/apps/utools/pages/index/index',
           backgroundImage: 'linear-gradient( to right, #70F570, #49C628)',
         },
-        {
-          name: 'log',
-          description: 'log小工具',
-          url: '/pages/tools/log/log',
-          backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
-        },
       ],
     }
-  },
-  methods: {
-    toLog() {
-      this.$util.router({
-        url: '/pages/tools/log/log',
-      })
-    },
   },
 }
 </script>

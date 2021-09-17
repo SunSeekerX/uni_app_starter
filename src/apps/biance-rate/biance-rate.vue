@@ -1,10 +1,11 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-05-17 21:08:55
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 18:01:25
+ * @LastEditTime: 2021-09-17 22:23:31
 -->
+
 <template>
   <view>
     <c-fixed-box :rpx="false" :height="120" :top="systemInfo.windowTop">
@@ -84,9 +85,9 @@ export default {
           const searchList = this.handleSearch(res)
           // 排序
           this.searchList = this.handleSortRate(searchList)
-          this.$util.toast('更新成功')
+          this.$utools.toast('更新成功')
         } else {
-          this.$util.toast('数据为空')
+          this.$utools.toast('数据为空')
         }
       } catch (error) {
         this.$handleError.handleApiRequestException(error)

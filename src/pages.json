@@ -5,7 +5,8 @@
     "^c-(.*)": "@/components/c-$1/c-$1.vue",
     "myp-(.*)": "@/mypUI/myp-$1/myp-$1.vue"
   },
-  "pages": [{
+  "pages": [
+    {
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
@@ -33,13 +34,6 @@
       }
     },
     {
-      "path": "pages/tools/log/log",
-      "style": {
-        "navigationBarTitleText": "LogUtils",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "pages/module/mono-font/mono-font",
       "style": {
         "navigationBarTitleText": "",
@@ -53,7 +47,6 @@
         "enablePullDownRefresh": true
       }
     },
-
     /*-------------pionex start-------------*/
     {
       "path": "apps/pionex/index/index",
@@ -71,7 +64,6 @@
       }
     },
     /*-------------pionex end-------------*/
-
     {
       "path": "pages/module/icon/icon",
       "style": {
@@ -79,7 +71,6 @@
         "enablePullDownRefresh": false
       }
     },
-
     /*-------------cnode start-------------*/
     // 首页
     {
@@ -114,7 +105,6 @@
       }
     },
     /*-------------cnode end-------------*/
-
     /*-------------jd-ck start-------------*/
     {
       "path": "apps/pionex/index/index",
@@ -131,7 +121,6 @@
       }
     },
     /*-------------jd-ck end-------------*/
-
     /*-------------utools start-------------*/
     {
       "path": "apps/utools/pages/index/index",
@@ -166,13 +155,16 @@
     {
       "path": "apps/utools/pages/validate/validate",
       "style": {
-        "navigationBarTitleText": "validate",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "validate"
+      }
+    },
+    {
+      "path": "apps/utools/pages/log/log",
+      "style": {
+        "navigationBarTitleText": "log"
       }
     }
     /*-------------utools end-------------*/
-
-
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
@@ -189,7 +181,8 @@
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tabbar/home.png",
         "selectedIconPath": "static/images/tabbar/home_selected.png",

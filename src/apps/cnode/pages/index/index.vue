@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-05-26 13:48:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 18:08:50
+ * @LastEditTime: 2021-09-17 20:13:37
 -->
 
 <template>
@@ -121,10 +121,10 @@ export default {
           const topicList = res.data
           this.topicList = this.handleTopicDataFilter(topicList)
         } else {
-          this.$util.toast('request api error')
+          this.$utools.toast('request api error')
         }
       } catch (e) {
-        this.$util.toast(e.message)
+        this.$utools.toast(e.message)
       } finally {
         // Stop pull down refresh
         uni.stopPullDownRefresh()
@@ -179,14 +179,14 @@ export default {
         }
         return data
       } else {
-        this.$util.toast('不是有效的数据')
+        this.$utools.toast('不是有效的数据')
       }
     },
     // 上下一页
     handlePageChange(action) {
       if (action === 'prev') {
         if (this.page === 1) {
-          this.$util.toast('这是第一页鸭')
+          this.$utools.toast('这是第一页鸭')
         } else {
           const params = {
             page: --this.page,

@@ -1,5 +1,5 @@
 /**
- * @name: 正式环境变量
+ * 正式环境变量
  * @author: SunSeekerX
  * @Date: 2021-03-27 14:59:18
  * @LastEditors: SunSeekerX

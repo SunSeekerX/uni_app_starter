@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-03-27 23:41:33
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-23 14:08:14
+ * @LastEditTime: 2021-09-17 20:19:15
 -->
 <template>
   <view>
@@ -11,7 +11,7 @@
       v-for="item of list"
       :key="item.url"
       @click="
-        $util.router({
+        $utools.route({
           url: item.url,
         })
       "

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-09-06 14:22:51
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 18:01:06
+ * @LastEditTime: 2021-09-17 19:45:28
 -->
 
 <template>
@@ -135,7 +135,29 @@ export default {
     },
 
     async onUpload() {
-      this.consoleText = await this.$api.Express.upload()
+      uni.chooseImage({
+        success: async (chooseImageRes) => {
+          const tempFilePaths = chooseImageRes.tempFilePaths
+          this.consoleText = await this.$api.Express.upload({
+            filePath: tempFilePaths[0],
+            name: 'file',
+            formData: {
+              user: 'test',
+            },
+          })
+          // uni.uploadFile({
+          //   url: 'https://www.example.com/upload', //仅为示例，非真实的接口地址
+          //   filePath: tempFilePaths[0],
+          //   name: 'file',
+          //   formData: {
+          //     user: 'test',
+          //   },
+          //   success: (uploadFileRes) => {
+          //     console.log(uploadFileRes.data)
+          //   },
+          // })
+        },
+      })
     },
   },
 }

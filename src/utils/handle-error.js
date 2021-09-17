@@ -1,12 +1,13 @@
 /**
- * @name Handle error
+ * 错误处理
  * @author SunSeekerX
  * @time 2019-11-27 15:18:44
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:34:44
+ * @LastEditTime: 2021-09-17 20:15:04
  */
 
-import { toast, LogUtil } from './index'
+import { LogUtil } from './index'
+import { toast } from '@/utools'
 import errCode from './err-code'
 
 /**

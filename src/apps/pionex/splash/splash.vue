@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-05-23 13:31:18
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-23 14:01:24
+ * @LastEditTime: 2021-09-17 20:19:04
 -->
 
 <template>
@@ -30,7 +30,7 @@ export default {
     onTransitionFinish() {
       const key = `${this.$constant.appName}/pionex/start`
       const toIndex = () => {
-        this.$util.router({
+        this.$utools.route({
           url: '/pages/projects/pionex/index/index',
           type: 'redirectTo',
         })

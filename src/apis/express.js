@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-09-17 17:40:07
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 18:00:31
+ * @LastEditTime: 2021-09-17 19:47:28
  */
 
 import { expressRequest } from '@/utils/request/index'
@@ -37,10 +37,13 @@ export default {
     })
   },
 
-  upload() {
+  upload({ filePath, name, formData }) {
     return expressRequest({
       url: '/upload',
       method: 'UPLOAD',
+      filePath,
+      name,
+      formData,
     })
   },
 }

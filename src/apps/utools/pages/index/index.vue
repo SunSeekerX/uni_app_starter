@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * 
  * @author: SunSeekerX
  * @Date: 2021-09-06 14:22:51
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 17:39:00
+ * @LastEditTime: 2021-09-17 21:44:25
 -->
 
 <template>
@@ -15,7 +15,7 @@
           v-for="item of menuList"
           :key="item.name"
           @tap="
-            $util.router({
+            $utools.route({
               url: item.url,
             })
           "
@@ -53,25 +53,31 @@ export default {
           name: 'uni-app',
           description: 'uni-app 相关',
           url: '/apps/utools/pages/uni-app/uni-app',
-          backgroundImage: 'linear-gradient( to right, #70F570, #49C628)',
+          backgroundImage: 'linear-gradient( to left, #70F570, #49C628)',
         },
         {
           name: 'encode',
           description: '编码解码相关',
           url: '/apps/utools/pages/encode/encode',
-          backgroundImage: 'linear-gradient( to right, #F05F57, #360940)',
+          backgroundImage: 'linear-gradient( to left, #F05F57, #360940)',
         },
         {
           name: 'encrypt',
           description: '加密解密相关',
           url: '/apps/utools/pages/encrypt/encrypt',
-          backgroundImage: 'linear-gradient( to right, #FFAA85, #B3315F;',
+          backgroundImage: 'linear-gradient( to left, #FFAA85, #B3315F;',
         },
         {
           name: 'validate',
           description: '正则验证相关',
           url: '/apps/utools/pages/validate/validate',
-          backgroundImage: 'linear-gradient( to right, #97ABFF, #123597);',
+          backgroundImage: 'linear-gradient( to left, #97ABFF, #123597);',
+        },
+        {
+          name: 'log',
+          description: '日志工具',
+          url: '/apps/utools/pages/log/log',
+          backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C);',
         },
       ],
     }

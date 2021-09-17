@@ -1,10 +1,10 @@
 /**
- * @name: 项目常量配置,按照规范 KEY 都为大写
+ * 项目常量配置,按照规范 KEY 都为大写
  * @author: SunSeekerX
  * @description 由于很多地方需要用到，使用单独导出的方式。
  * @Date: 2021-03-27 15:01:19
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 16:43:17
+ * @LastEditTime: 2021-09-17 21:33:12
  */
 
 // 项目名

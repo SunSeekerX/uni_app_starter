@@ -1,9 +1,9 @@
 /**
- * @name: 项目默认配置文件
+ * 项目默认配置文件
  * @author: SunSeekerX
  * @Date: 2021-03-27 15:00:32
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 21:25:33
+ * @LastEditTime: 2021-09-17 21:33:08
  */
 
 import { THEMES } from './constant'

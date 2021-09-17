@@ -4,10 +4,8 @@
   "description": "uni-app 开发工具包。",
   "license": "MIT",
   "author": "limm",
-  "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
-  "browser": "dist/bundle.browser.js",
-  "types": "types/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "serve": "rollup -c --watch",
     "build": "rollup -c",
