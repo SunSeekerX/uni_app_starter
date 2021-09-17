@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-05-18 23:09:33
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-17 23:30:01
+ * @LastEditTime: 2021-09-17 17:39:00
  */
 
 import createRequest from './request'
@@ -16,4 +16,13 @@ export const bianceRequest = createRequest(
     withCredentials: false,
   },
   false
+)
+
+// 导出测试请求对象
+export const expressRequest = createRequest(
+  {
+    baseUrl: getEnv('EXPRESS_BASE_URL'),
+    withCredentials: false,
+  },
+  true
 )

@@ -1,9 +1,9 @@
 <!--
- * @name: 
+ * uni-app 相关
  * @author: SunSeekerX
  * @Date: 2021-09-06 14:22:51
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:45:27
+ * @LastEditTime: 2021-09-17 18:01:06
 -->
 
 <template>
@@ -20,7 +20,58 @@
       <AppOperationButton buttonText="toast 提示: copy(val: string [, options: Object]): void" @onTap="toast" />
 
       <!-- route -->
-      <text class="fs-12">路由跳转</text>
+      <view class="fs-12 mt-12">路由跳转</view>
+      <AppOperationButton
+        buttonText="路由跳转 - navigateTo: route(options: Object): void"
+        @onTap="
+          $utools.route({
+            url: '/apps/utools/pages/uni-app/route?type=navigateTo',
+          })
+        "
+      />
+      <AppOperationButton
+        buttonText="路由跳转 - redirectTo: route(options: Object): void"
+        @onTap="
+          $utools.route({
+            url: '/apps/utools/pages/uni-app/route?type=redirectTo',
+            type: 'redirectTo',
+          })
+        "
+      />
+      <AppOperationButton
+        buttonText="路由跳转 - reLaunch: route(options: Object): void"
+        @onTap="
+          $utools.route({
+            url: '/apps/utools/pages/uni-app/route?type=reLaunch',
+            type: 'reLaunch',
+          })
+        "
+      />
+      <AppOperationButton
+        buttonText="路由跳转 - switchTab: route(options: Object): void (回到工具页)"
+        @onTap="
+          $utools.route({
+            url: '/pages/tools/tools',
+            type: 'switchTab',
+          })
+        "
+      />
+      <AppOperationButton
+        buttonText="路由跳转 - navigateBack: route(options: Object): void"
+        @onTap="
+          $utools.route({
+            type: 'navigateBack',
+          })
+        "
+      />
+
+      <!-- request -->
+      <view class="fs-12 mt-12">网络请求</view>
+      <AppOperationButton buttonText="网络请求 - GET: route(options: Object): void" @onTap="onGet" />
+      <AppOperationButton buttonText="网络请求 - POST: route(options: Object): void" @onTap="onPost" />
+      <AppOperationButton buttonText="网络请求 - PUT: route(options: Object): void" @onTap="onPut" />
+      <AppOperationButton buttonText="网络请求 - DELETE: route(options: Object): void" @onTap="onDelete" />
+      <AppOperationButton buttonText="网络请求 - UPLOAD: route(options: Object): void" @onTap="onUpload" />
     </AppOperationContent>
   </view>
 </template>
@@ -43,6 +94,7 @@ export default {
       toastText: '我是提示的文字',
     }
   },
+
   methods: {
     copy() {
       const { copyText, $utools } = this
@@ -64,6 +116,26 @@ export default {
       } else {
         $utools.toast('请输入内容！')
       }
+    },
+
+    async onGet() {
+      this.consoleText = await this.$api.Express.get()
+    },
+
+    async onPost() {
+      this.consoleText = await this.$api.Express.post()
+    },
+
+    async onPut() {
+      this.consoleText = await this.$api.Express.put()
+    },
+
+    async onDelete() {
+      this.consoleText = await this.$api.Express.delete()
+    },
+
+    async onUpload() {
+      this.consoleText = await this.$api.Express.upload()
     },
   },
 }

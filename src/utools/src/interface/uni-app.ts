@@ -1,17 +1,15 @@
 /**
- * @name:
+ * uni-app 接口
  * @author: SunSeekerX
  * @Date: 2021-06-03 22:27:33
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 22:36:47
+ * @LastEditTime: 2021-09-17 17:25:21
  */
-
-import SetClipboardDataOptions = UniApp.SetClipboardDataOptions
 
 /**
  * uni-app 路由跳转函数参数
  */
-interface UniRouteOptions {
+export interface UniRouteOptions {
   /**
    * 需要跳转的应用内非 tabBar 的页面的路径 , 路径后可以带参数
    */
@@ -54,21 +52,24 @@ interface UniRouteOptions {
   /**
    * 接口调用成功的回调函数
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   success?: (result: any) => void
   /**
    * 接口调用失败的回调函数
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fail?: (result: any) => void
   /**
    * 接口调用结束的回调函数（调用成功、失败都会执行）
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   complete?: (result: any) => void
 }
 
 /**
  * uni-app 复制函数参数
  */
-interface UniCopyOptions extends SetClipboardDataOptions {
+export interface UniCopyOptions extends UniApp.SetClipboardDataOptions {
   /**
    * 复制完成后需要提示的内容，为空不提示
    */
@@ -78,7 +79,7 @@ interface UniCopyOptions extends SetClipboardDataOptions {
 /**
  * uni-app 打开连接参数
  */
-interface UniOpenUrlOptions {
+export interface UniOpenUrlOptions {
   /**
    * H5 是否在内部打开地址
    */

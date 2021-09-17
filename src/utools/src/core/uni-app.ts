@@ -3,14 +3,22 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:14:50
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 18:29:16
+ * @LastEditTime: 2021-09-17 17:27:49
  */
+
+/**
+ * uni-app 请求类
+ */
+import { Request } from './request/request-class'
+import type { UniRouteOptions, UniCopyOptions, UniOpenUrlOptions } from '../interface'
+export { Request }
 
 /**
  * 获取主题模式
  * @returns { string } - 返回当前系统使用的外观样式
  */
 export function getUIStyle(): string {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   return plus.navigator.getUIStyle()
 }
@@ -125,6 +133,7 @@ export function route(options: UniRouteOptions): void {
 
     case 'navigateBack':
       // 关闭当前页面，返回上一页面或多级页面
+      _isRouting = false
       uni.navigateBack({
         delta,
         animationDuration,

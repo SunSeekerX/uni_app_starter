@@ -3,11 +3,11 @@
  * @author: SunSeekerX
  * @Date: 2020-05-19 14:38:47
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 00:51:23
+ * @LastEditTime: 2021-09-17 18:03:50
  */
 
-// import { Request } from '@/utils/utools/lib/bundle.esm'
-import Request from '@/utools/src/core/request/request-class'
+import { Request } from '@/utools/dist/bundle.esm'
+// import Request from '@/utools/src/core/request/request-class'
 import { LogUtil } from '@/utils/index'
 
 /**
@@ -28,7 +28,7 @@ export default function createRequest(options, packErr = true) {
   const http = new Request(options)
 
   // 请求拦截器
-  http.interceptor.request((config) => {
+  http.setReqInterceptor((config) => {
     // Get 请求添加时间戳防止缓存
     if (['get', 'GET'].includes(config.method)) {
       config.data = {
@@ -52,7 +52,7 @@ export default function createRequest(options, packErr = true) {
   })
 
   // 响应拦截器
-  http.interceptor.response(
+  http.setResInterceptor(
     (res) => {
       // 请求成功 http code === 200
       uni.hideLoading()
@@ -72,7 +72,14 @@ export default function createRequest(options, packErr = true) {
    */
   return async function request(config) {
     try {
-      return Promise.resolve(await http.request(config))
+      if (config.method.toUpperCase() === 'UPLOAD') {
+        // 文件上传
+        const res = await http.upload(config)
+        return Promise.resolve(res)
+      } else {
+        // 网络请求
+        return Promise.resolve(await http.request(config))
+      }
     } catch (res) {
       let packRes = null
       if (res instanceof Error) {

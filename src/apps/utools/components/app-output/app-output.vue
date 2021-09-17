@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-09-06 16:05:46
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 18:21:06
+ * @LastEditTime: 2021-09-17 17:45:45
 -->
 
 <template>
@@ -31,7 +31,9 @@ export default {
   position: sticky;
   top: calc(var(--window-top) + 6px);
   z-index: 1;
+  max-height: 200px;
   padding: 6px;
+  overflow-y: scroll;
   word-break: break-all;
   background: #fff;
   border-color: #ddd;

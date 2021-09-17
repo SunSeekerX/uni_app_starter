@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 17:52:15
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-22 23:38:42
+ * @LastEditTime: 2021-09-17 17:17:21
  */
 
 import { encode, decode } from 'js-base64'
@@ -23,7 +23,7 @@ export function urlEncode(val: string): string {
  * @param { boolean } [url=true] - 是否需要解码为可识别的 url 链接
  * @returns { string }
  */
-export function urlDecode(val: string = '', url: boolean = true): string {
+export function urlDecode(val = '', url = true): string {
   return url ? encodeURI(decodeURIComponent(val)) : decodeURIComponent(val)
 }
 

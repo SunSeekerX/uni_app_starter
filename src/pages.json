@@ -136,29 +136,31 @@
     {
       "path": "apps/utools/pages/index/index",
       "style": {
-        "navigationBarTitleText": "utools",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "utools"
       }
     },
     {
       "path": "apps/utools/pages/encode/encode",
       "style": {
-        "navigationBarTitleText": "encode",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "encode"
       }
     },
     {
       "path": "apps/utools/pages/encrypt/encrypt",
       "style": {
-        "navigationBarTitleText": "encrypt",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "encrypt"
       }
     },
     {
       "path": "apps/utools/pages/uni-app/uni-app",
       "style": {
-        "navigationBarTitleText": "uni-app",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "apps/utools/pages/uni-app/route",
+      "style": {
+        "navigationBarTitleText": "route"
       }
     },
     {

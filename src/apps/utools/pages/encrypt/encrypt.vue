@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-01 23:39:11
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:32:16
+ * @LastEditTime: 2021-09-17 14:26:19
 -->
 
 <template>
@@ -321,7 +321,6 @@ fhe0p/VKfqSYgA==
         const end = $utools.PerformanceUtil.getNow()
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
-        console.log(error.message)
         $utools.toast(`私钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
