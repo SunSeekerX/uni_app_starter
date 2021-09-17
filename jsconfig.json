@@ -13,5 +13,10 @@
   ],
   "include": [
     "src/**/*"
-  ]
+  ],
+  "typeAcquisition": {
+    "exclude": [
+      "agent-base"
+    ]
+  }
 }
