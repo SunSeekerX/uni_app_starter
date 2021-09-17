@@ -30,6 +30,19 @@ cd uni-app-starter
 npm i
 ```
 
+**构建 utools**
+
+项目内带了一个 uni-app 开发工具包，正处于开发阶段所以需要手动构建。后续发布正式版本就会添加到依赖内
+
+```shell
+cd src/utools/
+
+# 安装依赖
+npm i
+# 构建
+npm run build
+```
+
 **启动**
 
 ```bash
