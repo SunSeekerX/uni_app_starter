@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-07-01 23:39:11
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 15:48:16
+ * @LastEditTime: 2021-09-17 13:35:33
 -->
 
 <template>
@@ -12,44 +12,29 @@
 
     <AppOperationContent name="URL 编码">
       <!-- urlEncode -->
-      <AppOperation
-        operation-name="请输入需要 URL 编码的内容"
-        v-model="encodeText"
-        button-text="URL 编码: urlEncode(val: string)"
-        @onTap="onEncode"
-      />
+      <AppOperationInput operation-name="请输入需要 URL 编码的内容" v-model="encodeText" />
+      <AppOperationButton buttonText="URL 编码: urlEncode(val: string)" @onTap="onEncode" />
+
       <!-- urlDecode -->
-      <AppOperation
-        operation-name="请输入需要 URL 解码的内容"
-        v-model="decodeText"
-        button-text="URL 解码 - urlDecode(val: string, [url: boolean = true])"
-        @onTap="onDecode"
-      >
-        <template slot="params">
-          <text class="fs-12">解码为 ios 可识别的 url 链接</text>
-          <radio-group class="fs-12" @change="onRadioChange">
-            <radio value="true" :checked="isUrl">true</radio>
-            <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
-          </radio-group>
-        </template>
-      </AppOperation>
+      <AppOperationInput operation-name="请输入需要 URL 解码的内容" v-model="decodeText" />
+      <template>
+        <text class="fs-12">解码为 ios 可识别的 url 链接</text>
+        <radio-group class="fs-12" @change="onRadioChange">
+          <radio value="true" :checked="isUrl">true</radio>
+          <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
+        </radio-group>
+      </template>
+      <AppOperationButton buttonText="URL 解码 - urlDecode(val: string, [url: boolean = true])" @onTap="onDecode" />
     </AppOperationContent>
 
     <AppOperationContent name="base64 编码">
       <!-- base64Encode2String -->
-      <AppOperation
-        operation-name="请输入需要 base64 编码的内容"
-        v-model="encodeTextBase64"
-        button-text="base64 编码: base64Encode2String(val: string)"
-        @onTap="onEncodeBase64"
-      />
+      <AppOperationInput operation-name="请输入需要 base64 编码的内容" v-model="encodeTextBase64" />
+      <AppOperationButton buttonText="base64 编码: base64Encode2String(val: string)" @onTap="onEncodeBase64" />
+
       <!-- base64Decode -->
-      <AppOperation
-        operation-name="请输入需要 base64 解码的内容"
-        v-model="decodeTextBase64"
-        button-text="base64 解码: base64Decode(val: string)"
-        @onTap="onDecodeBase64"
-      />
+      <AppOperationInput operation-name="请输入需要 base64 解码的内容" v-model="decodeTextBase64" />
+      <AppOperationButton buttonText="base64 解码: base64Decode(val: string)" @onTap="onDecodeBase64" />
     </AppOperationContent>
   </view>
 </template>
@@ -57,10 +42,11 @@
 <script>
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
-import AppOperation from '../../components/app-operation/app-operation'
+import AppOperationInput from '../../components/app-operation-input/app-operation-input'
+import AppOperationButton from '../../components/app-operation-button/app-operation-button'
 
 export default {
-  components: { AppOutput, AppOperationContent, AppOperation },
+  components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
 
   data() {
     return {

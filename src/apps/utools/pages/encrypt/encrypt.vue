@@ -1,9 +1,9 @@
 <!--
- * 
+ * 加密
  * @author: SunSeekerX
  * @Date: 2021-07-01 23:39:11
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 19:12:59
+ * @LastEditTime: 2021-09-17 13:32:16
 -->
 
 <template>
@@ -76,15 +76,15 @@
       />
       <AppOperationButton
         @onTap="onDecryptRSABase64RSAPlain(false, true)"
-        buttonText="RSA 解密: 使用存储在 data 的加密器，直接解密"
+        buttonText="RSA 解密: 使用存储在 data 的解密器，直接解密"
       />
       <AppOperationButton
         @onTap="onDecryptRSABase64RSAPlain(true, true)"
-        buttonText="RSA 解密: 使用本地存储的加密器，直接解密"
+        buttonText="RSA 解密: 使用本地存储的解密器，直接解密"
       />
       <AppOperationButton
         @onTap="onDecryptRSABase64RSAPlain(true, false)"
-        buttonText="RSA 解密: 使用本地存储的加密器，用封装方法解密"
+        buttonText="RSA 解密: 使用本地存储的解密器，用封装方法解密"
       />
     </AppOperationContent>
   </view>
@@ -98,8 +98,10 @@ import AppOperationButton from '../../components/app-operation-button/app-operat
 
 /**
  * 加密器不需要放在 data，因为不需要动态响应，放在顶层效率更高
+ * 加密和解密不要用同一个对象，会出现莫名的问题!
  */
 let rsaEnCryptor = null
+let rsaDeCryptor = null
 
 export default {
   name: 'UtoolsEncryptUtil',
@@ -117,6 +119,7 @@ export default {
        * 这里在 data 放置了一个加密器，发现使用速度比放置在顶层慢了 10 倍。下面有对比数据
        */
       rsaEnCryptor: null,
+      rsaDeCryptor: null,
       rsaEncryptionText: 'rsaEncryptionText',
       rsaDecryptionText:
         'qOEypB88lYUn3VPleD9UwEhIaoSP9RpauGHpNyXorpPbibXNEiwXcm/ungvUITRxUalqBLwMlNckjeyKAtGVGXgPhDInkuUZU8D25C3sdxowC6OyGUE+UFDkQvud1EXqW1yqmVfaSG889Tt5XvH3oyi+a3zpCFnjbNoKoFAQvBc=',
@@ -195,9 +198,9 @@ fhe0p/VKfqSYgA==
       } else if (!rsaEncryptionPublicKey) {
         return $utools.toast('请输入RSA加密公钥!')
       }
-      const start = performance.now()
+      const start = $utools.PerformanceUtil.getNow()
       const res = $utools.EncryptUtil.encryptRSA2Base64(rsaEncryptionText, rsaEncryptionPublicKey)
-      const end = performance.now()
+      const end = $utools.PerformanceUtil.getNow()
       if (!res) {
         $utools.toast(`公钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
@@ -234,7 +237,7 @@ fhe0p/VKfqSYgA==
           this.rsaEnCryptor.setPublicKey(rsaEncryptionPublicKey)
         }
 
-        const start = performance.now()
+        const start = $utools.PerformanceUtil.getNow()
         if (isUseLocalCryptor) {
           if (direct) {
             this.consoleText = rsaEnCryptor.encrypt(rsaEncryptionText)
@@ -248,7 +251,7 @@ fhe0p/VKfqSYgA==
             this.consoleText = $utools.EncryptUtil.encryptRSA2Base64Plain(rsaEncryptionText, this.rsaEnCryptor)
           }
         }
-        const end = performance.now()
+        const end = $utools.PerformanceUtil.getNow()
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
         $utools.toast(`公钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
@@ -263,9 +266,9 @@ fhe0p/VKfqSYgA==
         return $utools.toast('请输入RSA解密私钥!')
       }
       try {
-        const start = performance.now()
+        const start = $utools.PerformanceUtil.getNow()
         const res = $utools.EncryptUtil.decryptRSABase64(rsaDecryptionText, rsaEncryptionPrivateKey)
-        const end = performance.now()
+        const end = $utools.PerformanceUtil.getNow()
         this.consoleText = res
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
@@ -281,14 +284,14 @@ fhe0p/VKfqSYgA==
         return $utools.toast('请输入RSA解密私钥!')
       }
       if (isUseLocalCryptor) {
-        if (!rsaEnCryptor) {
-          rsaEnCryptor = $utools.EncryptUtil.getRSAEnCryptor()
-          rsaEnCryptor.setPrivateKey(rsaEncryptionPrivateKey)
+        if (!rsaDeCryptor) {
+          rsaDeCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
       } else {
-        if (!this.rsaEnCryptor) {
-          this.rsaEnCryptor = $utools.EncryptUtil.getRSAEnCryptor()
-          this.rsaEnCryptor.setPrivateKey(rsaEncryptionPrivateKey)
+        if (!this.rsaDeCryptor) {
+          this.rsaDeCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          this.rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
       }
 
@@ -296,29 +299,29 @@ fhe0p/VKfqSYgA==
         /**
          * 私钥无变化不需要每次设置，这里提供了修改功能，所以每次都更新了
          */
-        if (rsaEnCryptor) {
-          rsaEnCryptor.setPrivateKey(rsaEncryptionPrivateKey)
+        if (rsaDeCryptor) {
+          rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         } else {
-          this.rsaEnCryptor.setPrivateKey(rsaEncryptionPrivateKey)
+          this.rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
-        const start = performance.now()
+        const start = $utools.PerformanceUtil.getNow()
         if (isUseLocalCryptor) {
           if (direct) {
-            this.consoleText = rsaEnCryptor.decrypt(rsaDecryptionText)
+            this.consoleText = rsaDeCryptor.decrypt(rsaDecryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, rsaEnCryptor)
+            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, rsaDeCryptor)
           }
         } else {
           if (direct) {
-            this.consoleText = this.rsaEnCryptor.decrypt(rsaDecryptionText)
+            this.consoleText = this.rsaDeCryptor.decrypt(rsaDecryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, this.rsaEnCryptor)
+            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, this.rsaDeCryptor)
           }
         }
-        // this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, this.rsaEnCryptor)
-        const end = performance.now()
+        const end = $utools.PerformanceUtil.getNow()
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
+        console.log(error.message)
         $utools.toast(`私钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },

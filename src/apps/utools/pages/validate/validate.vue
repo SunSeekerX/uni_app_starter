@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-09-06 14:22:51
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-15 10:38:46
+ * @LastEditTime: 2021-09-17 13:37:37
 -->
 
 <template>
@@ -12,33 +12,20 @@
 
     <AppOperationContent name="正则验证">
       <!-- isMobilePhone -->
-      <AppOperation
-        operation-name="请输入需要校验手机号码的内容"
-        v-model="isMobilePhoneText"
-        button-text="校验手机号码: isMobilePhone(val: string): boolean"
-        @onTap="isMobilePhone"
-      />
+      <AppOperationInput operation-name="请输入需要校验手机号码的内容" v-model="isMobilePhoneText" />
+      <AppOperationButton buttonText="校验手机号码: isMobilePhone(val: string): boolean" @onTap="isMobilePhone" />
+
       <!-- isIDCard -->
-      <AppOperation
-        operation-name="请输入需要校验身份证号码的内容"
-        v-model="isIDCardText"
-        button-text="校验身份证号码: isIDCard(val: string): boolean"
-        @onTap="isIDCard"
-      />
+      <AppOperationInput operation-name="请输入需要校验身份证号码的内容" v-model="isIDCardText" />
+      <AppOperationButton buttonText="校验身份证号码: isIDCard(val: string): boolean" @onTap="isIDCard" />
+
       <!-- isEmail -->
-      <AppOperation
-        operation-name="请输入需要验证电子邮箱的内容"
-        v-model="isEmailText"
-        button-text="验证电子邮箱: isEmail(val: string): boolean"
-        @onTap="isEmail"
-      />
+      <AppOperationInput operation-name="请输入需要验证电子邮箱的内容" v-model="isEmailText" />
+      <AppOperationButton buttonText="验证电子邮箱: isEmail(val: string): boolean" @onTap="isEmail" />
+
       <!-- isUrl -->
-      <AppOperation
-        operation-name="请输入需要验证 url 地址的内容"
-        v-model="isUrlText"
-        button-text="验证 url 地址: isUrl(val: string): boolean"
-        @onTap="isUrl"
-      />
+      <AppOperationInput operation-name="请输入需要验证 url 地址的内容" v-model="isUrlText" />
+      <AppOperationButton buttonText="验证 url 地址: isUrl(val: string): boolean" @onTap="isUrl" />
     </AppOperationContent>
   </view>
 </template>
@@ -46,12 +33,13 @@
 <script>
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
-import AppOperation from '../../components/app-operation/app-operation'
+import AppOperationInput from '../../components/app-operation-input/app-operation-input'
+import AppOperationButton from '../../components/app-operation-button/app-operation-button'
 
 export default {
   name: 'UtoolsValidateUtil',
 
-  components: { AppOutput, AppOperationContent, AppOperation },
+  components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
 
   data() {
     return {

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:00:14
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-15 10:44:12
+ * @LastEditTime: 2021-09-17 13:22:15
  */
 
 // 时间格式化
@@ -16,7 +16,10 @@ import * as ValidateUtil from './core/validate'
 import * as EncodeUtil from './core/encode'
 // Encrypt
 import * as EncryptUtil from './core/encrypt'
+// Performance
+import * as PerformanceUtil from './core/performance'
 // version
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json')
 /**
  * TODO 这里使用 import rollup 第一次无法解析，
@@ -28,7 +31,7 @@ const { version } = require('../package.json')
 /**
  * 导出
  */
-export { dayjs, ValidateUtil, EncodeUtil, EncryptUtil }
+export { dayjs, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil }
 // 导出 uni-app 方法封装
 export * from './core/uni-app'
 
@@ -44,6 +47,8 @@ const utools = {
   EncodeUtil,
   // Encrypt
   EncryptUtil,
+  // Performance
+  PerformanceUtil,
   // 版本号
   version,
 }

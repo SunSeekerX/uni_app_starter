@@ -3,13 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2021-06-02 19:13:24
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 00:19:29
+ * @LastEditTime: 2021-09-17 13:13:30
  */
 
 import md5 from 'md5'
 import CryptoJS from 'crypto-js'
-import { JSEncrypt } from 'jsencrypt'
-import type { IJSEncryptOptions } from 'jsencrypt/lib/JSEncrypt'
+import { JSEncrypt } from '@limm/jsencrypt-mp'
+import type { IJSEncryptOptions } from '@limm/jsencrypt-mp/lib/JSEncrypt'
 
 /**
  * md5 加密

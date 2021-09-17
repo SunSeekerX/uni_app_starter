@@ -3,12 +3,12 @@
  * @author: SunSeekerX
  * @Date: 2021-09-16 15:16:53
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-16 18:34:25
+ * @LastEditTime: 2021-09-17 13:44:21
 -->
 <template>
   <!-- 输入区 -->
   <label>
-    <text class="label">{{ operationName }}</text>
+    <text class="fs-12">{{ operationName }}</text>
     <textarea
       @input="$emit('change', $event.target.value)"
       :value="value"
@@ -36,7 +36,7 @@ export default {
     },
     // 输入的值
     value: {
-      type: String,
+      type: [String, Number],
       default: '',
       required: true,
     },
@@ -57,12 +57,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.label {
-  font-size: 12px;
-}
-
 .content-input {
-  width: 720rpx;
+  width: 100%;
   padding: 6px;
   margin-top: 6px;
   overflow-y: scroll;
