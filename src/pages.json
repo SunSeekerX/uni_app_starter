@@ -163,6 +163,12 @@
       "style": {
         "navigationBarTitleText": "log"
       }
+    },
+    {
+      "path": "apps/utools/pages/random/random",
+      "style": {
+        "navigationBarTitleText": "random"
+      }
     }
     /*-------------utools end-------------*/
   ],

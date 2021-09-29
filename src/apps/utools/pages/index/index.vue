@@ -79,6 +79,12 @@ export default {
           url: '/apps/utools/pages/log/log',
           backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C);',
         },
+        {
+          name: 'random',
+          description: '随机工具',
+          url: '/apps/utools/pages/random/random',
+          backgroundImage: 'linear-gradient( to left, #3B2667, #BC78EC);',
+        },
       ],
     }
   },

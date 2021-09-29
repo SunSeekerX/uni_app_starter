@@ -8,6 +8,9 @@
 
 // 时间格式化
 import dayjs from 'dayjs'
+// uuid
+import * as uuid from 'uuid'
+
 // uni-app
 import * as UniAppUtil from './core/uni-app'
 // Validate
@@ -18,6 +21,8 @@ import * as EncodeUtil from './core/encode'
 import * as EncryptUtil from './core/encrypt'
 // Performance
 import * as PerformanceUtil from './core/performance'
+// Random
+import * as RandomUtil from './core/random'
 // version
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { version } = require('../package.json')
@@ -31,7 +36,7 @@ const { version } = require('../package.json')
 /**
  * 导出
  */
-export { dayjs, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil }
+export { dayjs, uuid, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
 // 导出 uni-app 方法封装
 export * from './core/uni-app'
 
@@ -41,6 +46,8 @@ const utools = {
   UniAppUtil,
   // 时间处理
   dayjs,
+  // uuid
+  uuid,
   // Validate
   ValidateUtil,
   // Encode
@@ -49,6 +56,8 @@ const utools = {
   EncryptUtil,
   // Performance
   PerformanceUtil,
+  // Random
+  RandomUtil,
   // 版本号
   version,
 }

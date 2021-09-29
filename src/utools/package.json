@@ -1,11 +1,22 @@
 {
-  "name": "utools",
+  "name": "@limm/utools",
   "version": "0.0.1",
   "description": "uni-app 开发工具包。",
+  "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/master/src/utools#readme",
+  "bugs": {
+    "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunSeekerX/uni-app-starter.git"
+  },
   "license": "MIT",
-  "author": "limm",
+  "author": "SunSeekerX",
   "module": "dist/bundle.esm.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "serve": "rollup -c --watch",
     "build": "rollup -c",
@@ -13,28 +24,29 @@
     "build:types": "tsc",
     "pkg:sort": "npx sort-package-json"
   },
-  "dependencies": {},
   "devDependencies": {
     "@dcloudio/types": "^*",
     "@limm/jsencrypt-mp": "^3.2.1",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-typescript": "^8.2.5",
     "@types/crypto-js": "^4.0.2",
     "@types/md5": "^2.3.1",
-    "@types/node": "^16.9.2",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
-    "@typescript-eslint/parser": "^4.31.1",
+    "@types/node": "^16.10.1",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "crypto-js": "^4.1.1",
     "dayjs": "^1.10.7",
     "eslint": "^7.32.0",
-    "js-base64": "^3.7.1",
+    "js-base64": "^3.7.2",
     "md5": "^2.3.0",
-    "rollup": "^2.56.3",
+    "rollup": "^2.57.0",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-terser": "^7.0.2",
-    "sort-package-json": "^1.51.0",
-    "typescript": "^4.4.3"
+    "sort-package-json": "^1.52.0",
+    "typescript": "^4.4.3",
+    "uuid": "^8.3.2"
   }
 }
