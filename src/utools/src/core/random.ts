@@ -1,5 +1,5 @@
 /**
- * 产生随机模块
+ * 随机模块
  * @author: SunSeekerX
  * @Date: 2021-06-02 17:52:15
  * @LastEditors: SunSeekerX

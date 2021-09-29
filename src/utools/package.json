@@ -13,7 +13,6 @@
   "license": "MIT",
   "author": "SunSeekerX",
   "main": "dist/bundle.esm.js",
-  "types": "lib/index.d.ts",
   "files": [
     "dist/"
   ],
@@ -26,7 +25,7 @@
   },
   "devDependencies": {
     "@dcloudio/types": "^*",
-    "@limm/jsencrypt-mp": "^3.2.1",
+    "@limm/jsencrypt-mp": "3.2.2-0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
