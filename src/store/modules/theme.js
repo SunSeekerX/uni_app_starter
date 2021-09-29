@@ -8,7 +8,7 @@
 
 import dark from '@/common/js/theme/dark'
 import light from '@/common/js/theme/light'
-import { THEMES, STORAGE_APP_THEME, STORAGE_APP_THEME_MODEL } from '@/config/constant'
+import { THEMES, STORAGE_APP_THEME, STORAGE_APP_THEME_MODEL } from '@/constant'
 import { getUIStyle } from '@/utools'
 import { themeModel as defaultThemeModel } from '@/config/default'
 

@@ -7,7 +7,7 @@
  */
 
 import { ValidateUtil, LogUtil } from '@/utools'
-import { appName } from '@/config/constant'
+import { appName } from '@/constant'
 LogUtil.setName(appName)
 
 export { LogUtil }

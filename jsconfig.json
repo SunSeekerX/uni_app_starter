@@ -16,7 +16,8 @@
   ],
   "typeAcquisition": {
     "exclude": [
-      "agent-base"
+      "agent-base",
+      "https-proxy-agent"
     ]
   }
 }

@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-09-17 21:33:08
  */
 
-import { THEMES } from './constant'
+import { THEMES } from '@/constant'
 
 // 默认主题
 export const themeModel = THEMES.LIGHT

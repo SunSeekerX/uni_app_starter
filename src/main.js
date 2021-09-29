@@ -25,7 +25,7 @@ import App from './App'
 import store from './store/index'
 import utools from './utools' // utools
 import * as util from './utils/index' // 工具包
-import * as constant from './config/constant' // 常量
+import * as constant from './constant' // 常量
 import * as api from './apis' // Api
 import * as handleError from './utils/handle-error' // 错误处理
 import getEnv from './config/index'

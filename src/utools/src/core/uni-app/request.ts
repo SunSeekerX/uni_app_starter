@@ -20,7 +20,7 @@ export class Request {
   /**
    * 请求配置信息
    */
-  private config: CreateRequestConfig
+  config: { sslVerify: boolean } & CreateRequestConfig
 
   constructor(config: CreateRequestConfig) {
     this.config = Object.assign(

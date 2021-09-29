@@ -28,7 +28,7 @@ import AppOperationContent from '../../components/app-operation-content/app-oper
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
 import AppOperationButton from '../../components/app-operation-button/app-operation-button'
 
-import { appName } from '@/config/constant'
+import { appName } from '@/constant'
 
 export default {
   name: 'UtoolsLogUtil',

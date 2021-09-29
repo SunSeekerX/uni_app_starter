@@ -8,7 +8,7 @@
 
 import { mapGetters } from 'vuex'
 
-import { THEMES } from '@/config/constant'
+import { THEMES } from '@/constant'
 
 export function setNavTheme(THEME, colorNavigationBg) {
   let frontColor = '#000000'

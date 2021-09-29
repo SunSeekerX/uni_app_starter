@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-09-17 22:16:43
  */
 
-import { appEnv } from './constant'
+import { appEnv } from '@/constant'
 import { defaultEnv } from './default'
 import dev from './dev.config'
 import stage from './stage.config'
