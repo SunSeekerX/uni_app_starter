@@ -17,7 +17,8 @@
   "typeAcquisition": {
     "exclude": [
       "agent-base",
-      "https-proxy-agent"
+      "https-proxy-agent",
+      "mdast-util-from-markdown"
     ]
   }
 }

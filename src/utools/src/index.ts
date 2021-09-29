@@ -23,15 +23,6 @@ import * as EncryptUtil from './core/encrypt'
 import * as PerformanceUtil from './core/performance'
 // Random
 import * as RandomUtil from './core/random'
-// version
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { version } = require('../package.json')
-/**
- * TODO 这里使用 import rollup 第一次无法解析，
- * 需要去除 .json 文件扩展名打包，然后改回来.
- * 原因不明，暂时使用 require
- */
-// import { version } from '../package.json'
 
 /**
  * 导出
@@ -57,9 +48,6 @@ const utools = {
   // Performance
   PerformanceUtil,
   // Random
-  RandomUtil,
-  // 版本号
-  version,
 }
 
 export default utools

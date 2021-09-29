@@ -12,7 +12,7 @@
   },
   "license": "MIT",
   "author": "SunSeekerX",
-  "module": "dist/bundle.esm.js",
+  "main": "dist/bundle.esm.js",
   "types": "lib/index.d.ts",
   "files": [
     "dist/"
@@ -20,7 +20,7 @@
   "scripts": {
     "serve": "rollup -c --watch",
     "build": "rollup -c",
-    "p": "npm publish --access=public",
+    "publish": "npm publish --access=public",
     "build:types": "tsc",
     "pkg:sort": "npx sort-package-json"
   },
@@ -44,8 +44,6 @@
     "md5": "^2.3.0",
     "rollup": "^2.57.0",
     "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "sort-package-json": "^1.52.0",
     "typescript": "^4.4.3",
     "uuid": "^8.3.2"
   }
