@@ -22,7 +22,6 @@ export default {
     $util: null,
     $constant: null,
     $api: null,
-    $dayjs: null,
     $getEnv: null,
     $handleError: null,
     $utools: null,
@@ -64,7 +63,6 @@ export default {
       this.globalData.$constant = this.$constant
       this.globalData.$api = this.$api
       this.globalData.$getEnv = this.$getEnv
-      this.globalData.$dayjs = this.$dayjs
       this.globalData.$handleError = this.$handleError
       this.globalData.$utools = this.$utools
     },

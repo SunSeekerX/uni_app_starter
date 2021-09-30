@@ -11,7 +11,6 @@
  */
 import Vue from 'vue'
 import uView from 'uview-ui'
-import dayjs from 'dayjs'
 
 /**
  * @name 依赖设置
@@ -44,7 +43,6 @@ Vue.prototype.$store = store
 Vue.prototype.$constant = constant
 Vue.prototype.$api = api
 Vue.prototype.$handleError = handleError
-Vue.prototype.$dayjs = dayjs
 Vue.prototype.$getEnv = getEnv
 
 App.mpType = 'app'

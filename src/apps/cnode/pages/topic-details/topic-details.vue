@@ -57,8 +57,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-
 import uParse from '../../components/feng-parse/parse'
 import SsxHeader from '../../components/common/ssx-header'
 import SsxNoData from '../../components/common/ssx-no-data'
@@ -141,7 +139,7 @@ export default {
         default:
           break
       }
-      topic.create_at = dayjs(topic.create_at).format('YYYY-MM-DD HH:mm:ss')
+      topic.create_at = this.$utools.dayjs(topic.create_at).format('YYYY-MM-DD HH:mm:ss')
       // 设置标题
       uni.setNavigationBarTitle({
         title: topic.title,

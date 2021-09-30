@@ -64,8 +64,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-
 import SsxNoData from '../../components/common/ssx-no-data'
 import SsxHeader from '../../components/common/ssx-header'
 import { CNode } from '../../apis/index'
@@ -175,7 +173,7 @@ export default {
             }
           }
           // 过滤最近回复时间
-          data[i].last_reply_at = dayjs(data[i].last_reply_at).format('YYYY-MM-DD HH:mm:ss')
+          data[i].last_reply_at = this.$utools.dayjs(data[i].last_reply_at).format('YYYY-MM-DD HH:mm:ss')
         }
         return data
       } else {

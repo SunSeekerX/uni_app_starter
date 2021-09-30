@@ -14,7 +14,9 @@
         <view class="dp-f jc-sb ai-c h-34">
           <text class="fw-b fs-16">下次资金费率时间</text>
           <text class="fs-16">{{
-            premiumList.length ? $dayjs(premiumList[0].nextFundingTime).format($constant.dayjsFormat) : '更新中...'
+            premiumList.length
+              ? $utools.dayjs(premiumList[0].nextFundingTime).format($constant.dayjsFormat)
+              : '更新中...'
           }}</text>
         </view>
         <view class="dp-f jc-sb ai-c h-34">
