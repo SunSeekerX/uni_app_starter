@@ -2,7 +2,7 @@
    
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2015",
     "resolveJsonModule": true,
     "module": "es2015",
     "outDir": "./types",
