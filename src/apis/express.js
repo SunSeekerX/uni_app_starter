@@ -13,6 +13,9 @@ export default {
     return expressRequest({
       url: '/get',
       method: 'GET',
+      header: {
+        headerParam1: 'headerParam1',
+      },
     })
   },
 

@@ -93,6 +93,7 @@ export class Request {
       const _config: UniApp.RequestOptions = {
         url: `${this.config.baseUrl}${handleRe.url}`,
         data: handleRe.data,
+        header: handleRe.header,
         method: handleRe.method,
         // #ifdef APP-PLUS
         sslVerify: handleRe.sslVerify as boolean,
