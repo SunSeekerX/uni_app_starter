@@ -6,12 +6,12 @@
  * @LastEditTime: 2021-07-22 20:32:01
  */
 
-import utools from '../lib/bundle.esm.js' // utools
+import utools from '../dist/bundle.esm.js' // utools
 
 console.log('utools>>>', utools)
 
-import { EncodeUtil, EncryptUtil } from '../lib/bundle.esm.js'
-
+// import { EncodeUtil, EncryptUtil } from '../dist/bundle.esm.js'
+const { EncodeUtil, EncryptUtil } = utools
 // ------EncodeUtil------
 const encodeStr = '测试123123》》'
 

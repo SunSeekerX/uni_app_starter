@@ -36,6 +36,13 @@
       />
     </AppOperationContent>
 
+    <AppOperationContent name="AES 加密">
+      <!-- encryptSHA1ToString -->
+      <AppOperationInput operation-name="请输入需要 AES 加密的内容" v-model="aesEncryptionText" />
+      <AppOperationInput operation-name="请输入 AES 加密的密码" v-model="aesEncryptionCipher" />
+      <AppOperationButton buttonText="AES 加密: encryptAES2HexString(val: string): string" @onTap="onEncryptAES" />
+    </AppOperationContent>
+
     <AppOperationContent name="RSA 加密">
       <!-- encryptRSA2Base64 -->
       <AppOperationInput operation-name="请输入需要 RSA 加密的内容" v-model="rsaEncryptionText" />
@@ -115,6 +122,10 @@ export default {
       sha1EncryptionText: 'sha1EncryptionText',
       sha256EncryptionText: 'sha256EncryptionText',
       sha512EncryptionText: 'sha512EncryptionText',
+
+      aesEncryptionText: 'aesEncryptionText',
+      aesEncryptionCipher: '',
+
       /**
        * 这里在 data 放置了一个加密器，发现使用速度比放置在顶层慢了 10 倍。下面有对比数据
        */
@@ -189,6 +200,21 @@ fhe0p/VKfqSYgA==
       } else {
         $utools.toast('请输入内容!')
       }
+    },
+
+    onEncryptAES() {
+      const { aesEncryptionText, aesEncryptionCipher, $utools } = this
+      if (!aesEncryptionText) {
+        return $utools.toast('请输入内容!')
+      }
+      if (!aesEncryptionCipher) {
+        return $utools.toast('请输入密码!')
+      }
+
+      console.log({ aesEncryptionText, aesEncryptionCipher })
+      console.log($utools.EncryptUtil.encryptAES2Base64(aesEncryptionText, aesEncryptionCipher))
+      // this.consoleText =
+      $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
     },
 
     onEncryptRSA2Base64() {

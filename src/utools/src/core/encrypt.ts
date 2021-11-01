@@ -8,8 +8,18 @@
 
 import md5 from 'md5'
 import CryptoJS from 'crypto-js'
+import type { WordArray, DecryptedMessage } from 'crypto-js'
 import { JSEncrypt } from '@limm/jsencrypt-mp'
 import type { IJSEncryptOptions } from '@limm/jsencrypt-mp/lib/JSEncrypt'
+
+function _cryptoJSWordArray2Hex(val: WordArray): string {
+  return val.toString(CryptoJS.format.Hex)
+  // return CryptoJS.enc.Hex.stringify(val)
+}
+
+function _cryptoJSWordArray2Base64(val: WordArray): string {
+  return val.toString()
+}
 
 /**
  * md5 加密
@@ -21,11 +31,59 @@ export function encryptMD5(val: string): string {
 }
 
 /**
+ * AES 加密
+ * @param data 需要加密的数据
+ * @param key 需要加密的密码
+ * @param cfg 加密配置
+ * @returns
+ */
+export function encryptAES(
+  data: string | CryptoJS.LibWordArray,
+  key: string,
+  cfg?: CryptoJS.CipherOption | undefined
+): WordArray {
+  return CryptoJS.AES.encrypt(data, key, cfg)
+}
+export function encryptAES2HexString(
+  data: string | CryptoJS.LibWordArray,
+  key: string,
+  cfg?: CryptoJS.CipherOption | undefined
+): string {
+  const res = encryptAES(data, key, cfg)
+  return _cryptoJSWordArray2Hex(res)
+}
+export function encryptAES2Base64(
+  data: string | CryptoJS.LibWordArray,
+  key: string,
+  cfg?: CryptoJS.CipherOption | undefined
+): string {
+  return _cryptoJSWordArray2Base64(encryptAES(data, key, cfg))
+}
+/**
+ * AES 解密
+ * @param val
+ * @returns
+ */
+export function decryptAES(
+  data: string | WordArray,
+  key: string,
+  cfg?: CryptoJS.CipherOption | undefined
+): DecryptedMessage {
+  return CryptoJS.AES.decrypt(data, key, cfg)
+}
+export function decryptHexStringAES(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
+  return decryptAES(data, key, cfg).toString()
+}
+export function decryptBase64AES(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
+  return decryptAES(data, key, cfg).toString()
+}
+
+/**
  * SHA1 加密
  * @param { string } val - 需要加密的数据
  * @returns { any }
  */
-export function encryptSHA1(val: string): CryptoJS.lib.WordArray {
+export function encryptSHA1(val: string): WordArray {
   return CryptoJS.SHA1(val)
 }
 
@@ -43,7 +101,7 @@ export function encryptSHA1ToString(val: string): string {
  * @param { string } val - 需要加密的数据
  * @returns { any }
  */
-export function encryptSHA256(val: string): CryptoJS.lib.WordArray {
+export function encryptSHA256(val: string): WordArray {
   return CryptoJS.SHA256(val)
 }
 
@@ -61,7 +119,7 @@ export function encryptSHA256ToString(val: string): string {
  * @param { string } val - 需要加密的数据
  * @returns { any }
  */
-export function encryptSHA512(val: string): CryptoJS.lib.WordArray {
+export function encryptSHA512(val: string): WordArray {
   return CryptoJS.SHA512(val)
 }
 

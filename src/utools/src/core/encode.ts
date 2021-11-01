@@ -6,7 +6,8 @@
  * @LastEditTime: 2021-09-17 17:17:21
  */
 
-import { encode, decode } from 'js-base64'
+// import { encode, decode } from 'js-base64'
+import CryptoJS from 'crypto-js'
 
 /**
  * URL 编码
@@ -33,7 +34,10 @@ export function urlDecode(val = '', url = true): string {
  * @returns { string }
  */
 export function base64Encode2String(val: string): string {
-  return encode(val)
+  const wordArray = CryptoJS.enc.Utf8.parse(val)
+  // const base64 =
+  return CryptoJS.enc.Base64.stringify(wordArray)
+  // return encode(val)
 }
 
 /**
@@ -42,5 +46,8 @@ export function base64Encode2String(val: string): string {
  * @returns { string }
  */
 export function base64Decode(val: string): string {
-  return decode(val)
+  const parsedWordArray = CryptoJS.enc.Base64.parse(val)
+  // var parsedStr = parsedWordArray.toString(CryptoJS.enc.Utf8)
+  return parsedWordArray.toString(CryptoJS.enc.Utf8)
+  // return decode(val)
 }
