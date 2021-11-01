@@ -6,28 +6,22 @@
  * @LastEditTime: 2021-09-17 13:13:30
  */
 
-import md5 from 'md5'
 import CryptoJS from 'crypto-js'
 import type { WordArray, DecryptedMessage } from 'crypto-js'
 import { JSEncrypt } from '@limm/jsencrypt-mp'
 import type { IJSEncryptOptions } from '@limm/jsencrypt-mp/lib/JSEncrypt'
-
-function _cryptoJSWordArray2Hex(val: WordArray): string {
-  return val.toString(CryptoJS.format.Hex)
-  // return CryptoJS.enc.Hex.stringify(val)
-}
-
-function _cryptoJSWordArray2Base64(val: WordArray): string {
-  return val.toString()
-}
 
 /**
  * md5 加密
  * @param { string } val - 需要加密的数据
  * @returns { string }
  */
-export function encryptMD5(val: string): string {
-  return md5(val)
+export function encryptMD5(val: string): WordArray {
+  return CryptoJS.MD5(val)
+}
+
+export function encryptMD5ToString(val: string): string {
+  return encryptMD5(val).toString()
 }
 
 /**
@@ -42,22 +36,31 @@ export function encryptAES(
   key: string,
   cfg?: CryptoJS.CipherOption | undefined
 ): WordArray {
-  return CryptoJS.AES.encrypt(data, key, cfg)
-}
-export function encryptAES2HexString(
-  data: string | CryptoJS.LibWordArray,
-  key: string,
-  cfg?: CryptoJS.CipherOption | undefined
-): string {
-  const res = encryptAES(data, key, cfg)
-  return _cryptoJSWordArray2Hex(res)
+  return CryptoJS.AES.encrypt(
+    data,
+    CryptoJS.enc.Utf8.parse(key),
+    Object.assign(
+      {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+      },
+      cfg
+    )
+  )
 }
 export function encryptAES2Base64(
   data: string | CryptoJS.LibWordArray,
   key: string,
   cfg?: CryptoJS.CipherOption | undefined
 ): string {
-  return _cryptoJSWordArray2Base64(encryptAES(data, key, cfg))
+  return encryptAES(data, key, cfg).toString()
+}
+export function encryptAES2HexString(
+  data: string | CryptoJS.LibWordArray,
+  key: string,
+  cfg?: CryptoJS.CipherOption | undefined
+): string {
+  return encryptAES(data, key, cfg).toString(CryptoJS.format.Hex)
 }
 /**
  * AES 解密
@@ -69,14 +72,32 @@ export function decryptAES(
   key: string,
   cfg?: CryptoJS.CipherOption | undefined
 ): DecryptedMessage {
-  return CryptoJS.AES.decrypt(data, key, cfg)
+  return CryptoJS.AES.decrypt(
+    data,
+    CryptoJS.enc.Utf8.parse(key),
+    Object.assign(
+      {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+      },
+      cfg
+    )
+  )
 }
-export function decryptHexStringAES(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
-  return decryptAES(data, key, cfg).toString()
+export function decryptBase64AES2String(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
+  return decryptAES(data, key, cfg).toString(CryptoJS.enc.Utf8)
 }
-export function decryptBase64AES(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
-  return decryptAES(data, key, cfg).toString()
+export function decryptHexAES(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): DecryptedMessage {
+  const encryptedHex = CryptoJS.enc.Hex.parse(data)
+  const encryptedBase64 = CryptoJS.enc.Base64.stringify(encryptedHex)
+  return decryptAES(encryptedBase64, key, cfg)
 }
+export function decryptHexAES2String(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
+  return decryptHexAES(data, key, cfg).toString(CryptoJS.enc.Utf8)
+}
+
+export const AesModes = CryptoJS.mode
+export const AesPads = CryptoJS.pad
 
 /**
  * SHA1 加密

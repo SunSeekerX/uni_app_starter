@@ -1,8 +1,6 @@
-
-   
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2017",
     "resolveJsonModule": true,
     "module": "es2015",
     "outDir": "./types",

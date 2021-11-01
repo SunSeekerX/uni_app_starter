@@ -9,6 +9,7 @@
 import dayjs from 'dayjs'
 import * as uuid from 'uuid'
 
+import * as CommonUtil from './core/common'
 import * as UniAppUtil from './core/uni-app'
 import * as ValidateUtil from './core/validate'
 import * as EncodeUtil from './core/encode'
@@ -18,10 +19,11 @@ import * as RandomUtil from './core/random'
 
 export * from './core/uni-app'
 
-export { dayjs, uuid, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
+export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
 
 export default {
   ...UniAppUtil,
+  CommonUtil,
   UniAppUtil,
   dayjs,
   uuid,

@@ -13,7 +13,7 @@
     <AppOperationContent name="md5 加密">
       <!-- encryptMD5 -->
       <AppOperationInput operation-name="请输入需要 md5 加密的内容" v-model="md5EncryptionText" />
-      <AppOperationButton buttonText="md5 加密: encryptMD5(val: string): string" @onTap="onMd5Encrypt" />
+      <AppOperationButton buttonText="md5 加密: encryptMD5ToString(val: string): string" @onTap="onMd5Encrypt" />
     </AppOperationContent>
 
     <AppOperationContent name="SHA 加密">
@@ -37,10 +37,80 @@
     </AppOperationContent>
 
     <AppOperationContent name="AES 加密">
-      <!-- encryptSHA1ToString -->
       <AppOperationInput operation-name="请输入需要 AES 加密的内容" v-model="aesEncryptionText" />
+
+      <view class="pt-5">
+        <text class="fs-12 lh-30">请选择 AES 加密模式</text>
+        <radio-group @change="(e) => onEncryAESModeChange(e, 'aesEncryptionModeIndex')">
+          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
+            <radio :value="String(index)" :checked="index === aesEncryptionModeIndex" />
+            <text class="mr-5">{{ item.name }}</text>
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="pt-5">
+        <text class="fs-12 lh-30">请选择 AES 加密填充模式</text>
+        <radio-group @change="(e) => onEncryAESPadChange(e, 'aesEncryptionPadIndex')">
+          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
+            <radio :value="String(index)" :checked="index === aesEncryptionPadIndex" />
+            <text class="mr-5">{{ item.name }}</text>
+          </label>
+        </radio-group>
+      </view>
+
       <AppOperationInput operation-name="请输入 AES 加密的密码" v-model="aesEncryptionCipher" />
-      <AppOperationButton buttonText="AES 加密: encryptAES2HexString(val: string): string" @onTap="onEncryptAES" />
+      <AppOperationInput
+        v-if="aesEncryptionModeIndex !== 0"
+        operation-name="请输入 AES 加密 iv (填充向量)"
+        v-model="aesEncryptionIv"
+      />
+      <AppOperationButton
+        buttonText="AES 加密: encryptAES2Base64(val: string,key: string [,config]): string"
+        @onTap="onEncryptAES('encryptAES2Base64')"
+      />
+      <AppOperationButton
+        buttonText="AES 加密: encryptAES2HexString(val: string,key: string [,config]): string"
+        @onTap="onEncryptAES('encryptAES2HexString')"
+      />
+
+      <!-- AES 解密 -->
+      <AppOperationInput operation-name="请输入需要 AES 解密的内容" v-model="aesDecryptionText" />
+
+      <view class="pt-5">
+        <text class="fs-12 lh-30">请选择 AES 解密模式</text>
+        <radio-group @change="(e) => onEncryAESModeChange(e, 'aesDecryptionModeIndex')">
+          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
+            <radio :value="String(index)" :checked="index === aesDecryptionModeIndex" />
+            <text class="mr-5">{{ item.name }}</text>
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="pt-5">
+        <text class="fs-12 lh-30">请选择 AES 解密填充模式</text>
+        <radio-group @change="(e) => onEncryAESPadChange(e, 'aesDecryptionPadIndex')">
+          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
+            <radio :value="String(index)" :checked="index === aesDecryptionPadIndex" />
+            <text class="mr-5">{{ item.name }}</text>
+          </label>
+        </radio-group>
+      </view>
+
+      <AppOperationInput operation-name="请输入 AES 解密的密码" v-model="aesDecryptionCipher" />
+      <AppOperationInput
+        v-if="aesDecryptionModeIndex !== 0"
+        operation-name="请输入 AES 解密 iv (填充向量)"
+        v-model="aesDecryptionIv"
+      />
+      <AppOperationButton
+        buttonText="AES 解密: decryptBase64AES2String(val: string,key: string [,config]): string"
+        @onTap="onDecryptAES('decryptBase64AES2String')"
+      />
+      <AppOperationButton
+        buttonText="AES 解密: decryptHexAES2String(val: string,key: string [,config]): string"
+        @onTap="onDecryptAES('decryptHexAES2String')"
+      />
     </AppOperationContent>
 
     <AppOperationContent name="RSA 加密">
@@ -115,6 +185,67 @@ export default {
 
   components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
 
+  computed: {
+    aesEncryptionModes() {
+      const { $utools } = this
+      return [
+        {
+          name: 'ECB',
+          value: $utools.EncryptUtil.AesModes.ECB,
+        },
+        {
+          name: 'CBC',
+          value: $utools.EncryptUtil.AesModes.CBC,
+        },
+        {
+          name: 'CFB',
+          value: $utools.EncryptUtil.AesModes.CFB,
+        },
+        {
+          name: 'CTR',
+          value: $utools.EncryptUtil.AesModes.CTR,
+        },
+        {
+          name: 'CTRGladman',
+          value: $utools.EncryptUtil.AesModes.CTRGladman,
+        },
+        {
+          name: 'OFB',
+          value: $utools.EncryptUtil.AesModes.OFB,
+        },
+      ]
+    },
+    aesEncryptionPads() {
+      const { $utools } = this
+      return [
+        {
+          name: 'Pkcs7',
+          value: $utools.EncryptUtil.AesPads.Pkcs7,
+        },
+        {
+          name: 'AnsiX923',
+          value: $utools.EncryptUtil.AesPads.AnsiX923,
+        },
+        {
+          name: 'Iso10126',
+          value: $utools.EncryptUtil.AesPads.Iso10126,
+        },
+        {
+          name: 'Iso97971',
+          value: $utools.EncryptUtil.AesPads.Iso97971,
+        },
+        {
+          name: 'ZeroPadding',
+          value: $utools.EncryptUtil.AesPads.ZeroPadding,
+        },
+        {
+          name: 'NoPadding',
+          value: $utools.EncryptUtil.AesPads.NoPadding,
+        },
+      ]
+    },
+  },
+
   data() {
     return {
       consoleText: '输出区(可点击复制)',
@@ -125,6 +256,15 @@ export default {
 
       aesEncryptionText: 'aesEncryptionText',
       aesEncryptionCipher: '',
+      aesEncryptionModeIndex: 0,
+      aesEncryptionPadIndex: 0,
+      aesEncryptionIv: '',
+
+      aesDecryptionText: '',
+      aesDecryptionCipher: '',
+      aesDecryptionModeIndex: 0,
+      aesDecryptionPadIndex: 0,
+      aesDecryptionIv: '',
 
       /**
        * 这里在 data 放置了一个加密器，发现使用速度比放置在顶层慢了 10 倍。下面有对比数据
@@ -165,7 +305,7 @@ fhe0p/VKfqSYgA==
     onMd5Encrypt() {
       const { md5EncryptionText, $utools } = this
       if (md5EncryptionText) {
-        this.consoleText = $utools.EncryptUtil.encryptMD5(md5EncryptionText)
+        this.consoleText = $utools.EncryptUtil.encryptMD5ToString(md5EncryptionText)
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
         $utools.toast('请输入内容!')
@@ -202,19 +342,98 @@ fhe0p/VKfqSYgA==
       }
     },
 
-    onEncryptAES() {
-      const { aesEncryptionText, aesEncryptionCipher, $utools } = this
+    onEncryptAES(fun) {
+      const {
+        aesEncryptionText,
+        aesEncryptionCipher,
+        $utools,
+        aesEncryptionModes,
+        aesEncryptionModeIndex,
+        aesEncryptionPads,
+        aesEncryptionPadIndex,
+        aesEncryptionIv,
+      } = this
       if (!aesEncryptionText) {
         return $utools.toast('请输入内容!')
       }
       if (!aesEncryptionCipher) {
         return $utools.toast('请输入密码!')
       }
+      if (aesEncryptionModeIndex !== 0 && $utools.CommonUtil.isNil(aesEncryptionIv)) {
+        return $utools.toast('请输入 aes iv(填充向量)!')
+      }
 
-      console.log({ aesEncryptionText, aesEncryptionCipher })
-      console.log($utools.EncryptUtil.encryptAES2Base64(aesEncryptionText, aesEncryptionCipher))
-      // this.consoleText =
-      $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+      const mode = aesEncryptionModes[aesEncryptionModeIndex].value
+      const padding = aesEncryptionPads[aesEncryptionPadIndex].value
+
+      try {
+        const start = $utools.PerformanceUtil.getNow()
+        this.consoleText = $utools.EncryptUtil[fun](aesEncryptionText, aesEncryptionCipher, {
+          iv: aesEncryptionIv,
+          mode,
+          padding,
+        })
+        const end = $utools.PerformanceUtil.getNow()
+        // $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+      } catch (error) {
+        $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+      }
+    },
+    onDecryptAES(fun) {
+      const {
+        aesDecryptionText,
+        aesDecryptionCipher,
+        $utools,
+        aesEncryptionModes,
+        aesDecryptionModeIndex,
+        aesEncryptionPads,
+        aesDecryptionPadIndex,
+        aesDecryptionIv,
+      } = this
+      if (!aesDecryptionText) {
+        return $utools.toast('请输入内容!')
+      }
+      if (!aesDecryptionCipher) {
+        return $utools.toast('请输入密码!')
+      }
+      if (aesDecryptionModeIndex !== 0 && $utools.CommonUtil.isNil(aesDecryptionIv)) {
+        return $utools.toast('请输入 aes iv(填充向量)!')
+      }
+
+      const mode = aesEncryptionModes[aesDecryptionModeIndex].value
+      const padding = aesEncryptionPads[aesDecryptionPadIndex].value
+
+      try {
+        const start = $utools.PerformanceUtil.getNow()
+        console.log({
+          aesDecryptionText,
+          aesDecryptionCipher,
+          aesDecryptionIv,
+          mode,
+          padding,
+          res: $utools.EncryptUtil[fun](aesDecryptionText, aesDecryptionCipher, {
+            iv: aesDecryptionIv,
+            mode,
+            padding,
+          }),
+        })
+        this.consoleText = $utools.EncryptUtil[fun](aesDecryptionText, aesDecryptionCipher, {
+          iv: aesDecryptionIv,
+          mode,
+          padding,
+        })
+        const end = $utools.PerformanceUtil.getNow()
+        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+      } catch (error) {
+        $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+      }
+    },
+    onEncryAESModeChange(e, key) {
+      this[key] = Number(e.detail.value)
+    },
+    onEncryAESPadChange(e, key) {
+      this[key] = Number(e.detail.value)
     },
 
     onEncryptRSA2Base64() {
