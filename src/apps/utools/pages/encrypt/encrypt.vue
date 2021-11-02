@@ -36,9 +36,15 @@
       />
     </AppOperationContent>
 
+    <!-- AES 加密 -->
     <AppOperationContent name="AES 加密">
       <AppOperationInput operation-name="请输入需要 AES 加密的内容" v-model="aesEncryptionText" />
-
+      <AppOperationInput operation-name="请输入 AES 加密的密码" v-model="aesEncryptionCipher" />
+      <AppOperationInput
+        v-if="aesEncryptionModeIndex !== 0"
+        operation-name="请输入 AES 加密 iv (填充向量)"
+        v-model="aesEncryptionIv"
+      />
       <view class="pt-5">
         <text class="fs-12 lh-30">请选择 AES 加密模式</text>
         <radio-group @change="(e) => onEncryAESModeChange(e, 'aesEncryptionModeIndex')">
@@ -58,13 +64,6 @@
           </label>
         </radio-group>
       </view>
-
-      <AppOperationInput operation-name="请输入 AES 加密的密码" v-model="aesEncryptionCipher" />
-      <AppOperationInput
-        v-if="aesEncryptionModeIndex !== 0"
-        operation-name="请输入 AES 加密 iv (填充向量)"
-        v-model="aesEncryptionIv"
-      />
       <AppOperationButton
         buttonText="AES 加密: encryptAES2Base64(val: string,key: string [,config]): string"
         @onTap="onEncryptAES('encryptAES2Base64')"
@@ -368,15 +367,19 @@ fhe0p/VKfqSYgA==
 
       try {
         const start = $utools.PerformanceUtil.getNow()
-        this.consoleText = $utools.EncryptUtil[fun](aesEncryptionText, aesEncryptionCipher, {
-          iv: aesEncryptionIv,
-          mode,
-          padding,
-        })
+        this.consoleText = $utools.EncryptUtil[fun](
+          aesEncryptionText,
+          $utools.EncryptUtil.encryptMD5ToString(aesEncryptionCipher),
+          {
+            iv: aesEncryptionIv,
+            mode,
+            padding,
+          }
+        )
         const end = $utools.PerformanceUtil.getNow()
-        // $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
+        console.error(error)
         $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
@@ -398,34 +401,25 @@ fhe0p/VKfqSYgA==
         return $utools.toast('请输入密码!')
       }
       if (aesDecryptionModeIndex !== 0 && $utools.CommonUtil.isNil(aesDecryptionIv)) {
-        return $utools.toast('请输入 aes iv(填充向量)!')
+        return $utools.toast('请输入 AES iv(填充向量)!')
       }
-
       const mode = aesEncryptionModes[aesDecryptionModeIndex].value
       const padding = aesEncryptionPads[aesDecryptionPadIndex].value
-
       try {
         const start = $utools.PerformanceUtil.getNow()
-        console.log({
+        this.consoleText = $utools.EncryptUtil[fun](
           aesDecryptionText,
-          aesDecryptionCipher,
-          aesDecryptionIv,
-          mode,
-          padding,
-          res: $utools.EncryptUtil[fun](aesDecryptionText, aesDecryptionCipher, {
+          $utools.EncryptUtil.encryptMD5ToString(aesDecryptionCipher),
+          {
             iv: aesDecryptionIv,
             mode,
             padding,
-          }),
-        })
-        this.consoleText = $utools.EncryptUtil[fun](aesDecryptionText, aesDecryptionCipher, {
-          iv: aesDecryptionIv,
-          mode,
-          padding,
-        })
+          }
+        )
         const end = $utools.PerformanceUtil.getNow()
         $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
+        console.error(error)
         $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },

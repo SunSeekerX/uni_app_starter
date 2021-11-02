@@ -76,6 +76,7 @@
     "@mypui/myp-ui": "^2.9.2",
     "@vue/shared": "^3.2.19",
     "core-js": "^3.18.2",
+    "crypto-js": "3.3.0",
     "dayjs": "^1.10.7",
     "flyio": "^0.6.14",
     "regenerator-runtime": "^0.13.9",

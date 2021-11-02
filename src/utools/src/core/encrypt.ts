@@ -36,17 +36,17 @@ export function encryptAES(
   key: string,
   cfg?: CryptoJS.CipherOption | undefined
 ): WordArray {
-  return CryptoJS.AES.encrypt(
-    data,
-    CryptoJS.enc.Utf8.parse(key),
-    Object.assign(
-      {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7,
-      },
-      cfg
-    )
+  const cipherOption: CryptoJS.CipherOption = Object.assign(
+    {
+      mode: CryptoJS.mode.ECB,
+      padding: CryptoJS.pad.Pkcs7,
+    },
+    cfg
   )
+  if (cipherOption.iv && typeof cipherOption.iv === 'string') {
+    cipherOption.iv = CryptoJS.enc.Utf8.parse(cipherOption.iv)
+  }
+  return CryptoJS.AES.encrypt(data, CryptoJS.enc.Utf8.parse(key), cipherOption)
 }
 export function encryptAES2Base64(
   data: string | CryptoJS.LibWordArray,
@@ -72,17 +72,17 @@ export function decryptAES(
   key: string,
   cfg?: CryptoJS.CipherOption | undefined
 ): DecryptedMessage {
-  return CryptoJS.AES.decrypt(
-    data,
-    CryptoJS.enc.Utf8.parse(key),
-    Object.assign(
-      {
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7,
-      },
-      cfg
-    )
+  const cipherOption: CryptoJS.CipherOption = Object.assign(
+    {
+      mode: CryptoJS.mode.ECB,
+      padding: CryptoJS.pad.Pkcs7,
+    },
+    cfg
   )
+  if (cipherOption.iv && typeof cipherOption.iv === 'string') {
+    cipherOption.iv = CryptoJS.enc.Utf8.parse(cipherOption.iv)
+  }
+  return CryptoJS.AES.decrypt(data, CryptoJS.enc.Utf8.parse(key), cipherOption)
 }
 export function decryptBase64AES2String(data: string, key: string, cfg?: CryptoJS.CipherOption | undefined): string {
   return decryptAES(data, key, cfg).toString(CryptoJS.enc.Utf8)
