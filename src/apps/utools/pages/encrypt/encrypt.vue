@@ -257,13 +257,13 @@ export default {
       aesEncryptionCipher: '',
       aesEncryptionModeIndex: 0,
       aesEncryptionPadIndex: 0,
-      aesEncryptionIv: '',
+      aesEncryptionIv: undefined,
 
       aesDecryptionText: '',
       aesDecryptionCipher: '',
       aesDecryptionModeIndex: 0,
       aesDecryptionPadIndex: 0,
-      aesDecryptionIv: '',
+      aesDecryptionIv: undefined,
 
       /**
        * 这里在 data 放置了一个加密器，发现使用速度比放置在顶层慢了 10 倍。下面有对比数据

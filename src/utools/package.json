@@ -1,6 +1,6 @@
 {
   "name": "@limm/utools",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "uni-app 开发工具包。",
   "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/master/src/utools#readme",
   "bugs": {
@@ -19,7 +19,7 @@
   "scripts": {
     "serve": "rollup -c --watch",
     "build": "rollup -c",
-    "publish": "npm publish --access=public",
+    "pb": "npm publish --access=public",
     "build:types": "tsc",
     "pkg:sort": "npx sort-package-json"
   },
