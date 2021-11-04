@@ -18,17 +18,7 @@
     "src/"
   ],
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "gc": "git add -A && git-cz && git pull && git push",
     "pb": "npm publish --access public",
-    "prepare": "husky install",
-    "lint:lint-staged": "lint-staged",
-    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "sort-package-json": "npx sort-package-json"
-  },
-  "devDependencies": {
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.2",
-    "prettier": "2.3.2"
   }
 }
