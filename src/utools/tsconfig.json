@@ -3,7 +3,7 @@
     "target": "es2017",
     "resolveJsonModule": true,
     "module": "es2015",
-    "outDir": "./types",
+    "outDir": "./bin",
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
