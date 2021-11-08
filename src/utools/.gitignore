@@ -30,6 +30,7 @@ yarn-error.log*
 # Another files
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
 unpackage/release/
 unpackage/debug/
-
+.DS_Store
