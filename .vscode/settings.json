@@ -10,6 +10,7 @@
     "mypui",
     "utools",
     "ciphertext",
-    "statechanged"
+    "statechanged",
+    "antdocs"
   ]
 }

@@ -21,7 +21,8 @@
     "exclude": [
       "agent-base",
       "https-proxy-agent",
-      "mdast-util-from-markdown/**"
+      "mdast-util-from-markdown/**",
+      "stable"
     ]
   }
 }
