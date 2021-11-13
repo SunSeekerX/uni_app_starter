@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-09-17 21:33:41
  */
 
-import { Request } from '@/utools'
+import { Request } from '#root/packages/utools'
 import { LogUtil } from '@/utils/index'
 
 /**

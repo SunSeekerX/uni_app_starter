@@ -18,6 +18,6 @@ src/mypUI/**
 feng-parse
 
 # Temp
-src/utools
+packages/utools
 src/components/c-icon
 

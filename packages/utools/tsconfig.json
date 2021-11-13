@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "resolveJsonModule": true,
+    "module": "es2015",
+    "outDir": "./bin",
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "types": [
+      "@dcloudio/types",
+    ],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "test"
+  ],
+  "typeAcquisition": {
+    "exclude": [
+      "@dcloudio/types"
+    ]
+  }
+}

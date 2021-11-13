@@ -6,6 +6,18 @@
  * @LastEditTime: 2021-07-17 16:05:09
  */
 
+const path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   transpileDependencies: ['@limm/uni-pushy-client'],
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '#root': resolve('./'),
+      },
+    },
+  },
 }

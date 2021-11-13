@@ -7,7 +7,7 @@
  */
 
 import { LogUtil } from './index'
-import { toast } from '@/utools'
+import { toast } from '#root/packages/utools'
 import errCode from './err-code'
 
 /**

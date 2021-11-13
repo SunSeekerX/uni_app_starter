@@ -5,6 +5,9 @@
   "repository": "https://github.com/SunSeekerX/uni-app-starter",
   "license": "MIT",
   "author": "SunSeekerX",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "npm run build:h5",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
@@ -41,7 +44,6 @@
     "dev:quickapp-webview-huawei": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp-webview-huawei vue-cli-service uni-build --watch",
     "dev:quickapp-webview-union": "cross-env NODE_ENV=development UNI_PLATFORM=quickapp-webview-union vue-cli-service uni-build --watch",
     "gc": "git add -A && git-cz && git pull && git push",
-    "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js",
     "lint:eslint": "eslint --fix --ext \"src/**/*.{vue,less,css,scss}\"",
     "lint:lint-staged": "lint-staged",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
@@ -112,6 +114,7 @@
     "eslint-plugin-vue": "^7.19.1",
     "husky": "^7.0.2",
     "jest": "^27.2.4",
+    "lerna": "^4.0.0",
     "lint-staged": "^11.2.0",
     "mini-types": "0.1.7",
     "miniprogram-api-typings": "3.4.3",
@@ -125,9 +128,6 @@
     "stylelint-order": "^4.1.0",
     "vue-template-compiler": "^2.6.14"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "uni-app": {
     "scripts": {}
   }

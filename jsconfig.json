@@ -4,7 +4,10 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "#root/*": [
+        "./*"
+      ],
     }
   },
   "exclude": [
@@ -18,7 +21,7 @@
     "exclude": [
       "agent-base",
       "https-proxy-agent",
-      "mdast-util-from-markdown"
+      "mdast-util-from-markdown/**"
     ]
   }
 }

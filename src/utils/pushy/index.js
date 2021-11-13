@@ -1,5 +1,5 @@
 /**
- * @name:
+ * 热更新
  * @author: SunSeekerX
  * @Date: 2020-12-20 10:54:51
  * @LastEditors: SunSeekerX
@@ -7,8 +7,7 @@
  */
 
 import getEnv from '@/config/index'
-// import Pushy from '@limm/uni-pushy-client'
-import Pushy from './src'
+import Pushy from '#root/packages/pushy'
 
 export default new Pushy({
   // 项目id

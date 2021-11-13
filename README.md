@@ -27,7 +27,7 @@ cd uni-app-starter
 国内网络安装过慢可以安装 `tbify`， 使用说明：[tbify](https://sunseekerx.yoouu.cn/front-end/npm/#📂-tbify)
 
 ```bash
-npm i
+yarn
 ```
 
 **构建 utools**
@@ -35,19 +35,18 @@ npm i
 项目内带了一个 uni-app 开发工具包，需要手动构建。
 
 ```shell
-cd src/utools/
-
-# 安装依赖
-npm i
+cd packages/utools/
 # 构建
-npm run build
+yarn build
 ```
 
 **启动**
 
 ```bash
-npm run server
+yarn server
 ```
+
+### lerna
 
 ## 📌 项目亮点
 
