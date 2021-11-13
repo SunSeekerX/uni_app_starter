@@ -93,10 +93,8 @@ export default class Pushy {
        */
       locale: 'zh_CN',
     }
-
     // 生效的配置
     this._workSetting = {}
-
     // 合并用户设置
     this._setConfig(options)
 
@@ -106,6 +104,16 @@ export default class Pushy {
     // 资源信息
     this._cSourceInfo = {}
     this._cDownLoadTask = null
+
+    /**
+     * 弹窗对象
+     */
+    // 更新
+    this.updateMaskLayer = undefined
+    this.updatePopupView = undefined
+    // 下载
+    this.downloadMaskLayer = undefined
+    this.downloadPopupView = undefined
   }
 
   /**
@@ -959,10 +967,20 @@ export default class Pushy {
 
   // 是否更新弹窗
   _updatePopup(res, callback) {
+    // 先处理上一次的弹框
+    this.closePopup('update')
     const { logo, mainColor } = this._config
     const { version, changelog } = res
     // 弹窗遮罩层
-    const maskLayer = new plus.nativeObj.View('maskLayer', {
+    // const maskLayer = new plus.nativeObj.View('maskLayer', {
+    //   //先创建遮罩层
+    //   top: '0px',
+    //   left: '0px',
+    //   height: '100%',
+    //   width: '100%',
+    //   backgroundColor: 'rgba(0,0,0,0.5)',
+    // })
+    this.updateMaskLayer = new plus.nativeObj.View('maskLayer', {
       //先创建遮罩层
       top: '0px',
       left: '0px',
@@ -1050,7 +1068,15 @@ export default class Pushy {
       }
     })
     // 弹窗内容
-    const popupView = new plus.nativeObj.View('popupView', {
+    // const popupView = new plus.nativeObj.View('popupView', {
+    //   //创建底部图标菜单
+    //   tag: 'rect',
+    //   top: (screenHeight - popupViewHeight) / 2 + 'px',
+    //   left: `${((1 - popupViewWidthPercent) / 2) * 100}%`,
+    //   height: popupViewHeight + 'px',
+    //   width: `${popupViewWidthPercent * 100}%`,
+    // })
+    this.updatePopupView = new plus.nativeObj.View('popupView', {
       //创建底部图标菜单
       tag: 'rect',
       top: (screenHeight - popupViewHeight) / 2 + 'px',
@@ -1059,7 +1085,7 @@ export default class Pushy {
       width: `${popupViewWidthPercent * 100}%`,
     })
     // 绘制白色背景
-    popupView.drawRect(
+    this.updatePopupView.drawRect(
       {
         color: '#FFFFFF',
         radius: '8px',
@@ -1070,7 +1096,7 @@ export default class Pushy {
       }
     )
     // 绘制底边按钮
-    popupView.drawRect(
+    this.updatePopupView.drawRect(
       {
         radius: '3px',
         borderColor: '#f1f1f1',
@@ -1084,7 +1110,7 @@ export default class Pushy {
       }
     )
     // 绘制底边按钮
-    popupView.drawRect(
+    this.updatePopupView.drawRect(
       {
         radius: '3px',
         color: mainColor,
@@ -1130,8 +1156,8 @@ export default class Pushy {
         height: '30px',
       },
     })
-    popupView.draw(popupViewContentList)
-    popupView.addEventListener('click', (e) => {
+    this.updatePopupView.draw(popupViewContentList)
+    this.updatePopupView.addEventListener('click', (e) => {
       const maxTop = popupViewHeight - viewContentPadding
       const maxLeft = popupViewWidth - viewContentPadding
       const buttonWidth = (viewContentWidth - viewContentPadding) / 2
@@ -1140,12 +1166,12 @@ export default class Pushy {
         if (e.clientX > viewContentPadding && e.clientX < maxLeft - buttonWidth - viewContentPadding) {
           // maskLayer.hide()
           // popupView.hide()
-          maskLayer.close()
-          popupView.close()
+          this.updateMaskLayer.close()
+          this.updatePopupView.close()
         } else if (e.clientX > maxLeft - buttonWidth && e.clientX < maxLeft) {
           // 立即升级
-          maskLayer.close()
-          popupView.close()
+          this.updateMaskLayer.close()
+          this.updatePopupView.close()
           callback && callback()
         }
       }
@@ -1157,8 +1183,73 @@ export default class Pushy {
     //   popupView.hide()
     // })
     // 显示弹窗
-    maskLayer.show()
-    popupView.show()
+    this.updateMaskLayer.show()
+    this.updatePopupView.show()
+  }
+
+  /**
+   * 弹框是否显示
+   * @param { String } type - 弹框类型 [update, download]
+   * @returns boolean
+   */
+  isPopupShow(type) {
+    if (type === 'update') {
+      // 更新弹框
+      const { updateMaskLayer, updatePopupView } = this
+      if (updateMaskLayer || updatePopupView) {
+        if (updateMaskLayer.isVisible() || updatePopupView.isVisible()) {
+          return true
+        } else {
+          return false
+        }
+      } else {
+        return false
+      }
+    } else if (type === 'download') {
+      // 下载弹框
+      const { downloadMaskLayer, downloadPopupView } = this
+      if (downloadMaskLayer || downloadPopupView) {
+        if (downloadMaskLayer.isVisible() || downloadPopupView.isVisible()) {
+          return true
+        } else {
+          return false
+        }
+      } else {
+        return false
+      }
+    } else {
+      throw new Error('type 弹框类型未传入!')
+    }
+  }
+
+  /**
+   * 关闭弹框
+   * @param { String } type - 弹框类型 [update, download]
+   * @returns null
+   */
+  closePopup(type) {
+    if (type === 'update') {
+      // 更新弹框
+      const { updateMaskLayer, updatePopupView } = this
+      if (updateMaskLayer && updateMaskLayer.isVisible()) {
+        updateMaskLayer.close()
+      }
+      if (updatePopupView && updatePopupView.isVisible()) {
+        updatePopupView.close()
+      }
+    } else if (type === 'download') {
+      // 下载弹框
+      const { downloadMaskLayer, downloadPopupView } = this
+
+      if (downloadMaskLayer && downloadMaskLayer.isVisible()) {
+        downloadMaskLayer.close()
+      }
+      if (downloadPopupView && downloadPopupView.isVisible()) {
+        downloadPopupView.close()
+      }
+    } else {
+      throw new Error('type 弹框类型未传入!')
+    }
   }
 
   // 文件下载的弹窗绘图
@@ -1374,9 +1465,19 @@ export default class Pushy {
 
   // 文件下载的弹窗
   _downloadPopup(data) {
+    // 先处理上一次的弹框
+    this.closePopup('download')
     const { mainColor } = this._config
     // 弹窗遮罩层
-    const maskLayer = new plus.nativeObj.View('maskLayer', {
+    // const maskLayer = new plus.nativeObj.View('maskLayer', {
+    //   //先创建遮罩层
+    //   top: '0px',
+    //   left: '0px',
+    //   height: '100%',
+    //   width: '100%',
+    //   backgroundColor: 'rgba(0,0,0,0.5)',
+    // })
+    this.downloadMaskLayer = new plus.nativeObj.View('maskLayer', {
       //先创建遮罩层
       top: '0px',
       left: '0px',
@@ -1388,7 +1489,15 @@ export default class Pushy {
     let popupViewData = this._downloadPopupDrawing(data)
 
     // 弹窗内容
-    const popupView = new plus.nativeObj.View('popupView', {
+    // const popupView = new plus.nativeObj.View('popupView', {
+    //   //创建底部图标菜单
+    //   tag: 'rect',
+    //   top: (popupViewData.screenHeight - popupViewData.popupViewHeight) / 2 + 'px',
+    //   left: '15%',
+    //   height: popupViewData.popupViewHeight + 'px',
+    //   width: '70%',
+    // })
+    this.downloadPopupView = new plus.nativeObj.View('popupView', {
       //创建底部图标菜单
       tag: 'rect',
       top: (popupViewData.screenHeight - popupViewData.popupViewHeight) / 2 + 'px',
@@ -1403,7 +1512,7 @@ export default class Pushy {
     if (data.buttonNum >= 0) {
       buttonNum = data.buttonNum
     }
-    popupView.draw(popupViewData.elementList)
+    this.downloadPopupView.draw(popupViewData.elementList)
 
     const callbackData = {
       change: (res) => {
@@ -1462,7 +1571,7 @@ export default class Pushy {
         }
         if (res.buttonNum >= 0 && buttonNum !== res.buttonNum) {
           buttonNum = res.buttonNum
-          popupView.reset()
+          this.downloadPopupView.reset()
           popupViewData = this._downloadPopupDrawing(
             Object.assign(
               {
@@ -1486,30 +1595,30 @@ export default class Pushy {
             }
           })
           progressElement = newElement.concat(progressElement)
-          popupView.setStyle({
+          this.downloadPopupView.setStyle({
             tag: 'rect',
             top: (popupViewData.screenHeight - popupViewData.popupViewHeight) / 2 + 'px',
             left: '15%',
             height: popupViewData.popupViewHeight + 'px',
             width: '70%',
           })
-          popupView.draw(progressElement)
+          this.downloadPopupView.draw(progressElement)
         } else {
-          popupView.draw(progressElement)
+          this.downloadPopupView.draw(progressElement)
         }
       },
       cancel: () => {
-        maskLayer.close()
-        popupView.close()
+        this.downloadMaskLayer.close()
+        this.downloadPopupView.close()
       },
       show: () => {
-        if (!maskLayer.isVisible()) {
-          maskLayer.show()
-          popupView.show()
+        if (!this.downloadMaskLayer.isVisible()) {
+          this.downloadMaskLayer.show()
+          this.downloadPopupView.show()
         }
       },
     }
-    popupView.addEventListener('click', (e) => {
+    this.downloadPopupView.addEventListener('click', (e) => {
       const maxTop = popupViewData.popupViewHeight - popupViewData.viewContentPadding
       const maxLeft = popupViewData.popupViewWidth - popupViewData.viewContentPadding
       if (e.clientY > maxTop - 40 && e.clientY < maxTop) {
@@ -1517,8 +1626,8 @@ export default class Pushy {
           // 单按钮
           if (e.clientX > popupViewData.viewContentPadding && e.clientX < maxLeft) {
             // 重启
-            maskLayer.close()
-            popupView.close()
+            this.downloadMaskLayer.close()
+            this.downloadPopupView.close()
             plus.runtime.restart()
             // callbackData.reboot()
           }
@@ -1530,20 +1639,20 @@ export default class Pushy {
             e.clientX < maxLeft - buttonWidth - popupViewData.viewContentPadding
           ) {
             // 取消下载
-            maskLayer.close()
-            popupView.close()
+            this.downloadMaskLayer.close()
+            this.downloadPopupView.close()
             callbackData.cancelDownload()
           } else if (e.clientX > maxLeft - buttonWidth && e.clientX < maxLeft) {
             // 后台下载
-            maskLayer.hide()
-            popupView.hide()
+            this.downloadMaskLayer.hide()
+            this.downloadPopupView.hide()
           }
         }
       }
     })
     // 显示弹窗
-    maskLayer.show()
-    popupView.show()
+    this.downloadMaskLayer.show()
+    this.downloadPopupView.show()
     // 改变进度条
     return callbackData
   }
@@ -1555,6 +1664,7 @@ export default class Pushy {
     const msg = logString ? JSON.stringify(message) : message
     switch (type) {
       case 'log':
+        // eslint-disable-next-line no-console
         console.log(label, msg)
         break
       case 'warn':
@@ -1590,10 +1700,6 @@ export default class Pushy {
     const { locale } = this._config
     return translate(locale, key)
   }
-
-  /**
-   * @name 自定义界面相关方法
-   */
 
   /**
    * @name 开始下载资源，只会 resolve， 不会 reject

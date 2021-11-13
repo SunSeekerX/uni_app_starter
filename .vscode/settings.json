@@ -9,6 +9,7 @@
     "launchtype",
     "mypui",
     "utools",
-    "ciphertext"
+    "ciphertext",
+    "statechanged"
   ]
 }
