@@ -22,9 +22,7 @@ git clone https://github.com/SunSeekerX/uni-app-starter.git
 cd uni-app-starter
 ```
 
-**安装依赖 ，项目根目录下执行**
-
-国内网络安装过慢可以安装 `tbify`， 使用说明：[tbify](https://sunseekerx.yoouu.cn/front-end/npm/#📂-tbify)
+**安装依赖**
 
 ```bash
 yarn
@@ -42,11 +40,11 @@ yarn build
 
 **启动**
 
-```bash
-yarn server
-```
+回到项目根目录，运行
 
-### lerna
+```bash
+yarn serve
+```
 
 ## 📌 项目亮点
 

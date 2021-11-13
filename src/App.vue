@@ -45,13 +45,8 @@ export default {
 
     // #ifdef APP-PLUS
     // App 端启动需要的操作
-    // this.handleAppPlus()
+    this.handleAppPlus()
     // #endif
-
-    setInterval(() => {
-      console.log('更新弹框是否显示[update]>>>', pushy.isPopupShow('update'))
-      console.log('更新弹框是否显示[download]>>>', pushy.isPopupShow('download'))
-    }, 2000)
   },
   onShow() {
     this.$util.LogUtil.log('App Show')
