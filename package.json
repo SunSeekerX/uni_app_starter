@@ -78,8 +78,6 @@
     "@dcloudio/uni-quickapp-native": "2.0.0-32920210927002",
     "@dcloudio/uni-quickapp-webview": "2.0.0-32920210927002",
     "@dcloudio/uni-stat": "2.0.0-32920210927002",
-    "@limm/markrgba-css": "^0.7.0",
-    "@limm/uni-pushy-client": "^0.3.0",
     "@mypui/myp-ui": "^2.9.2",
     "@vue/shared": "^3.2.19",
     "core-js": "^3.18.2",
@@ -130,5 +128,6 @@
   },
   "uni-app": {
     "scripts": {}
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }

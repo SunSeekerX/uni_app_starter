@@ -23,7 +23,6 @@ yarn-error.log*
 
 # Another files
 package-lock.json
-yarn.lock
 unpackage/release/
 unpackage/debug/
 
@@ -32,3 +31,12 @@ unpackage/debug/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# yarn 2.0+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

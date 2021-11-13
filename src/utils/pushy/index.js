@@ -7,7 +7,7 @@
  */
 
 import getEnv from '@/config/index'
-import Pushy from '#root/packages/pushy'
+import Pushy from '#root/packages/uni-pushy-client'
 
 export default new Pushy({
   // 项目id
