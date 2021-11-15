@@ -22,7 +22,8 @@
       "agent-base",
       "https-proxy-agent",
       "mdast-util-from-markdown/**",
-      "stable"
+      "stable",
+      "source-map"
     ]
   }
 }
