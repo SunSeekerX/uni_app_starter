@@ -19,5 +19,6 @@ feng-parse
 
 # Temp
 packages/utools
+packages/uni-pushy-client
 src/components/c-icon
 

@@ -21,5 +21,6 @@ iconfont-svg.js
 feng-parse
 
 # Temp
+packages/uni-pushy-client
 src/utools
 src/components/c-icon
