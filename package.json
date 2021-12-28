@@ -78,7 +78,6 @@
     "@dcloudio/uni-quickapp-native": "2.0.1-33320211224001",
     "@dcloudio/uni-quickapp-webview": "2.0.1-33320211224001",
     "@dcloudio/uni-stat": "2.0.1-33320211224001",
-    "@mypui/myp-ui": "^2.9.2",
     "@vue/babel-preset-app": "^4.5.15",
     "@vue/shared": "^3.2.26",
     "core-js": "^3.20.1",
@@ -86,7 +85,7 @@
     "dayjs": "^1.10.7",
     "flyio": "^0.6.14",
     "regenerator-runtime": "^0.13.9",
-    "uview-ui": "^1.8.5",
+    "uview-ui": "^2.0.17",
     "vue": "^2.6.14",
     "vuex": "^3.6.2"
   },

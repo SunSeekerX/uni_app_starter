@@ -8,7 +8,6 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import { initSystemInfo } from '@mypui/myp-ui/utils/system'
 
 // #ifdef APP-PLUS
 import pushy from '@/utils/pushy/index'
@@ -33,15 +32,6 @@ export default {
 
     // 挂载属性到 globalData
     this.handleMountGlobalDataProperty()
-
-    // #ifdef APP-PLUS || H5
-    initSystemInfo()
-    // #endif
-    // #ifndef APP-PLUS || H5
-    setTimeout(() => {
-      initSystemInfo()
-    }, 0)
-    // #endif
 
     // #ifdef APP-PLUS
     // App 端启动需要的操作
@@ -82,18 +72,28 @@ export default {
 </script>
 
 <style lang="scss">
-// @import '@root/packages/markrgba-css'; /* Some magic css */
-@import '../packages/markrgba-css'; /* Some magic css */
-@import '~@/common/scss/index.scss'; /* 全局通用样式 */
+@import '../packages/markrgba-css/src/index.scss'; /* Some magic css */
+@import '@/common/scss/index.scss'; /* 全局通用样式 */
 
-// mypUI
-@import '@mypui/myp-ui/base.scss';
+// uni-app 抽风不能定义到 @/common/scss/index.scss 条件编译不生效
 
 /* #ifndef APP-NVUE */
-// uview
+image {
+  will-change: transform;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* #endif */
+
+/* #ifndef APP-NVUE */
+
+/* uview */
 @import 'uview-ui/index.scss';
 
-// CNode 需要
+/* CNode 需要 */
 @import '~@/apps/cnode/components/feng-parse/parse.css';
 
 /* #endif */

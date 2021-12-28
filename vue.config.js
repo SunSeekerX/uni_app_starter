@@ -7,15 +7,17 @@
  */
 
 const path = require('path')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
 module.exports = {
+  // uview-ui 2.0
+  transpileDependencies: ['uview-ui'],
   configureWebpack: {
     resolve: {
       alias: {
-        '#root': resolve('./'),
         '@root': resolve('/'),
       },
     },

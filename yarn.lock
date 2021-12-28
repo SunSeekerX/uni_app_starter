@@ -3145,13 +3145,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mypui/myp-ui@npm:^2.9.2":
-  version: 2.9.2
-  resolution: "@mypui/myp-ui@npm:2.9.2"
-  checksum: f95b1fad89d2be3d97eefa667edf59fe9ca3f342a08a69c46c2df9de3ada771ba17750363b39dea9883dc6312552cb1d87a9a4c4283972d3abdd1313684a7cb2
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -20344,7 +20337,6 @@ __metadata:
     "@dcloudio/vue-cli-plugin-uni-optimize": 2.0.1-33320211224001
     "@dcloudio/webpack-uni-mp-loader": 2.0.1-33320211224001
     "@dcloudio/webpack-uni-pages-loader": 2.0.1-33320211224001
-    "@mypui/myp-ui": ^2.9.2
     "@vue/babel-preset-app": ^4.5.15
     "@vue/cli-plugin-babel": ~4.5.15
     "@vue/cli-service": ~4.5.15
@@ -20376,7 +20368,7 @@ __metadata:
     stylelint-config-prettier: ^8.0.2
     stylelint-config-standard: ^22.0.0
     stylelint-order: ^4.1.0
-    uview-ui: ^1.8.5
+    uview-ui: ^2.0.17
     vue: ^2.6.14
     vue-template-compiler: ^2.6.14
     vuex: ^3.6.2
@@ -20782,10 +20774,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uview-ui@npm:^1.8.5":
-  version: 1.8.5
-  resolution: "uview-ui@npm:1.8.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fuview-ui%2Fdownload%2Fuview-ui-1.8.5.tgz"
-  checksum: ca662275f4e8484ae5f8a836cf06b06360b010e24c1323ceadcb6ecca9c0cb9abab060ee6ad4e14d3394b4fbddc99ae333342b25d7399e6107713171b549ca3b
+"uview-ui@npm:^2.0.17":
+  version: 2.0.17
+  resolution: "uview-ui@npm:2.0.17::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fuview-ui%2Fdownload%2Fuview-ui-2.0.17.tgz"
+  checksum: 29e42f3983780a4969d3c324edf9729b99b7edcf3a35f9599ae280cfb315c3f67017d36efa49c3a53278a5e47afb8a9ac157443e033e7d384d3eecf78cb95ee9
   languageName: node
   linkType: hard
 

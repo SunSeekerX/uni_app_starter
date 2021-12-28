@@ -79,6 +79,7 @@ module.exports = {
         ],
       },
     ],
+    'no-invalid-position-at-import-rule': null,
     // 指定声明块内属性的字母顺序
     'order/properties-order': [
       'position',

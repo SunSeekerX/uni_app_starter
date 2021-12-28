@@ -2,8 +2,7 @@
   "easycom": {
     "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
     "^cn-(.*)": "@/components-nvue/cn-$1/cn-$1.vue",
-    "^c-(.*)": "@/components/c-$1/c-$1.vue",
-    "myp-(.*)": "@/mypUI/myp-$1/myp-$1.vue"
+    "^c-(.*)": "@/components/c-$1/c-$1.vue"
   },
   "pages": [
 		// {
