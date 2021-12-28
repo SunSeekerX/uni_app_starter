@@ -47,25 +47,23 @@ Github：[https://github.com/SunSeekerX/markrgba-css](https://github.com/SunSeek
 
 ## 2️⃣ 快速上手
 
-**安装**
+### 安装
 
 ```bash
 npm i @limm/markrgba-css
-# or yarn
-yarn add @limm/markrgba-css
 ```
 
-**在 uni-app 页面中使用**
-
-`${app}/App.vue`
+### 导入
 
 推荐全部引入，开启 `treeshaking` 会自动裁剪没有用到的类
+
+`${app}/App.vue`
 
 ```scss
 @import '@limm/markrgba-css';
 ```
 
-**使用**
+### 使用
 
 就是简介图上直接添加 class 就行了。
 

@@ -28,18 +28,6 @@
 npm i @limm/uni-pushy-client
 ```
 
-### 配置 `vue.config.js`
-
-由于代码是用 `es6` 写的，没有进行 `Babel` 编译，需要配置下进行 `Babel` 转译。
-
-`app/vue.config.js`
-
-```javascript
-module.exports = {
-  transpileDependencies: ['@limm/uni-pushy-client'],
-}
-```
-
 ### **使用**
 
 `app/src/utils/pushy/index.js`

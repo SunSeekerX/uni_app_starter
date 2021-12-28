@@ -127,7 +127,8 @@
     "h5" : {
         "title" : "",
         "router" : {
-            "mode" : "hash"
+            "mode" : "hash",
+            "base" : "./"
         },
         "optimization" : {
             "treeShaking" : {

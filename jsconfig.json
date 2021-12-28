@@ -2,28 +2,21 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "#root/*": [
-        "./*"
-      ],
+      "@/*": ["src/*"],
+      "#root/*": ["./*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "include": [
-    "src/**/*"
-  ],
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*"],
   "typeAcquisition": {
     "exclude": [
       "agent-base",
       "https-proxy-agent",
       "mdast-util-from-markdown/**",
       "stable",
-      "source-map"
+      "source-map",
+      "defer-to-connect",
+      "ismobilejs"
     ]
   }
 }

@@ -12,7 +12,6 @@ function resolve(dir) {
 }
 
 module.exports = {
-  transpileDependencies: ['@limm/uni-pushy-client'],
   configureWebpack: {
     resolve: {
       alias: {
