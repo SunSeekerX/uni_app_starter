@@ -16,6 +16,7 @@ module.exports = {
     resolve: {
       alias: {
         '#root': resolve('./'),
+        '@root': resolve('/'),
       },
     },
   },

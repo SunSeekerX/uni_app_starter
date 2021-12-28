@@ -82,7 +82,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '#root/packages/markrgba-css'; /* Some magic css */
+// @import '@root/packages/markrgba-css'; /* Some magic css */
+@import '../packages/markrgba-css'; /* Some magic css */
 @import '~@/common/scss/index.scss'; /* 全局通用样式 */
 
 // mypUI
