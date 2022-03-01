@@ -5,12 +5,6 @@
     "^c-(.*)": "@/components/c-$1/c-$1.vue"
   },
   "pages": [
-		// {
-		//   "path": "pages/index/index",
-		//   "style": {
-		//     "navigationBarTitleText": "首页"
-		//   }
-		// },
     {
       "path": "pages/home/home",
       "style": {
