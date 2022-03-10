@@ -18,10 +18,10 @@ module.exports = {
     smoothScroll: true,
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Api', link: '/api/' },
+      { text: 'Api', link: '/api/guide' },
     ],
     sidebar: {
-      '/api/': ['/api/', 'common', 'uni-app', 'validate', 'encode', 'encrypt', 'performance', 'random'],
+      '/api/': ['guide', 'common', 'uni-app', 'validate', 'encode', 'encrypt', 'performance', 'random'],
     },
     sidebarDepth: 3,
     lastUpdated: '上次更新',

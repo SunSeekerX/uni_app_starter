@@ -1,5 +1,5 @@
 ---
-title: ValidateUtil
+title: ValidateUtil 验证工具
 ---
 
 ## isMobilePhone

@@ -1,5 +1,5 @@
 ---
-title: PerformanceUtil
+title: PerformanceUtil 性能测试工具
 ---
 
 ## getNow

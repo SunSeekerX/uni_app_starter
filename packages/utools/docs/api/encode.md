@@ -1,5 +1,5 @@
 ---
-title: EncodeUtil
+title: EncodeUtil 编码工具
 ---
 
 ## urlEncode

@@ -1,5 +1,5 @@
 ---
-title: utools
+title: 简介
 ---
 
 # utools
@@ -16,8 +16,11 @@ yarn add @limm/utools
 
 ```javascript
 import { EncryptUtil } from '@limm/utools'
-
 console.log(EncryptUtil.encryptAES2Base64('我是需要 AES 加密的数据'))
+
+// 或
+import utools from '@limm/utools'
+console.log(utools.EncryptUtil.encryptAES2Base64('我是需要 AES 加密的数据'))
 ```
 
 ## 📌 依赖库

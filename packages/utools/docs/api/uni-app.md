@@ -1,5 +1,5 @@
 ---
-title: UniAppUtil
+title: UniAppUtil uni-app 封装
 ---
 
 ## getUIStyle

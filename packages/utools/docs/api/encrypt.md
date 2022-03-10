@@ -1,5 +1,5 @@
 ---
-title: EncryptUtil
+title: EncryptUtil 加密工具
 ---
 
 ## encryptMD5ToString
