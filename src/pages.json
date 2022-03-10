@@ -1,0 +1,216 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+    "^cn-(.*)": "@/components-nvue/cn-$1/cn-$1.vue",
+    "^c-(.*)": "@/components/c-$1/c-$1.vue"
+  },
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/module/module",
+      "style": {
+        "navigationBarTitleText": "组件",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/tools/tools",
+      "style": {
+        "navigationBarTitleText": "工具",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/me/me",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/module/mono-font/mono-font",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/biance-rate/biance-rate",
+      "style": {
+        "navigationBarTitleText": "币安资金费率",
+        "enablePullDownRefresh": true
+      }
+    },
+    /*-------------pionex start-------------*/
+    {
+      "path": "apps/pionex/index/index",
+      "style": {
+        "navigationBarTitleText": "Pionex",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/pionex/splash/splash",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    /*-------------pionex end-------------*/
+    {
+      "path": "pages/module/icon/icon",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    /*-------------cnode start-------------*/
+    // 首页
+    {
+      "path": "apps/cnode/pages/index/index",
+      "style": {
+        "enablePullDownRefresh": true,
+        "navigationBarTextStyle": "white",
+        "app-plus": {
+          "titleNView": {
+            "backgroundColor": "#444444",
+            "titleText": "CNode",
+            "titleColor": "#ffffff",
+            "type": "default"
+          },
+          "bounce": "none"
+        }
+      }
+    },
+    // 详情界面
+    {
+      "path": "apps/cnode/pages/topic-details/topic-details",
+      "style": {
+        "navigationBarTextStyle": "white",
+        "app-plus": {
+          "bounce": "none",
+          "titleNView": {
+            "backgroundColor": "#444444",
+            "titleText": "CNode details",
+            "type": "default"
+          }
+        }
+      }
+    },
+    /*-------------cnode end-------------*/
+    /*-------------jd-ck start-------------*/
+    {
+      "path": "apps/pionex/index/index",
+      "style": {
+        "navigationBarTitleText": "Pionex",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "apps/jd-ck/index/index",
+      "style": {
+        "navigationBarTitleText": "Jd-ck",
+        "enablePullDownRefresh": false
+      }
+    },
+    /*-------------jd-ck end-------------*/
+    /*-------------utools start-------------*/
+    {
+      "path": "apps/utools/pages/index/index",
+      "style": {
+        "navigationBarTitleText": "utools"
+      }
+    },
+    {
+      "path": "apps/utools/pages/encode/encode",
+      "style": {
+        "navigationBarTitleText": "encode"
+      }
+    },
+    {
+      "path": "apps/utools/pages/encrypt/encrypt",
+      "style": {
+        "navigationBarTitleText": "encrypt"
+      }
+    },
+    {
+      "path": "apps/utools/pages/uni-app/uni-app",
+      "style": {
+        "navigationBarTitleText": "uni-app"
+      }
+    },
+    {
+      "path": "apps/utools/pages/uni-app/route",
+      "style": {
+        "navigationBarTitleText": "route"
+      }
+    },
+    {
+      "path": "apps/utools/pages/validate/validate",
+      "style": {
+        "navigationBarTitleText": "validate"
+      }
+    },
+    {
+      "path": "apps/utools/pages/log/log",
+      "style": {
+        "navigationBarTitleText": "log"
+      }
+    },
+    {
+      "path": "apps/utools/pages/random/random",
+      "style": {
+        "navigationBarTitleText": "random"
+      }
+    }
+    /*-------------utools end-------------*/
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app-starter",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "pageOrientation": "portrait",
+    "app-plus": {
+      "bounce": "none"
+    }
+  },
+  "tabBar": {
+    "color": "#8894AB",
+    "selectedColor": "#2979ff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/module/module",
+        "iconPath": "static/images/tabbar/module.png",
+        "selectedIconPath": "static/images/tabbar/module_selected.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/tools/tools",
+        "iconPath": "static/images/tabbar/tools.png",
+        "selectedIconPath": "static/images/tabbar/tools_selected.png",
+        "text": "工具"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "static/images/tabbar/me.png",
+        "selectedIconPath": "static/images/tabbar/me_selected.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-10 00:17:39
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-10 09:57:49
+ */
+
+/* border-width（0~20）px */
+@for $i from 0 through 20 {
+  .bw-#{$i} {
+    border-width: $i + px;
+  }
+
+  .bw-#{$i}r {
+    border-width: $i + rpx;
+  }
+
+  .btw-#{$i} {
+    border-top-width: $i + px;
+  }
+  .btw-#{$i}r {
+    border-top-width: $i + rpx;
+  }
+
+  .brw-#{$i} {
+    border-right-width: $i + px;
+  }
+  .brw-#{$i}r {
+    border-right-width: $i + rpx;
+  }
+
+  .bbw-#{$i} {
+    border-bottom-width: $i + px;
+  }
+  .bbw-#{$i}r {
+    border-bottom-width: $i + rpx;
+  }
+
+  .blw-#{$i} {
+    border-left-width: $i + px;
+  }
+  .blw-#{$i}r {
+    border-left-width: $i + rpx;
+  }
+}
+
+/* border-radius (0~100)px */
+@for $i from 0 through 100 {
+  .br-#{$i} {
+    border-radius: $i + px;
+  }
+
+  .br-#{$i}r {
+    border-radius: $i + rpx;
+  }
+
+  /* border-radius (0~100)% */
+  .br-#{$i}p {
+    border-radius: $i * 1%;
+  }
+}
+
+/* border-style */
+.bs-dotted {
+  border-style: dotted;
+}
+
+.bs-dashed {
+  border-style: dashed;
+}
+
+.bs-solid {
+  border-style: solid;
+}
+
+/* #ifndef APP-NVUE */
+.bs-none {
+  border-style: none;
+}
+
+.bs-hidden {
+  border-style: hidden;
+}
+
+.bs-double {
+  border-style: double;
+}
+
+.bs-groove {
+  border-style: groove;
+}
+
+.bs-ridge {
+  border-style: ridge;
+}
+
+.bs-inset {
+  border-style: inset;
+}
+
+.bs-outset {
+  border-style: outset;
+}
+
+/* #endif */

@@ -1,0 +1,96 @@
+/**
+ * 
+ * @author: SunSeekerX
+ * @Date: 2021-01-06 15:40:18
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-02-06 09:50:39
+ */
+
+[data-theme='light'] {
+  // Base
+  --color-base: #3f81ff;
+  --color-up: #04cba8;
+  --color-down: #c7485f;
+
+  // Background color
+  --color-status-bar-bg: #fff; // 状态栏
+  --color-navigation-bg: #fff; // 导航栏
+  --color-page-bg: #f7f9ff; // 页面
+  --color-content-bg: #fff; // 内容背景
+
+  // Dialog/Popup
+  --color-dialog-bg: #fff; // 弹框背景色
+  --color-dialog-title: #333; // 弹框里标题文字颜色
+  --color-dialog-content: #666; // 弹框里其他文字颜色
+  --color-dialog-icon: #666; // 弹框里icon颜色
+  --color-dialog-options: #fff; // 弹框里含选项的文字颜色
+
+  // Button
+  --color-btn-text: #eee;
+  --color-btn: #999;
+  --color-btn-bg: #fbfbfb;
+
+  // wallet Button
+  --color-wallet-bg: #f9fbff;
+
+  //  input
+  --color-input-bg: #f7f9ff;
+  --color-input-text: #666;
+
+  // Text
+  --color-text-main: #333;
+  --color-text-content: #666;
+  --color-text-light: #999;
+  --color-text-tips: #faad14;
+
+  // Border
+  --color-border: #ececec;
+  // --color-border-input: #dcdfe6;
+  --color-border-separate: #fff; // 分隔线颜色
+
+  // Primary
+  --color-primary: #2979ff;
+  --color-primary-dark: #2b85e4;
+  --color-primary-disabled: #a0cfff;
+  --color-primary-light: #ecf5ff;
+
+  // Success
+  --color-success: #19be6b;
+  --color-success-dark: #18b566;
+  --color-success-disabled: #71d5a1;
+  --color-success-light: #dbf1e1;
+
+  // Error
+  --color-error: #fa3534;
+  --color-error-dark: #dd6161;
+  --color-error-disabled: #fab6b6;
+  --color-error-light: #fef0f0;
+
+  // Warning
+  --color-warning: #f90;
+  --color-warning-dark: #f29100;
+  --color-warning-disabled: #fcbd71;
+  --color-warning-light: #fdf6ec;
+
+  // Info
+  --color-info: #909399;
+  --color-info-dark: #82848a;
+  --color-info-disabled: #c8c9cc;
+  --color-info-light: #f4f4f5;
+
+  // icon color
+  --color-icon: #666;
+
+  // 表单选中颜色
+  --color-form_selection: #eee;
+  // 表单默认颜色
+  --color-form_default: #f7f9ff;
+
+  // 币币
+  --color-buy-deep: #03ad8f;
+  --color-buy-shallow: #9aded2;
+  --color-buy-icon: #89e3f1;
+  --color-sell-deep: #c7485f;
+  --color-sell-shallow: #f7dde2;
+  --color-sell-icon: #d36e80;
+}

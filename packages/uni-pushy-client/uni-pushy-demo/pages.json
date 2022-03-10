@@ -1,0 +1,40 @@
+{
+  "easycom": {
+    "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+  },
+  "pages": [{
+    "path": "pages/native/native",
+    "style": {
+      "navigationBarTitleText": "自带界面更新",
+      "enablePullDownRefresh": false
+    }
+  }, {
+    "path": "pages/custom/custom",
+    "style": {
+      "navigationBarTitleText": "自定义界面更新",
+      "enablePullDownRefresh": false
+    }
+
+  }],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#8894AB",
+    "selectedColor": "#3F81FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/native/native",
+        "text": "原生"
+      },
+      {
+        "pagePath": "pages/custom/custom",
+        "text": "自定义"
+      }
+    ]
+  }
+}

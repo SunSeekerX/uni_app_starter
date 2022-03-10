@@ -1,0 +1,171 @@
+<template>
+  <view>
+    <!-- 轮播图 -->
+    <view class="pt-r pt-10 w-750r">
+      <!-- 背景色 -->
+      <view class="swiper-background w-750r" :style="{ backgroundColor: swiperBackground }"></view>
+      <swiper
+        class="swiper w-750r"
+        style="height: 393.75rpx"
+        circular
+        autoplay
+        :interval="5000"
+        :indicator-dots="false"
+        @change="onSwiperChange"
+      >
+        <swiper-item v-for="item of bannerList" :key="item.url">
+          <image style="height: 393.75rpx" class="w-700r ml-25r mr-25r br-6" :src="item.url"></image>
+        </swiper-item>
+      </swiper>
+
+      <!-- 自定义swiper指示器 -->
+      <view class="swiper-dots dp-f fd-r ai-c fs-12 c-f">
+        <text class="num">{{ swiperCurrent + 1 }}</text>
+        <text class="sign c-f fs-11">&#47;</text>
+        <text class="num">{{ bannerList.length }}</text>
+      </view>
+    </view>
+
+    <view class="content">
+      <!-- 项目菜单 -->
+      <view class="menu">
+        <view
+          v-for="item of menuList"
+          :key="item.name"
+          @tap="
+            globalData.$utools.route({
+              url: item.url,
+            })
+          "
+          class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
+          :style="`background-image: ${item.backgroundImage};`"
+        >
+          <view class="dp-f fd-c f-1">
+            <view class="item fd-r jc-sb ai-c lh-34">
+              <text class="c-f fs-16 fw-b">{{ item.name }}</text>
+            </view>
+
+            <!-- 描述 -->
+            <view class="description mt-6">
+              <text class="description-text">{{ item.description }}</text>
+            </view>
+          </view>
+
+          <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import { nvueGetGlobalData } from '@/utils/mixin'
+export default {
+  mixins: [nvueGetGlobalData],
+
+  data() {
+    return {
+      // 轮播图背景色
+      swiperBackground: 'rgb(12,12,12)',
+
+      // 轮播图指针
+      swiperCurrent: 0,
+
+      // 轮播图
+      bannerList: [
+        {
+          url: '/static/images/home/1.jpg',
+          background: 'rgb(87,100,112)',
+        },
+        {
+          url: '/static/images/home/2.jpg',
+          background: 'rgb(158,94,90)',
+        },
+      ],
+
+      // 菜单列表
+      /*
+      渐变色：https://webkul.github.io/coolhue/
+      */
+      menuList: [
+        {
+          name: '币安资金费率',
+          description: '查看资金费率小项目',
+          url: '/apps/biance-rate/biance-rate',
+          backgroundImage: 'linear-gradient( to right, #52E5E7, #130CB7)',
+        },
+        {
+          name: 'Pionex',
+          description: '想开发静态页面的项目',
+          url: '/apps/pionex/index/index',
+          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
+        },
+        {
+          name: 'Cnode',
+          description: '刚刚接触 uni-app 不久的开发的项目，整合进来了。',
+          url: '/apps/cnode/pages/index/index',
+          backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
+        },
+        // {
+        //   name: 'Jd-ck',
+        //   description: '我永远喜欢京东~',
+        //   url: '/apps/jd-ck/index/index',
+        //   backgroundImage: 'linear-gradient( to right, #FDD819, #E80505);',
+        // },
+      ],
+    }
+  },
+
+  methods: {
+    onSwiperChange(e) {
+      const index = e.detail.current
+      this.swiperCurrent = index
+      this.swiperBackground = this.bannerList[index].background
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.swiper-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 393.75rpx;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.swiper-dots {
+  position: absolute;
+  left: 60rpx;
+  bottom: 15rpx;
+  // width: 72rpx;
+  height: 36rpx;
+}
+.num {
+  width: 36upx;
+  height: 36upx;
+  border-radius: 50px;
+  font-size: 24upx;
+  color: #fff;
+  text-align: center;
+  line-height: 36upx;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  // background-color: rgba(255, 255, 255, 0.3);
+  // border-radius: 6px;
+  // padding: 12px;
+}
+.description-text {
+  font-size: 12px;
+  // text-align: center;
+  color: #fff;
+  // word-break: break-all;
+}
+</style>

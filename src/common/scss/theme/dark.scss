@@ -1,0 +1,98 @@
+/**
+ * 
+ * @author: SunSeekerX
+ * @Date: 2021-01-06 17:07:58
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-02-04 10:51:42
+ */
+
+[data-theme='dark'] {
+  // Base
+  --color-base: #3f81ff;
+  --color-up: #04cba8;
+  --color-down: #c7485f;
+
+  // Background color
+  --color-status-bar-bg: #1d1d2a;
+  --color-navigation-bg: #1d1d2a;
+  --color-page-bg: #1d1d2a;
+  --color-content-bg: #252537;
+
+  // Dialog/Popup
+  --color-dialog-bg: #2c2c40; // 弹框背景色
+  --color-dialog-title: #fff; // 弹框里标题文字颜色
+  --color-dialog-content: #b4b4b4; // 弹框里其他文字颜色
+  --color-dialog-icon: #b4b4b4; // 弹框里icon颜色
+  --color-dialog-options: #bababa; // 弹框里含选项的文字颜色
+
+  // Background color
+  --color-bg-tabbar: #2c2c3c;
+
+  // Button
+  --color-btn-text: #eee;
+  --color-btn: #46466f;
+  --color-btn-bg: #2a2a3b;
+
+  // wallet Button
+  --color-wallet-bg: #303041;
+
+  //  input
+  --color-input-bg: #32323e;
+  --color-input-text: #4b4b5e;
+
+  // Text
+  --color-text-main: #fff;
+  --color-text-content: #b4b4b4;
+  --color-text-light: #757575;
+  --color-text-tips: #faad14;
+  // Border
+  --color-border: #37374e;
+  // --color-border-input: #dcdfe6;
+  --color-border-separate: #000; // 分隔线颜色
+
+  // Primary
+  // --color-primary: #2979ff;
+  --color-primary-dark: #2b85e4;
+  --color-primary-disabled: #a0cfff;
+  --color-primary-light: #ecf5ff;
+
+  // Success
+  --color-success: #19be6b;
+  --color-success-dark: #18b566;
+  --color-success-disabled: #71d5a1;
+  --color-success-light: #dbf1e1;
+
+  // Error
+  --color-error: #fa3534;
+  --color-error-dark: #dd6161;
+  --color-error-disabled: #fab6b6;
+  --color-error-light: #fef0f0;
+
+  // Warning
+  --color-warning: #f90;
+  --color-warning-dark: #f29100;
+  --color-warning-disabled: #fcbd71;
+  --color-warning-light: #fdf6ec;
+
+  // Info
+  --color-info: #909399;
+  --color-info-dark: #82848a;
+  --color-info-disabled: #c8c9cc;
+  --color-info-light: #f4f4f5;
+
+  // icon color
+  --color-icon: #b4b4b4;
+
+  // 表单选中颜色
+  --color-form_selection: #3d3d5d;
+  // 表单默认颜色
+  --color-form_default: #2e2e45;
+
+  // 币币
+  --color-buy-deep: #03ad8f;
+  --color-buy-shallow: #185556;
+  --color-buy-icon: #89e3f1;
+  --color-sell-deep: #c7485f;
+  --color-sell-shallow: #663347;
+  --color-sell-icon: #d36e80;
+}
