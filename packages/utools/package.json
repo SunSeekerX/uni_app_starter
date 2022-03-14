@@ -1,6 +1,6 @@
 {
   "name": "@limm/utools",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "uni-app 开发工具包。",
   "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/master/packages/utools",
   "bugs": {

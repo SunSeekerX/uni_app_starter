@@ -137,12 +137,25 @@ export class Request {
       // 请求参数
       const _config: UniApp.UploadFileOption = {
         url: `${this.config.baseUrl}${handleRe.url}`,
+        /**
+         * App、H5（ 2.6.15+）
+         * 需要上传的文件列表。使用 files 时，filePath 和 name 不生效。
+         */
+        files: handleRe.files,
         // #ifdef MP-ALIPAY
+        /**
+         * 仅支付宝小程序，且必填。
+         */
         fileType: handleRe.fileType,
         // #endif
+        /**
+         * 要上传的文件对象。
+         */
+        file: handleRe.file,
         filePath: handleRe.filePath,
         name: handleRe.name,
         header: handleRe.header,
+        timeout: handleRe.timeout,
         formData: handleRe.formData,
         success: async (response) => {
           if (typeof response.data === 'string') {
