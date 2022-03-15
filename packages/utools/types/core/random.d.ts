@@ -5,5 +5,5 @@
  * @LastEditors: SunSeekerX
  * @LastEditTime: 2021-09-17 17:17:21
  */
-import type { V1Options } from 'uuid'
-export declare function uuidv1(options: V1Options | undefined): string
+import type { V1Options } from 'uuid';
+export declare function uuidv1(options: V1Options | undefined): string;

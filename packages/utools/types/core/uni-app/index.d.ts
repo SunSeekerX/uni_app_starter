@@ -8,7 +8,7 @@
 /**
  * uni-app 请求类
  */
-import { Request } from './request'
-import { LogUtil, Log } from './log'
-export * from './uni-app'
-export { Request, LogUtil, Log }
+import { Request } from './request';
+import { LogUtil, Log } from './log';
+export * from './uni-app';
+export { Request, LogUtil, Log };

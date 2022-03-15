@@ -40,7 +40,32 @@ export function toast(msg: string, options?: UniApp.ShowToastOptions): void {
 
 // 是否正在跳转
 let _isRouting = false
-
+const navigateAnimationTypes = [
+  undefined,
+  'auto',
+  'none',
+  'slide-in-right',
+  'slide-in-left',
+  'slide-in-top',
+  'slide-in-bottom',
+  'fade-in',
+  'zoom-out',
+  'zoom-fade-out',
+  'pop-in',
+]
+const navigateBackAnimationTypes = [
+  undefined,
+  'auto',
+  'none',
+  'slide-out-right',
+  'slide-out-left',
+  'slide-out-top',
+  'slide-out-bottom',
+  'fade-out',
+  'zoom-in',
+  'zoom-fade-in',
+  'pop-out',
+]
 /**
  * uni-app 路由封装
  * @param { Object } options - 参数配置
@@ -67,35 +92,66 @@ export function route(options: UniRouteOptions): void {
     // 返回的页面数，如果 delta 大于现有页面数，则返回到首页
     delta: 1,
     // 窗口显示的动画效果
-    animationType: 'pop-in',
+    // animationType: 'pop-in',
     // 窗口动画持续时间，单位为 ms
     animationDuration: 300,
     // 接口调用成功的回调函数
     // success() {},
     // 接口调用失败的回调函数
-    fail(e) {
-      console.warn(e)
-    },
+    // fail(e) {
+    //   console.warn(e)
+    // },
     // 接口调用结束的回调函数（调用成功、失败都会执行）
-    complete() {
-      _isRouting = false
-    },
+    // complete() {
+    //   _isRouting = false
+    // },
+  }
+  // 失败
+  const failFun = (e: unknown) => {
+    console.warn(e)
+  }
+  // 完成
+  const completeFun = () => {
+    _isRouting = false
   }
 
   // 合并参数
   Object.assign(_config, options)
+  let { animationType } = _config
 
-  const { url, animationType, animationDuration, fail, complete, delta, type } = _config
+  const { url, animationDuration, success, fail, complete, delta, type } = _config
 
   switch (type) {
     case 'navigateTo':
+      if (navigateAnimationTypes.includes(animationType)) {
+        animationType = 'pop-in'
+      }
       // 保留当前页面，跳转到应用内的某个页面
       uni.navigateTo({
         url,
-        animationType,
+        animationType: animationType as
+          | 'auto'
+          | 'none'
+          | 'slide-in-right'
+          | 'slide-in-left'
+          | 'slide-in-top'
+          | 'slide-in-bottom'
+          | 'fade-in'
+          | 'zoom-out'
+          | 'zoom-fade-out'
+          | 'pop-in',
         animationDuration,
-        fail,
-        complete,
+        success(result) {
+          success && success(result)
+        },
+        fail(e) {
+          failFun(e)
+          fail && fail(e)
+        },
+        complete(result) {
+          completeFun()
+          complete && complete(result)
+        },
       })
       break
 
@@ -103,8 +159,17 @@ export function route(options: UniRouteOptions): void {
       // 关闭当前页面，跳转到应用内的某个页面
       uni.redirectTo({
         url,
-        fail,
-        complete,
+        success(result) {
+          success && success(result)
+        },
+        fail(e) {
+          failFun(e)
+          fail && fail(e)
+        },
+        complete(result) {
+          completeFun()
+          complete && complete(result)
+        },
       })
       break
 
@@ -112,8 +177,17 @@ export function route(options: UniRouteOptions): void {
       // 关闭所有页面，打开到应用内的某个页面
       uni.reLaunch({
         url,
-        fail,
-        complete,
+        success(result) {
+          success && success(result)
+        },
+        fail(e) {
+          failFun(e)
+          fail && fail(e)
+        },
+        complete(result) {
+          completeFun()
+          complete && complete(result)
+        },
       })
       break
 
@@ -121,17 +195,50 @@ export function route(options: UniRouteOptions): void {
       // 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
       uni.switchTab({
         url,
-        fail,
-        complete,
+        success(result) {
+          success && success(result)
+        },
+        fail(e) {
+          failFun(e)
+          fail && fail(e)
+        },
+        complete(result) {
+          completeFun()
+          complete && complete(result)
+        },
       })
       break
 
     case 'navigateBack':
       // 关闭当前页面，返回上一页面或多级页面
-      _isRouting = false
+      if (!navigateBackAnimationTypes.includes('animationType')) {
+        animationType = 'pop-out'
+      }
       uni.navigateBack({
         delta,
+        animationType: animationType as
+          | 'auto'
+          | 'none'
+          | 'slide-out-right'
+          | 'slide-out-left'
+          | 'slide-out-top'
+          | 'slide-out-bottom'
+          | 'fade-out'
+          | 'zoom-in'
+          | 'zoom-fade-in'
+          | 'pop-out',
         animationDuration,
+        success(result) {
+          success && success(result)
+        },
+        fail(e) {
+          failFun(e)
+          fail && fail(e)
+        },
+        complete(result) {
+          completeFun()
+          complete && complete(result)
+        },
       })
       break
 

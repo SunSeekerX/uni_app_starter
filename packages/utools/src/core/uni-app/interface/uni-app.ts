@@ -43,6 +43,14 @@ export interface UniRouteOptions {
     | 'zoom-out'
     | 'zoom-fade-out'
     | 'pop-in'
+    | 'slide-out-right'
+    | 'slide-out-left'
+    | 'slide-out-top'
+    | 'slide-out-bottom'
+    | 'fade-out'
+    | 'zoom-in'
+    | 'zoom-fade-in'
+    | 'pop-out'
 
   /**
    * 窗口显示动画的持续时间，单位为 ms

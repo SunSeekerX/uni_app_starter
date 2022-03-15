@@ -10,4 +10,4 @@
  * @param val { unknown } 需要检查的值
  * @returns 检查结果
  */
-export declare function isNil(val: unknown): boolean
+export declare function isNil(val: unknown): boolean;
