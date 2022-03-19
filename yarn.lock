@@ -3385,6 +3385,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@limm/windi-css-uni@workspace:packages/windi-css-uni":
+  version: 0.0.0-use.local
+  resolution: "@limm/windi-css-uni@workspace:packages/windi-css-uni"
+  languageName: unknown
+  linkType: soft
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
