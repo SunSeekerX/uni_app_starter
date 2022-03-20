@@ -1,0 +1,95 @@
+/* 边框圆角 */
+// .#{$prefix}rounded-none {
+//   border-radius: 0px;
+// }
+// .#{$prefix}rounded-sm {
+//   border-radius: 0.125rem;
+// }
+// .#{$prefix}rounded-1\/2 {
+//   border-radius: 50%;
+// }
+// .#{$prefix}rounded-full {
+//   border-radius: 9999px;
+// }
+// @for $i from 0 through 20 {
+//   .#{$prefix}rounded-#{$i} {
+//     border-radius: $i + px;
+//   }
+
+//   .#{$prefix}rounded-#{$i}r {
+//     border-radius: $i + rpx;
+//   }
+
+//   /* border-radius (0~100)% */
+//   .#{$prefix}rounded-#{$i}p {
+//     border-radius: $i * 1%;
+//   }
+// }
+
+/* 边框宽度 {0~10} px || rpx */
+// @for $i from 0 through 10 {
+//   .#{$prefix}border-#{$i} {
+//     border-width: $i + px;
+//   }
+
+//   .#{$prefix}border-#{$i}r {
+//     border-width: $i + rpx;
+//   }
+
+//   .#{$prefix}border-top-#{$i} {
+//     border-top-width: $i + px;
+//   }
+//   .#{$prefix}border-top-#{$i}r {
+//     border-top-width: $i + rpx;
+//   }
+
+//   .#{$prefix}border-right-#{$i} {
+//     border-right-width: $i + px;
+//   }
+//   .#{$prefix}border-right-#{$i}r {
+//     border-right-width: $i + rpx;
+//   }
+
+//   .#{$prefix}border-bottom-#{$i} {
+//     border-bottom-width: $i + px;
+//   }
+//   .#{$prefix}border-bottom-#{$i}r {
+//     border-bottom-width: $i + rpx;
+//   }
+
+//   .#{$prefix}border-left-#{$i} {
+//     border-left-width: $i + px;
+//   }
+//   .#{$prefix}border-left-#{$i}r {
+//     border-left-width: $i + rpx;
+//   }
+// }
+
+/* 边框颜色 */
+// .#{$prefix}border-transparent {
+//   border-color: transparent;
+// }
+// .#{$prefix}border-current {
+//   border-color: currentColor;
+// }
+// .#{$prefix}border-fff,
+// .#{$prefix}border-white {
+//   border-color: #fff;
+// }
+
+/* 边框样式 */
+// .#{$prefix}border-solid {
+//   border-style: solid;
+// }
+// .#{$prefix}border-dashed {
+//   border-style: dashed;
+// }
+// .#{$prefix}border-dotted {
+//   border-style: dotted;
+// }
+// .#{$prefix}border-double {
+//   border-style: double;
+// }
+// .#{$prefix}border-none {
+//   border-style: none;
+// }

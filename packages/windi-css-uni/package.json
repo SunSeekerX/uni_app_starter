@@ -20,7 +20,7 @@
   "author": "SunSeekerX",
   "main": "src/index.scss",
   "scripts": {
-    "dev": "sass --no-source-map --watch src/index.scss:dist/output.css ",
+    "dev": "sass --no-source-map --watch src/index.scss:dist/output.css",
     "gc": "git add -A && git-cz && git pull && git push",
     "pkg:sort": "npx sort-package-json",
     "pub": "npm publish --access public"

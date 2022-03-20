@@ -17,6 +17,8 @@
   "author": "SunSeekerX",
   "main": "src/index.scss",
   "scripts": {
+    "build": "sass --no-source-map src/index.scss:dist/output.css",
+    "dev": "sass --no-source-map --watch src/index.scss:dist/output.css",
     "gc": "git add -A && git-cz && git pull && git push",
     "pub": "npm publish --access public"
   }

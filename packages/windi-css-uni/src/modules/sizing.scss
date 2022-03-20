@@ -1,0 +1,32 @@
+/* width (0~750)px */
+@for $i from 0 through 750 {
+  .#{$prefix}w-#{$i} {
+    width: $i + px;
+  }
+
+  /* width (0~750)rpx */
+  .#{$prefix}w-#{$i}r {
+    width: $i + rpx;
+  }
+}
+
+/* #ifndef APP-NVUE */
+
+/* width (0~100)% */
+@for $i from 0 through 100 {
+  .#{$prefix}w-#{$i}p {
+    width: $i * 1%;
+  }
+}
+
+/* #endif */
+
+/* Box Sizing */
+.#{$prefix}box-border {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.#{$prefix}box-content {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}

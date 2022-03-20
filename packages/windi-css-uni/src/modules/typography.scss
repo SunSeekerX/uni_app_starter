@@ -114,17 +114,66 @@
 // }
 
 /* 文本颜色 {000~999} */
-.#{$prefix}text-transparent {
-  color: transparent;
-}
-.#{$prefix}text-current {
-  color: currentColor;
-}
-.#{$prefix}text-000 {
-  color: #000;
-}
-@for $i from 1 through 9 {
-  .#{$prefix}text-#{$i * 111} {
-    color: unquote("##{$i * 111}");
-  }
-}
+// .#{$prefix}text-transparent {
+//   color: transparent;
+// }
+// .#{$prefix}text-current {
+//   color: currentColor;
+// }
+// .#{$prefix}text-000 {
+//   color: #000;
+// }
+// @for $i from 1 through 9 {
+//   .#{$prefix}text-#{$i * 111} {
+//     color: unquote("##{$i * 111}");
+//   }
+// }
+
+/* 垂直对齐 */
+// .#{$prefix}align-baseline {
+//   vertical-align: baseline;
+// }
+// .#{$prefix}align-top {
+//   vertical-align: top;
+// }
+// .#{$prefix}align-middle {
+//   vertical-align: middle;
+// }
+// .#{$prefix}align-bottom {
+//   vertical-align: bottom;
+// }
+// .#{$prefix}align-text-top {
+//   vertical-align: text-top;
+// }
+// .#{$prefix}align-text-bottom {
+//   vertical-align: text-bottom;
+// }
+
+/* 空格 */
+// .#{$prefix}whitespace-normal {
+//   white-space: normal;
+// }
+// .#{$prefix}whitespace-nowrap {
+//   white-space: nowrap;
+// }
+// .#{$prefix}whitespace-pre {
+//   white-space: pre;
+// }
+// .#{$prefix}whitespace-pre-line {
+//   white-space: pre-line;
+// }
+// .#{$prefix}whitespace-pre-wrap {
+//   white-space: pre-wrap;
+// }
+
+/* 断字 */
+// .#{$prefix}break-normal {
+//   word-break: normal;
+//   overflow-wrap: normal;
+// }
+// .#{$prefix}break-words {
+//   overflow-wrap: break-word;
+// }
+// .#{$prefix}break-all {
+//   word-break: break-all;
+// }
