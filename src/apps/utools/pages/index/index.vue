@@ -14,7 +14,11 @@
         <view
           v-for="item of menuList"
           :key="item.name"
-          @tap="testFun(item.url)"
+          @tap="
+            $utools.route({
+              url: item.url,
+            })
+          "
           class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
           :style="`background-image: ${item.backgroundImage};`"
         >
@@ -83,16 +87,6 @@ export default {
         },
       ],
     }
-  },
-  methods: {
-    testFun(url) {
-      this.$utools.route({
-        url,
-        complete() {
-          console.log('i am the complete')
-        },
-      })
-    },
   },
 }
 </script>

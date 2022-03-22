@@ -121,13 +121,24 @@ yarn serve
 
 应用名：`UAS`
 
-包名：`cn.yoouu.uni.app.starter.prod`
+包名：`cn.yoouu.uni.app.starter`
 
 **开发**
 
 应用名：`Uni-app-starter`
 
-包名：`cn.yoouu.uni.app.starter`
+包名：`cn.yoouu.uni.app.starter.dev`
+
+android
+
+```shell
+# Just a tips 👻
+password: key1
+```
+
+ios
+
+没有证书。
 
 ## 📌 鸣谢
 
