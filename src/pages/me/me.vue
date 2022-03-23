@@ -1,11 +1,3 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-03-27 16:24:58
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:50:01
--->
-
 <template>
   <view class="content">
     <!-- 环境切换 -->

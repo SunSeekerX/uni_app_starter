@@ -78,16 +78,9 @@ class MPAnimation {
     this.animation.step(config)
     // #endif
     // #ifdef APP-NVUE
-    this.currentStepAnimates[this.next].config = Object.assign(
-      {},
-      this.options,
-      config
-    )
-    this.currentStepAnimates[
-      this.next
-    ].styles.transformOrigin = this.currentStepAnimates[
-      this.next
-    ].config.transformOrigin
+    this.currentStepAnimates[this.next].config = Object.assign({}, this.options, config)
+    this.currentStepAnimates[this.next].styles.transformOrigin =
+      this.currentStepAnimates[this.next].config.transformOrigin
     this.next++
     // #endif
     return this
@@ -135,7 +128,7 @@ const animateTypes1 = [
 const animateTypes2 = ['opacity', 'backgroundColor']
 const animateTypes3 = ['width', 'height', 'left', 'right', 'top', 'bottom']
 animateTypes1.concat(animateTypes2, animateTypes3).forEach((type) => {
-  MPAnimation.prototype[type] = function(...args) {
+  MPAnimation.prototype[type] = function (...args) {
     // #ifndef APP-NVUE
     this.animation[type](...args)
     // #endif

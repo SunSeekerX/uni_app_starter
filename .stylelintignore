@@ -4,6 +4,7 @@ src/components-nvue/
 nativeplugins/
 src/res/
 src/static/
+uni_modules
 
 # 忽略打包的文件
 src/unpackage/

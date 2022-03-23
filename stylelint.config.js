@@ -1,5 +1,5 @@
 /**
- * @name:
+ * css 样式格式化
  * @author: SunSeekerX
  * @Date: 2020-11-13 13:33:20
  * @LastEditors: SunSeekerX

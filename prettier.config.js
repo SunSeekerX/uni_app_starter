@@ -1,5 +1,5 @@
 /**
- * @name: prettier 配置
+ * uni-app prettier 配置,和 vue 项目有一些区别！！！
  * @url https://prettier.io/docs/en/options.html
  * @author: SunSeekerX
  * @Date: 2020-07-20 16:34:25
@@ -27,7 +27,7 @@ module.exports = {
   // 在对象字面量声明所使用的的花括号后（{）和前（}）输出空格 default:true
   bracketSpacing: true,
   // 将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。default:false
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   // (x) => {} 是否要有小括号 default:"always"
   arrowParens: 'always',
   // default:0

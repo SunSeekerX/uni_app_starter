@@ -98,15 +98,7 @@ export default {
     },
     // 初始化动画条件
     transformStyles() {
-      return (
-        'transform:' +
-        this.transform +
-        ';' +
-        'opacity:' +
-        this.opacity +
-        ';' +
-        this.stylesObject
-      )
+      return 'transform:' + this.transform + ';' + 'opacity:' + this.opacity + ';' + this.stylesObject
     },
   },
   created() {

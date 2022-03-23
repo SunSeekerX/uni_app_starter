@@ -65,12 +65,7 @@
 ```html
 <template>
   <view class="content">
-    <uni-transition
-      custom-class="custom-transition"
-      mode-class="fade"
-      :duration="0"
-      :show="true"
-    />
+    <uni-transition custom-class="custom-transition" mode-class="fade" :duration="0" :show="true" />
   </view>
 </template>
 
@@ -97,12 +92,7 @@
 ```html
 <template>
   <view class="content">
-    <uni-transition
-      :styles="styles"
-      mode-class="fade"
-      :duration="0"
-      :show="true"
-    />
+    <uni-transition :styles="styles" mode-class="fade" :duration="0" :show="true" />
   </view>
 </template>
 <script>
@@ -130,11 +120,7 @@
 <template>
   <view>
     <button type="primary" @click="run">执行动画</button>
-    <uni-transition
-      ref="ani"
-      :styles="{'width':'100px','height':'100px','backgroundColor':'red'}"
-      :show="show"
-    />
+    <uni-transition ref="ani" :styles="{'width':'100px','height':'100px','backgroundColor':'red'}" :show="show" />
   </view>
 </template>
 
