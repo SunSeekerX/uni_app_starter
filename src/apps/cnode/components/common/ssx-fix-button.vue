@@ -16,7 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 .prev {
-  /* #endif */
   display: flex;
   position: fixed;
   z-index: 999;
@@ -29,6 +28,8 @@ export default {
   /* #ifndef H5 */
   bottom: calc(var(--window-bottom) + 50rpx);
   left: 50rpx;
+
+  /* #endif */
   align-items: center;
   justify-content: center;
   width: 88rpx;
