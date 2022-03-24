@@ -20,6 +20,10 @@
   display: inline-block !important;
 }
 
+.bs-bx {
+  box-sizing: border-box;
+}
+
 /* #endif */
 
 .fd-r {
@@ -162,8 +166,4 @@
   right: 0;
   bottom: 0;
   left: 0;
-}
-
-.bs-bx {
-  box-sizing: border-box;
 }
