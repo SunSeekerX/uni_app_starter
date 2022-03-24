@@ -29,23 +29,23 @@ export default {
 // 内容输出区域
 .console {
   position: sticky;
-  top: calc(var(--window-top) + 6px);
   z-index: 1;
+  top: calc(var(--window-top) + 6px);
   max-height: 200px;
   padding: 6px;
   overflow-y: scroll;
-  word-break: break-all;
-  background: #fff;
-  border-color: #ddd;
-  border-style: solid;
   border-width: 1px;
+  border-style: solid;
   border-radius: 3px;
+  border-color: #ddd;
+  background: #fff;
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 10%);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+  word-break: break-all;
 
   .output {
-    font-size: 12px;
     color: #333;
+    font-size: 12px;
   }
 }
 </style>

@@ -1,13 +1,13 @@
 <template>
   <view>
     jd-cookie
-
     <button @tap="handleQrcode">handleQrcode</button>
   </view>
 </template>
 
 <script>
 export default {
+  name: 'JDIndex',
   methods: {
     handleQrcode() {
       uni.request({
@@ -24,10 +24,10 @@ export default {
           Host: 'plogin.m.jd.com',
         },
         success: (res) => {
-          console.log(res)
+          console.warn(res)
         },
         fail: (e) => {
-          console.log(e)
+          console.warn(e)
         },
         complete: () => {},
       })

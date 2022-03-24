@@ -23,10 +23,8 @@
 
 /* Box Sizing */
 .#{$prefix}box-border {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .#{$prefix}box-content {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }

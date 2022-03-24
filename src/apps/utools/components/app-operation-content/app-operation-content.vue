@@ -33,7 +33,7 @@ export default {
 // 操作区域
 .operation {
   margin-top: 6px;
-  color: #666;
   border-radius: 3px;
+  color: #666;
 }
 </style>

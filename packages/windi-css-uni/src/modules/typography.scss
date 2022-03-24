@@ -11,6 +11,7 @@
 // }
 
 /* 字体平滑度 */
+
 /* 字号 {8~100} px || rpx */
 // @for $i from 8 through 100 {
 //   /* font-size 8~100 */
@@ -21,6 +22,7 @@
 //     font-size: $i + rpx;
 //   }
 // }
+
 /* 字体平滑度 */
 // .#{$prefix}antialiased {
 //   -webkit-font-smoothing: antialiased;
@@ -38,6 +40,7 @@
 // .#{$prefix}not-italic {
 //   font-style: normal;
 // }
+
 /* 字体粗细 */
 // .#{$prefix}font-thin {
 //   font-weight: 100;

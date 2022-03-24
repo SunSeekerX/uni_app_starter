@@ -78,6 +78,13 @@ export default {
 // uni-app 抽风不能定义到 @/common/scss/index.scss 条件编译不生效
 
 /* #ifndef APP-NVUE */
+
+/* uview */
+@import 'uview-ui/index.scss';
+
+/* CNode 需要 */
+@import '~@/apps/cnode/components/feng-parse/parse.css';
+
 image {
   will-change: transform;
 }
@@ -85,16 +92,6 @@ image {
 * {
   box-sizing: border-box;
 }
-
-/* #endif */
-
-/* #ifndef APP-NVUE */
-
-/* uview */
-@import 'uview-ui/index.scss';
-
-/* CNode 需要 */
-@import '~@/apps/cnode/components/feng-parse/parse.css';
 
 /* #endif */
 </style>

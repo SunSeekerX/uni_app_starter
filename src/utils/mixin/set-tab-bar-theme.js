@@ -10,7 +10,7 @@ import { mapGetters } from 'vuex'
 
 import { setNavTheme } from './set-nav-theme'
 
-export function setTabbarTheme(backgroundColor) {
+export function setTabBarTheme(backgroundColor) {
   uni.setTabBarStyle({
     backgroundColor,
   })
@@ -22,6 +22,6 @@ export default {
   },
   onShow() {
     setNavTheme(this.THEME, this.themeVal('colorNavigationBg'))
-    setTabbarTheme(this.themeVal('colorContentBg'))
+    setTabBarTheme(this.themeVal('colorContentBg'))
   },
 }

@@ -61,6 +61,7 @@ export default {
       default: 'var(--color-content-bg)',
       // #endif
       // #ifdef APP-NVUE
+      // eslint-disable-next-line no-dupe-keys
       default: '',
       // #endif
     },
@@ -107,6 +108,7 @@ export default {
         return windowHeight - 44
         // #endif
         // #ifndef H5
+        // eslint-disable-next-line no-unreachable
         return safeArea.height - 44
         // #endif
       } else {

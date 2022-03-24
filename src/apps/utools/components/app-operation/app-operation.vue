@@ -78,22 +78,22 @@ export default {
 .content-input {
   width: 720rpx;
   height: 66px;
-  padding: 6px;
   margin-top: 6px;
-  font-size: 12px;
+  padding: 6px;
   border: solid 1px #eee;
-  border-color: #ddd;
-  border-style: dashed;
   border-width: 1px;
+  border-style: dashed;
   border-radius: 6px;
+  border-color: #ddd;
+  font-size: 12px;
 }
 
 .content-button {
   width: 100%;
   height: 33px;
   margin-top: 12px;
+  border-radius: 3px;
   font-size: 12px;
   line-height: normal;
-  border-radius: 3px;
 }
 </style>

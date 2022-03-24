@@ -27,12 +27,12 @@ export default {
 <style>
 .content-button {
   width: 100%;
+  margin-top: 12px;
 
   /* height: 33px; */
   padding: 6px 0;
-  margin-top: 12px;
+  border-radius: 3px;
   font-size: 12px;
   line-height: normal;
-  border-radius: 3px;
 }
 </style>

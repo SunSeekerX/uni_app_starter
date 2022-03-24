@@ -16,7 +16,10 @@ export default {
 
 <style lang="scss" scoped>
 .prev {
+  /* #endif */
+  display: flex;
   position: fixed;
+  z-index: 999;
 
   /* #ifdef H5 */
   bottom: 50rpx;
@@ -26,18 +29,14 @@ export default {
   /* #ifndef H5 */
   bottom: calc(var(--window-bottom) + 50rpx);
   left: 50rpx;
-  z-index: 999;
-
-  /* #endif */
-  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 88rpx;
   height: 88rpx;
-  font-size: 12px;
-  color: #80bd01;
-  background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0 20rpx 60rpx 20rpx rgba(0, 0, 0, 0.2);
-  justify-content: center;
-  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 20rpx 60rpx 20rpx rgb(0 0 0 / 20%);
+  color: #80bd01;
+  font-size: 12px;
 }
 </style>

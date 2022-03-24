@@ -59,15 +59,15 @@ export default {
 <style lang="scss" scoped>
 .content-input {
   width: 100%;
-  padding: 6px;
   margin-top: 6px;
+  padding: 6px;
   overflow-y: scroll;
+  border: solid 1px #eee;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 6px;
+  border-color: #ddd;
   font-size: 12px;
   line-height: normal;
-  border: solid 1px #eee;
-  border-color: #ddd;
-  border-style: dashed;
-  border-width: 1px;
-  border-radius: 6px;
 }
 </style>

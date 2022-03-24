@@ -9,7 +9,7 @@
 <template>
   <view
     class="page dp-fc fd-c"
-    style="height: calc(100vh - var(--window-top)); background: linear-gradient(to right, #70f570, #49c628);"
+    style="height: calc(100vh - var(--window-top)); background: linear-gradient(to right, #70f570, #49c628)"
   >
     <text class="c-f fs-36">{{ routeType }}</text>
 

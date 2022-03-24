@@ -46,6 +46,8 @@ import AppOperationInput from '../../components/app-operation-input/app-operatio
 import AppOperationButton from '../../components/app-operation-button/app-operation-button'
 
 export default {
+  name: 'UtoolsEncodeUtil',
+
   components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
 
   data() {

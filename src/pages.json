@@ -46,7 +46,7 @@
         "enablePullDownRefresh": true
       }
     },
-    /*-------------pionex start-------------*/
+    /*-------------Pionex start-------------*/
     {
       "path": "apps/pionex/index/index",
       "style": {
@@ -62,7 +62,7 @@
         "enablePullDownRefresh": false
       }
     },
-    /*-------------pionex end-------------*/
+    /*-------------Pionex end-------------*/
     {
       "path": "pages/module/icon/icon",
       "style": {
@@ -189,26 +189,26 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "iconPath": "static/images/tabbar/home.png",
-        "selectedIconPath": "static/images/tabbar/home_selected.png",
+        "iconPath": "static/images/tab-bar/home.png",
+        "selectedIconPath": "static/images/tab-bar/home_selected.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/module/module",
-        "iconPath": "static/images/tabbar/module.png",
-        "selectedIconPath": "static/images/tabbar/module_selected.png",
+        "iconPath": "static/images/tab-bar/module.png",
+        "selectedIconPath": "static/images/tab-bar/module_selected.png",
         "text": "组件"
       },
       {
         "pagePath": "pages/tools/tools",
-        "iconPath": "static/images/tabbar/tools.png",
-        "selectedIconPath": "static/images/tabbar/tools_selected.png",
+        "iconPath": "static/images/tab-bar/tools.png",
+        "selectedIconPath": "static/images/tab-bar/tools_selected.png",
         "text": "工具"
       },
       {
         "pagePath": "pages/me/me",
-        "iconPath": "static/images/tabbar/me.png",
-        "selectedIconPath": "static/images/tabbar/me_selected.png",
+        "iconPath": "static/images/tab-bar/me.png",
+        "selectedIconPath": "static/images/tab-bar/me_selected.png",
         "text": "我的"
       }
     ]

@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  name: 'ModuleIcon',
   data() {
     return {}
   },

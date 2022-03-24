@@ -53,8 +53,6 @@
 
 .c-e-2 {
   /* #ifndef APP-NVUE */
-
-  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
@@ -70,7 +68,6 @@
 
 .c-e-3 {
   /* #ifndef APP-NVUE */
-  display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;

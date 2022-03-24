@@ -100,36 +100,36 @@ $padding: 15px;
 
   .item {
     display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
     height: 44px;
     border-bottom: 1px solid #eee;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
 
     .label {
+      color: #333;
       font-size: 18px;
       font-weight: bold;
-      color: #333;
     }
 
     .value {
-      font-size: 16px;
       color: #666;
+      font-size: 16px;
     }
   }
 
   .btn {
+    box-sizing: border-box;
     margin-top: $padding;
     color: #fff;
-    box-sizing: border-box;
   }
 
   .info-board {
-    padding: $padding;
+    box-sizing: border-box;
     margin-top: $padding;
+    padding: $padding;
     border: 1px solid #eee;
     border-radius: 6px;
-    box-sizing: border-box;
   }
 }
 </style>

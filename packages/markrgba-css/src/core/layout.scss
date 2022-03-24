@@ -2,7 +2,6 @@
 .dp-f {
   /* #ifndef APP-NVUE */
   display: flex !important;
-  display: -webkit-flex !important;
 
   /* #endif */
 }
@@ -10,7 +9,6 @@
 .dp-fc {
   /* #ifndef APP-NVUE */
   display: flex !important;
-  display: -webkit-flex !important;
 
   /* #endif */
   align-items: center !important;

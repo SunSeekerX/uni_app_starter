@@ -9,7 +9,7 @@
 <template>
   <view>
     <c-fixed-box :rpx="false" :height="120" :top="systemInfo.windowTop">
-      <view class="dp-f fd-c jc-c h-120 w-750r pl-25r pr-25r" style="border-bottom: solid #eee 1px;">
+      <view class="dp-f fd-c jc-c h-120 w-750r pl-25r pr-25r" style="border-bottom: solid #eee 1px">
         <u-search placeholder="请输入交易对" v-model="keyword" @change="onSearchChange" :show-action="false"></u-search>
         <view class="dp-f jc-sb ai-c h-34">
           <text class="fw-b fs-16">下次资金费率时间</text>
@@ -39,7 +39,7 @@
               v-for="item of searchList"
               :key="item.symbol"
               class="item dp-f jc-sb ai-c h-34"
-              style="border-bottom: solid 1px #eee;"
+              style="border-bottom: solid 1px #eee"
             >
               <text class="fw-b fs-16">{{ item.symbol }}</text> <text class="fs-16">{{ item.lastFundingRate }}%</text>
             </view>

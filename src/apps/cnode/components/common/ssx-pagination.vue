@@ -32,24 +32,24 @@ export default {
 <style lang="scss" scoped>
 .content {
   display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   height: 60rpx;
   padding: 10rpx 0;
   line-height: 60rpx;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
 
   .prev,
   .next {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60rpx;
     height: 60rpx;
-    font-size: 12px;
-    color: #c0c4cc;
     background-color: #f4f4f5;
-    justify-content: center;
-    align-items: center;
+    color: #c0c4cc;
+    font-size: 12px;
   }
 
   .prev {
@@ -65,16 +65,16 @@ export default {
 
     .page {
       display: flex;
+      align-items: center;
+      justify-content: center;
       width: 60rpx;
       height: 60rpx;
       color: #606266;
-      justify-content: center;
-      align-items: center;
     }
 
     .current {
-      color: #fff;
       background-color: #80bd01;
+      color: #fff;
     }
   }
 }

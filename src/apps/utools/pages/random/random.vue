@@ -18,13 +18,12 @@
 <script>
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
-import AppOperationInput from '../../components/app-operation-input/app-operation-input'
 import AppOperationButton from '../../components/app-operation-button/app-operation-button'
 
 export default {
   name: 'UtoolsLogUtil',
 
-  components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
+  components: { AppOutput, AppOperationContent, AppOperationButton },
 
   data() {
     return {

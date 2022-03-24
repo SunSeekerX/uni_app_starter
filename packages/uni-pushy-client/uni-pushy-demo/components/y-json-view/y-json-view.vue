@@ -117,9 +117,9 @@ export default {
 }
 </script>
 <style lang="scss">
-$tab: 40upx; //缩进
+$tab: 40upx; // 缩进
 $font-size: 16px;
-$colon-size: 7px; //冒号两边的间隔
+$colon-size: 7px; // 冒号两边的间隔
 $arrow-size: 7px;
 $arrow-color: #333;
 $key-color: #c35e00;
@@ -127,8 +127,8 @@ $index-color: #00f;
 $vaule-color: #42c800;
 
 .jsonview {
-  padding-left: $tab;
   margin: 0;
+  padding-left: $tab;
   font-size: $font-size;
   line-height: $font-size * 1.62;
   white-space: nowrap;
@@ -137,8 +137,8 @@ $vaule-color: #42c800;
 .first-line {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   text-align: center;
 
   .json-key {
@@ -153,20 +153,20 @@ $vaule-color: #42c800;
 }
 
 .json-body {
-  position: relative;
   display: flex;
-  padding: 0;
-  margin: 0;
+  position: relative;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 
   .json-item {
     display: flex;
-    padding-left: $tab;
-    margin: 0;
-    text-align: center;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding-left: $tab;
+    text-align: center;
 
     .json-index {
       color: $index-color;
@@ -193,29 +193,28 @@ $vaule-color: #42c800;
 }
 
 .angle {
+  display: block;
   position: absolute;
   left: 0;
-  display: block;
   text-align: center;
 
   &::after {
+    content: '';
     display: inline-block;
     width: 0;
     height: 0;
-    vertical-align: middle;
+    border-width: $arrow-size;
+    border-style: solid;
     border-color: transparent;
     border-top-color: $arrow-color;
-    border-style: solid;
-    border-width: $arrow-size;
-    content: '';
+    vertical-align: middle;
   }
 
   &.closed::after {
+    border-width: $arrow-size;
+    border-style: solid;
     border-color: transparent;
     border-left-color: $arrow-color;
-    border-style: solid;
-    border-width: $arrow-size;
   }
-  //}
 }
 </style>

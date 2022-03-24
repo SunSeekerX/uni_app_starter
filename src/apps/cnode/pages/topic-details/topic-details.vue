@@ -113,7 +113,7 @@ export default {
           this.$utools.toast('request api error')
         }
       } catch (e) {
-        console.log(e)
+        console.warn(e)
         this.$utools.toast(e.message)
       } finally {
         // Stop pull down refresh
@@ -166,39 +166,43 @@ export default {
 page {
   background-color: #e1e1e1;
 }
+
 // 话题详情
 .topic-detail {
   display: flex;
   flex-direction: column;
-  padding: 20rpx;
   margin: 0 15rpx 25rpx;
-  background-color: #fff;
+  padding: 20rpx;
   border-radius: 6rpx;
+  background-color: #fff;
+
   // 话题头部
   .detail-header {
     border-bottom: #e5e5e5 solid 2rpx;
 
     .topic-title {
+      color: #333;
       font-size: 22px;
       font-weight: 700;
-      color: #333;
     }
 
     .topic-header-info {
-      font-size: 12px;
       color: #838383;
+      font-size: 12px;
     }
   }
+
   // 话题回复
   .detail-reply {
     // 回复标题
     .reply-title {
       height: 40rpx;
+      background-color: #f6f6f6;
+      color: #333;
       font-size: 14px;
       line-height: 40rpx;
-      color: #333;
-      background-color: #f6f6f6;
     }
+
     // 回复列表
     .reply-list {
       .reply {
@@ -207,10 +211,10 @@ page {
 
         .reply-header {
           display: flex;
-          height: 88rpx;
           flex-flow: row nowrap;
-          justify-content: flex-start;
           align-items: center;
+          justify-content: flex-start;
+          height: 88rpx;
 
           .reply-author-avatar {
             margin-right: 15rpx;
@@ -224,14 +228,14 @@ page {
           .reply-info {
             .reply-author {
               margin-right: 15rpx;
+              color: #666;
               font-size: 12px;
               font-weight: 700;
-              color: #666;
             }
 
             .reply-time {
-              font-size: 11px;
               color: #08c;
+              font-size: 11px;
             }
           }
         }

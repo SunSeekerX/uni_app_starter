@@ -6,12 +6,12 @@
  * @LastEditTime: 2021-09-16 23:12:01
  */
 
-import setTabbarThemeMixin from './set-tabbar-theme'
-import setNavThemeMixin from './set-tabbar-theme'
-import tabbarVibrating from './tabbar-vibrating'
+import setTabBarThemeMixin from './set-tab-bar-theme'
+import setNavThemeMixin from './set-tab-bar-theme'
+import tabBarVibrating from './tab-bar-vibrating'
 import setNavTitleMixin from './set-nav-title'
 import systemInfo from './system-info'
 // Nvue 获取 globalData
 import nvueGetGlobalData from './nvue-get-global-data'
 
-export { setTabbarThemeMixin, setNavThemeMixin, tabbarVibrating, setNavTitleMixin, systemInfo, nvueGetGlobalData }
+export { setTabBarThemeMixin, setNavThemeMixin, tabBarVibrating, setNavTitleMixin, systemInfo, nvueGetGlobalData }

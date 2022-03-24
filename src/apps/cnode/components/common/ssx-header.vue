@@ -1,17 +1,5 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-05-26 18:10:08
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 18:10:40
--->
 <template>
   <view>
-    <!-- #ifndef H5 -->
-    <!-- <view class="status_bar">  
-			<view class="top_view"></view>  
-		</view>  -->
-    <!-- #endif -->
     <!-- 头部 -->
     <view class="header">
       <!-- logo -->
@@ -26,37 +14,20 @@
 </template>
 
 <style lang="scss" scoped>
-/* #ifndef H5 */
-.status_bar {
-  width: 100%;
-  height: var(--status-bar-height);
-  background-color: #444;
-}
-
-.top_view {
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  height: var(--status-bar-height);
-  background-color: #444;
-}
-
-/* #endif */
 // 头部logo
 .header {
   display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
   width: 750rpx;
-  padding: 25rpx 0;
 
   /* #ifndef H5 */
   margin-bottom: 50rpx;
+  padding: 25rpx 0;
 
   /* #endif */
   background-color: #444;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
 
   // logo
   .cnode-logo {
@@ -68,18 +39,18 @@
   // 搜索
   .header-search {
     display: flex;
+    align-items: center;
     width: 480rpx;
     height: 66rpx;
     padding: 0 20rpx;
-    background-color: #888;
-    border-radius: 50rpx;
     transition: 0.3s;
-    align-items: center;
+    border-radius: 50rpx;
+    background-color: #888;
 
     .search-icon {
       width: 50rpx;
-      font-weight: 600;
       color: #444;
+      font-weight: 600;
     }
 
     .search-input {
@@ -88,9 +59,9 @@
       input {
         width: 410rpx;
         height: 66rpx;
+        color: #666;
         font-size: 24rpx;
         line-height: 66rpx;
-        color: #666;
       }
     }
   }

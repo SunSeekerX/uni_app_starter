@@ -1,12 +1,17 @@
 // 变量
-@import "./modules/vars";
+@import './modules/vars.scss';
+
 // 排版
-@import "./modules/typography";
+@import './modules/typography.scss';
+
 // 背景
-@import "./modules/backgrounds";
+@import './modules/backgrounds.scss';
+
 // 边框
-@import "./modules/borders";
+@import './modules/borders.scss';
+
 // 间隔
-@import "./modules/spacing";
+@import './modules/spacing.scss';
+
 // 尺寸
-@import "./modules/sizing";
+@import './modules/sizing.scss';

@@ -57,20 +57,16 @@
     </view>
   </view>
 </template>
-
 <script>
 import { nvueGetGlobalData } from '@/utils/mixin'
 export default {
   mixins: [nvueGetGlobalData],
-
   data() {
     return {
       // 轮播图背景色
       swiperBackground: 'rgb(12,12,12)',
-
       // 轮播图指针
       swiperCurrent: 0,
-
       // 轮播图
       bannerList: [
         {
@@ -82,7 +78,6 @@ export default {
           background: 'rgb(158,94,90)',
         },
       ],
-
       // 菜单列表
       /*
       渐变色：https://webkul.github.io/coolhue/
@@ -115,7 +110,6 @@ export default {
       ],
     }
   },
-
   methods: {
     onSwiperChange(e) {
       const index = e.detail.current
@@ -125,7 +119,6 @@ export default {
   },
 }
 </script>
-
 <style lang="scss" scoped>
 .swiper-background {
   position: absolute;

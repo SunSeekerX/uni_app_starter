@@ -69,6 +69,7 @@ import SsxHeader from '../../components/common/ssx-header'
 import { CNode } from '../../apis/index'
 
 export default {
+  name: 'CnodeINdex',
   components: {
     SsxNoData,
     SsxHeader,
@@ -251,62 +252,63 @@ export default {
 page {
   background-color: #e1e1e1;
 }
+
 // 话题
 .topic-wrap {
   width: 730rpx;
   margin: 0 10rpx 25rpx;
-  background-color: #fff;
   border-radius: 6rpx;
+  background-color: #fff;
 
   // 分类
   .topic-classify {
     display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
     width: 710rpx;
     padding: 10rpx;
-    background-color: #f6f6f6;
     border-radius: 6rpx;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: center;
+    background-color: #f6f6f6;
 
     .classift-item {
       width: 132rpx;
-      font-size: 14px;
-      color: #80bd01;
-      text-align: center;
-      border-radius: 6rpx;
       transition: 0.15s;
+      border-radius: 6rpx;
+      color: #80bd01;
+      font-size: 14px;
+      text-align: center;
     }
 
     .selected {
-      color: #fff;
       background-color: #80bd01;
+      color: #fff;
     }
   }
 
   // 列表
   .topic-list {
     width: 730rpx;
-    background-color: #fff;
     border-radius: 6rpx;
+    background-color: #fff;
 
     // 话题项
     .topic {
       display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
       width: 730rpx;
       height: 100rpx;
       padding: 5rpx 0;
       border-bottom: #f0f0f0 solid 2rpx;
-      flex-flow: row nowrap;
-      justify-content: flex-start;
-      align-items: center;
 
       .topic-author-avatar {
         display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100rpx;
         height: 100rpx;
-        justify-content: center;
-        align-items: center;
 
         .author-avatar-url {
           width: 60rpx;
@@ -316,20 +318,20 @@ page {
 
       .topic-type {
         display: flex;
-        width: 64rpx;
-        padding: 0 4rpx;
-        margin-right: 10rpx;
-        font-size: 12px;
-        color: #999;
-        background-color: #e5e5e5;
-        border-radius: 6rpx;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        width: 64rpx;
+        margin-right: 10rpx;
+        padding: 0 4rpx;
+        border-radius: 6rpx;
+        background-color: #e5e5e5;
+        color: #999;
+        font-size: 12px;
       }
 
       .type-good {
-        color: #fff;
         background-color: #80bd01;
+        color: #fff;
       }
 
       .topic-info {
@@ -338,23 +340,23 @@ page {
         .topic-title {
           width: 420rpx;
           overflow: hidden;
-          line-height: 40rpx;
           color: #333;
+          line-height: 40rpx;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
 
         .topic-other {
           display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
           width: 528rpx;
           line-height: 40rpx;
-          flex-flow: row nowrap;
-          justify-content: space-between;
-          align-items: center;
 
           .topic-view {
-            font-size: 10px;
             color: #b4b4b4;
+            font-size: 10px;
 
             .count-of-replies {
               color: #9e78c0;
@@ -362,8 +364,8 @@ page {
           }
 
           .topic-time {
-            font-size: 12px;
             color: #778087;
+            font-size: 12px;
           }
         }
       }
@@ -376,33 +378,33 @@ page {
 
       .pagination-action {
         display: flex;
+        justify-content: space-between;
         width: 215rpx;
         height: 60rpx;
         padding: 15rpx;
-        justify-content: space-between;
 
         .prev,
         .next {
           display: flex;
+          align-items: center;
+          justify-content: center;
           width: 100rpx;
           height: 60rpx;
-          font-size: 12px;
-          color: #80bd01;
-          background-color: #f6f6f6;
           border-radius: 12rpx;
-          justify-content: center;
-          align-items: center;
+          background-color: #f6f6f6;
+          color: #80bd01;
+          font-size: 12px;
         }
       }
 
       .current-page {
         display: flex;
-        width: 515rpx;
-        font-size: 14px;
-        color: #999;
         flex-flow: row nowrap;
-        justify-content: flex-start;
         align-items: center;
+        justify-content: flex-start;
+        width: 515rpx;
+        color: #999;
+        font-size: 14px;
       }
     }
   }

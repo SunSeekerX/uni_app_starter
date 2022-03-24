@@ -42,6 +42,7 @@
 
 <script>
 export default {
+  name: 'PageTools',
   data() {
     return {
       // 菜单列表
@@ -63,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .description-text {
-  font-size: 12px;
   color: #fff;
+  font-size: 12px;
 }
 </style>
