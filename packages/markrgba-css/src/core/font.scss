@@ -1,39 +1,49 @@
-/* 文本对齐 text-align (left,right,center) */
-.#{$prefix}ta-l {
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-09 21:06:43
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-26 18:17:15
+ */
+
+/* text-align (left,right,center) */
+.ta-l {
   text-align: left;
 }
-.#{$prefix}ta-r {
+
+.ta-r {
   text-align: right;
 }
-.#{$prefix}ta-c {
+
+.ta-c {
   text-align: center;
 }
 
 /* font-weight */
 
 /* #ifndef APP-NVUE */
-.#{$prefix}fw-l {
+.fw-l {
   font-weight: lighter;
 }
 
 /* #endif */
 
-.#{$prefix}fw-b {
+.fw-b {
   font-weight: bold;
 }
 
-.#{$prefix}fw-n {
+.fw-n {
   font-weight: normal;
 }
 
 @for $i from 1 through 9 {
-  .#{$prefix}fw-#{$i} {
+  .fw-#{$i} {
     font-weight: $i * 100;
   }
 }
 
 /* special handling */
-.#{$prefix}t-oh {
+.t-oh {
   overflow: hidden;
   text-overflow: ellipsis;
 
@@ -44,7 +54,7 @@
 }
 
 /* #ifndef APP-NVUE */
-.#{$prefix}td-lt {
+.td-lt {
   text-decoration: line-through;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -52,7 +62,7 @@
 
 /* #endif */
 
-.#{$prefix}t-ohs {
+.t-ohs {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -61,7 +71,7 @@
 
 /* #ifndef APP-NVUE */
 @for $i from 3 through 15 {
-  .#{$prefix}t-lc#{$i} {
+  .t-lc#{$i} {
     -webkit-line-clamp: $i;
   }
 }
@@ -70,35 +80,19 @@
 
 /* 字号（8~100）px */
 @for $i from 8 through 100 {
-  .#{$prefix}fs-#{$i} {
+  .fs-#{$i} {
     font-size: $i + px;
   }
 
-  .#{$prefix}fs-#{$i}r {
+  .fs-#{$i}r {
     font-size: $i + rpx;
   }
 
   /* line-height（8~100）px */
-  .#{$prefix}lh-#{$i} {
+  .lh-#{$i} {
     line-height: $i + px;
   }
-  .#{$prefix}lh-#{$i}r {
+  .lh-#{$i}r {
     line-height: $i + rpx;
-  }
-}
-
-/* 文本颜色 {000~999} */
-.#{$prefix}c-t {
-  color: transparent;
-}
-.#{$prefix}c-fff {
-  color: #fff;
-}
-.#{$prefix}c-000 {
-  color: #000;
-}
-@for $i from 1 through 9 {
-  .#{$prefix}c-#{$i * 111} {
-    color: string.unquote('##{$i * 111}');
   }
 }

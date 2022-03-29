@@ -1,0 +1,59 @@
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-09 21:06:43
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-10 09:45:15
+ */
+
+/* margin-left (0~100)px */
+@for $i from 0 through 100 {
+  /* margin-top (0~100)px */
+  .mt-#{$i} {
+    margin-top: $i + px;
+  }
+  .mt-#{$i}r {
+    margin-top: $i + rpx;
+  }
+
+  /* margin-right (0~100)px */
+  .mr-#{$i} {
+    margin-right: $i + px;
+  }
+  .mr-#{$i}r {
+    margin-right: $i + rpx;
+  }
+
+  /* margin-bottom (0~100)px */
+  .mb-#{$i} {
+    margin-bottom: $i + px;
+  }
+  .mb-#{$i}r {
+    margin-bottom: $i + rpx;
+  }
+
+  .ml-#{$i} {
+    margin-left: $i + px;
+  }
+  .ml-#{$i}r {
+    margin-left: $i + rpx;
+  }
+
+  .m-all-#{$i} {
+    margin: $i + px;
+  }
+}
+
+/* #ifndef APP-NVUE */
+
+/* 上下外边(0~50) */
+@for $i from 0 through 50 {
+  .m-#{$i}-a {
+    margin: $i + px auto;
+  }
+  .m-#{$i}r-a {
+    margin: $i + rpx auto;
+  }
+}
+
+/* #endif */

@@ -1,86 +1,105 @@
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-10 00:17:39
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-10 09:57:49
+ */
+
 /* border-width（0~20）px */
 @for $i from 0 through 20 {
-  .#{$prefix}bw-#{$i} {
+  .bw-#{$i} {
     border-width: $i + px;
   }
-  .#{$prefix}bw-#{$i}r {
+
+  .bw-#{$i}r {
     border-width: $i + rpx;
   }
 
-  .#{$prefix}btw-#{$i} {
+  .btw-#{$i} {
     border-top-width: $i + px;
   }
-  .#{$prefix}btw-#{$i}r {
+  .btw-#{$i}r {
     border-top-width: $i + rpx;
   }
 
-  .#{$prefix}brw-#{$i} {
+  .brw-#{$i} {
     border-right-width: $i + px;
   }
-  .#{$prefix}brw-#{$i}r {
+  .brw-#{$i}r {
     border-right-width: $i + rpx;
   }
 
-  .#{$prefix}bbw-#{$i} {
+  .bbw-#{$i} {
     border-bottom-width: $i + px;
   }
-  .#{$prefix}bbw-#{$i}r {
+  .bbw-#{$i}r {
     border-bottom-width: $i + rpx;
   }
-  .#{$prefix}blw-#{$i} {
+
+  .blw-#{$i} {
     border-left-width: $i + px;
   }
-  .#{$prefix}blw-#{$i}r {
+  .blw-#{$i}r {
     border-left-width: $i + rpx;
   }
 }
 
 /* border-radius (0~100)px */
 @for $i from 0 through 100 {
-  .#{$prefix}br-#{$i} {
+  .br-#{$i} {
     border-radius: $i + px;
   }
-  .#{$prefix}br-#{$i}r {
+
+  .br-#{$i}r {
     border-radius: $i + rpx;
   }
 
   /* border-radius (0~100)% */
-  .#{$prefix}br-#{$i}p {
+  .br-#{$i}p {
     border-radius: $i * 1%;
   }
 }
 
 /* border-style */
-.#{$prefix}bs-dotted {
+.bs-dotted {
   border-style: dotted;
 }
-.#{$prefix}bs-dashed {
+
+.bs-dashed {
   border-style: dashed;
 }
-.#{$prefix}bs-solid {
+
+.bs-solid {
   border-style: solid;
 }
 
 /* #ifndef APP-NVUE */
-.#{$prefix}bs-none {
+.bs-none {
   border-style: none;
 }
-.#{$prefix}bs-hidden {
+
+.bs-hidden {
   border-style: hidden;
 }
-.#{$prefix}bs-double {
+
+.bs-double {
   border-style: double;
 }
-.#{$prefix}bs-groove {
+
+.bs-groove {
   border-style: groove;
 }
-.#{$prefix}bs-ridge {
+
+.bs-ridge {
   border-style: ridge;
 }
-.#{$prefix}bs-inset {
+
+.bs-inset {
   border-style: inset;
 }
-.#{$prefix}bs-outset {
+
+.bs-outset {
   border-style: outset;
 }
 
