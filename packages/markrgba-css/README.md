@@ -55,8 +55,6 @@ npm i @limm/markrgba-css
 
 ### 导入
 
-推荐全部引入，开启 `treeshaking` 会自动裁剪没有用到的类
-
 `${app}/App.vue`
 
 ```scss
@@ -77,6 +75,14 @@ npm i @limm/markrgba-css
 
 ## 5️⃣ 更新日志（CHANGELOG）
 
+### 1.0.0
+
+**功能（Features）**
+
+1. 增加 `qq-` 为前缀，防止冲突，为什么为 `qq-` ？，纯粹为了方便！好按到。
+2. 颜色由一位数改为三位数，例如 `c-1` 改为 `qq-c-111`
+3.
+
 ### 0.7.0
 
 **功能（Features）**
@@ -85,7 +91,30 @@ npm i @limm/markrgba-css
 
 ### 0.5.0
 
-#### BREAKING CHANGES
+BREAKING CHANGES
 
 - w-xp => wp-x
 - 移除 nvue 直接引入就能使用
+
+## 迁移
+
+### 从 0.x 迁移
+
+0.x 以后的版本的 class 增加了 `qq-` 为前缀，防止和自定义或其他的 css 库冲突。现在列出需要修改的类名方便全局查找替换。
+
+- {x} 代表可变数字，搜索前部分就行
+- [r] 代表可选 rpx 单位
+
+| 原来的类  | 修改后为   | 说明                 |
+| --------- | ---------- | -------------------- |
+|           |            |                      |
+| bbw-{x}   | qq-bw-{x}  | borderw: {x};        |
+| btw-{x}   | qq-btw-{x} | 外上边框             |
+| p-all-{x} | qq-p-{x}   | 内边距               |
+| p-{x}-0   | qq-py-{x}  | 上下内边距，左右为 0 |
+| p-0-{x}   | qq-px-{x}  | 左右内边距，上下为 0 |
+| m-all-{x} | qq-m-{x}   | 外边距               |
+
+## 用到的类
+
+bw-

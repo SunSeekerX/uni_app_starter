@@ -6,7 +6,7 @@ Github：[https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi
 
 这是一些 css 的简写类名的库，用于快速开发 uni-app。适用于 vue+nvue 文件。类名的设计参考了 [windicss](https://github.com/windicss/windicss) 的类名。
 
-大部分效果可以参考 [https://cn.windicss.org/utilities/typography.html#font-size](https://cn.windicss.org/utilities/typography.html#font-size) 预览。
+大部分效果可以参考 [https://cn.windicss.org/guide/](https://cn.windicss.org/guide/) 预览。
 
 在写代码的过程中，写 css 是非常头疼的事情，例如：
 
@@ -37,8 +37,6 @@ yarn add @limm/windi-css-uni
 ```
 
 ### 使用
-
-
 
 ## 4️⃣ class
 

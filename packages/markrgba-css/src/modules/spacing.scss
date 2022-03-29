@@ -1,0 +1,104 @@
+// padding 内边距
+// [top,right,bottom,left]{0~100}{px || rpx}
+@for $i from 0 through 100 {
+  /* padding-top (0~100)px */
+  .#{$prefix}pt-#{$i} {
+    padding-top: $i + px;
+  }
+  .#{$prefix}pt-#{$i}r {
+    padding-top: $i + rpx;
+  }
+
+  /* padding-right (0~100)px */
+  .#{$prefix}pr-#{$i} {
+    padding-right: $i + px;
+  }
+  .#{$prefix}pr-#{$i}r {
+    padding-right: $i + rpx;
+  }
+
+  /* padding-bottom (0~100)px */
+  .#{$prefix}pb-#{$i} {
+    padding-bottom: $i + px;
+  }
+  .#{$prefix}pb-#{$i}r {
+    padding-bottom: $i + rpx;
+  }
+
+  /* padding-left (0~100)px */
+  .#{$prefix}pl-#{$i} {
+    padding-left: $i + px;
+  }
+  .#{$prefix}pl-#{$i}r {
+    padding-left: $i + rpx;
+  }
+
+  /* padding (0~100)px */
+  .#{$prefix}p-#{$i} {
+    padding: $i + px;
+  }
+  .#{$prefix}p-#{$i}r {
+    padding: $i + rpx;
+  }
+}
+
+// margin 外边距
+// [top,right,bottom,left]{0~100}{px || rpx}
+@for $i from 0 through 100 {
+  /* margin-top (0~100)px */
+  .#{$prefix}mt-#{$i} {
+    margin-top: $i + px;
+  }
+  .#{$prefix}mt-#{$i}r {
+    margin-top: $i + rpx;
+  }
+
+  /* margin-right (0~100)px */
+  .#{$prefix}mr-#{$i} {
+    margin-right: $i + px;
+  }
+  .#{$prefix}mr-#{$i}r {
+    margin-right: $i + rpx;
+  }
+
+  /* margin-bottom (0~100)px */
+  .#{$prefix}mb-#{$i} {
+    margin-bottom: $i + px;
+  }
+  .#{$prefix}mb-#{$i}r {
+    margin-bottom: $i + rpx;
+  }
+
+  /* margin-left (0~100) */
+  .#{$prefix}ml-#{$i} {
+    margin-left: $i + px;
+  }
+  .#{$prefix}ml-#{$i}r {
+    margin-left: $i + rpx;
+  }
+
+  /* margin (0~100) */
+  .#{$prefix}m-#{$i} {
+    margin: $i + px;
+  }
+  .#{$prefix}m-#{$i}r {
+    margin: $i + rpx;
+  }
+}
+
+/* #ifndef APP-NVUE */
+.#{$prefix}mx-a {
+  margin: 0 auto;
+}
+
+/* 上下外边(0~50) */
+// @for $i from 0 through 50 {
+//   .#{$prefix}m-#{$i}-a {
+//     margin: $i + px auto;
+//   }
+//   .#{$prefix}m-#{$i}r-a {
+//     margin: $i + rpx auto;
+//   }
+// }
+
+/* #endif */

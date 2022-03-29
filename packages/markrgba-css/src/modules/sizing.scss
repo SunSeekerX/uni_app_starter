@@ -1,0 +1,39 @@
+// 宽度
+@for $i from 0 through 750 {
+  // width: {0~750}rpx;
+  .#{$prefix}w-#{$i}r {
+    width: $i + rpx;
+  }
+
+  // height: {0~750}rpx;
+  .#{$prefix}h-#{$i}r {
+    height: $i + rpx;
+  }
+}
+
+@for $i from 0 through 500 {
+  // width: {0~500}px;
+  .#{$prefix}w-#{$i} {
+    width: $i + px;
+  }
+
+  // height: {0~500}px;
+  .#{$prefix}h-#{$i} {
+    height: $i + px;
+  }
+}
+
+/* #ifndef APP-NVUE */
+@for $i from 0 through 100 {
+  // width: {0~100}%;
+  .#{$prefix}w-#{$i}p {
+    width: $i * 1%;
+  }
+
+  // height: {0~100}%;
+  .#{$prefix}h-#{$i}p {
+    height: $i * 1%;
+  }
+}
+
+/* #endif */

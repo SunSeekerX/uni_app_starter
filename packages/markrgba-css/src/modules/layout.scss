@@ -1,12 +1,11 @@
-/* ========== flex布局相关 ========== */
-.dp-f {
+.#{$prefix}dp-f {
   /* #ifndef APP-NVUE */
   display: flex !important;
 
   /* #endif */
 }
 
-.dp-fc {
+.#{$prefix}dp-fc {
   /* #ifndef APP-NVUE */
   display: flex !important;
 
@@ -16,110 +15,109 @@
 }
 
 /* #ifndef APP-NVUE */
-.dp-ib {
+.#{$prefix}dp-ib {
   display: inline-block !important;
 }
-
-.bs-bx {
+.#{$prefix}bs-bx {
   box-sizing: border-box;
 }
 
 /* #endif */
 
-.fd-r {
+.#{$prefix}fd-r {
   flex-direction: row !important;
 }
 
-.fd-rr {
+.#{$prefix}fd-rr {
   flex-direction: row-reverse !important;
 }
 
-.fd-c {
+.#{$prefix}fd-c {
   flex-direction: column !important;
 }
 
-.fd-cr {
+.#{$prefix}fd-cr {
   flex-direction: column-reverse !important;
 }
 
-.fw-w {
+.#{$prefix}fw-w {
   flex-wrap: wrap !important;
 }
 
-.fw-wr {
+.#{$prefix}fw-wr {
   flex-wrap: wrap-reverse !important;
 }
 
-.jc-fs {
+.#{$prefix}jc-fs {
   justify-content: flex-start !important;
 }
 
-.jc-fe {
+.#{$prefix}jc-fe {
   justify-content: flex-end !important;
 }
 
-.jc-c {
+.#{$prefix}jc-c {
   justify-content: center !important;
 }
 
-.jc-sb {
+.#{$prefix}jc-sb {
   justify-content: space-between !important;
 }
 
-.jc-sa {
+.#{$prefix}jc-sa {
   justify-content: space-around !important;
 }
 
-.ai-fs {
+.#{$prefix}ai-fs {
   align-items: flex-start !important;
 }
 
-.ai-fe {
+.#{$prefix}ai-fe {
   align-items: flex-end !important;
 }
 
-.ai-c {
+.#{$prefix}ai-c {
   align-items: center !important;
 }
 
 /* #ifndef APP-NVUE */
-.ai-bl {
+.#{$prefix}ai-bl {
   align-items: baseline !important;
 }
 
-.ac-fs {
+.#{$prefix}ac-fs {
   align-content: flex-start !important;
 }
 
-.ac-fe {
+.#{$prefix}ac-fe {
   align-content: flex-end !important;
 }
 
-.ac-c {
+.#{$prefix}ac-c {
   align-content: center !important;
 }
 
-.ac-sb {
+.#{$prefix}ac-sb {
   align-content: space-between !important;
 }
 
-.ac-sa {
+.#{$prefix}ac-sa {
   align-content: space-around !important;
 }
 
-.as-fs {
+.#{$prefix}as-fs {
   align-self: flex-start !important;
 }
 
-.as-fe {
+.#{$prefix}as-fe {
   align-self: flex-end !important;
 }
 
-.as-c {
+.#{$prefix}as-c {
   align-self: center !important;
 }
 
-.as-bl {
+.#{$prefix}as-bl {
   align-self: baseline !important;
 }
 
@@ -127,21 +125,21 @@
 
 /* flex (1~10) */
 @for $i from 1 through 100 {
-  .f-#{$i} {
+  .#{$prefix}f-#{$i} {
     flex: $i !important;
   }
 }
 
-/* 定位相关 */
-.pt-f {
+// position
+.#{$prefix}pt-f {
   position: fixed !important;
 }
 
-.pt-r {
+.#{$prefix}pt-r {
   position: relative !important;
 }
 
-.pt-a {
+.#{$prefix}pt-a {
   position: absolute !important;
 }
 
