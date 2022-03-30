@@ -1,3 +1,4 @@
+/* #ifndef APP-NVUE */
 // Order
 .#{$prefix}order-first {
   order: -9999;
@@ -17,6 +18,7 @@
     order: $i * -1;
   }
 }
+/* #endif */
 
 // Justify Content
 .#{$prefix}justify-start {
@@ -31,6 +33,7 @@
 .#{$prefix}justify-between {
   justify-content: space-between;
 }
+/* #ifndef APP-NVUE */
 .#{$prefix}justify-around {
   justify-content: space-around;
 }
@@ -91,6 +94,7 @@
 .#{$prefix}content-evenly {
   align-content: space-evenly;
 }
+/* #endif */
 
 // Align Items
 .#{$prefix}items-start {
@@ -102,40 +106,30 @@
 .#{$prefix}items-center {
   align-items: center;
 }
+/* #ifndef APP-NVUE */
 .#{$prefix}items-baseline {
   align-items: baseline;
 }
+/* #endif */
 .#{$prefix}items-stretch {
   align-items: stretch;
 }
 
+/* #ifndef APP-NVUE */
 // Align Self
 .#{$prefix}self-auto {
-  -ms-flex-item-align: auto;
-  -ms-grid-row-align: auto;
-  -webkit-align-self: auto;
   align-self: auto;
 }
 .#{$prefix}self-start {
-  -ms-flex-item-align: start;
-  -webkit-align-self: flex-start;
   align-self: flex-start;
 }
 .#{$prefix}self-end {
-  -ms-flex-item-align: end;
-  -webkit-align-self: flex-end;
   align-self: flex-end;
 }
 .#{$prefix}self-center {
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -webkit-align-self: center;
   align-self: center;
 }
 .#{$prefix}self-stretch {
-  -ms-flex-item-align: stretch;
-  -ms-grid-row-align: stretch;
-  -webkit-align-self: stretch;
   align-self: stretch;
 }
 
@@ -195,11 +189,14 @@
 .#{$prefix}place-self-stretch {
   place-self: stretch;
 }
+/* #endif */
 
 // Position
+/* #ifndef APP-NVUE */
 .#{$prefix}static {
   position: static;
 }
+/* #endif */
 .#{$prefix}fixed {
   position: fixed;
 }
@@ -240,35 +237,43 @@
   left: 100%;
 }
 @for $i from 0 through 50 {
+  // top: {0-50}px;
   .#{$prefix}top-#{$i} {
     top: $i + px;
   }
-  .#{$prefix}top-#{$i}r {
-    top: $i + rpx;
-  }
-
+  // right: {0-50}px;
   .#{$prefix}right-#{$i} {
     right: $i + px;
   }
-  .#{$prefix}right-#{$i}r {
-    right: $i + rpx;
-  }
-
+  // bottom: {0-50}px;
   .#{$prefix}bottom-#{$i} {
     bottom: $i + px;
   }
-  .#{$prefix}bottom-#{$i}r {
-    bottom: $i + rpx;
-  }
-
+  // left: {0-50}px;
   .#{$prefix}left-#{$i} {
     left: $i + px;
   }
+}
+@for $i from 0 through 100 {
+  // top: {0-100}rpx;
+  .#{$prefix}top-#{$i}r {
+    top: $i + rpx;
+  }
+  // right: {0-100}rpx;
+  .#{$prefix}right-#{$i}r {
+    right: $i + rpx;
+  }
+  // bottom: {0-100}rpx;
+  .#{$prefix}bottom-#{$i}r {
+    bottom: $i + rpx;
+  }
+  // left: {0-100}rpx;
   .#{$prefix}left-#{$i}r {
     left: $i + rpx;
   }
 }
 
+/* #ifndef APP-NVUE */
 // Floats
 .#{$prefix}float-right {
   float: right;
@@ -344,10 +349,9 @@
 .#{$prefix}z-auto {
   z-index: auto;
 }
-.#{$prefix}z-0 {
-  z-index: 0;
-}
-@for $i from 1 through 20 {
+/* #endif */
+
+@for $i from 0 through 20 {
   .#{$prefix}z-#{$i} {
     z-index: $i;
   }

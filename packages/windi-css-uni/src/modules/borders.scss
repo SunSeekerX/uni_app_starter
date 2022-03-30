@@ -2,25 +2,21 @@
 .#{$prefix}rounded-none {
   border-radius: 0px;
 }
-.#{$prefix}rounded-sm {
-  border-radius: 0.125rem;
-}
-.#{$prefix}rounded-1\/2 {
-  border-radius: 50%;
-}
 .#{$prefix}rounded-full {
   border-radius: 9999px;
 }
-@for $i from 0 through 20 {
+@for $i from 0 through 32 {
+  // border-radius: {0~32}px;
   .#{$prefix}rounded-#{$i} {
     border-radius: $i + px;
   }
-
+  // border-radius: {0~32}rpx;
   .#{$prefix}rounded-#{$i}r {
     border-radius: $i + rpx;
   }
-
-  // border-radius (0~100)%
+}
+@for $i from 0 through 100 {
+  // border-radius: {0~100}%;
   .#{$prefix}rounded-#{$i}p {
     border-radius: $i * 1%;
   }
@@ -28,38 +24,45 @@
 
 // 边框宽度 {0~10} px || rpx
 @for $i from 0 through 10 {
+  // border-width: {0~10}px;
   .#{$prefix}border-#{$i} {
     border-width: $i + px;
   }
-
-  .#{$prefix}border-#{$i}r {
-    border-width: $i + rpx;
-  }
-
+  // border-top-width: {0~10}px;
   .#{$prefix}border-top-#{$i} {
     border-top-width: $i + px;
   }
-  .#{$prefix}border-top-#{$i}r {
-    border-top-width: $i + rpx;
-  }
-
+  // border-right-width: {0~10}px;
   .#{$prefix}border-right-#{$i} {
     border-right-width: $i + px;
   }
-  .#{$prefix}border-right-#{$i}r {
-    border-right-width: $i + rpx;
-  }
-
+  // border-bottom-width: {0~10}px;
   .#{$prefix}border-bottom-#{$i} {
     border-bottom-width: $i + px;
   }
-  .#{$prefix}border-bottom-#{$i}r {
-    border-bottom-width: $i + rpx;
-  }
-
+  // border-left-width: {0~10}px;
   .#{$prefix}border-left-#{$i} {
     border-left-width: $i + px;
   }
+}
+@for $i from 0 through 20 {
+  // border-width: {0~20}rpx;
+  .#{$prefix}border-#{$i}r {
+    border-width: $i + rpx;
+  }
+  // border-top-width: {0~20}rpx;
+  .#{$prefix}border-top-#{$i}r {
+    border-top-width: $i + rpx;
+  }
+  // border-right-width: {0~20}rpx;
+  .#{$prefix}border-right-#{$i}r {
+    border-right-width: $i + rpx;
+  }
+  // border-bottom-width: {0~20}rpx;
+  .#{$prefix}border-bottom-#{$i}r {
+    border-bottom-width: $i + rpx;
+  }
+  // border-left-width: {0~20}rpx;
   .#{$prefix}border-left-#{$i}r {
     border-left-width: $i + rpx;
   }
@@ -69,9 +72,11 @@
 .#{$prefix}border-transparent {
   border-color: transparent;
 }
+/* #ifndef APP-NVUE */
 .#{$prefix}border-current {
   border-color: currentColor;
 }
+/* #endif */
 .#{$prefix}border-fff,
 .#{$prefix}border-white {
   border-color: #fff;
@@ -87,9 +92,11 @@
 .#{$prefix}border-dotted {
   border-style: dotted;
 }
+/* #ifndef APP-NVUE */
 .#{$prefix}border-double {
   border-style: double;
 }
 .#{$prefix}border-none {
   border-style: none;
 }
+/* #endif */

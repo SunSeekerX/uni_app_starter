@@ -69,6 +69,112 @@ npm i @limm/markrgba-css
 
 ## 4️⃣ class
 
+**border**
+
+- bw-
+- btw-
+- brw-
+- bbw-
+- blw-
+- br-
+- bs-
+
+**color**
+
+- c-
+- bg-c-f
+
+**font**
+
+- ta-
+- fw-
+- t-oh
+- td-lt
+- t-ohs
+- t-lc
+- fs-
+- lh-
+
+**height**
+
+- h-
+
+**layout**
+
+- dp-f
+- dp-fc
+- dp-ib
+- bs-bx
+- fd-r
+- fd-rr
+- fd-c
+- fd-cr
+- fw-w
+- fw-wr
+- jc-fs
+- jc-fe
+- jc-c
+- jc-sb
+- jc-sa
+- ai-fs
+- ai-fe
+- ai-c
+- ai-bl
+- ac-fs
+- ac-fe
+- ac-c
+- ac-sb
+- ac-sa
+- as-fs
+- as-fe
+- as-c
+- as-bl
+- f-
+- pt-f
+- pt-r
+- pt-a
+- t-0
+- l-0
+- r-0
+- bot-0
+- all-0
+
+**margin**
+
+- mt-
+- mr-
+- mb-
+- ml-
+- m-all-
+- m-
+
+**other**
+
+- cu-p
+- cu-d
+- oy-s
+- ox-s
+- lh-n
+- o-h
+- c-e
+- c-e-
+- z-
+- line-
+
+**padding**
+
+- pt-
+- pr-
+- pb-
+- pl-
+- p-all-
+- p-0-
+- p-
+
+**width**
+
+- w-
+
 |           |                           |     |
 | :-------: | :-----------------------: | :-: |
 | .bw-${x}  |    border-width: xpx;     |     |
