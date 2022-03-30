@@ -28,7 +28,7 @@ yarn add @limm/windi-css-uni
 
 ### 导入
 
-推荐全部引入，开启 `treeshaking` 会自动裁剪没有用到的类
+~~推荐全部引入，开启 `treeshaking` 会自动裁剪没有用到的类~~，截至目前，css 裁剪没有方案。
 
 `${app}/App.vue`
 
@@ -40,30 +40,228 @@ yarn add @limm/windi-css-uni
 
 ## 4️⃣ class
 
-### 排版
+### 通用
 
-#### Font Family
+#### 排版
 
-- font-sans
-- font-serif
-- font-mono
+|                      | 样式参考                                                     | 说明       |
+| -------------------- | ------------------------------------------------------------ | ---------- |
+| **Font Family**      |                                                              |            |
+| font-sans            |                                                              | !nvue      |
+| font-serif           |                                                              | !nvue      |
+| font-mono            |                                                              | !nvue      |
+|                      |                                                              |            |
+| **font-size**        |                                                              |            |
+| text-{8~48}          | font-size: {8-48}px;                                         |            |
+| text-{8~96}r         | font-size: {8-96}rpx;                                        |            |
+|                      |                                                              |            |
+| **字体平滑度**       |                                                              |            |
+| antialiased          | -webkit-font-smoothing: antialiased;<br />-moz-osx-font-smoothing: grayscale; | !nvue      |
+| subpixel-antialiased | -webkit-font-smoothing: auto;<br />-moz-osx-font-smoothing: auto; | !nvue      |
+|                      |                                                              |            |
+| **font-style**       |                                                              |            |
+| italic               | font-style: italic;                                          |            |
+| not-italic           | font-style: normal;                                          |            |
+|                      |                                                              |            |
+| **font-weight**      |                                                              |            |
+| font-{100-900}       | font-weight: {100-900};                                      | 步长为 100 |
+|                      |                                                              |            |
+| **连字符**           |                                                              |            |
+| hyphens-none         | hyphens: none;                                               | !nvue      |
+| hyphens-manual       | hyphens: manual;                                             | !nvue      |
+| hyphens-auto         | hyphens: auto;                                               | !nvue      |
+|                      |                                                              |            |
+| **行高**             |                                                              |            |
+| leading-{8-48}       | line-height: {8-48}px;                                       |            |
+| leading-{8-96}r      | line-height: {8-96}rpx;                                      |            |
+|                      |                                                              |            |
+| **文本对齐**         |                                                              |            |
+| text-left            | text-align: left;                                            |            |
+| text-center          | text-align: center;                                          |            |
+| text-right           | text-align: right;                                           |            |
+| text-justify         | text-align: justify;                                         | !nvue      |
+|                      |                                                              |            |
+| **文本颜色**         |                                                              |            |
+| text-transparent     | color: transparent;                                          | !nvue      |
+| text-current         | color: currentColor;                                         | !nvue      |
+| text-{000~900}       | color: #{000-900};                                           | 步长为 100 |
+|                      |                                                              |            |
+| **垂直对齐**         |                                                              |            |
+| align-baseline       | vertical-align: baseline;                                    | !nvue      |
+| align-top            | vertical-align: top;                                         | !nvue      |
+| align-middle         | vertical-align: middle;                                      | !nvue      |
+| align-bottom         | vertical-align: bottom;                                      | !nvue      |
+| align-text-top       | vertical-align: text-top;                                    | !nvue      |
+| align-text-bottom    | vertical-align: text-bottom;                                 | !nvue      |
+|                      |                                                              |            |
+| **空格**             |                                                              |            |
+| whitespace-normal    | white-space: normal;                                         | !nvue      |
+| whitespace-nowrap    | white-space: nowrap;                                         | !nvue      |
+| whitespace-pre       | white-space: pre;                                            | !nvue      |
+| whitespace-pre-line  | white-space: pre-line;                                       | !nvue      |
+| whitespace-pre-wrap  | white-space: pre-wrap;                                       | !nvue      |
+|                      |                                                              |            |
+| **断字**             |                                                              |            |
+| break-normal         | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal; |            |
+| break-words          | nvue: word-break: break-word;<br />!nvue: overflow-wrap: break-word; |            |
+| break-all            | nvue: word-break: anywhere;<br />!nvue: word-break: break-all; |            |
 
-#### 字体大小
+### 背景
 
-| text-{8-100}  | font-size: {8-100}px;    |
-| ------------- | ------------------------ |
-| text-{8-100}r | font-size: {8-100}rpx;   |
-| lh-{8-100}    | line-height: {8-100}px;  |
-| lh-{8-100}r   | line-height: {8-100}rpx; |
+|                      | 样式参考                           | 说明  |
+| -------------------- | ---------------------------------- | ----- |
+| **背景固定**         |                                    |       |
+| bg-fixed             | background-attachment: fixed;      | !nvue |
+| bg-local             | background-attachment: local;      | !nvue |
+| bg-scroll            | background-attachment: scroll;     | !nvue |
+|                      |                                    |       |
+| **背景裁剪**         |                                    |       |
+| bg-clip-border       | background-clip: border-box;       | !nvue |
+| bg-clip-padding      | background-clip: padding-box;      | !nvue |
+| bg-clip-content      | background-clip: content-box;      | !nvue |
+|                      |                                    |       |
+| **背景颜色**         |                                    |       |
+| bg-transparent       | background-color: transparent;     |       |
+| bg-current           | background-color: currentColor;    | !nvue |
+| bg-fff<br />bg-white | background-color: #fff;            |       |
+|                      |                                    |       |
+| **背景图像位置**     |                                    |       |
+| bg-bottom            | background-position: bottom;       | !nvue |
+| bg-center            | background-position: center;       | !nvue |
+| bg-left              | background-position: left;         | !nvue |
+| bg-left-bottom       | background-position: left bottom;  | !nvue |
+| bg-left-top          | background-position: left top;     | !nvue |
+| bg-right             | background-position: right;        | !nvue |
+| bg-right-bottom      | background-position: right bottom; | !nvue |
+| bg-right-top         | background-position: right top;    | !nvue |
+| bg-top               | background-position: top;          | !nvue |
+|                      |                                    |       |
+| **背景图像重复**     |                                    |       |
+| bg-repeat            | background-repeat: repeat;         | !nvue |
+| bg-repeat-x          | background-repeat: repeat-x;       | !nvue |
+| bg-repeat-y          | background-repeat: repeat-y;       | !nvue |
+| bg-repeat-round      | background-repeat: round;          | !nvue |
+| bg-repeat-space      | background-repeat: space;          | !nvue |
+|                      |                                    |       |
+| **背景图像大小**     |                                    |       |
+| bg-auto              | background-size: auto;             | !nvue |
+| bg-cover             | background-size: cover;            | !nvue |
+| bg-contain           | background-size: contain;          | !nvue |
+|                      |                                    |       |
+| **背景图像原点**     |                                    |       |
+| bg-origin-border     | background-origin: border-box;     | !nvue |
+| bg-origin-padding    | background-origin: padding-box;    | !nvue |
+| bg-origin-content    | background-origin: content-box;    | !nvue |
 
-#### 字体平滑度
+### 边框
 
-- antialiased
-- subpixel-antialiased
+|                              | 样式参考                        | 说明  |
+| ---------------------------- | ------------------------------- | ----- |
+| **边框圆角**                 |                                 |       |
+| rounded-none                 | border-radius: 0px;             |       |
+| rounded-full                 | border-radius: 9999px;          |       |
+| rounded-{0~32}               | border-radius: {0~32}px;        |       |
+| rounded-{0~64}r              | border-radius: {0~64}rpx;       |       |
+| rounded-{0~100}p             | border-radius: {0~100}%;        |       |
+|                              |                                 |       |
+| **边框宽度**                 |                                 |       |
+| border-{0-10}                | border-width: {0-10}px;         |       |
+| border-{0-20}r               | border-width: {0-20}rpx;        |       |
+| border-top-{0-10}            | border-top-width: {0-10}px;     |       |
+| border-top-{0-20}r           | border-top-width: {0-20}rpx;    |       |
+| border-right-{0-10}          | border-right-width: {0-10}px;   |       |
+| border-right-{0-20}r         | border-right-width: {0-20}rpx;  |       |
+| border-bottom-{0-10}         | border-bottom-width: {0-10}px;  |       |
+| border-bottom-{0-20}r        | border-bottom-width: {0-20}rpx; |       |
+| border-left-{0-10}           | border-left-width: {0-10}px;    |       |
+| border-left-{0-20}r          | border-left-width: {0-20}rpx;   |       |
+|                              |                                 |       |
+| **边框颜色**                 |                                 |       |
+| border-transparent           | border-color: transparent;      |       |
+| border-current               | border-color: currentColor;     | !nvue |
+| border-fff<br />border-white | border-color: #fff;             |       |
+|                              |                                 |       |
+| **边框样式**                 |                                 |       |
+| border-solid                 | border-style: solid;            |       |
+| border-dashed                | border-style: dashed;           |       |
+| border-dotted                | border-style: dotted;           |       |
+| border-double                | border-style: double;           | !nvue |
+| border-none                  | border-style: none;             | !nvue |
 
-#### 字体样式
+### 特效
 
-- italic
-- not-italic
+|                 | **样式参考**      | 说明     |
+| --------------- | ----------------- | -------- |
+| **Opacity**     |                   |          |
+| opacity-{0~100} | opacity: {0~100}; | 步长为 5 |
+
+### 布局
+
+#### Display
+
+|              | **样式参考**           | 说明  |
+| ------------ | ---------------------- | ----- |
+| **块级元素** |                        |       |
+| block        | display: block;        | !nvue |
+| inline-block | display: inline-block; | !nvue |
+| inline       | display: inline;       | !nvue |
+| contents     | display: contents;     | !nvue |
+| hidden       | display: none;         | !nvue |
+| visible      | visibility: visible;   | !nvue |
+| invisible    | visibility: hidden;    | !nvue |
+
+#### Flexbox
+
+|                   | **样式参考**                                                 | 说明  |
+| ----------------- | ------------------------------------------------------------ | ----- |
+| **Flex**          |                                                              |       |
+| flex              | display: flex !important;                                    | !nvue |
+| flex-center       | nvue: <br />justify-content: center !important;<br />align-items: center !important;<br />!nvue: <br />display: flex !important;<br />justify-content: center !important;<br />align-items: center !important; |       |
+|                   |                                                              |       |
+| **Flex 方向**     |                                                              |       |
+| flex-row          | flex-direction: row !important;                              |       |
+| flex-row-reverse  | flex-direction: row-reverse !important;                      |       |
+| flex-col          | flex-direction: column !important;                           |       |
+| flex-col-reverse  | flex-direction: column-reverse !important;                   |       |
+|                   |                                                              |       |
+| **Flex Wrap**     |                                                              |       |
+| flex-wrap         | flex-wrap: wrap !important;                                  |       |
+| flex-wrap-reverse | flex-wrap: wrap-reverse !important;                          |       |
+| flex-nowrap       | flex-wrap: nowrap !important;                                |       |
+|                   |                                                              |       |
+| **Flex Stretch**  |                                                              |       |
+| flex-auto         | flex: 1 1 auto;                                              | !nvue |
+| flex-initial      | flex: 0 1 auto;                                              | !nvue |
+| flex-none         | flex: none;                                                  | !nvue |
+| flex-{1~16}       | flex: {1-16} !important;                                     |       |
+|                   |                                                              |       |
+| **Flex Grow**     |                                                              |       |
+| flex-grow-0       | flex-grow: 0;                                                | !nvue |
+| flex-grow         | flex-grow: 1;                                                | !nvue |
+|                   |                                                              |       |
+| **Flex Shrink**   |                                                              |       |
+| flex-shrink-0     | flex-shrink: 0;                                              | !nvue |
+| flex-shrink       | flex-shrink: 1;                                              | !nvue |
+
+#### Posiioning
+
+|      | **样式参考** | 说明 |
+| ---- | ------------ | ---- |
+|      |              |      |
+|      |              |      |
+
+#### 尺寸
+
+|      | **样式参考** | 说明 |
+| ---- | ------------ | ---- |
+|      |              |      |
+|      |              |      |
+
+### 间隔
+
+|      | **样式参考** | 说明 |
+| ---- | ------------ | ---- |
+|      |              |      |
+|      |              |      |
 
 ## 5️⃣ 更新日志（CHANGELOG）

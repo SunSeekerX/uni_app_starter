@@ -97,10 +97,12 @@
 
 
 // 行高 {8~100} px || rpx
-@for $i from 8 through 100 {
+@for $i from 8 through 48 {
   .#{$prefix}leading-#{$i} {
     line-height: $i + px;
   }
+}
+@for $i from 8 through 96 {
   .#{$prefix}leading-#{$i}r {
     line-height: $i + rpx;
   }

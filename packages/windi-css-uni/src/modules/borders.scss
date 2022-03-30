@@ -10,7 +10,9 @@
   .#{$prefix}rounded-#{$i} {
     border-radius: $i + px;
   }
-  // border-radius: {0~32}rpx;
+}
+@for $i from 0 through 64 {
+  // border-radius: {0~64}rpx;
   .#{$prefix}rounded-#{$i}r {
     border-radius: $i + rpx;
   }
