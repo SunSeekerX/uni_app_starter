@@ -224,12 +224,14 @@
   bottom: 1px;
   left: 1px;
 }
+/* #ifndef APP-NVUE */
 .#{$prefix}inset-auto {
   top: auto;
   right: auto;
   bottom: auto;
   left: auto;
 }
+/* #endif */
 .#{$prefix}inset-full {
   top: 100%;
   right: 100%;
@@ -254,7 +256,7 @@
     left: $i + px;
   }
 }
-@for $i from 0 through 100 {
+@for $i from 1 through 100 {
   // top: {0-100}rpx;
   .#{$prefix}top-#{$i}r {
     top: $i + rpx;
@@ -351,7 +353,7 @@
 }
 /* #endif */
 
-@for $i from 0 through 20 {
+@for $i from 0 through 16 {
   .#{$prefix}z-#{$i} {
     z-index: $i;
   }

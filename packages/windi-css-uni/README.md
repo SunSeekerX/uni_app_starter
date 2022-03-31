@@ -33,7 +33,7 @@ yarn add @limm/windi-css-uni
 `${app}/App.vue`
 
 ```scss
-@import '@limm/windi-css-uni';
+@import '@limm/windi-css-uni/src/index.scss';
 ```
 
 ### 使用
@@ -103,8 +103,8 @@ yarn add @limm/windi-css-uni
 |                      |                                                              |            |
 | **断字**             |                                                              |            |
 | break-normal         | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal; |            |
-| break-words          | nvue: word-break: break-word;<br />!nvue: overflow-wrap: break-word; |            |
-| break-all            | nvue: word-break: anywhere;<br />!nvue: word-break: break-all; |            |
+| break-words          | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word; |            |
+| break-all            | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all; |            |
 
 ### 背景
 
@@ -245,23 +245,174 @@ yarn add @limm/windi-css-uni
 
 #### Posiioning
 
-|      | **样式参考** | 说明 |
-| ---- | ------------ | ---- |
-|      |              |      |
-|      |              |      |
+|                                 | **样式参考**                                                 | 说明  |
+| ------------------------------- | ------------------------------------------------------------ | ----- |
+|                                 |                                                              |       |
+| **Order**                       |                                                              |       |
+| order-first                     | order: -9999;                                                | !nvue |
+| order-last                      | order: 9999;                                                 | !nvue |
+| order-none                      | order: 0;                                                    | !nvue |
+| order-{0~16}                    | order: {0~16};                                               | !nvue |
+|                                 |                                                              |       |
+| **Justify Content**             |                                                              |       |
+| justify-start                   | justify-content: flex-start;                                 |       |
+| justify-end                     | justify-content: flex-end;                                   |       |
+| justify-center                  | justify-content: center;                                     |       |
+| justify-between                 | justify-content: space-between;                              |       |
+| justify-around                  | justify-content: space-around;                               | !nvue |
+| justify-evenly                  | justify-content: space-evenly;                               | !nvue |
+|                                 |                                                              |       |
+| **Justify Items**               |                                                              |       |
+| justify-items-auto              | justify-items: auto;                                         |       |
+| justify-items-start             | justify-items: start;                                        |       |
+| justify-items-end               | justify-items: end;                                          |       |
+| justify-self-center             | justify-self: center;                                        |       |
+| justify-self-stretch            | justify-self: stretch;                                       |       |
+|                                 |                                                              |       |
+| **Align Items**                 |                                                              |       |
+| items-start                     | align-items: flex-start;                                     |       |
+| items-end                       | align-items: flex-end;                                       |       |
+| items-center                    | align-items: center;                                         |       |
+| items-baseline                  | align-items: baseline;                                       | !nvue |
+| items-stretch                   | align-items: stretch;                                        |       |
+|                                 |                                                              |       |
+| **Align Self**                  |                                                              |       |
+| self-auto                       | align-self: auto;                                            | !nvue |
+| self-start                      | align-self: flex-start;                                      | !nvue |
+| self-end                        | align-self: flex-end;                                        | !nvue |
+| self-center                     | align-self: center;                                          | !nvue |
+| self-stretch                    | align-self: stretch;                                         | !nvue |
+|                                 |                                                              |       |
+| **Place Content**               |                                                              |       |
+| place-content-center            | place-content: center;                                       | !nvue |
+| place-content-start             | place-content: start;                                        | !nvue |
+| place-content-end               | place-content: end;                                          | !nvue |
+| place-content-between           | place-content: space-between;                                | !nvue |
+| place-content-around            | place-content: space-around;                                 | !nvue |
+| place-content-evenly            | place-content: space-evenly;                                 | !nvue |
+| place-content-stretch           | place-content: stretch;                                      | !nvue |
+|                                 |                                                              |       |
+| **Place Items**                 |                                                              |       |
+| place-items-auto                | place-items: auto;                                           | !nvue |
+| place-items-start               | place-items: start;                                          | !nvue |
+| place-items-end                 | place-items: end;                                            | !nvue |
+| place-items-center              | place-items: center;                                         | !nvue |
+| place-items-stretch             | place-items: stretch;                                        | !nvue |
+|                                 |                                                              |       |
+| **Place Self**                  |                                                              |       |
+| place-self-auto                 | place-self: auto;                                            | !nvue |
+| place-self-start                | place-self: start;                                           | !nvue |
+| place-self-end                  | place-self: end;                                             | !nvue |
+| place-self-center               | place-self: center;                                          | !nvue |
+| place-self-stretch              | place-self: stretch;                                         | !nvue |
+|                                 |                                                              |       |
+| **Position**                    |                                                              |       |
+| static                          | position: static;                                            | !nvue |
+| fixed                           | position: fixed;                                             |       |
+| absolute                        | position: absolute;                                          |       |
+| relative                        | position: relative;                                          |       |
+| sticky                          | position: sticky;                                            |       |
+|                                 |                                                              |       |
+| **Top / Right / Bottom / Left** |                                                              |       |
+| inset-0                         | top: 0px;<br />right: 0px;<br />bottom: 0px;<br />left: 0px; |       |
+| inset-px                        | top: 1px;<br />right: 1px;<br />bottom: 1px;<br />left: 1px; |       |
+| inset-auto                      | top: auto;<br />right: auto;<br />bottom: auto;<br />left: auto; |       |
+| inset-full                      | top: 100%;<br />right: 100%;<br />bottom: 100%;<br />left: 100%; |       |
+| top-{0-50}                      | top: {0-50}px;                                               |       |
+| top-{1-100}r                    | top: {1-100}rpx;                                             |       |
+| right-{0-50}                    | right: {0-50}px;                                             |       |
+| right-{1-100}r                  | right: {1-100}rpx;                                           |       |
+| bottom-{0-50}                   | bottom: {0-50}px;                                            |       |
+| bottom-{1-100}r                 | bottom: {1-100}rpx;                                          |       |
+| left-{0-50}                     | left: {0-50}px;                                              |       |
+| left-{1-100}r                   | left: {1-100}rpx;                                            |       |
+|                                 |                                                              |       |
+| **Floats**                      |                                                              |       |
+| float-right                     | float: right;                                                | !nvue |
+| float-left                      | float: left;                                                 | !nvue |
+| float-none                      | float: none;                                                 | !nvue |
+|                                 |                                                              |       |
+| **Clear**                       |                                                              |       |
+| clear-right                     | clear: right;                                                | !nvue |
+| clear-left                      | clear: left;                                                 | !nvue |
+| clear-both                      | clear: both;                                                 | !nvue |
+| clear-none                      | clear: none;                                                 | !nvue |
+|                                 |                                                              |       |
+| **Object Fit**                  |                                                              |       |
+| object-contain                  | object-fit: contain;                                         | !nvue |
+| object-cover                    | object-fit: cover;                                           | !nvue |
+| object-fill                     | object-fit: fill;                                            | !nvue |
+| object-none                     | object-fit: none;                                            | !nvue |
+| object-scale-down               | object-fit: scale-down;                                      | !nvue |
+|                                 |                                                              |       |
+| **Object Position**             |                                                              |       |
+| object-bottom                   | object-position: bottom;                                     | !nvue |
+| object-center                   | object-position: center;                                     | !nvue |
+| object-left                     | object-position: left;                                       | !nvue |
+| object-left-bottom              | object-position: left bottom;                                | !nvue |
+| object-left-top                 | object-position: left top;                                   | !nvue |
+| object-right                    | object-position: right;                                      | !nvue |
+| object-right-bottom             | object-position: right bottom;                               | !nvue |
+| object-right-top                | object-position: right top;                                  | !nvue |
+| object-top                      | object-position: top;                                        | !nvue |
+|                                 |                                                              |       |
+| **Z-Index**                     |                                                              |       |
+| z-auto                          | z-index: auto;                                               | !nvue |
+| z-{0~16}                        | z-index: {0~16};                                             |       |
 
 #### 尺寸
 
-|      | **样式参考** | 说明 |
-| ---- | ------------ | ---- |
-|      |              |      |
-|      |              |      |
+|                | **样式参考**             | 说明 |
+| -------------- | ------------------------ | ---- |
+| **width**      |                          |      |
+| w-{0~750}r     | width: {0~750}rpx;       |      |
+| w-{0~500}      | width: {0~500}px;        |      |
+| w-{0~100}p     | width: {0~100}%;         |      |
+|                |                          |      |
+| **height**     |                          |      |
+| h-{0~750}r     | height: {0~750}rpx;      |      |
+| h-{0~500}      | height: {0~500}px;       |      |
+| h-{0~100}p     | height: $i * 1%;         |      |
+|                |                          |      |
+| **Box Sizing** |                          |      |
+| box-border     | box-sizing: border-box;  |      |
+| box-content    | box-sizing: content-box; |      |
 
 ### 间隔
 
-|      | **样式参考** | 说明 |
-| ---- | ------------ | ---- |
-|      |              |      |
-|      |              |      |
+|             | **样式参考**                                              | 说明 |
+| ----------- | --------------------------------------------------------- | ---- |
+| **Padding** |                                                           |      |
+| pt-{0~100}  | padding-top: {0~100}px;                                   |      |
+| pt-{1~200}r | padding-top: {1~200}rpx;                                  |      |
+| pr-{0~100}  | padding-right: {0~100}px;                                 |      |
+| pr-{1~200}r | padding-right: {1~200}rpx;                                |      |
+| pb-{0~100}  | padding-bottom: {0~100}px;                                |      |
+| pb-{1~200}r | padding-bottom: {1~200}rpx;                               |      |
+| pl-{0~100}  | padding-left: {0~100}px;                                  |      |
+| pl-{1~200}r | padding-left: {1~200}rpx;                                 |      |
+| p-{0-100}   | padding: {0~100}px;                                       |      |
+| p-{1-200}r  | padding: {1~200}rpx;                                      |      |
+| px-{0-100}  | padding-right: {0~100}px;<br />padding-left: {0~100}px;   |      |
+| px-{1-200}r | padding-right: {1~200}rpx;<br />padding-left: {1~200}rpx; |      |
+| py-{0-100}  | padding-top: {0~100}px;<br />padding-bottom: {0~100}px;   |      |
+| py-{1-200}r | padding-top: {1~200}rpx;<br />padding-bottom: {1~200}rpx; |      |
+|             |                                                           |      |
+| **Margin**  |                                                           |      |
+| mt-{0~100}  | margin-top: {0~100}px;                                    |      |
+| mt-{1~200}r | margin-top: {1~200}rpx;                                   |      |
+| mr-{0~100}  | margin-right: {0~100}px;                                  |      |
+| mr-{1~200}r | margin-right: {1~200}rpx;                                 |      |
+| mb-{0~100}  | margin-bottom: {0~100}px;                                 |      |
+| mb-{1~200}r | margin-bottom: {1~200}rpx;                                |      |
+| ml-{0~100}  | margin-left: {0~100}px;                                   |      |
+| ml-{1~200}r | margin-left: {1~200}rpx;                                  |      |
+| m-{0-100}   | margin: {0~100}px;                                        |      |
+| m-{1-200}r  | margin: {1~200}rpx;                                       |      |
+| mx-{0-100}  | margin-right: {0~100}px;<br />margin-left: {0~100}px;     |      |
+| mx-{1-200}r | margin-right: {1~200}rpx;<br />margin-left: {1~200}rpx;   |      |
+| my-{0-100}  | margin-top: {0~100}px;<br />margin-bottom: {0~100}px;     |      |
+| my-{1-200}r | margin-top: {1~200}rpx;<br />margin-bottom: {1~200}rpx;   |      |
+| mx-auto     | margin-right: auto;<br />margin-left: auto;               |      |
 
 ## 5️⃣ 更新日志（CHANGELOG）

@@ -187,8 +187,11 @@
 
 // 断字
 .#{$prefix}break-normal {
-  word-break: normal;
+  /* #ifdef APP-NVUE */
+  word-wrap: normal;
+  /* #endif */
   /* #ifndef APP-NVUE */
+  word-break: normal;
   overflow-wrap: normal;
   /* #endif */
 }
@@ -197,14 +200,14 @@
   overflow-wrap: break-word;
   /* #endif */
   /* #ifdef APP-NVUE */
-  word-break: break-word;
+  word-wrap: break-word;
   /* #endif */
 }
 .#{$prefix}break-all {
+  /* #ifdef APP-NVUE */
+  word-wrap: anywhere;
+  /* #endif */
   /* #ifndef APP-NVUE */
   word-break: break-all;
-  /* #endif */
-  /* #ifdef APP-NVUE */
-  word-break: anywhere;
   /* #endif */
 }
