@@ -14,7 +14,13 @@ Github：[https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi
 2. **写 dom 不能直接写 css**；html 和 css 通常不在一块，需要滑动很长才能找到 css 定义的地方。
 3. **很多重复定义**；像 `diaplay: flex;` 这样的代码在 css 中写了太多太多
 
-[https://cn.windicss.org/](https://cn.windicss.org/)
+缺点也很明显
+
+1. **增加了一些项目根本没有用到的 css 类**
+2. **可读性不好**
+3. **有一定的学习成本和记忆成本**
+
+有舍有得，自行取舍。
 
 ## 2️⃣ 快速上手
 
@@ -39,7 +45,19 @@ yarn add @limm/windi-css-uni
 @import '@limm/windi-css-uni/src/index.scss';
 ```
 
+**关于大小**
+
+全部压缩之后大概 254KB 左右大小。nvue 下应该不到 200KB。
+
 ### 使用
+
+在下面列出的类名前增加 `wd-` 这是全局的前缀，为了防止和其他库或者你自己定义的样式冲突。
+
+```html
+<view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">
+  <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
+</view>
+```
 
 ## 4️⃣ class
 
@@ -258,10 +276,10 @@ yarn add @limm/windi-css-uni
 | order-{0~16}                    | order: {0~16};                                               | !nvue |
 |                                 |                                                              |       |
 | **Justify Content**             |                                                              |       |
-| justify-start                   | justify-content: flex-start;                                 |       |
-| justify-end                     | justify-content: flex-end;                                   |       |
-| justify-center                  | justify-content: center;                                     |       |
-| justify-between                 | justify-content: space-between;                              |       |
+| justify-start                   | justify-content: flex-start !important;                      |       |
+| justify-end                     | justify-content: flex-end;!important                         |       |
+| justify-center                  | justify-content: center !important;                          |       |
+| justify-between                 | justify-content: space-between !important;                   |       |
 | justify-around                  | justify-content: space-around;                               | !nvue |
 | justify-evenly                  | justify-content: space-evenly;                               | !nvue |
 |                                 |                                                              |       |
@@ -273,11 +291,11 @@ yarn add @limm/windi-css-uni
 | justify-self-stretch            | justify-self: stretch;                                       |       |
 |                                 |                                                              |       |
 | **Align Items**                 |                                                              |       |
-| items-start                     | align-items: flex-start;                                     |       |
-| items-end                       | align-items: flex-end;                                       |       |
-| items-center                    | align-items: center;                                         |       |
+| items-start                     | align-items: flex-start !important;                          |       |
+| items-end                       | align-items: flex-end;!important                             |       |
+| items-center                    | align-items: center;!important                               |       |
 | items-baseline                  | align-items: baseline;                                       | !nvue |
-| items-stretch                   | align-items: stretch;                                        |       |
+| items-stretch                   | align-items: stretch !important;                             |       |
 |                                 |                                                              |       |
 | **Align Self**                  |                                                              |       |
 | self-auto                       | align-self: auto;                                            | !nvue |
@@ -311,10 +329,10 @@ yarn add @limm/windi-css-uni
 |                                 |                                                              |       |
 | **Position**                    |                                                              |       |
 | static                          | position: static;                                            | !nvue |
-| fixed                           | position: fixed;                                             |       |
-| absolute                        | position: absolute;                                          |       |
-| relative                        | position: relative;                                          |       |
-| sticky                          | position: sticky;                                            |       |
+| fixed                           | position: fixed !important;                                  |       |
+| absolute                        | position: absolute !important;                               |       |
+| relative                        | position: relative !important;                               |       |
+| sticky                          | position: sticky !important;                                 |       |
 |                                 |                                                              |       |
 | **Top / Right / Bottom / Left** |                                                              |       |
 | inset-0                         | top: 0px;<br />right: 0px;<br />bottom: 0px;<br />left: 0px; |       |
@@ -361,7 +379,7 @@ yarn add @limm/windi-css-uni
 |                                 |                                                              |       |
 | **Z-Index**                     |                                                              |       |
 | z-auto                          | z-index: auto;                                               | !nvue |
-| z-{0~16}                        | z-index: {0~16};                                             |       |
+| z-{0~16}                        | z-index: {0~16} !important;                                  |       |
 
 #### 尺寸
 
@@ -418,4 +436,16 @@ yarn add @limm/windi-css-uni
 | my-{1-200}r | margin-top: {1\~200}rpx;<br />margin-bottom: {1\~200}rpx;   |      |
 | mx-auto     | margin-right: auto;<br />margin-left: auto;                 |      |
 
-## 5️⃣ 更新日志（CHANGELOG）
+## 5️⃣ 问题？
+
+1. 为什么没有 `max-width` 、`min-width`、`max-height`、`min-height` 等类？
+
+   付出 > 收益，性价比不高，项目中用到的地方不多。增加之后文件增大了 100 多 kb。没有必要。
+
+## 6️⃣ 更新日志（CHANGELOG）
+
+### 0.0.1
+
+**功能（Features）**
+
+- 第一个可用版本

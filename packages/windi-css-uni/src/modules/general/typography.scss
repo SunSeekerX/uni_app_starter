@@ -137,6 +137,9 @@
 .#{$prefix}text-000 {
   color: #000;
 }
+.#{$prefix}text-fff {
+  color: #fff;
+}
 @for $i from 1 through 9 {
   .#{$prefix}text-#{$i * 111} {
     color: unquote("##{$i * 111}");

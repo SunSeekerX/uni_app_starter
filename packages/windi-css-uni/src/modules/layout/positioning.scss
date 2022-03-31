@@ -22,16 +22,16 @@
 
 // Justify Content
 .#{$prefix}justify-start {
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 .#{$prefix}justify-end {
-  justify-content: flex-end;
+  justify-content: flex-end !important;
 }
 .#{$prefix}justify-center {
-  justify-content: center;
+  justify-content: center !important;
 }
 .#{$prefix}justify-between {
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 /* #ifndef APP-NVUE */
 .#{$prefix}justify-around {
@@ -98,13 +98,13 @@
 
 // Align Items
 .#{$prefix}items-start {
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 .#{$prefix}items-end {
-  align-items: flex-end;
+  align-items: flex-end !important;
 }
 .#{$prefix}items-center {
-  align-items: center;
+  align-items: center !important;
 }
 /* #ifndef APP-NVUE */
 .#{$prefix}items-baseline {
@@ -112,7 +112,7 @@
 }
 /* #endif */
 .#{$prefix}items-stretch {
-  align-items: stretch;
+  align-items: stretch !important;
 }
 
 /* #ifndef APP-NVUE */
@@ -198,16 +198,16 @@
 }
 /* #endif */
 .#{$prefix}fixed {
-  position: fixed;
+  position: fixed !important;
 }
 .#{$prefix}absolute {
-  position: absolute;
+  position: absolute !important;
 }
 .#{$prefix}relative {
-  position: relative;
+  position: relative !important;
 }
 .#{$prefix}sticky {
-  position: sticky;
+  position: sticky !important;
 }
 
 // Top / Right / Bottom / Left
@@ -355,6 +355,6 @@
 
 @for $i from 0 through 16 {
   .#{$prefix}z-#{$i} {
-    z-index: $i;
+    z-index: $i !important;
   }
 }

@@ -1,11 +1,11 @@
 <template>
   <view>
     <!-- 轮播图 -->
-    <view class="pt-r pt-10 w-750r">
+    <view class="wd-relative wd-pt-10 wd-w-750r">
       <!-- 背景色 -->
-      <view class="swiper-background w-750r" :style="{ backgroundColor: swiperBackground }"></view>
+      <view class="swiper-background wd-w-750r" :style="{ backgroundColor: swiperBackground }"></view>
       <swiper
-        class="swiper w-750r"
+        class="swiper wd-w-750r"
         style="height: 393.75rpx"
         circular
         autoplay
@@ -19,7 +19,9 @@
       </swiper>
 
       <!-- 自定义swiper指示器 -->
-      <view class="swiper-dots dp-f fd-r ai-c fs-12 c-f">
+      <view
+        class="wd-absolute wd-left-60r wd-bottom-15r wd-h-36r wd-flex wd-flex-row wd-items-center wd-text-12 wd-text-fff"
+      >
         <text class="num">{{ swiperCurrent + 1 }}</text>
         <text class="sign c-f fs-11">&#47;</text>
         <text class="num">{{ bannerList.length }}</text>
@@ -37,17 +39,17 @@
               url: item.url,
             })
           "
-          class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
+          class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
           :style="`background-image: ${item.backgroundImage};`"
         >
-          <view class="dp-f fd-c f-1">
-            <view class="item fd-r jc-sb ai-c lh-34">
-              <text class="c-f fs-16 fw-b">{{ item.name }}</text>
+          <view class="wd-flex wd-flex-col wd-flex-1">
+            <view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">
+              <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
             </view>
 
             <!-- 描述 -->
-            <view class="description mt-6">
-              <text class="description-text">{{ item.description }}</text>
+            <view class="wd-mt-6">
+              <text class="wd-text-12 wd-text-fff">{{ item.description }}</text>
             </view>
           </view>
 
@@ -131,14 +133,6 @@ export default {
   transition-delay: 0s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
-
-.swiper-dots {
-  position: absolute;
-  left: 60rpx;
-  bottom: 15rpx;
-  // width: 72rpx;
-  height: 36rpx;
-}
 .num {
   width: 36upx;
   height: 36upx;
@@ -148,17 +142,5 @@ export default {
   text-align: center;
   line-height: 36upx;
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.description {
-  // background-color: rgba(255, 255, 255, 0.3);
-  // border-radius: 6px;
-  // padding: 12px;
-}
-.description-text {
-  font-size: 12px;
-  // text-align: center;
-  color: #fff;
-  // word-break: break-all;
 }
 </style>

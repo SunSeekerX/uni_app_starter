@@ -19,8 +19,12 @@
   "license": "UNLICENSED",
   "author": "SunSeekerX",
   "main": "src/index.scss",
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "dev": "sass --no-source-map --no-charset --watch src/index.scss:dist/output.css",
+    "build": "sass --no-source-map --no-charset --style=compressed src/index.scss:dist/output.css",
     "gc": "git add -A && git-cz && git pull && git push",
     "pkg:sort": "npx sort-package-json",
     "pub": "npm publish --access public"
