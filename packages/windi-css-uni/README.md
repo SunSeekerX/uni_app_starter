@@ -33,6 +33,9 @@ yarn add @limm/windi-css-uni
 `${app}/App.vue`
 
 ```scss
+@import '@limm/windi-css-uni';
+
+// 如果使用了 stylelint
 @import '@limm/windi-css-uni/src/index.scss';
 ```
 
@@ -372,7 +375,7 @@ yarn add @limm/windi-css-uni
 | **height**     |                          |      |
 | h-{0~750}r     | height: {0~750}rpx;      |      |
 | h-{0~500}      | height: {0~500}px;       |      |
-| h-{0~100}p     | height: $i * 1%;         |      |
+| h-{0~100}p     | height: {0~100}%;        |      |
 |                |                          |      |
 | **Box Sizing** |                          |      |
 | box-border     | box-sizing: border-box;  |      |
@@ -380,39 +383,39 @@ yarn add @limm/windi-css-uni
 
 ### 间隔
 
-|             | **样式参考**                                              | 说明 |
-| ----------- | --------------------------------------------------------- | ---- |
-| **Padding** |                                                           |      |
-| pt-{0~100}  | padding-top: {0~100}px;                                   |      |
-| pt-{1~200}r | padding-top: {1~200}rpx;                                  |      |
-| pr-{0~100}  | padding-right: {0~100}px;                                 |      |
-| pr-{1~200}r | padding-right: {1~200}rpx;                                |      |
-| pb-{0~100}  | padding-bottom: {0~100}px;                                |      |
-| pb-{1~200}r | padding-bottom: {1~200}rpx;                               |      |
-| pl-{0~100}  | padding-left: {0~100}px;                                  |      |
-| pl-{1~200}r | padding-left: {1~200}rpx;                                 |      |
-| p-{0-100}   | padding: {0~100}px;                                       |      |
-| p-{1-200}r  | padding: {1~200}rpx;                                      |      |
-| px-{0-100}  | padding-right: {0~100}px;<br />padding-left: {0~100}px;   |      |
-| px-{1-200}r | padding-right: {1~200}rpx;<br />padding-left: {1~200}rpx; |      |
-| py-{0-100}  | padding-top: {0~100}px;<br />padding-bottom: {0~100}px;   |      |
-| py-{1-200}r | padding-top: {1~200}rpx;<br />padding-bottom: {1~200}rpx; |      |
-|             |                                                           |      |
-| **Margin**  |                                                           |      |
-| mt-{0~100}  | margin-top: {0~100}px;                                    |      |
-| mt-{1~200}r | margin-top: {1~200}rpx;                                   |      |
-| mr-{0~100}  | margin-right: {0~100}px;                                  |      |
-| mr-{1~200}r | margin-right: {1~200}rpx;                                 |      |
-| mb-{0~100}  | margin-bottom: {0~100}px;                                 |      |
-| mb-{1~200}r | margin-bottom: {1~200}rpx;                                |      |
-| ml-{0~100}  | margin-left: {0~100}px;                                   |      |
-| ml-{1~200}r | margin-left: {1~200}rpx;                                  |      |
-| m-{0-100}   | margin: {0~100}px;                                        |      |
-| m-{1-200}r  | margin: {1~200}rpx;                                       |      |
-| mx-{0-100}  | margin-right: {0~100}px;<br />margin-left: {0~100}px;     |      |
-| mx-{1-200}r | margin-right: {1~200}rpx;<br />margin-left: {1~200}rpx;   |      |
-| my-{0-100}  | margin-top: {0~100}px;<br />margin-bottom: {0~100}px;     |      |
-| my-{1-200}r | margin-top: {1~200}rpx;<br />margin-bottom: {1~200}rpx;   |      |
-| mx-auto     | margin-right: auto;<br />margin-left: auto;               |      |
+|             | **样式参考**                                                | 说明 |
+| ----------- | ----------------------------------------------------------- | ---- |
+| **Padding** |                                                             |      |
+| pt-{0~100}  | padding-top: {0~100}px;                                     |      |
+| pt-{1~200}r | padding-top: {1~200}rpx;                                    |      |
+| pr-{0~100}  | padding-right: {0~100}px;                                   |      |
+| pr-{1~200}r | padding-right: {1~200}rpx;                                  |      |
+| pb-{0~100}  | padding-bottom: {0~100}px;                                  |      |
+| pb-{1~200}r | padding-bottom: {1~200}rpx;                                 |      |
+| pl-{0~100}  | padding-left: {0~100}px;                                    |      |
+| pl-{1~200}r | padding-left: {1~200}rpx;                                   |      |
+| p-{0-100}   | padding: {0~100}px;                                         |      |
+| p-{1-200}r  | padding: {1~200}rpx;                                        |      |
+| px-{0-100}  | padding-right: {0\~100}px;<br />padding-left: {0\~100}px;   |      |
+| px-{1-200}r | padding-right: {1\~200}rpx;<br />padding-left: {1\~200}rpx; |      |
+| py-{0-100}  | padding-top: {0\~100}px;<br />padding-bottom: {0\~100}px;   |      |
+| py-{1-200}r | padding-top: {1\~200}rpx;<br />padding-bottom: {1\~200}rpx; |      |
+|             |                                                             |      |
+| **Margin**  |                                                             |      |
+| mt-{0~100}  | margin-top: {0~100}px;                                      |      |
+| mt-{1~200}r | margin-top: {1~200}rpx;                                     |      |
+| mr-{0~100}  | margin-right: {0~100}px;                                    |      |
+| mr-{1~200}r | margin-right: {1~200}rpx;                                   |      |
+| mb-{0~100}  | margin-bottom: {0~100}px;                                   |      |
+| mb-{1~200}r | margin-bottom: {1~200}rpx;                                  |      |
+| ml-{0~100}  | margin-left: {0~100}px;                                     |      |
+| ml-{1~200}r | margin-left: {1~200}rpx;                                    |      |
+| m-{0-100}   | margin: {0~100}px;                                          |      |
+| m-{1-200}r  | margin: {1~200}rpx;                                         |      |
+| mx-{0-100}  | margin-right: {0\~100}px;<br />margin-left: {0\~100}px;     |      |
+| mx-{1-200}r | margin-right: {1\~200}rpx;<br />margin-left: {1\~200}rpx;   |      |
+| my-{0-100}  | margin-top: {0\~100}px;<br />margin-bottom: {0\~100}px;     |      |
+| my-{1-200}r | margin-top: {1\~200}rpx;<br />margin-bottom: {1\~200}rpx;   |      |
+| mx-auto     | margin-right: auto;<br />margin-left: auto;                 |      |
 
 ## 5️⃣ 更新日志（CHANGELOG）
