@@ -1,15 +1,17 @@
 // Font Family
+
 /* #ifndef APP-NVUE */
 .#{$prefix}font-sans {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .#{$prefix}font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 .#{$prefix}font-mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
+
 /* #endif */
 
 // 字号 {8~100} px || rpx
@@ -27,6 +29,7 @@
 }
 
 // 字体平滑度
+
 /* #ifndef APP-NVUE */
 .#{$prefix}antialiased {
   -webkit-font-smoothing: antialiased;
@@ -36,6 +39,7 @@
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
 }
+
 /* #endif */
 
 // 字体样式
@@ -82,6 +86,7 @@
 }
 
 // 连字符
+
 /* #ifndef APP-NVUE */
 .#{$prefix}hyphens-none {
   hyphens: none;
@@ -92,6 +97,7 @@
 .#{$prefix}hyphens-auto {
   hyphens: auto;
 }
+
 /* #endif */
 
 // 行高 {8~100} px || rpx
@@ -116,20 +122,24 @@
 .#{$prefix}text-right {
   text-align: right;
 }
+
 /* #ifndef APP-NVUE */
 .#{$prefix}text-justify {
   text-align: justify;
 }
+
 /* #endif */
 
 // 文本颜色 {000~999}
+
 /* #ifndef APP-NVUE */
 .#{$prefix}text-transparent {
   color: transparent;
 }
 .#{$prefix}text-current {
-  color: currentColor;
+  color: currentcolor;
 }
+
 /* #endif */
 .#{$prefix}text-000,
 .#{$prefix}text-black {
@@ -141,11 +151,12 @@
 }
 @for $i from 1 through 9 {
   .#{$prefix}text-#{$i * 111} {
-    color: unquote("##{$i * 111}");
+    color: string.unquote('##{$i * 111}');
   }
 }
 
 // 垂直对齐
+
 /* #ifndef APP-NVUE */
 .#{$prefix}align-baseline {
   vertical-align: baseline;
@@ -165,42 +176,56 @@
 .#{$prefix}align-text-bottom {
   vertical-align: text-bottom;
 }
+
 /* #endif */
 
 // 文本溢出
 .#{$prefix}truncate {
-  text-overflow: ellipsis;
   /* #ifndef APP-NVUE */
   overflow: hidden;
-  -o-text-overflow: ellipsis;
-  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
   /* #endif */
 }
 .#{$prefix}overflow-ellipsis {
   /* #ifndef APP-NVUE */
-  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+
   /* #endif */
   text-overflow: ellipsis;
 }
 .#{$prefix}overflow-clip {
   /* #ifndef APP-NVUE */
   overflow: clip;
+
   /* #endif */
+
   /* #ifdef APP-NVUE */
   text-overflow: clip;
+
   /* #endif */
 }
 
-/* #ifdef APP-NVUE */
-// nvue 行数
+// 行数
 @for $i from 1 through 8 {
   .#{$prefix}lines-#{$i} {
+    /* #ifdef APP-NVUE */
     lines: $i;
+
+    /* #endif */
+
+    /* #ifndef APP-NVUE */
+    display: box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+
+    /* #endif */
   }
 }
-/* #endif */
 
 // 空格
+
 /* #ifndef APP-NVUE */
 .#{$prefix}whitespace-normal {
   white-space: normal;
@@ -217,31 +242,41 @@
 .#{$prefix}whitespace-pre-wrap {
   white-space: pre-wrap;
 }
+
 /* #endif */
 
 // 断字
 .#{$prefix}break-normal {
   /* #ifdef APP-NVUE */
   word-wrap: normal;
+
   /* #endif */
+
   /* #ifndef APP-NVUE */
   word-break: normal;
   overflow-wrap: normal;
+
   /* #endif */
 }
 .#{$prefix}break-words {
   /* #ifndef APP-NVUE */
   overflow-wrap: break-word;
+
   /* #endif */
+
   /* #ifdef APP-NVUE */
   word-wrap: break-word;
+
   /* #endif */
 }
 .#{$prefix}break-all {
   /* #ifdef APP-NVUE */
   word-wrap: anywhere;
+
   /* #endif */
+
   /* #ifndef APP-NVUE */
   word-break: break-all;
+
   /* #endif */
 }

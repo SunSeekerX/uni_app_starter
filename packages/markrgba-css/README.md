@@ -175,12 +175,6 @@ npm i @limm/markrgba-css
 
 - w-
 
-|           |                           |     |
-| :-------: | :-----------------------: | :-: |
-| .bw-${x}  |    border-width: xpx;     |     |
-| .bw-${x}r |    border-width: xrpx;    |     |
-| .btw-${x} | border-top-width: ${x}px; |     |
-
 ## 5️⃣ 更新日志（CHANGELOG）
 
 ### 0.7.0

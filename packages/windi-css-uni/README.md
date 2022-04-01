@@ -65,77 +65,77 @@ yarn add @limm/windi-css-uni
 
 #### 排版
 
-|                          | 样式参考                                                     | 说明       |
-| ------------------------ | ------------------------------------------------------------ | ---------- |
-| **Font Family**          |                                                              |            |
-| font-sans                |                                                              | !nvue      |
-| font-serif               |                                                              | !nvue      |
-| font-mono                |                                                              | !nvue      |
-|                          |                                                              |            |
-| **font-size**            |                                                              |            |
-| text-{8~48}              | font-size: {8-48}px;                                         |            |
-| text-{8~96}r             | font-size: {8-96}rpx;                                        |            |
-|                          |                                                              |            |
-| **字体平滑度**           |                                                              |            |
-| antialiased              | -webkit-font-smoothing: antialiased;<br />-moz-osx-font-smoothing: grayscale; | !nvue      |
-| subpixel-antialiased     | -webkit-font-smoothing: auto;<br />-moz-osx-font-smoothing: auto; | !nvue      |
-|                          |                                                              |            |
-| **font-style**           |                                                              |            |
-| italic                   | font-style: italic;                                          |            |
-| not-italic               | font-style: normal;                                          |            |
-|                          |                                                              |            |
-| **font-weight**          |                                                              |            |
-| font-{100-900}           | font-weight: {100-900};                                      | 步长为 100 |
-|                          |                                                              |            |
-| **连字符**               |                                                              |            |
-| hyphens-none             | hyphens: none;                                               | !nvue      |
-| hyphens-manual           | hyphens: manual;                                             | !nvue      |
-| hyphens-auto             | hyphens: auto;                                               | !nvue      |
-|                          |                                                              |            |
-| **行高**                 |                                                              |            |
-| leading-{8-48}           | line-height: {8-48}px;                                       |            |
-| leading-{8-96}r          | line-height: {8-96}rpx;                                      |            |
-|                          |                                                              |            |
-| **文本对齐**             |                                                              |            |
-| text-left                | text-align: left;                                            |            |
-| text-center              | text-align: center;                                          |            |
-| text-right               | text-align: right;                                           |            |
-| text-justify             | text-align: justify;                                         | !nvue      |
-|                          |                                                              |            |
-| **文本颜色**             |                                                              |            |
-| text-transparent         | color: transparent;                                          | !nvue      |
-| text-current             | color: currentColor;                                         | !nvue      |
-| text-000<br />text-black | color: #000;                                                 |            |
-| text-fff<br />text-white | color: #fff;                                                 |            |
-| text-{100~900}           | color: #{111-999};                                           | 步长为 100 |
-|                          |                                                              |            |
-| **垂直对齐**             |                                                              |            |
-| align-baseline           | vertical-align: baseline;                                    | !nvue      |
-| align-top                | vertical-align: top;                                         | !nvue      |
-| align-middle             | vertical-align: middle;                                      | !nvue      |
-| align-bottom             | vertical-align: bottom;                                      | !nvue      |
-| align-text-top           | vertical-align: text-top;                                    | !nvue      |
-| align-text-bottom        | vertical-align: text-bottom;                                 | !nvue      |
-|                          |                                                              |            |
-| **文本溢出**             |                                                              |            |
-| truncate                 | text-overflow: ellipsis;<br />!nvue<br />overflow: hidden;<br />-o-text-overflow: ellipsis;<br />white-space: nowrap; |            |
-| overflow-ellipsis        | text-overflow: ellipsis;<br />!nvue<br />-o-text-overflow: ellipsis; |            |
-| overflow-clip            | !nvue<br />overflow: clip;<br />nvue<br />text-overflow: clip; |            |
-|                          |                                                              |            |
-| **nvue 行数**            |                                                              |            |
-| lines-{1~8}              | lines: {1~8};                                                |            |
-|                          |                                                              |            |
-| **空格**                 |                                                              |            |
-| whitespace-normal        | white-space: normal;                                         | !nvue      |
-| whitespace-nowrap        | white-space: nowrap;                                         | !nvue      |
-| whitespace-pre           | white-space: pre;                                            | !nvue      |
-| whitespace-pre-line      | white-space: pre-line;                                       | !nvue      |
-| whitespace-pre-wrap      | white-space: pre-wrap;                                       | !nvue      |
-|                          |                                                              |            |
-| **断字**                 |                                                              |            |
-| break-normal             | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal; |            |
-| break-words              | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word; |            |
-| break-all                | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all; |            |
+|                          | 样式参考                                                                                                                         | 说明       |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Font Family**          |                                                                                                                                  |            |
+| font-sans                |                                                                                                                                  | !nvue      |
+| font-serif               |                                                                                                                                  | !nvue      |
+| font-mono                |                                                                                                                                  | !nvue      |
+|                          |                                                                                                                                  |            |
+| **font-size**            |                                                                                                                                  |            |
+| text-{8~48}              | font-size: {8-48}px;                                                                                                             |            |
+| text-{8~96}r             | font-size: {8-96}rpx;                                                                                                            |            |
+|                          |                                                                                                                                  |            |
+| **字体平滑度**           |                                                                                                                                  |            |
+| antialiased              | -webkit-font-smoothing: antialiased;<br />-moz-osx-font-smoothing: grayscale;                                                    | !nvue      |
+| subpixel-antialiased     | -webkit-font-smoothing: auto;<br />-moz-osx-font-smoothing: auto;                                                                | !nvue      |
+|                          |                                                                                                                                  |            |
+| **font-style**           |                                                                                                                                  |            |
+| italic                   | font-style: italic;                                                                                                              |            |
+| not-italic               | font-style: normal;                                                                                                              |            |
+|                          |                                                                                                                                  |            |
+| **font-weight**          |                                                                                                                                  |            |
+| font-{100-900}           | font-weight: {100-900};                                                                                                          | 步长为 100 |
+|                          |                                                                                                                                  |            |
+| **连字符**               |                                                                                                                                  |            |
+| hyphens-none             | hyphens: none;                                                                                                                   | !nvue      |
+| hyphens-manual           | hyphens: manual;                                                                                                                 | !nvue      |
+| hyphens-auto             | hyphens: auto;                                                                                                                   | !nvue      |
+|                          |                                                                                                                                  |            |
+| **行高**                 |                                                                                                                                  |            |
+| leading-{8-48}           | line-height: {8-48}px;                                                                                                           |            |
+| leading-{8-96}r          | line-height: {8-96}rpx;                                                                                                          |            |
+|                          |                                                                                                                                  |            |
+| **文本对齐**             |                                                                                                                                  |            |
+| text-left                | text-align: left;                                                                                                                |            |
+| text-center              | text-align: center;                                                                                                              |            |
+| text-right               | text-align: right;                                                                                                               |            |
+| text-justify             | text-align: justify;                                                                                                             | !nvue      |
+|                          |                                                                                                                                  |            |
+| **文本颜色**             |                                                                                                                                  |            |
+| text-transparent         | color: transparent;                                                                                                              | !nvue      |
+| text-current             | color: currentColor;                                                                                                             | !nvue      |
+| text-000<br />text-black | color: #000;                                                                                                                     |            |
+| text-fff<br />text-white | color: #fff;                                                                                                                     |            |
+| text-{100~900}           | color: #{111-999};                                                                                                               | 步长为 100 |
+|                          |                                                                                                                                  |            |
+| **垂直对齐**             |                                                                                                                                  |            |
+| align-baseline           | vertical-align: baseline;                                                                                                        | !nvue      |
+| align-top                | vertical-align: top;                                                                                                             | !nvue      |
+| align-middle             | vertical-align: middle;                                                                                                          | !nvue      |
+| align-bottom             | vertical-align: bottom;                                                                                                          | !nvue      |
+| align-text-top           | vertical-align: text-top;                                                                                                        | !nvue      |
+| align-text-bottom        | vertical-align: text-bottom;                                                                                                     | !nvue      |
+|                          |                                                                                                                                  |            |
+| **文本溢出**             |                                                                                                                                  |            |
+| truncate                 | text-overflow: ellipsis;<br />!nvue<br />overflow: hidden;<br />-o-text-overflow: ellipsis;                                      |            |
+| overflow-ellipsis        | text-overflow: ellipsis;<br />!nvue<br />-o-text-overflow: ellipsis;                                                             |            |
+| overflow-clip            | !nvue<br />overflow: clip;<br />nvue<br />text-overflow: clip;                                                                   |            |
+|                          |                                                                                                                                  |            |
+| **行数**                 |                                                                                                                                  |            |
+| lines-{1~8}              | nvue<br />lines: {1~8};<br />!nvue<br />display: -webkit-box;<br />-webkit-box-orient: vertical;<br />-webkit-line-clamp: {1~8}; |            |
+|                          |                                                                                                                                  |            |
+| **空格**                 |                                                                                                                                  |            |
+| whitespace-normal        | white-space: normal;                                                                                                             | !nvue      |
+| whitespace-nowrap        | white-space: nowrap;                                                                                                             | !nvue      |
+| whitespace-pre           | white-space: pre;                                                                                                                | !nvue      |
+| whitespace-pre-line      | white-space: pre-line;                                                                                                           | !nvue      |
+| whitespace-pre-wrap      | white-space: pre-wrap;                                                                                                           | !nvue      |
+|                          |                                                                                                                                  |            |
+| **断字**                 |                                                                                                                                  |            |
+| break-normal             | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal;                                      |            |
+| break-words              | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word;                                                        |            |
+| break-all                | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all;                                                                    |            |
 
 ### 背景
 
@@ -247,153 +247,153 @@ yarn add @limm/windi-css-uni
 
 #### Flexbox
 
-|                   | **样式参考**                                                 | 说明  |
-| ----------------- | ------------------------------------------------------------ | ----- |
-| **Flex**          |                                                              |       |
-| flex              | display: flex !important;                                    | !nvue |
+|                   | **样式参考**                                                                                                                                                                                                   | 说明  |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| **Flex**          |                                                                                                                                                                                                                |       |
+| flex              | display: flex !important;                                                                                                                                                                                      | !nvue |
 | flex-center       | nvue: <br />justify-content: center !important;<br />align-items: center !important;<br />!nvue: <br />display: flex !important;<br />justify-content: center !important;<br />align-items: center !important; |       |
-|                   |                                                              |       |
-| **Flex 方向**     |                                                              |       |
-| flex-row          | flex-direction: row !important;                              |       |
-| flex-row-reverse  | flex-direction: row-reverse !important;                      |       |
-| flex-col          | flex-direction: column !important;                           |       |
-| flex-col-reverse  | flex-direction: column-reverse !important;                   |       |
-|                   |                                                              |       |
-| **Flex Wrap**     |                                                              |       |
-| flex-wrap         | flex-wrap: wrap !important;                                  |       |
-| flex-wrap-reverse | flex-wrap: wrap-reverse !important;                          |       |
-| flex-nowrap       | flex-wrap: nowrap !important;                                |       |
-|                   |                                                              |       |
-| **Flex Stretch**  |                                                              |       |
-| flex-auto         | flex: 1 1 auto;                                              | !nvue |
-| flex-initial      | flex: 0 1 auto;                                              | !nvue |
-| flex-none         | flex: none;                                                  | !nvue |
-| flex-{1~16}       | flex: {1-16} !important;                                     |       |
-|                   |                                                              |       |
-| **Flex Grow**     |                                                              |       |
-| flex-grow-0       | flex-grow: 0;                                                | !nvue |
-| flex-grow         | flex-grow: 1;                                                | !nvue |
-|                   |                                                              |       |
-| **Flex Shrink**   |                                                              |       |
-| flex-shrink-0     | flex-shrink: 0;                                              | !nvue |
-| flex-shrink       | flex-shrink: 1;                                              | !nvue |
+|                   |                                                                                                                                                                                                                |       |
+| **Flex 方向**     |                                                                                                                                                                                                                |       |
+| flex-row          | flex-direction: row !important;                                                                                                                                                                                |       |
+| flex-row-reverse  | flex-direction: row-reverse !important;                                                                                                                                                                        |       |
+| flex-col          | flex-direction: column !important;                                                                                                                                                                             |       |
+| flex-col-reverse  | flex-direction: column-reverse !important;                                                                                                                                                                     |       |
+|                   |                                                                                                                                                                                                                |       |
+| **Flex Wrap**     |                                                                                                                                                                                                                |       |
+| flex-wrap         | flex-wrap: wrap !important;                                                                                                                                                                                    |       |
+| flex-wrap-reverse | flex-wrap: wrap-reverse !important;                                                                                                                                                                            |       |
+| flex-nowrap       | flex-wrap: nowrap !important;                                                                                                                                                                                  |       |
+|                   |                                                                                                                                                                                                                |       |
+| **Flex Stretch**  |                                                                                                                                                                                                                |       |
+| flex-auto         | flex: 1 1 auto;                                                                                                                                                                                                | !nvue |
+| flex-initial      | flex: 0 1 auto;                                                                                                                                                                                                | !nvue |
+| flex-none         | flex: none;                                                                                                                                                                                                    | !nvue |
+| flex-{1~16}       | flex: {1-16} !important;                                                                                                                                                                                       |       |
+|                   |                                                                                                                                                                                                                |       |
+| **Flex Grow**     |                                                                                                                                                                                                                |       |
+| flex-grow-0       | flex-grow: 0;                                                                                                                                                                                                  | !nvue |
+| flex-grow         | flex-grow: 1;                                                                                                                                                                                                  | !nvue |
+|                   |                                                                                                                                                                                                                |       |
+| **Flex Shrink**   |                                                                                                                                                                                                                |       |
+| flex-shrink-0     | flex-shrink: 0;                                                                                                                                                                                                | !nvue |
+| flex-shrink       | flex-shrink: 1;                                                                                                                                                                                                | !nvue |
 
 #### Posiioning
 
-|                                 | **样式参考**                                                 | 说明  |
-| ------------------------------- | ------------------------------------------------------------ | ----- |
-|                                 |                                                              |       |
-| **Order**                       |                                                              |       |
-| order-first                     | order: -9999;                                                | !nvue |
-| order-last                      | order: 9999;                                                 | !nvue |
-| order-none                      | order: 0;                                                    | !nvue |
-| order-{0~16}                    | order: {0~16};                                               | !nvue |
-|                                 |                                                              |       |
-| **Justify Content**             |                                                              |       |
-| justify-start                   | justify-content: flex-start !important;                      |       |
-| justify-end                     | justify-content: flex-end;!important                         |       |
-| justify-center                  | justify-content: center !important;                          |       |
-| justify-between                 | justify-content: space-between !important;                   |       |
-| justify-around                  | justify-content: space-around;                               | !nvue |
-| justify-evenly                  | justify-content: space-evenly;                               | !nvue |
-|                                 |                                                              |       |
-| **Justify Items**               |                                                              |       |
-| justify-items-auto              | justify-items: auto;                                         |       |
-| justify-items-start             | justify-items: start;                                        |       |
-| justify-items-end               | justify-items: end;                                          |       |
-| justify-self-center             | justify-self: center;                                        |       |
-| justify-self-stretch            | justify-self: stretch;                                       |       |
-|                                 |                                                              |       |
-| **Align Items**                 |                                                              |       |
-| items-start                     | align-items: flex-start !important;                          |       |
-| items-end                       | align-items: flex-end;!important                             |       |
-| items-center                    | align-items: center;!important                               |       |
-| items-baseline                  | align-items: baseline;                                       | !nvue |
-| items-stretch                   | align-items: stretch !important;                             |       |
-|                                 |                                                              |       |
-| **Align Self**                  |                                                              |       |
-| self-auto                       | align-self: auto;                                            | !nvue |
-| self-start                      | align-self: flex-start;                                      | !nvue |
-| self-end                        | align-self: flex-end;                                        | !nvue |
-| self-center                     | align-self: center;                                          | !nvue |
-| self-stretch                    | align-self: stretch;                                         | !nvue |
-|                                 |                                                              |       |
-| **Place Content**               |                                                              |       |
-| place-content-center            | place-content: center;                                       | !nvue |
-| place-content-start             | place-content: start;                                        | !nvue |
-| place-content-end               | place-content: end;                                          | !nvue |
-| place-content-between           | place-content: space-between;                                | !nvue |
-| place-content-around            | place-content: space-around;                                 | !nvue |
-| place-content-evenly            | place-content: space-evenly;                                 | !nvue |
-| place-content-stretch           | place-content: stretch;                                      | !nvue |
-|                                 |                                                              |       |
-| **Place Items**                 |                                                              |       |
-| place-items-auto                | place-items: auto;                                           | !nvue |
-| place-items-start               | place-items: start;                                          | !nvue |
-| place-items-end                 | place-items: end;                                            | !nvue |
-| place-items-center              | place-items: center;                                         | !nvue |
-| place-items-stretch             | place-items: stretch;                                        | !nvue |
-|                                 |                                                              |       |
-| **Place Self**                  |                                                              |       |
-| place-self-auto                 | place-self: auto;                                            | !nvue |
-| place-self-start                | place-self: start;                                           | !nvue |
-| place-self-end                  | place-self: end;                                             | !nvue |
-| place-self-center               | place-self: center;                                          | !nvue |
-| place-self-stretch              | place-self: stretch;                                         | !nvue |
-|                                 |                                                              |       |
-| **Position**                    |                                                              |       |
-| static                          | position: static;                                            | !nvue |
-| fixed                           | position: fixed !important;                                  |       |
-| absolute                        | position: absolute !important;                               |       |
-| relative                        | position: relative !important;                               |       |
-| sticky                          | position: sticky !important;                                 |       |
-|                                 |                                                              |       |
-| **Top / Right / Bottom / Left** |                                                              |       |
-| inset-0                         | top: 0px;<br />right: 0px;<br />bottom: 0px;<br />left: 0px; |       |
-| inset-px                        | top: 1px;<br />right: 1px;<br />bottom: 1px;<br />left: 1px; |       |
+|                                 | **样式参考**                                                     | 说明  |
+| ------------------------------- | ---------------------------------------------------------------- | ----- |
+|                                 |                                                                  |       |
+| **Order**                       |                                                                  |       |
+| order-first                     | order: -9999;                                                    | !nvue |
+| order-last                      | order: 9999;                                                     | !nvue |
+| order-none                      | order: 0;                                                        | !nvue |
+| order-{0~16}                    | order: {0~16};                                                   | !nvue |
+|                                 |                                                                  |       |
+| **Justify Content**             |                                                                  |       |
+| justify-start                   | justify-content: flex-start !important;                          |       |
+| justify-end                     | justify-content: flex-end;!important                             |       |
+| justify-center                  | justify-content: center !important;                              |       |
+| justify-between                 | justify-content: space-between !important;                       |       |
+| justify-around                  | justify-content: space-around;                                   | !nvue |
+| justify-evenly                  | justify-content: space-evenly;                                   | !nvue |
+|                                 |                                                                  |       |
+| **Justify Items**               |                                                                  |       |
+| justify-items-auto              | justify-items: auto;                                             |       |
+| justify-items-start             | justify-items: start;                                            |       |
+| justify-items-end               | justify-items: end;                                              |       |
+| justify-self-center             | justify-self: center;                                            |       |
+| justify-self-stretch            | justify-self: stretch;                                           |       |
+|                                 |                                                                  |       |
+| **Align Items**                 |                                                                  |       |
+| items-start                     | align-items: flex-start !important;                              |       |
+| items-end                       | align-items: flex-end;!important                                 |       |
+| items-center                    | align-items: center;!important                                   |       |
+| items-baseline                  | align-items: baseline;                                           | !nvue |
+| items-stretch                   | align-items: stretch !important;                                 |       |
+|                                 |                                                                  |       |
+| **Align Self**                  |                                                                  |       |
+| self-auto                       | align-self: auto;                                                | !nvue |
+| self-start                      | align-self: flex-start;                                          | !nvue |
+| self-end                        | align-self: flex-end;                                            | !nvue |
+| self-center                     | align-self: center;                                              | !nvue |
+| self-stretch                    | align-self: stretch;                                             | !nvue |
+|                                 |                                                                  |       |
+| **Place Content**               |                                                                  |       |
+| place-content-center            | place-content: center;                                           | !nvue |
+| place-content-start             | place-content: start;                                            | !nvue |
+| place-content-end               | place-content: end;                                              | !nvue |
+| place-content-between           | place-content: space-between;                                    | !nvue |
+| place-content-around            | place-content: space-around;                                     | !nvue |
+| place-content-evenly            | place-content: space-evenly;                                     | !nvue |
+| place-content-stretch           | place-content: stretch;                                          | !nvue |
+|                                 |                                                                  |       |
+| **Place Items**                 |                                                                  |       |
+| place-items-auto                | place-items: auto;                                               | !nvue |
+| place-items-start               | place-items: start;                                              | !nvue |
+| place-items-end                 | place-items: end;                                                | !nvue |
+| place-items-center              | place-items: center;                                             | !nvue |
+| place-items-stretch             | place-items: stretch;                                            | !nvue |
+|                                 |                                                                  |       |
+| **Place Self**                  |                                                                  |       |
+| place-self-auto                 | place-self: auto;                                                | !nvue |
+| place-self-start                | place-self: start;                                               | !nvue |
+| place-self-end                  | place-self: end;                                                 | !nvue |
+| place-self-center               | place-self: center;                                              | !nvue |
+| place-self-stretch              | place-self: stretch;                                             | !nvue |
+|                                 |                                                                  |       |
+| **Position**                    |                                                                  |       |
+| static                          | position: static;                                                | !nvue |
+| fixed                           | position: fixed !important;                                      |       |
+| absolute                        | position: absolute !important;                                   |       |
+| relative                        | position: relative !important;                                   |       |
+| sticky                          | position: sticky !important;                                     |       |
+|                                 |                                                                  |       |
+| **Top / Right / Bottom / Left** |                                                                  |       |
+| inset-0                         | top: 0px;<br />right: 0px;<br />bottom: 0px;<br />left: 0px;     |       |
+| inset-px                        | top: 1px;<br />right: 1px;<br />bottom: 1px;<br />left: 1px;     |       |
 | inset-auto                      | top: auto;<br />right: auto;<br />bottom: auto;<br />left: auto; |       |
 | inset-full                      | top: 100%;<br />right: 100%;<br />bottom: 100%;<br />left: 100%; |       |
-| top-{0-50}                      | top: {0-50}px;                                               |       |
-| top-{1-100}r                    | top: {1-100}rpx;                                             |       |
-| right-{0-50}                    | right: {0-50}px;                                             |       |
-| right-{1-100}r                  | right: {1-100}rpx;                                           |       |
-| bottom-{0-50}                   | bottom: {0-50}px;                                            |       |
-| bottom-{1-100}r                 | bottom: {1-100}rpx;                                          |       |
-| left-{0-50}                     | left: {0-50}px;                                              |       |
-| left-{1-100}r                   | left: {1-100}rpx;                                            |       |
-|                                 |                                                              |       |
-| **Floats**                      |                                                              |       |
-| float-right                     | float: right;                                                | !nvue |
-| float-left                      | float: left;                                                 | !nvue |
-| float-none                      | float: none;                                                 | !nvue |
-|                                 |                                                              |       |
-| **Clear**                       |                                                              |       |
-| clear-right                     | clear: right;                                                | !nvue |
-| clear-left                      | clear: left;                                                 | !nvue |
-| clear-both                      | clear: both;                                                 | !nvue |
-| clear-none                      | clear: none;                                                 | !nvue |
-|                                 |                                                              |       |
-| **Object Fit**                  |                                                              |       |
-| object-contain                  | object-fit: contain;                                         | !nvue |
-| object-cover                    | object-fit: cover;                                           | !nvue |
-| object-fill                     | object-fit: fill;                                            | !nvue |
-| object-none                     | object-fit: none;                                            | !nvue |
-| object-scale-down               | object-fit: scale-down;                                      | !nvue |
-|                                 |                                                              |       |
-| **Object Position**             |                                                              |       |
-| object-bottom                   | object-position: bottom;                                     | !nvue |
-| object-center                   | object-position: center;                                     | !nvue |
-| object-left                     | object-position: left;                                       | !nvue |
-| object-left-bottom              | object-position: left bottom;                                | !nvue |
-| object-left-top                 | object-position: left top;                                   | !nvue |
-| object-right                    | object-position: right;                                      | !nvue |
-| object-right-bottom             | object-position: right bottom;                               | !nvue |
-| object-right-top                | object-position: right top;                                  | !nvue |
-| object-top                      | object-position: top;                                        | !nvue |
-|                                 |                                                              |       |
-| **Z-Index**                     |                                                              |       |
-| z-auto                          | z-index: auto;                                               | !nvue |
-| z-{0~16}                        | z-index: {0~16} !important;                                  |       |
+| top-{0-50}                      | top: {0-50}px;                                                   |       |
+| top-{1-100}r                    | top: {1-100}rpx;                                                 |       |
+| right-{0-50}                    | right: {0-50}px;                                                 |       |
+| right-{1-100}r                  | right: {1-100}rpx;                                               |       |
+| bottom-{0-50}                   | bottom: {0-50}px;                                                |       |
+| bottom-{1-100}r                 | bottom: {1-100}rpx;                                              |       |
+| left-{0-50}                     | left: {0-50}px;                                                  |       |
+| left-{1-100}r                   | left: {1-100}rpx;                                                |       |
+|                                 |                                                                  |       |
+| **Floats**                      |                                                                  |       |
+| float-right                     | float: right;                                                    | !nvue |
+| float-left                      | float: left;                                                     | !nvue |
+| float-none                      | float: none;                                                     | !nvue |
+|                                 |                                                                  |       |
+| **Clear**                       |                                                                  |       |
+| clear-right                     | clear: right;                                                    | !nvue |
+| clear-left                      | clear: left;                                                     | !nvue |
+| clear-both                      | clear: both;                                                     | !nvue |
+| clear-none                      | clear: none;                                                     | !nvue |
+|                                 |                                                                  |       |
+| **Object Fit**                  |                                                                  |       |
+| object-contain                  | object-fit: contain;                                             | !nvue |
+| object-cover                    | object-fit: cover;                                               | !nvue |
+| object-fill                     | object-fit: fill;                                                | !nvue |
+| object-none                     | object-fit: none;                                                | !nvue |
+| object-scale-down               | object-fit: scale-down;                                          | !nvue |
+|                                 |                                                                  |       |
+| **Object Position**             |                                                                  |       |
+| object-bottom                   | object-position: bottom;                                         | !nvue |
+| object-center                   | object-position: center;                                         | !nvue |
+| object-left                     | object-position: left;                                           | !nvue |
+| object-left-bottom              | object-position: left bottom;                                    | !nvue |
+| object-left-top                 | object-position: left top;                                       | !nvue |
+| object-right                    | object-position: right;                                          | !nvue |
+| object-right-bottom             | object-position: right bottom;                                   | !nvue |
+| object-right-top                | object-position: right top;                                      | !nvue |
+| object-top                      | object-position: top;                                            | !nvue |
+|                                 |                                                                  |       |
+| **Z-Index**                     |                                                                  |       |
+| z-auto                          | z-index: auto;                                                   | !nvue |
+| z-{0~16}                        | z-index: {0~16} !important;                                      |       |
 
 #### 尺寸
 
@@ -458,16 +458,16 @@ yarn add @limm/windi-css-uni
 
 ## 6️⃣ 更新日志（CHANGELOG）
 
-### 0.0.4
+### 0.0.5
 
-**功能（Features）**
+- 修正文本溢出行数无效
+
+### 0.0.4
 
 - 增加文本溢出功能类
 - 增加 nvue 下 lines-{1~8} 功能类
 
 ### 0.0.3
-
-**功能（Features）**
 
 - 文档颜色描述修正
 - 增加边框颜色 border-black
@@ -475,15 +475,11 @@ yarn add @limm/windi-css-uni
 
 ### 0.0.2
 
-**功能（Features）**
-
 - 增加背景色 bg-{000~999}
 - 增加背景色 bg-black
 - 增加文字颜色 text-fff、text-white
 - 增加文字颜色 text-black
 
 ### 0.0.1
-
-**功能（Features）**
 
 - 第一个可用版本
