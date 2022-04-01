@@ -12,7 +12,6 @@
 }
 /* #endif */
 
-
 // 字号 {8~100} px || rpx
 @for $i from 8 through 48 {
   // font-size: {8~48}px;
@@ -20,7 +19,7 @@
     font-size: $i + px;
   }
 }
-@for $i from 8 through 96{
+@for $i from 8 through 96 {
   // font-size: {8~96}rpx;
   .#{$prefix}text-#{$i}r {
     font-size: $i + rpx;
@@ -95,7 +94,6 @@
 }
 /* #endif */
 
-
 // 行高 {8~100} px || rpx
 @for $i from 8 through 48 {
   .#{$prefix}leading-#{$i} {
@@ -124,7 +122,6 @@
 }
 /* #endif */
 
-
 // 文本颜色 {000~999}
 /* #ifndef APP-NVUE */
 .#{$prefix}text-transparent {
@@ -134,10 +131,12 @@
   color: currentColor;
 }
 /* #endif */
-.#{$prefix}text-000 {
+.#{$prefix}text-000,
+.#{$prefix}text-black {
   color: #000;
 }
-.#{$prefix}text-fff {
+.#{$prefix}text-fff,
+.#{$prefix}text-white {
   color: #fff;
 }
 @for $i from 1 through 9 {
@@ -168,6 +167,39 @@
 }
 /* #endif */
 
+// 文本溢出
+.#{$prefix}truncate {
+  text-overflow: ellipsis;
+  /* #ifndef APP-NVUE */
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  white-space: nowrap;
+  /* #endif */
+}
+.#{$prefix}overflow-ellipsis {
+  /* #ifndef APP-NVUE */
+  -o-text-overflow: ellipsis;
+  /* #endif */
+  text-overflow: ellipsis;
+}
+.#{$prefix}overflow-clip {
+  /* #ifndef APP-NVUE */
+  overflow: clip;
+  /* #endif */
+  /* #ifdef APP-NVUE */
+  text-overflow: clip;
+  /* #endif */
+}
+
+/* #ifdef APP-NVUE */
+// nvue 行数
+@for $i from 1 through 8 {
+  .#{$prefix}lines-#{$i} {
+    lines: $i;
+  }
+}
+/* #endif */
+
 // 空格
 /* #ifndef APP-NVUE */
 .#{$prefix}whitespace-normal {
@@ -186,7 +218,6 @@
   white-space: pre-wrap;
 }
 /* #endif */
-
 
 // 断字
 .#{$prefix}break-normal {

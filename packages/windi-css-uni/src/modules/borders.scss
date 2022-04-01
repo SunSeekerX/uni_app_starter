@@ -83,6 +83,15 @@
 .#{$prefix}border-white {
   border-color: #fff;
 }
+.#{$prefix}border-000,
+.#{$prefix}border-black {
+  border-color: #000;
+}
+@for $i from 1 through 9 {
+  .#{$prefix}border-#{$i * 111} {
+    border-color: unquote("##{$i * 111}");
+  }
+}
 
 // 边框样式
 .#{$prefix}border-solid {

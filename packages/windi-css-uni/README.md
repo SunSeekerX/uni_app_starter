@@ -47,7 +47,7 @@ yarn add @limm/windi-css-uni
 
 **关于大小**
 
-全部压缩之后大概 254KB 左右大小。nvue 下应该不到 200KB。
+全部压缩之后大概 258KB 左右大小。nvue 下应该不到 200KB。
 
 ### 使用
 
@@ -65,67 +65,77 @@ yarn add @limm/windi-css-uni
 
 #### 排版
 
-|                      | 样式参考                                                     | 说明       |
-| -------------------- | ------------------------------------------------------------ | ---------- |
-| **Font Family**      |                                                              |            |
-| font-sans            |                                                              | !nvue      |
-| font-serif           |                                                              | !nvue      |
-| font-mono            |                                                              | !nvue      |
-|                      |                                                              |            |
-| **font-size**        |                                                              |            |
-| text-{8~48}          | font-size: {8-48}px;                                         |            |
-| text-{8~96}r         | font-size: {8-96}rpx;                                        |            |
-|                      |                                                              |            |
-| **字体平滑度**       |                                                              |            |
-| antialiased          | -webkit-font-smoothing: antialiased;<br />-moz-osx-font-smoothing: grayscale; | !nvue      |
-| subpixel-antialiased | -webkit-font-smoothing: auto;<br />-moz-osx-font-smoothing: auto; | !nvue      |
-|                      |                                                              |            |
-| **font-style**       |                                                              |            |
-| italic               | font-style: italic;                                          |            |
-| not-italic           | font-style: normal;                                          |            |
-|                      |                                                              |            |
-| **font-weight**      |                                                              |            |
-| font-{100-900}       | font-weight: {100-900};                                      | 步长为 100 |
-|                      |                                                              |            |
-| **连字符**           |                                                              |            |
-| hyphens-none         | hyphens: none;                                               | !nvue      |
-| hyphens-manual       | hyphens: manual;                                             | !nvue      |
-| hyphens-auto         | hyphens: auto;                                               | !nvue      |
-|                      |                                                              |            |
-| **行高**             |                                                              |            |
-| leading-{8-48}       | line-height: {8-48}px;                                       |            |
-| leading-{8-96}r      | line-height: {8-96}rpx;                                      |            |
-|                      |                                                              |            |
-| **文本对齐**         |                                                              |            |
-| text-left            | text-align: left;                                            |            |
-| text-center          | text-align: center;                                          |            |
-| text-right           | text-align: right;                                           |            |
-| text-justify         | text-align: justify;                                         | !nvue      |
-|                      |                                                              |            |
-| **文本颜色**         |                                                              |            |
-| text-transparent     | color: transparent;                                          | !nvue      |
-| text-current         | color: currentColor;                                         | !nvue      |
-| text-{000~900}       | color: #{000-900};                                           | 步长为 100 |
-|                      |                                                              |            |
-| **垂直对齐**         |                                                              |            |
-| align-baseline       | vertical-align: baseline;                                    | !nvue      |
-| align-top            | vertical-align: top;                                         | !nvue      |
-| align-middle         | vertical-align: middle;                                      | !nvue      |
-| align-bottom         | vertical-align: bottom;                                      | !nvue      |
-| align-text-top       | vertical-align: text-top;                                    | !nvue      |
-| align-text-bottom    | vertical-align: text-bottom;                                 | !nvue      |
-|                      |                                                              |            |
-| **空格**             |                                                              |            |
-| whitespace-normal    | white-space: normal;                                         | !nvue      |
-| whitespace-nowrap    | white-space: nowrap;                                         | !nvue      |
-| whitespace-pre       | white-space: pre;                                            | !nvue      |
-| whitespace-pre-line  | white-space: pre-line;                                       | !nvue      |
-| whitespace-pre-wrap  | white-space: pre-wrap;                                       | !nvue      |
-|                      |                                                              |            |
-| **断字**             |                                                              |            |
-| break-normal         | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal; |            |
-| break-words          | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word; |            |
-| break-all            | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all; |            |
+|                          | 样式参考                                                     | 说明       |
+| ------------------------ | ------------------------------------------------------------ | ---------- |
+| **Font Family**          |                                                              |            |
+| font-sans                |                                                              | !nvue      |
+| font-serif               |                                                              | !nvue      |
+| font-mono                |                                                              | !nvue      |
+|                          |                                                              |            |
+| **font-size**            |                                                              |            |
+| text-{8~48}              | font-size: {8-48}px;                                         |            |
+| text-{8~96}r             | font-size: {8-96}rpx;                                        |            |
+|                          |                                                              |            |
+| **字体平滑度**           |                                                              |            |
+| antialiased              | -webkit-font-smoothing: antialiased;<br />-moz-osx-font-smoothing: grayscale; | !nvue      |
+| subpixel-antialiased     | -webkit-font-smoothing: auto;<br />-moz-osx-font-smoothing: auto; | !nvue      |
+|                          |                                                              |            |
+| **font-style**           |                                                              |            |
+| italic                   | font-style: italic;                                          |            |
+| not-italic               | font-style: normal;                                          |            |
+|                          |                                                              |            |
+| **font-weight**          |                                                              |            |
+| font-{100-900}           | font-weight: {100-900};                                      | 步长为 100 |
+|                          |                                                              |            |
+| **连字符**               |                                                              |            |
+| hyphens-none             | hyphens: none;                                               | !nvue      |
+| hyphens-manual           | hyphens: manual;                                             | !nvue      |
+| hyphens-auto             | hyphens: auto;                                               | !nvue      |
+|                          |                                                              |            |
+| **行高**                 |                                                              |            |
+| leading-{8-48}           | line-height: {8-48}px;                                       |            |
+| leading-{8-96}r          | line-height: {8-96}rpx;                                      |            |
+|                          |                                                              |            |
+| **文本对齐**             |                                                              |            |
+| text-left                | text-align: left;                                            |            |
+| text-center              | text-align: center;                                          |            |
+| text-right               | text-align: right;                                           |            |
+| text-justify             | text-align: justify;                                         | !nvue      |
+|                          |                                                              |            |
+| **文本颜色**             |                                                              |            |
+| text-transparent         | color: transparent;                                          | !nvue      |
+| text-current             | color: currentColor;                                         | !nvue      |
+| text-000<br />text-black | color: #000;                                                 |            |
+| text-fff<br />text-white | color: #fff;                                                 |            |
+| text-{100~900}           | color: #{111-999};                                           | 步长为 100 |
+|                          |                                                              |            |
+| **垂直对齐**             |                                                              |            |
+| align-baseline           | vertical-align: baseline;                                    | !nvue      |
+| align-top                | vertical-align: top;                                         | !nvue      |
+| align-middle             | vertical-align: middle;                                      | !nvue      |
+| align-bottom             | vertical-align: bottom;                                      | !nvue      |
+| align-text-top           | vertical-align: text-top;                                    | !nvue      |
+| align-text-bottom        | vertical-align: text-bottom;                                 | !nvue      |
+|                          |                                                              |            |
+| **文本溢出**             |                                                              |            |
+| truncate                 | text-overflow: ellipsis;<br />!nvue<br />overflow: hidden;<br />-o-text-overflow: ellipsis;<br />white-space: nowrap; |            |
+| overflow-ellipsis        | text-overflow: ellipsis;<br />!nvue<br />-o-text-overflow: ellipsis; |            |
+| overflow-clip            | !nvue<br />overflow: clip;<br />nvue<br />text-overflow: clip; |            |
+|                          |                                                              |            |
+| **nvue 行数**            |                                                              |            |
+| lines-{1~8}              | lines: {1~8};                                                |            |
+|                          |                                                              |            |
+| **空格**                 |                                                              |            |
+| whitespace-normal        | white-space: normal;                                         | !nvue      |
+| whitespace-nowrap        | white-space: nowrap;                                         | !nvue      |
+| whitespace-pre           | white-space: pre;                                            | !nvue      |
+| whitespace-pre-line      | white-space: pre-line;                                       | !nvue      |
+| whitespace-pre-wrap      | white-space: pre-wrap;                                       | !nvue      |
+|                          |                                                              |            |
+| **断字**                 |                                                              |            |
+| break-normal             | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal; |            |
+| break-words              | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word; |            |
+| break-all                | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all; |            |
 
 ### 背景
 
@@ -145,6 +155,8 @@ yarn add @limm/windi-css-uni
 | bg-transparent       | background-color: transparent;     |       |
 | bg-current           | background-color: currentColor;    | !nvue |
 | bg-fff<br />bg-white | background-color: #fff;            |       |
+| bg-000<br />bg-black | background-color: #000;            |       |
+| bg-{111-999}         | background-color: #{111-999};      |       |
 |                      |                                    |       |
 | **背景图像位置**     |                                    |       |
 | bg-bottom            | background-position: bottom;       | !nvue |
@@ -201,6 +213,8 @@ yarn add @limm/windi-css-uni
 | border-transparent           | border-color: transparent;      |       |
 | border-current               | border-color: currentColor;     | !nvue |
 | border-fff<br />border-white | border-color: #fff;             |       |
+| border-000<br />border-black | border-color: #000;             |       |
+| border-{111-999}             | border-color: #{111-999};       |       |
 |                              |                                 |       |
 | **边框样式**                 |                                 |       |
 | border-solid                 | border-style: solid;            |       |
@@ -443,6 +457,30 @@ yarn add @limm/windi-css-uni
    付出 > 收益，性价比不高，项目中用到的地方不多。增加之后文件增大了 100 多 kb。没有必要。
 
 ## 6️⃣ 更新日志（CHANGELOG）
+
+### 0.0.4
+
+**功能（Features）**
+
+- 增加文本溢出功能类
+- 增加 nvue 下 lines-{1~8} 功能类
+
+### 0.0.3
+
+**功能（Features）**
+
+- 文档颜色描述修正
+- 增加边框颜色 border-black
+- 增加边框颜色 border-{000~999}
+
+### 0.0.2
+
+**功能（Features）**
+
+- 增加背景色 bg-{000~999}
+- 增加背景色 bg-black
+- 增加文字颜色 text-fff、text-white
+- 增加文字颜色 text-black
 
 ### 0.0.1
 
