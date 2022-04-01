@@ -15,6 +15,9 @@ src/common/scss/markrgba-css/
 # Cnode 需要
 feng-parse
 
+# windi-css-uni
+packages/windi-css-uni
+
 # Temp
 src/utools
 src/components/c-icon
