@@ -1815,16 +1815,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-app-plus@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-app-plus@npm:2.0.1-alpha-34220220310003"
-  checksum: f7d3fb9c6b204c99315d477efbd80fa0a58d12c5af5df1d441b4f27949165a035b516c3e5e80de5a623a75ede8c8ebbd5674578252b50f3e50b9e99d726ee245
+"@dcloudio/uni-app-plus@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-app-plus@npm:2.0.1-alpha-34320220401001"
+  checksum: 5ff19a87387c57783b3c25ca65a3df75eef98b12be2617d0032d315e18d952aecc703476188d11dc7f712bcabc8eb8d74c78e5c5581be7c29d73a4987c019791
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-automator@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-automator@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-automator@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-automator@npm:2.0.1-alpha-34320220401001"
   dependencies:
     address: ^1.1.2
     debug: ^4.1.1
@@ -1840,40 +1840,40 @@ __metadata:
     jimp: ^0.10.1
     node-simctl: ^6.1.0
     puppeteer: ^3.0.1
-  checksum: 593b574cb30b4aab7ef9f387605a2c77563c3e3a37c956322c444625e47f0899a339b8745b334379b0859048fcef60f5bc4d740a521f4bac62bc7d83e370c7a8
+  checksum: e8dfea725191166c105f5baa12a604ddb05ce3052bdb5caf00009383ebc465b291419f6d2091d01663dfe770c6cf32b9e2a1003d2f14c08e5bbe75d5dbf4693a
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-cli-i18n@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-cli-i18n@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-cli-i18n@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-cli-i18n@npm:2.0.1-alpha-34320220401001"
   dependencies:
     i18n: ^0.13.3
     os-locale-s-fix: ^1.0.8-fix-1
-  checksum: 2ccfe49378156979d60a6e71ee5831539c6ff5d4067dc0e2c6f53e35349e20c524b6ae927633a2b8c6ff81ac79db1b1665136a4ea43c00a09fe79185810e7413
+  checksum: fb261dd578f44ea2fca759b38c7812ec34edd555bdecb65c6f4663d99565cfe8fa0f0c7e13842920dae419a1b8d704a1c5dec28548af449700b59abda8c3a8a9
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-cli-shared@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-cli-shared@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-cli-shared@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-cli-shared@npm:2.0.1-alpha-34320220401001"
   dependencies:
     hash-sum: ^1.0.2
     postcss-urlrewrite: ^0.2.2
     strip-json-comments: ^2.0.1
-  checksum: 27b7680d1d0310df526c9c3095cbca73bd1e9cb9b44eaaafcdf4f1ef5ce0a5d264ad88222907f9a8804e417c707acfd0160c3e32bc91fb62c66cdf1a5239ccdb
+  checksum: 5dcc46e212be8a0deb3dc876286f67fa997eb6329218be4a8ce14ecfc9c11f3490c92004f0827ba36e0016bc20c1e91bc4704210fe7df251b578d559f68a1e94
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-h5@npm:2.0.1-33920220314002":
-  version: 2.0.1-33920220314002
-  resolution: "@dcloudio/uni-h5@npm:2.0.1-33920220314002"
+"@dcloudio/uni-h5@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-h5@npm:2.0.1-alpha-34320220401001"
   dependencies:
     base64-arraybuffer: ^0.2.0
     intersection-observer: ^0.7.0
     pako: ^1.0.11
     safe-area-insets: ^1.4.1
-  checksum: 0e3042676f62f0de0e6bdec28b8c244896b128b6ef790162560cea4184a3bae664e584a558ed6a825d76f5e933c523f63168be201056cd2fac778209ea91b051
+  checksum: 0f30cb803338e5d15899e8ec045026874ffac6bbd6e149ae37403a89057e5cf5f7c111d5ad250443796477e267e056ca968ac118aa31cb45607c3bff7d21930f
   languageName: node
   linkType: hard
 
@@ -1884,16 +1884,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-i18n@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-i18n@npm:2.0.1-alpha-34220220310003"
-  checksum: 76ea0775584dedf480ecdb99a491771ddf48ca1bdd425d4541c3ee98694fecfc5c3fe84f5e6589a082fbec5afb35ff38c84b0b3902be42f73c59bccc0b53c734
+"@dcloudio/uni-i18n@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-i18n@npm:2.0.1-alpha-34320220401001"
+  checksum: 181d46232ea6830bd58bfe5519aa165c487bdcde4f1801620a259eb83a4838de99af4cfa09daa854e1cdec11ae6a1e33dea2f48766ea8ab7a00faaed2ff0d3af
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-migration@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-migration@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-migration@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-migration@npm:2.0.1-alpha-34320220401001"
   dependencies:
     commander: ^4.0.1
     fs-extra: ^8.1.0
@@ -1902,120 +1902,120 @@ __metadata:
     stricter-htmlparser2: ^3.9.6
   bin:
     uni-migration: bin/uni-migration.js
-  checksum: fc00871947b7d762816220af0e4bf71ddecf3a8050ae4d4e1dc15bd77430bb639b701b20b50737c5c80a20e51bfd33ebc7087dc4dba48eb5805ca8f9e142cdf5
+  checksum: 7db95660895e8146ebf22f8b6f584d7e4fb80d12f1935a1fddcd523621c6d096b17d10b8d79d77d6088349655fc55396b9e50ceac1cc4ba5b9c2eb164491af55
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-360@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-360@npm:2.0.1-alpha-34220220310003"
-  checksum: 5d96771ed2844c1b7b6ffa382704f8850f75af12b966bf03bc138379f150fca36e522f87afcaab65d7276a8fb20376aa9a6eab941977bb8313c0d04e166d984b
+"@dcloudio/uni-mp-360@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-360@npm:2.0.1-alpha-34320220401001"
+  checksum: 50d8d5e08a2f10e56465daa545feff1817fee7e2665305c87091e2d1609c41b796621bcb89e873701684e549150e86ea8d55255e392bc035c75e2887515b2a56
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-alipay@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-alipay@npm:2.0.1-alpha-34220220310003"
-  checksum: 0e61fa20069d9c675ffd9f564521f41af5243048cd503945b3c715fc3c8e523f9c73519db3cd68df601c40b70a61a37b236f2ab0f5b13424caf4a6e61455df26
+"@dcloudio/uni-mp-alipay@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-alipay@npm:2.0.1-alpha-34320220401001"
+  checksum: 907b7fb357208f4af1a17656d75f3e60315c9aeba370c646cc9a163132d257603d307220399c24418e23716f1170568c83c10e595c86d64a584897dfe57e055f
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-baidu@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-baidu@npm:2.0.1-alpha-34220220310003"
-  checksum: d4f78e234de039275fbe975ae4159f1a3cacb2806a92c3ef5fb82e500d47c031fbcd92ffc94a9ea2fcaf309833b1524e585925c1c1533a04ffcb16c0e0d5ac10
+"@dcloudio/uni-mp-baidu@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-baidu@npm:2.0.1-alpha-34320220401001"
+  checksum: e30267920ccdc177a72956d4141161f849ac0d198a2fa6344ea8f602afd1ad02fb7baeb990a6a7a06b502b89654936732604aba9239d91afb12b3779761561c8
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-qq@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-qq@npm:2.0.1-alpha-34220220310003"
-  checksum: 596cd53d86164bc0ab5bf837d50eeea021d5151b02d1d922fcc103a3c48a56a765c97bbca30f3d3416d6258a9ac9333f063a9045e7078d26b3908c11b85e772b
+"@dcloudio/uni-mp-qq@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-qq@npm:2.0.1-alpha-34320220401001"
+  checksum: 4cc1dce6c0c7907cf055c332a5a2704d91de92f95d9b24497f62bdcdc3baa4a13050078c3c3db07f26bb1af2e90613ad2772eb61b7a8ffb6da980e36b079f8bf
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-toutiao@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-toutiao@npm:2.0.1-alpha-34220220310003"
-  checksum: dfe8bd928e0f8b11de3f53e13f94581088d9a490d813f31db09b34352c5c5ff0aaaec2f1bc1d1e85a9964ab7a53e6ca5247f3c4639d66f438211fb811fd4bbf6
+"@dcloudio/uni-mp-toutiao@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-toutiao@npm:2.0.1-alpha-34320220401001"
+  checksum: 9d8d2c3120b54a48874deef90b479118d22cf96d303085fe06fac2d79759180d3b6d70100d77d50bace5b770a8eb96d5ecd4602289a31fbbe731482b918dccbb
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-vue@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-vue@npm:2.0.1-alpha-34220220310003"
-  checksum: fcee1f842fa9c0f22771a083808afeb20d18c7ad84b496df886d112970340cbdf11591253755d07d35093e4d525544fd9c3e751a5c3616d70bf6451ecebf4eb2
+"@dcloudio/uni-mp-vue@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-vue@npm:2.0.1-alpha-34320220401001"
+  checksum: 37bd07ba63d47ecdde3f5bd39209cb804519e57212bb56bd2afa04dff3333902ac548f630411ef5d1660bd04d24cf9b3d87c17a6743d4fdf557fb019d613ebfd
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-mp-weixin@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-mp-weixin@npm:2.0.1-alpha-34220220310003"
-  checksum: c0edd7811e1d1c1b0110f67842b78be2d31d49d9f2e31a8816f1fecc330206c2ffd7ff4813ed5f33763de60d4a4256d52d1f1784756d4541d72068ae551bab40
+"@dcloudio/uni-mp-weixin@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-mp-weixin@npm:2.0.1-alpha-34320220401001"
+  checksum: 9fcc3e7803d230635cb632f0bd43035b904ae01c61f592d51c6dcb8ee763a347d37f31aadbe88c520f98ad9ce1f5507d890ac3fd0448b1cdec22254839f7b214
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-quickapp-native@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-quickapp-native@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-quickapp-native@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-quickapp-native@npm:2.0.1-alpha-34320220401001"
   dependencies:
     "@hap-toolkit/dsl-vue": 0.6.13
     "@hap-toolkit/packager": 0.6.13
     "@hap-toolkit/server": 0.6.13
     module-alias: ^2.1.0
-  checksum: cdacd7aad9e7fbb04bb5d02560a5554c162abc1a35ad313a6c4816d2cdd72328faa53c8f9c4e71ab54570e59e913e070f0c8017b3a2b6570451dce6d055a1b8a
+  checksum: 97ffb514bc012b74c0a8bb36238db18b973653b76eab79728d503790d97f02b959ea51e9b92b4bc37a509a94fddb2b3c6f23f0075664f36f895c522cf3be31e3
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-quickapp-webview@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-quickapp-webview@npm:2.0.1-alpha-34220220310003"
-  checksum: 4b1358d77e4d141f3dbc126591d9a63a45caa23d09824f16bf706474eba55b480b255a73691989386271502eecfc1f11416ddd853d4d46a4065e66fa015ae307
+"@dcloudio/uni-quickapp-webview@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-quickapp-webview@npm:2.0.1-alpha-34320220401001"
+  checksum: 9f49e9e095be94e8631397da600359e6e144ad33651d0098c60f048d33341990b6922de89acd5592700da854ac50680f52bb17abb2f1455cbee534f66dfae064
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-stat@npm:^2.0.1-33920220314002, @dcloudio/uni-stat@npm:^2.0.1-alpha-34220220310003":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-stat@npm:2.0.1-alpha-34220220310003"
-  checksum: 1f331e8df45f7e5db47f41c43cbe33ed17d3778e6efda133538190b52c4f6d4b74c3017a91b048cf0f75479147d79238d77771bd4fd89b32122ad85a8a41862d
+"@dcloudio/uni-stat@npm:^2.0.1-33920220314003, @dcloudio/uni-stat@npm:^2.0.1-alpha-34320220401001":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-stat@npm:2.0.1-alpha-34320220401001"
+  checksum: c2ef7210302ed4d28f79cf78491b14801b90a735ce8f7557ff46d03da78c8deee578455a81dd260ebd1260b8637418703b6172914091560b56f39222877ee3cc
   languageName: node
   linkType: hard
 
-"@dcloudio/uni-template-compiler@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/uni-template-compiler@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/uni-template-compiler@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/uni-template-compiler@npm:2.0.1-alpha-34320220401001"
   dependencies:
     "@babel/parser": ^7.3.3
     "@babel/traverse": ^7.3.3
     "@babel/types": ^7.3.3
     vue-template-compiler: ^2.6.10
-  checksum: 6eba0effdde064624ca10ed54571932e696965907f47d5ddac78f560a6b4348e496314b7658f4801f9543ca3abeb431ca8b1ae1448f9b8338b8e3893a1ab123c
+  checksum: adadb5f8f04fdbb43b97d3966ac68ac3f7052a237e34ecd4f23218f0e4c56041a70f635154f6d601d075e60a85cada5730f8f631da4155281f908572df005976
   languageName: node
   linkType: hard
 
-"@dcloudio/vue-cli-plugin-hbuilderx@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/vue-cli-plugin-hbuilderx@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/vue-cli-plugin-hbuilderx@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/vue-cli-plugin-hbuilderx@npm:2.0.1-alpha-34320220401001"
   dependencies:
     acorn: ^5.2.1
     css: ~2.2.1
     escodegen: ^1.8.1
-  checksum: f8406e12749ef4b990d0de93f23929d6bd56280222a789d611778bb6acbe5fba68304f259a728b4cad47d91ee7b7c9481b47aefe60b759a1f2fb9241d598f7a0
+  checksum: 4228873d4fbd88ba2bd687a5f8aed3d3ae105e64176fcaffd4795e70c78361cc4c10d9e6a784051cb9b7275488ddc489f0dcfd37dc118b0f0e25c9f166cb65c0
   languageName: node
   linkType: hard
 
-"@dcloudio/vue-cli-plugin-uni-optimize@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/vue-cli-plugin-uni-optimize@npm:2.0.1-alpha-34220220310003"
-  checksum: 7302e11ed47eb6478c5e89596dbe775fd3a58cc6ba4987cf15b3c7f43ffa62e88244ac4ae48d3187d954b1a95e7c2247278699bca9976a01260ad2ac12ff9f59
+"@dcloudio/vue-cli-plugin-uni-optimize@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/vue-cli-plugin-uni-optimize@npm:2.0.1-alpha-34320220401001"
+  checksum: 47956027758c08d2388cf7981d6c219074c92f497b85205c7a39d9cee0f986550f79c8a9400fb4bf539370cbe89deb97982c39e5834b233f53316505c5d08228
   languageName: node
   linkType: hard
 
-"@dcloudio/vue-cli-plugin-uni@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/vue-cli-plugin-uni@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/vue-cli-plugin-uni@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/vue-cli-plugin-uni@npm:2.0.1-alpha-34320220401001"
   dependencies:
-    "@dcloudio/uni-stat": ^2.0.1-alpha-34220220310003
+    "@dcloudio/uni-stat": ^2.0.1-alpha-34320220401001
     buffer-json: ^2.0.0
     clone-deep: ^4.0.1
     copy-webpack-plugin: ^5.1.1
@@ -2038,24 +2038,24 @@ __metadata:
     xregexp: 4.0.0
   bin:
     uniapp-cli: bin/uniapp-cli.js
-  checksum: 89eb5f4075a58f5db8b78f76c6b6d42c0212e020a9bfa1633483ca0a6cf6befc78e29f8249b57a554dc63e654977bef0d9d639035a5795d975fc878c622fee1a
+  checksum: e2c77b3863b5f63a736ec810450783dccdfa71eb65b0d47adb5b5c2d285557d167606f7da72516e5d21ed828d7e3157e57cba4dec4172fc476e4501a96745b8b
   languageName: node
   linkType: hard
 
-"@dcloudio/webpack-uni-mp-loader@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/webpack-uni-mp-loader@npm:2.0.1-alpha-34220220310003"
-  checksum: a577337df4a1beae9de67fc3c9ec90f4a6d69d7985608ca53160472bf057096b8fd3a6a8fe662356cfe85c045e3b69c3537bff87287717a134132d03b5c4894c
+"@dcloudio/webpack-uni-mp-loader@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/webpack-uni-mp-loader@npm:2.0.1-alpha-34320220401001"
+  checksum: 34ac29d1dd87dd4cbcf08b6055ec54b502e6d3f369faedeba5bf46579023d2b83c96685d787dce6525b07c877c9ccf7679222a4330e9d5c915b3549dbec638f0
   languageName: node
   linkType: hard
 
-"@dcloudio/webpack-uni-pages-loader@npm:^2.0.1-33920220314002":
-  version: 2.0.1-alpha-34220220310003
-  resolution: "@dcloudio/webpack-uni-pages-loader@npm:2.0.1-alpha-34220220310003"
+"@dcloudio/webpack-uni-pages-loader@npm:^2.0.1-33920220314003":
+  version: 2.0.1-alpha-34320220401001
+  resolution: "@dcloudio/webpack-uni-pages-loader@npm:2.0.1-alpha-34320220401001"
   dependencies:
     merge: ^2.1.1
     strip-json-comments: ^2.0.1
-  checksum: 9c957b78453ddc07ba45b0909e8dfaa483df3b8c23612a15913838851d8fcf269f4f33c2447489ac5df91c83d4febea79da77e6f7ed2857659c5cbfc6581cc73
+  checksum: e09592b78bfebe29025550e5229cd3e0bbc83e3b18750ffed10fa200623aa1a47dd55481caf6657e1463dd962c63765360a5ad95de22b92803d90219bff0a589
   languageName: node
   linkType: hard
 
@@ -16363,16 +16363,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.49.10":
-  version: 1.49.10
-  resolution: "sass@npm:1.49.10"
+"sass@npm:^1.49.11":
+  version: 1.49.11
+  resolution: "sass@npm:1.49.11"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 7b767ece77df47382ac80ff279f5c1cff24dec6684ccaf3f9657f52a793e7ba7b85e4d30a45fb6c70f9fc46da507559fe83e771dcb804341d03af908ad6404c9
+  checksum: f81cabfc43d6baf710979d647e24019f7cfb68242f8421d20dfc8c864cf83512b0b74a89098331696f758756829cb736f7b8aca70a11cff365928393ae351bcc
   languageName: node
   linkType: hard
 
@@ -18432,30 +18432,30 @@ __metadata:
   dependencies:
     "@babel/eslint-parser": ^7.17.0
     "@dcloudio/types": "*"
-    "@dcloudio/uni-app-plus": ^2.0.1-33920220314002
-    "@dcloudio/uni-automator": ^2.0.1-33920220314002
-    "@dcloudio/uni-cli-i18n": ^2.0.1-33920220314002
-    "@dcloudio/uni-cli-shared": ^2.0.1-33920220314002
-    "@dcloudio/uni-h5": 2.0.1-33920220314002
+    "@dcloudio/uni-app-plus": ^2.0.1-33920220314003
+    "@dcloudio/uni-automator": ^2.0.1-33920220314003
+    "@dcloudio/uni-cli-i18n": ^2.0.1-33920220314003
+    "@dcloudio/uni-cli-shared": ^2.0.1-33920220314003
+    "@dcloudio/uni-h5": ^2.0.1-33920220314003
     "@dcloudio/uni-helper-json": "*"
-    "@dcloudio/uni-i18n": ^2.0.1-33920220314002
-    "@dcloudio/uni-migration": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-360": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-alipay": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-baidu": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-qq": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-toutiao": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-vue": ^2.0.1-33920220314002
-    "@dcloudio/uni-mp-weixin": ^2.0.1-33920220314002
-    "@dcloudio/uni-quickapp-native": ^2.0.1-33920220314002
-    "@dcloudio/uni-quickapp-webview": ^2.0.1-33920220314002
-    "@dcloudio/uni-stat": ^2.0.1-33920220314002
-    "@dcloudio/uni-template-compiler": ^2.0.1-33920220314002
-    "@dcloudio/vue-cli-plugin-hbuilderx": ^2.0.1-33920220314002
-    "@dcloudio/vue-cli-plugin-uni": ^2.0.1-33920220314002
-    "@dcloudio/vue-cli-plugin-uni-optimize": ^2.0.1-33920220314002
-    "@dcloudio/webpack-uni-mp-loader": ^2.0.1-33920220314002
-    "@dcloudio/webpack-uni-pages-loader": ^2.0.1-33920220314002
+    "@dcloudio/uni-i18n": ^2.0.1-33920220314003
+    "@dcloudio/uni-migration": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-360": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-alipay": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-baidu": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-qq": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-toutiao": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-vue": ^2.0.1-33920220314003
+    "@dcloudio/uni-mp-weixin": ^2.0.1-33920220314003
+    "@dcloudio/uni-quickapp-native": ^2.0.1-33920220314003
+    "@dcloudio/uni-quickapp-webview": ^2.0.1-33920220314003
+    "@dcloudio/uni-stat": ^2.0.1-33920220314003
+    "@dcloudio/uni-template-compiler": ^2.0.1-33920220314003
+    "@dcloudio/vue-cli-plugin-hbuilderx": ^2.0.1-33920220314003
+    "@dcloudio/vue-cli-plugin-uni": ^2.0.1-33920220314003
+    "@dcloudio/vue-cli-plugin-uni-optimize": ^2.0.1-33920220314003
+    "@dcloudio/webpack-uni-mp-loader": ^2.0.1-33920220314003
+    "@dcloudio/webpack-uni-pages-loader": ^2.0.1-33920220314003
     "@vue/babel-preset-app": ^4.5.15
     "@vue/cli-plugin-babel": ~4.5.15
     "@vue/cli-service": ~4.5.15
@@ -18479,7 +18479,7 @@ __metadata:
     postcss-scss: ^4.0.3
     prettier: ^2.6.1
     regenerator-runtime: ^0.13.9
-    sass: ^1.49.10
+    sass: ^1.49.11
     sass-loader: 8.0.2
     stylelint: ^14.6.1
     stylelint-config-prettier: ^9.0.3

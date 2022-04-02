@@ -107,7 +107,7 @@ yarn add @limm/windi-css-uni
 | text-current             | color: currentColor;                                                                                                             | !nvue      |
 | text-000<br />text-black | color: #000;                                                                                                                     |            |
 | text-fff<br />text-white | color: #fff;                                                                                                                     |            |
-| text-{100~900}           | color: #{111-999};                                                                                                               | 步长为 100 |
+| text-{100~900}           | color: #{111-999};                                                                                                               | 步长为 111 |
 |                          |                                                                                                                                  |            |
 | **垂直对齐**             |                                                                                                                                  |            |
 | align-baseline           | vertical-align: baseline;                                                                                                        | !nvue      |
@@ -139,52 +139,52 @@ yarn add @limm/windi-css-uni
 
 ### 背景
 
-|                      | 样式参考                           | 说明  |
-| -------------------- | ---------------------------------- | ----- |
-| **背景固定**         |                                    |       |
-| bg-fixed             | background-attachment: fixed;      | !nvue |
-| bg-local             | background-attachment: local;      | !nvue |
-| bg-scroll            | background-attachment: scroll;     | !nvue |
-|                      |                                    |       |
-| **背景裁剪**         |                                    |       |
-| bg-clip-border       | background-clip: border-box;       | !nvue |
-| bg-clip-padding      | background-clip: padding-box;      | !nvue |
-| bg-clip-content      | background-clip: content-box;      | !nvue |
-|                      |                                    |       |
-| **背景颜色**         |                                    |       |
-| bg-transparent       | background-color: transparent;     |       |
-| bg-current           | background-color: currentColor;    | !nvue |
-| bg-fff<br />bg-white | background-color: #fff;            |       |
-| bg-000<br />bg-black | background-color: #000;            |       |
-| bg-{111-999}         | background-color: #{111-999};      |       |
-|                      |                                    |       |
-| **背景图像位置**     |                                    |       |
-| bg-bottom            | background-position: bottom;       | !nvue |
-| bg-center            | background-position: center;       | !nvue |
-| bg-left              | background-position: left;         | !nvue |
-| bg-left-bottom       | background-position: left bottom;  | !nvue |
-| bg-left-top          | background-position: left top;     | !nvue |
-| bg-right             | background-position: right;        | !nvue |
-| bg-right-bottom      | background-position: right bottom; | !nvue |
-| bg-right-top         | background-position: right top;    | !nvue |
-| bg-top               | background-position: top;          | !nvue |
-|                      |                                    |       |
-| **背景图像重复**     |                                    |       |
-| bg-repeat            | background-repeat: repeat;         | !nvue |
-| bg-repeat-x          | background-repeat: repeat-x;       | !nvue |
-| bg-repeat-y          | background-repeat: repeat-y;       | !nvue |
-| bg-repeat-round      | background-repeat: round;          | !nvue |
-| bg-repeat-space      | background-repeat: space;          | !nvue |
-|                      |                                    |       |
-| **背景图像大小**     |                                    |       |
-| bg-auto              | background-size: auto;             | !nvue |
-| bg-cover             | background-size: cover;            | !nvue |
-| bg-contain           | background-size: contain;          | !nvue |
-|                      |                                    |       |
-| **背景图像原点**     |                                    |       |
-| bg-origin-border     | background-origin: border-box;     | !nvue |
-| bg-origin-padding    | background-origin: padding-box;    | !nvue |
-| bg-origin-content    | background-origin: content-box;    | !nvue |
+|                      | 样式参考                           | 说明       |
+| -------------------- | ---------------------------------- | ---------- |
+| **背景固定**         |                                    |            |
+| bg-fixed             | background-attachment: fixed;      | !nvue      |
+| bg-local             | background-attachment: local;      | !nvue      |
+| bg-scroll            | background-attachment: scroll;     | !nvue      |
+|                      |                                    |            |
+| **背景裁剪**         |                                    |            |
+| bg-clip-border       | background-clip: border-box;       | !nvue      |
+| bg-clip-padding      | background-clip: padding-box;      | !nvue      |
+| bg-clip-content      | background-clip: content-box;      | !nvue      |
+|                      |                                    |            |
+| **背景颜色**         |                                    |            |
+| bg-transparent       | background-color: transparent;     |            |
+| bg-current           | background-color: currentColor;    | !nvue      |
+| bg-fff<br />bg-white | background-color: #fff;            |            |
+| bg-000<br />bg-black | background-color: #000;            |            |
+| bg-{111-999}         | background-color: #{111-999};      | 步长为 111 |
+|                      |                                    |            |
+| **背景图像位置**     |                                    |            |
+| bg-bottom            | background-position: bottom;       | !nvue      |
+| bg-center            | background-position: center;       | !nvue      |
+| bg-left              | background-position: left;         | !nvue      |
+| bg-left-bottom       | background-position: left bottom;  | !nvue      |
+| bg-left-top          | background-position: left top;     | !nvue      |
+| bg-right             | background-position: right;        | !nvue      |
+| bg-right-bottom      | background-position: right bottom; | !nvue      |
+| bg-right-top         | background-position: right top;    | !nvue      |
+| bg-top               | background-position: top;          | !nvue      |
+|                      |                                    |            |
+| **背景图像重复**     |                                    |            |
+| bg-repeat            | background-repeat: repeat;         | !nvue      |
+| bg-repeat-x          | background-repeat: repeat-x;       | !nvue      |
+| bg-repeat-y          | background-repeat: repeat-y;       | !nvue      |
+| bg-repeat-round      | background-repeat: round;          | !nvue      |
+| bg-repeat-space      | background-repeat: space;          | !nvue      |
+|                      |                                    |            |
+| **背景图像大小**     |                                    |            |
+| bg-auto              | background-size: auto;             | !nvue      |
+| bg-cover             | background-size: cover;            | !nvue      |
+| bg-contain           | background-size: contain;          | !nvue      |
+|                      |                                    |            |
+| **背景图像原点**     |                                    |            |
+| bg-origin-border     | background-origin: border-box;     | !nvue      |
+| bg-origin-padding    | background-origin: padding-box;    | !nvue      |
+| bg-origin-content    | background-origin: content-box;    | !nvue      |
 
 ### 边框
 
@@ -457,6 +457,10 @@ yarn add @limm/windi-css-uni
    付出 > 收益，性价比不高，项目中用到的地方不多。增加之后文件增大了 100 多 kb。没有必要。
 
 ## 6️⃣ 更新日志（CHANGELOG）
+
+### 0.0.6
+
+- 文档颜色描述修正
 
 ### 0.0.5
 
