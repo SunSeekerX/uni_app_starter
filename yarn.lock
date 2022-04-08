@@ -8197,9 +8197,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vue@npm:^8.5.0":
-  version: 8.5.0
-  resolution: "eslint-plugin-vue@npm:8.5.0"
+"eslint-plugin-vue@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "eslint-plugin-vue@npm:8.6.0"
   dependencies:
     eslint-utils: ^3.0.0
     natural-compare: ^1.4.0
@@ -8207,7 +8207,7 @@ __metadata:
     vue-eslint-parser: ^8.0.1
   peerDependencies:
     eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
-  checksum: 2edc956debe3bf22d0daab04b5d59609185799c76dc24ce0c899035ecf64de07a526accc96e8622bccd368b6848f185980e9d6e395d4d14068e89a77e0010119
+  checksum: a03ce84d2ab51f9dc9b43511fe113b3eddc8c5ce5530f3a05ce0e921e47c7b3ae0c04499031fe732387b1370ac567daa08b40d9302961d892eacd124a0606f7e
   languageName: node
   linkType: hard
 
@@ -15290,12 +15290,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "prettier@npm:2.6.1"
+"prettier@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 78be1f8a3ddfad7c3d8a854b6c8941a3bb1ddfca4225c38d778e0fe1029a55368f71b3bbefff82c689015fbb4d391ec44add957f01308ad2725e01a7c1f37cb6
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
   languageName: node
   linkType: hard
 
@@ -16363,16 +16363,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.49.11":
-  version: 1.49.11
-  resolution: "sass@npm:1.49.11"
+"sass@npm:^1.50.0":
+  version: 1.50.0
+  resolution: "sass@npm:1.50.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: f81cabfc43d6baf710979d647e24019f7cfb68242f8421d20dfc8c864cf83512b0b74a89098331696f758756829cb736f7b8aca70a11cff365928393ae351bcc
+  checksum: 43738cc83a3921731456f769aba190277f0620f8b80c14426ab098be9ab8dc8465957f5bf2edbcffda189edb3024ed83dee2cb8cd580459ca4984a9fc88c18f7
   languageName: node
   linkType: hard
 
@@ -18467,7 +18467,7 @@ __metadata:
     cross-env: ^7.0.3
     eslint: ^8.12.0
     eslint-plugin-prettier: ^4.0.0
-    eslint-plugin-vue: ^8.5.0
+    eslint-plugin-vue: ^8.6.0
     flyio: ^0.6.14
     husky: ^7.0.4
     jest: ^27.5.1
@@ -18477,9 +18477,9 @@ __metadata:
     postcss-comment: ^2.0.0
     postcss-html: ^1.3.0
     postcss-scss: ^4.0.3
-    prettier: ^2.6.1
+    prettier: ^2.6.2
     regenerator-runtime: ^0.13.9
-    sass: ^1.49.11
+    sass: ^1.50.0
     sass-loader: 8.0.2
     stylelint: ^14.6.1
     stylelint-config-prettier: ^9.0.3
@@ -18487,7 +18487,7 @@ __metadata:
     stylelint-config-recommended-vue: ^1.4.0
     stylelint-config-standard-scss: ^3.0.0
     stylelint-order: ^5.0.0
-    uview-ui: ^2.0.29
+    uview-ui: ^2.0.30
     vue: ^2.6.14
     vue-template-compiler: ^2.6.14
     vuex: ^3.6.2
@@ -18824,10 +18824,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uview-ui@npm:^2.0.29":
-  version: 2.0.29
-  resolution: "uview-ui@npm:2.0.29"
-  checksum: 9049ac458eacb707e1f27cc26ff63bcef369bdd42bf035eb7089c0cb4e7a3cf12dd79b73b97fcad640b36c3ff7fc28d43dc328d4accdbe256438343efddb9e18
+"uview-ui@npm:^2.0.30":
+  version: 2.0.30
+  resolution: "uview-ui@npm:2.0.30"
+  checksum: fd78247d33b906c471cb95026770f4f3a4acb9c4b9acd7e43e2731b18ecb3b2f2170d0bcd633fd25ca86e4959b8a7b88a50146e7906f4b35a92bcabccd2d81e1
   languageName: node
   linkType: hard
 

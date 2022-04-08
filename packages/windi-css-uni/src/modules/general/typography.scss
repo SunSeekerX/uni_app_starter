@@ -224,28 +224,18 @@
 /* #endif */
 
 // 断字
+/* #ifndef APP-NVUE */
 .#{$prefix}break-normal {
-  /* #ifdef APP-NVUE */
-  word-wrap: normal;
-  /* #endif */
-  /* #ifndef APP-NVUE */
+  // word-wrap: normal;
   word-break: normal;
   overflow-wrap: normal;
-  /* #endif */
 }
 .#{$prefix}break-words {
-  /* #ifndef APP-NVUE */
   overflow-wrap: break-word;
-  /* #endif */
-  /* #ifdef APP-NVUE */
-  word-wrap: break-word;
-  /* #endif */
+  // word-wrap: break-word;
 }
 .#{$prefix}break-all {
-  /* #ifdef APP-NVUE */
-  word-wrap: anywhere;
-  /* #endif */
-  /* #ifndef APP-NVUE */
+  // word-wrap: anywhere;
   word-break: break-all;
-  /* #endif */
 }
+/* #endif */

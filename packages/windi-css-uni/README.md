@@ -133,9 +133,9 @@ yarn add @limm/windi-css-uni
 | whitespace-pre-wrap      | white-space: pre-wrap;                                                                                                           | !nvue      |
 |                          |                                                                                                                                  |            |
 | **断字**                 |                                                                                                                                  |            |
-| break-normal             | nvue: word-break: normal;<br />!nvue: <br />overflow-wrap: normal;<br />word-break: normal;                                      |            |
-| break-words              | nvue: word-wrap: break-word;<br />!nvue: <br />overflow-wrap: break-word;                                                        |            |
-| break-all                | nvue: word-wrap: anywhere;<br />!nvue: word-break: break-all;                                                                    |            |
+| break-normal             | overflow-wrap: normal;<br />word-break: normal;                                                                                  | !nvue      |
+| break-words              | overflow-wrap: break-word;                                                                                                       | !nvue      |
+| break-all                | !nvue: word-break: break-all;                                                                                                    | !nvue      |
 
 ### 背景
 
@@ -457,6 +457,13 @@ yarn add @limm/windi-css-uni
    付出 > 收益，性价比不高，项目中用到的地方不多。增加之后文件增大了 100 多 kb。没有必要。
 
 ## 6️⃣ 更新日志（CHANGELOG）
+
+### 0.0.7
+
+- 移除 nvue 下的断字相关的类，避免警告
+  - break-normal
+  - break-words
+  - break-all
 
 ### 0.0.6
 
