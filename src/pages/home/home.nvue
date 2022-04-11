@@ -103,6 +103,12 @@ export default {
           url: '/apps/cnode/pages/index/index',
           backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
         },
+        {
+          name: 'Dapp 浏览器',
+          description: 'Uni-app dapp 实现',
+          url: '/apps/dapp-browser/pages/index/index',
+          backgroundImage: 'linear-gradient( to right, #65FDF0, #1D6FA3);',
+        },
         // {
         //   name: 'Jd-ck',
         //   description: '我永远喜欢京东~',

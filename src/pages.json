@@ -168,8 +168,16 @@
       "style": {
         "navigationBarTitleText": "random"
       }
-    }
+    },
     /*-------------utools end-------------*/
+    /*-------------Dapp Browser start-------------*/
+    {
+      "path": "apps/dapp-browser/pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Dapp 浏览器"
+      }
+    }
+    /*-------------Dapp Browser end-------------*/
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
