@@ -3,7 +3,7 @@
 	<block v-if="node.node == 'element'">
 		<!--button类型-->
 		<button v-if="node.tag == 'button'" type="default" size="mini" :class="node.classStr" :style="node.styleStr">
-			<rich-text :nodes="node" :class="node.classStr" :style="'user-select:' + parseSelect"></rich-text>
+			<rich-text :nodes="node" :class="node.classStr" :style="'user-select:' + parseSelect" />
 		</button>
 		
 		<!--a类型-->

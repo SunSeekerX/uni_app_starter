@@ -18,7 +18,7 @@
         <block v-for="classIfy of classIfyList" :key="classIfy.id">
           <view
             @tap="handleClassIfyChange(classIfy.id)"
-            class="classift-item"
+            class="classify-item"
             :class="{ selected: currentClassIfy === classIfy.id }"
           >
             {{ classIfy.name }}
@@ -271,7 +271,7 @@ page {
     border-radius: 6rpx;
     background-color: #f6f6f6;
 
-    .classift-item {
+    .classify-item {
       width: 132rpx;
       transition: 0.15s;
       border-radius: 6rpx;

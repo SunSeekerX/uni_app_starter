@@ -25,14 +25,14 @@
     <!-- <slot name="content" /> -->
 
     <!-- 参数设置 -->
-    <!-- <view class="dp-f fd-c">
+    <!-- <view class="wd-flex wd-flex-col">
       <slot name="params" />
     </view> -->
 
     <slot />
 
     <!-- 确认 -->
-    <!-- <button type="primary" @tap="$emit('onTap')" class="content-button dp-fc mb-15">{{ buttonText }}</button> -->
+    <!-- <button type="primary" @tap="$emit('onTap')" class="content-button wd-flex wd-mb-15">{{ buttonText }}</button> -->
   </view>
 </template>
 

@@ -93,7 +93,7 @@
         "setting" : {
             "urlCheck" : false,
             "postcss" : true,
-            "minified" : true,
+            "minified" : false,
             "es6" : false,
             "checkSiteMap" : false
         },

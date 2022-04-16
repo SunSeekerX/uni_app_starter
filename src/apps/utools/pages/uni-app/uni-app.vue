@@ -20,7 +20,7 @@
       <AppOperationButton buttonText="toast 提示: copy(val: string [, options: Object]): void" @onTap="toast" />
 
       <!-- route -->
-      <view class="fs-12 mt-12">路由跳转</view>
+      <view class="wd-text-12 wd-mt-12">路由跳转</view>
       <AppOperationButton
         buttonText="路由跳转 - navigateTo: route(options: Object): void"
         @onTap="
@@ -66,7 +66,7 @@
       />
 
       <!-- request -->
-      <view class="fs-12 mt-12">网络请求</view>
+      <view class="wd-text-12 wd-mt-12">网络请求</view>
       <AppOperationButton buttonText="网络请求 - GET: route(options: Object): void" @onTap="onGet" />
       <AppOperationButton buttonText="网络请求 - POST: route(options: Object): void" @onTap="onPost" />
       <AppOperationButton buttonText="网络请求 - PUT: route(options: Object): void" @onTap="onPut" />

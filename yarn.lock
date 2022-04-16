@@ -1715,7 +1715,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.11.0, @babel/runtime@npm:^7.13.8, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.11.0, @babel/runtime@npm:^7.13.8, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.8.4":
   version: 7.16.3
   resolution: "@babel/runtime@npm:7.16.3"
   dependencies:
@@ -5212,13 +5212,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-import@npm:^1.13.3":
-  version: 1.13.3
-  resolution: "babel-plugin-import@npm:1.13.3"
+"babel-plugin-import@npm:^1.13.5":
+  version: 1.13.5
+  resolution: "babel-plugin-import@npm:1.13.5"
   dependencies:
     "@babel/helper-module-imports": ^7.0.0
-    "@babel/runtime": ^7.0.0
-  checksum: 1be664a34fa6cdffb08485a7094ff1a3fdfd2e95a7d367afdd7a6dcb51842c0bc717c8fdba65538561a4d3aecc39c123e6de1449c5b1b2aa5b13604c17ca7042
+  checksum: 54d6a7e29c012b4a33507eae9deeb5f169ab8f825206b81212d8282045e35a97405a98ec8c7d7ce1a1e703422c8b7b278a4248a64b56ffe6d92e07312ac7de79
   languageName: node
   linkType: hard
 
@@ -5687,7 +5686,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"braces@npm:^3.0.1, braces@npm:~3.0.2":
+"braces@npm:^3.0.1, braces@npm:^3.0.2, braces@npm:~3.0.2":
   version: 3.0.2
   resolution: "braces@npm:3.0.2"
   dependencies:
@@ -7100,10 +7099,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.21.1":
-  version: 3.21.1
-  resolution: "core-js@npm:3.21.1"
-  checksum: d68eddd831340ad5b24ac29c72fda022a43b17f194c4278b6b875a843283d316502cb4abd07f28631d6ebc4387f66aa06e2b1b3c8fd7e08096a751b5c63f6889
+"core-js@npm:^3.22.0":
+  version: 3.22.0
+  resolution: "core-js@npm:3.22.0"
+  checksum: 88ac28dfb8e7fdcd80d32a69dc634900e3daf3bc873ebefb6f189b598ce96e9b68fe553428627e5c43f27749779389faceb865a2a120cf2d44f05795830b5cd7
   languageName: node
   linkType: hard
 
@@ -10671,6 +10670,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html-tags@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "html-tags@npm:3.2.0"
+  checksum: a0c9e96ac26c84adad9cc66d15d6711a17f60acda8d987218f1d4cbaacd52864939b230e635cce5a1179f3ddab2a12b9231355617dfbae7945fcfec5e96d2041
+  languageName: node
+  linkType: hard
+
 "html-webpack-plugin@npm:^3.2.0":
   version: 3.2.0
   resolution: "html-webpack-plugin@npm:3.2.0"
@@ -13220,9 +13226,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.3.7":
-  version: 12.3.7
-  resolution: "lint-staged@npm:12.3.7"
+"lint-staged@npm:^12.3.8":
+  version: 12.3.8
+  resolution: "lint-staged@npm:12.3.8"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -13240,7 +13246,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: b595097556880eb2ab7ce2cf105047f6f22525ccfd608fbdc63ab243259aa36a26949576fadff673748fb885e7cb37ad3f4471d964ad54c1205d57a58999ba24
+  checksum: af6a89ae4244e4eac7180c6e7da452f378fd156ff38eaa666ecbb78f1e2efb7f1a9fc766dcc1cdde2bd76e03da68e602056ca9d2f1c6e46cf10aa83d20bf4d49
   languageName: node
   linkType: hard
 
@@ -13892,6 +13898,16 @@ __metadata:
     braces: ^3.0.1
     picomatch: ^2.2.3
   checksum: ef3d1c88e79e0a68b0e94a03137676f3324ac18a908c245a9e5936f838079fcc108ac7170a5fadc265a9c2596963462e402841406bda1a4bb7b68805601d631c
+  languageName: node
+  linkType: hard
+
+"micromatch@npm:^4.0.5":
+  version: 4.0.5
+  resolution: "micromatch@npm:4.0.5"
+  dependencies:
+    braces: ^3.0.2
+    picomatch: ^2.3.1
+  checksum: 02a17b671c06e8fefeeb6ef996119c1e597c942e632a21ef589154f23898c9c6a9858526246abb14f8bca6e77734aa9dcf65476fca47cedfb80d9577d52843fc
   languageName: node
   linkType: hard
 
@@ -15673,6 +15689,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picomatch@npm:^2.3.1":
+  version: 2.3.1
+  resolution: "picomatch@npm:2.3.1"
+  checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
+  languageName: node
+  linkType: hard
+
 "pidtree@npm:^0.5.0":
   version: 0.5.0
   resolution: "pidtree@npm:0.5.0"
@@ -15868,14 +15891,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-html@npm:^1.3.1":
-  version: 1.3.1
-  resolution: "postcss-html@npm:1.3.1"
+"postcss-html@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "postcss-html@npm:1.4.1"
   dependencies:
     htmlparser2: ^7.1.2
     postcss: ^8.4.0
     postcss-safe-parser: ^6.0.0
-  checksum: 70a7d22478044756c16d0d548e724a261388f065edb1fba96d0f17afa3d316b0dc890d1c6d0eaa123692358f3d03d17fb8045e9733793672d4aba0b02262f429
+  checksum: e0fa63501390dff8ac35d9487250d835508a8ceb88a72f647288394b03412e62f43904ecfff36895ad19cab4108f8f7f7bf6540cf99aaf939f4ce82c0054616d
   languageName: node
   linkType: hard
 
@@ -16256,7 +16279,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.6, postcss-selector-parser@npm:^6.0.9":
+"postcss-selector-parser@npm:^6.0.10":
+  version: 6.0.10
+  resolution: "postcss-selector-parser@npm:6.0.10"
+  dependencies:
+    cssesc: ^3.0.0
+    util-deprecate: ^1.0.2
+  checksum: 46afaa60e3d1998bd7adf6caa374baf857cc58d3ff944e29459c9a9e4680a7fe41597bd5b755fc81d7c388357e9bf67c0251d047c640a09f148e13606b8a8608
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^6.0.6":
   version: 6.0.9
   resolution: "postcss-selector-parser@npm:6.0.9"
   dependencies:
@@ -18950,9 +18983,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^14.6.1":
-  version: 14.6.1
-  resolution: "stylelint@npm:14.6.1"
+"stylelint@npm:^14.7.0":
+  version: 14.7.0
+  resolution: "stylelint@npm:14.7.0"
   dependencies:
     balanced-match: ^2.0.0
     colord: ^2.9.2
@@ -18967,7 +19000,7 @@ __metadata:
     global-modules: ^2.0.0
     globby: ^11.1.0
     globjoin: ^0.1.4
-    html-tags: ^3.1.0
+    html-tags: ^3.2.0
     ignore: ^5.2.0
     import-lazy: ^4.0.0
     imurmurhash: ^0.1.4
@@ -18975,7 +19008,7 @@ __metadata:
     known-css-properties: ^0.24.0
     mathml-tag-names: ^2.1.3
     meow: ^9.0.0
-    micromatch: ^4.0.4
+    micromatch: ^4.0.5
     normalize-path: ^3.0.0
     normalize-selector: ^0.2.0
     picocolors: ^1.0.0
@@ -18983,7 +19016,7 @@ __metadata:
     postcss-media-query-parser: ^0.2.3
     postcss-resolve-nested-selector: ^0.1.1
     postcss-safe-parser: ^6.0.0
-    postcss-selector-parser: ^6.0.9
+    postcss-selector-parser: ^6.0.10
     postcss-value-parser: ^4.2.0
     resolve-from: ^5.0.0
     specificity: ^0.4.1
@@ -18997,7 +19030,7 @@ __metadata:
     write-file-atomic: ^4.0.1
   bin:
     stylelint: bin/stylelint.js
-  checksum: 8fb3b94bcec5ee7e09e352dd89f4a52ad900125687a671842e28b4489ddba4b12e28d1883bc25f92590e0c8174cb25d073b2cbe37d409faed0f8f8928ed43b87
+  checksum: 206df9b0a88e1be25f8ab236268211e1b3fbb1d7088e94ec9953161601b84214b1b1f3757ede03782141632c4d94f2b741d1307c813fda42af7330a1eac0d1d6
   languageName: node
   linkType: hard
 
@@ -19804,8 +19837,8 @@ __metadata:
     "@vue/eslint-config-prettier": ^7.0.0
     "@vue/shared": ^3.2.33
     babel-loader: ^8.2.4
-    babel-plugin-import: ^1.13.3
-    core-js: ^3.21.1
+    babel-plugin-import: ^1.13.5
+    core-js: ^3.22.0
     cross-env: ^7.0.3
     eslint: ^8.13.0
     eslint-plugin-prettier: ^4.0.0
@@ -19813,17 +19846,17 @@ __metadata:
     flyio: ^0.6.14
     husky: ^7.0.4
     jest: ^27.5.1
-    lint-staged: ^12.3.7
+    lint-staged: ^12.3.8
     mini-types: 0.1.7
     miniprogram-api-typings: "*"
     postcss-comment: ^2.0.0
-    postcss-html: ^1.3.1
+    postcss-html: ^1.4.1
     postcss-scss: ^4.0.3
     prettier: ^2.6.2
     regenerator-runtime: ^0.13.9
     sass: ^1.50.0
     sass-loader: 8.0.2
-    stylelint: ^14.6.1
+    stylelint: ^14.7.0
     stylelint-config-prettier: ^9.0.3
     stylelint-config-property-sort-order-smacss: ^9.0.0
     stylelint-config-recommended-vue: ^1.4.0

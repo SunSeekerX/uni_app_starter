@@ -19,16 +19,18 @@
               url: item.url,
             })
           "
-          class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
-          :style="`background-image: ${item.backgroundImage};`"
+          class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
+          :style="{
+            'background-image': item.backgroundImage,
+          }"
         >
-          <view class="dp-f fd-c f-1">
-            <view class="item fd-r jc-sb ai-c lh-34">
-              <text class="c-f fs-16 fw-b">{{ item.name }}</text>
+          <view class="wd-flex wd-flex-col wd-flex-1">
+            <view class="item wd-flex-row wd-justify-between wd-items-center wd-leading-34">
+              <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
             </view>
 
             <!-- 描述 -->
-            <view class="description mt-6">
+            <view class="description wd-mt-6">
               <text class="description-text">{{ item.description }}</text>
             </view>
           </view>

@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-05-23 13:54:52
 -->
 <template>
-  <view class="content dp-f jc-c ai-c">
+  <view class="content wd-flex wd-justify-center wd-items-center">
     <view>Home</view>
   </view>
 </template>

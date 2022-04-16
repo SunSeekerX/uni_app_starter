@@ -9,8 +9,8 @@
 <template>
   <view class="operation">
     <!-- 操作标题 -->
-    <view class="h-33 c-3 dp-f ai-c">
-      <text class="fs-16">📌 {{ name }} </text>
+    <view class="wd-h-33 wd-text-333 wd-flex wd-items-center">
+      <text class="wd-text-16">📌 {{ name }} </text>
     </view>
 
     <slot />
