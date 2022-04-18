@@ -66,8 +66,9 @@
   </view>
 </template>
 <script>
-import { route } from '@root/packages/utools' // utools
+getApp({allowDefault: true}).globalData
 export default {
+  name: 'PageHome',
   data() {
     return {
       // GlobalData
@@ -133,15 +134,12 @@ export default {
     },
     // 点击菜单
     onClickMenuItem(url) {
-      route({
+      const globalData = getApp({allowDefault: true}).globalData
+      globalData.$utools.route({
         url,
       })
     },
   },
-
-  onShow(){
-    console.log(getApp().globalData);
-  }
 }
 </script>
 <style lang="scss" scoped>
