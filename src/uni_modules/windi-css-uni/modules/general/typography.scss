@@ -1,0 +1,241 @@
+// Font Family
+/* #ifndef APP-NVUE */
+.#{$prefix}font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.#{$prefix}font-serif {
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+.#{$prefix}font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+/* #endif */
+
+// 字号 {8~100} px || rpx
+@for $i from 8 through 48 {
+  // font-size: {8~48}px;
+  .#{$prefix}text-#{$i} {
+    font-size: $i + px;
+  }
+}
+@for $i from 8 through 96 {
+  // font-size: {8~96}rpx;
+  .#{$prefix}text-#{$i}r {
+    font-size: $i + rpx;
+  }
+}
+
+// 字体平滑度
+/* #ifndef APP-NVUE */
+.#{$prefix}antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.#{$prefix}subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+/* #endif */
+
+// 字体样式
+.#{$prefix}italic {
+  font-style: italic;
+}
+.#{$prefix}not-italic {
+  font-style: normal;
+}
+
+// 字体粗细
+.#{$prefix}font-thin {
+  font-weight: 100;
+}
+.#{$prefix}font-extralight {
+  font-weight: 200;
+}
+.#{$prefix}font-light {
+  font-weight: 300;
+}
+.#{$prefix}font-normal {
+  font-weight: 400;
+}
+.#{$prefix}font-medium {
+  font-weight: 500;
+}
+.#{$prefix}font-semibold {
+  font-weight: 600;
+}
+.#{$prefix}font-bold {
+  font-weight: 700;
+}
+.#{$prefix}font-extrabold {
+  font-weight: 800;
+}
+.#{$prefix}font-black {
+  font-weight: 900;
+}
+@for $i from 1 through 9 {
+  // font-weight: {100-900};
+  .#{$prefix}font-#{$i * 100} {
+    font-weight: $i * 100;
+  }
+}
+
+// 连字符
+/* #ifndef APP-NVUE */
+.#{$prefix}hyphens-none {
+  hyphens: none;
+}
+.#{$prefix}hyphens-manual {
+  hyphens: manual;
+}
+.#{$prefix}hyphens-auto {
+  hyphens: auto;
+}
+/* #endif */
+
+// 行高 {8~100} px || rpx
+@for $i from 8 through 48 {
+  .#{$prefix}leading-#{$i} {
+    line-height: $i + px;
+  }
+}
+@for $i from 8 through 96 {
+  .#{$prefix}leading-#{$i}r {
+    line-height: $i + rpx;
+  }
+}
+
+// 文本对齐
+.#{$prefix}text-left {
+  text-align: left;
+}
+.#{$prefix}text-center {
+  text-align: center;
+}
+.#{$prefix}text-right {
+  text-align: right;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}text-justify {
+  text-align: justify;
+}
+/* #endif */
+
+// 文本颜色 {000~999}
+/* #ifndef APP-NVUE */
+.#{$prefix}text-transparent {
+  color: transparent;
+}
+.#{$prefix}text-current {
+  color: currentColor;
+}
+/* #endif */
+.#{$prefix}text-000,
+.#{$prefix}text-black {
+  color: #000;
+}
+.#{$prefix}text-fff,
+.#{$prefix}text-white {
+  color: #fff;
+}
+@for $i from 1 through 9 {
+  .#{$prefix}text-#{$i * 111} {
+    color: unquote('##{$i * 111}');
+  }
+}
+
+// 垂直对齐
+/* #ifndef APP-NVUE */
+.#{$prefix}align-baseline {
+  vertical-align: baseline;
+}
+.#{$prefix}align-top {
+  vertical-align: top;
+}
+.#{$prefix}align-middle {
+  vertical-align: middle;
+}
+.#{$prefix}align-bottom {
+  vertical-align: bottom;
+}
+.#{$prefix}align-text-top {
+  vertical-align: text-top;
+}
+.#{$prefix}align-text-bottom {
+  vertical-align: text-bottom;
+}
+/* #endif */
+
+// 文本溢出
+.#{$prefix}truncate {
+  text-overflow: ellipsis;
+  /* #ifndef APP-NVUE */
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  /* #endif */
+}
+.#{$prefix}overflow-ellipsis {
+  /* #ifndef APP-NVUE */
+  -o-text-overflow: ellipsis;
+  /* #endif */
+  text-overflow: ellipsis;
+}
+.#{$prefix}overflow-clip {
+  /* #ifndef APP-NVUE */
+  overflow: clip;
+  /* #endif */
+  /* #ifdef APP-NVUE */
+  text-overflow: clip;
+  /* #endif */
+}
+
+// 行数
+@for $i from 1 through 8 {
+  .#{$prefix}lines-#{$i} {
+    /* #ifdef APP-NVUE */
+    lines: $i;
+    /* #endif */
+    /* #ifndef APP-NVUE */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+    /* #endif */
+  }
+}
+
+// 空格
+/* #ifndef APP-NVUE */
+.#{$prefix}whitespace-normal {
+  white-space: normal;
+}
+.#{$prefix}whitespace-nowrap {
+  white-space: nowrap;
+}
+.#{$prefix}whitespace-pre {
+  white-space: pre;
+}
+.#{$prefix}whitespace-pre-line {
+  white-space: pre-line;
+}
+.#{$prefix}whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+/* #endif */
+
+// 断字
+/* #ifndef APP-NVUE */
+.#{$prefix}break-normal {
+  // word-wrap: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.#{$prefix}break-words {
+  overflow-wrap: break-word;
+  // word-wrap: break-word;
+}
+.#{$prefix}break-all {
+  // word-wrap: anywhere;
+  word-break: break-all;
+}
+/* #endif */

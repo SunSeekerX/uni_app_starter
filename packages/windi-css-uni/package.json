@@ -11,10 +11,7 @@
   "bugs": {
     "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SunSeekerX/uni-app-starter.git"
-  },
+  "repository": "https://github.com/SunSeekerX/uni-app-starter.git",
   "license": "UNLICENSED",
   "author": "SunSeekerX",
   "main": "src/index.scss",

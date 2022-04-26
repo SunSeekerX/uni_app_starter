@@ -1,0 +1,360 @@
+/* #ifndef APP-NVUE */
+// Order
+.#{$prefix}order-first {
+  order: -9999;
+}
+.#{$prefix}order-last {
+  order: 9999;
+}
+.#{$prefix}order-none {
+  order: 0;
+}
+
+@for $i from 1 through 14 {
+  .#{$prefix}order-#{$i} {
+    order: $i;
+  }
+  .#{$prefix}-order-#{$i} {
+    order: $i * -1;
+  }
+}
+/* #endif */
+
+// Justify Content
+.#{$prefix}justify-start {
+  justify-content: flex-start !important;
+}
+.#{$prefix}justify-end {
+  justify-content: flex-end !important;
+}
+.#{$prefix}justify-center {
+  justify-content: center !important;
+}
+.#{$prefix}justify-between {
+  justify-content: space-between !important;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}justify-around {
+  justify-content: space-around;
+}
+.#{$prefix}justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Justify Items
+.#{$prefix}justify-items-auto {
+  justify-items: auto;
+}
+.#{$prefix}justify-items-start {
+  justify-items: start;
+}
+.#{$prefix}justify-items-end {
+  justify-items: end;
+}
+.#{$prefix}justify-items-center {
+  justify-items: center;
+}
+.#{$prefix}justify-items-stretch {
+  justify-items: stretch;
+}
+
+// Justify Self
+.#{$prefix}justify-self-auto {
+  justify-self: auto;
+}
+.#{$prefix}justify-self-start {
+  justify-self: start;
+}
+.#{$prefix}justify-self-end {
+  justify-self: end;
+}
+.#{$prefix}justify-self-center {
+  justify-self: center;
+}
+.#{$prefix}justify-self-stretch {
+  justify-self: stretch;
+}
+
+// Align Content
+.#{$prefix}content-center {
+  align-content: center;
+}
+.#{$prefix}content-start {
+  align-content: flex-start;
+}
+.#{$prefix}content-end {
+  align-content: flex-end;
+}
+.#{$prefix}content-between {
+  align-content: space-between;
+}
+.#{$prefix}content-around {
+  align-content: space-around;
+}
+.#{$prefix}content-evenly {
+  align-content: space-evenly;
+}
+/* #endif */
+
+// Align Items
+.#{$prefix}items-start {
+  align-items: flex-start !important;
+}
+.#{$prefix}items-end {
+  align-items: flex-end !important;
+}
+.#{$prefix}items-center {
+  align-items: center !important;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}items-baseline {
+  align-items: baseline;
+}
+/* #endif */
+.#{$prefix}items-stretch {
+  align-items: stretch !important;
+}
+
+/* #ifndef APP-NVUE */
+// Align Self
+.#{$prefix}self-auto {
+  align-self: auto;
+}
+.#{$prefix}self-start {
+  align-self: flex-start;
+}
+.#{$prefix}self-end {
+  align-self: flex-end;
+}
+.#{$prefix}self-center {
+  align-self: center;
+}
+.#{$prefix}self-stretch {
+  align-self: stretch;
+}
+
+// Place Content
+.#{$prefix}place-content-center {
+  place-content: center;
+}
+.#{$prefix}place-content-start {
+  place-content: start;
+}
+.#{$prefix}place-content-end {
+  place-content: end;
+}
+.#{$prefix}place-content-between {
+  place-content: space-between;
+}
+.#{$prefix}place-content-around {
+  place-content: space-around;
+}
+.#{$prefix}place-content-evenly {
+  place-content: space-evenly;
+}
+.#{$prefix}place-content-stretch {
+  place-content: stretch;
+}
+
+// Place Items
+.#{$prefix}place-items-auto {
+  place-items: auto;
+}
+.#{$prefix}place-items-start {
+  place-items: start;
+}
+.#{$prefix}place-items-end {
+  place-items: end;
+}
+.#{$prefix}place-items-center {
+  place-items: center;
+}
+.#{$prefix}place-items-stretch {
+  place-items: stretch;
+}
+
+// Place Self
+.#{$prefix}place-self-auto {
+  place-self: auto;
+}
+.#{$prefix}place-self-start {
+  place-self: start;
+}
+.#{$prefix}place-self-end {
+  place-self: end;
+}
+.#{$prefix}place-self-center {
+  place-self: center;
+}
+.#{$prefix}place-self-stretch {
+  place-self: stretch;
+}
+/* #endif */
+
+// Position
+/* #ifndef APP-NVUE */
+.#{$prefix}static {
+  position: static;
+}
+/* #endif */
+.#{$prefix}fixed {
+  position: fixed !important;
+}
+.#{$prefix}absolute {
+  position: absolute !important;
+}
+.#{$prefix}relative {
+  position: relative !important;
+}
+.#{$prefix}sticky {
+  position: sticky !important;
+}
+
+// Top / Right / Bottom / Left
+// Inset
+.#{$prefix}inset-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.#{$prefix}inset-px {
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}inset-auto {
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+/* #endif */
+.#{$prefix}inset-full {
+  top: 100%;
+  right: 100%;
+  bottom: 100%;
+  left: 100%;
+}
+@for $i from 0 through 50 {
+  // top: {0-50}px;
+  .#{$prefix}top-#{$i} {
+    top: $i + px;
+  }
+  // right: {0-50}px;
+  .#{$prefix}right-#{$i} {
+    right: $i + px;
+  }
+  // bottom: {0-50}px;
+  .#{$prefix}bottom-#{$i} {
+    bottom: $i + px;
+  }
+  // left: {0-50}px;
+  .#{$prefix}left-#{$i} {
+    left: $i + px;
+  }
+}
+@for $i from 1 through 100 {
+  // top: {0-100}rpx;
+  .#{$prefix}top-#{$i}r {
+    top: $i + rpx;
+  }
+  // right: {0-100}rpx;
+  .#{$prefix}right-#{$i}r {
+    right: $i + rpx;
+  }
+  // bottom: {0-100}rpx;
+  .#{$prefix}bottom-#{$i}r {
+    bottom: $i + rpx;
+  }
+  // left: {0-100}rpx;
+  .#{$prefix}left-#{$i}r {
+    left: $i + rpx;
+  }
+}
+
+/* #ifndef APP-NVUE */
+// Floats
+.#{$prefix}float-right {
+  float: right;
+}
+.#{$prefix}float-left {
+  float: left;
+}
+.#{$prefix}float-none {
+  float: none;
+}
+
+// Clear
+.#{$prefix}clear-right {
+  clear: right;
+}
+.#{$prefix}clear-left {
+  clear: left;
+}
+.#{$prefix}clear-both {
+  clear: both;
+}
+.#{$prefix}clear-none {
+  clear: none;
+}
+
+// Object Fit
+.#{$prefix}object-contain {
+  object-fit: contain;
+}
+.#{$prefix}object-cover {
+  object-fit: cover;
+}
+.#{$prefix}object-fill {
+  object-fit: fill;
+}
+.#{$prefix}object-none {
+  object-fit: none;
+}
+.#{$prefix}object-scale-down {
+  object-fit: scale-down;
+}
+
+// Object Position
+.#{$prefix}object-bottom {
+  object-position: bottom;
+}
+.#{$prefix}object-center {
+  object-position: center;
+}
+.#{$prefix}object-left {
+  object-position: left;
+}
+.#{$prefix}object-left-bottom {
+  object-position: left bottom;
+}
+.#{$prefix}object-left-top {
+  object-position: left top;
+}
+.#{$prefix}object-right {
+  object-position: right;
+}
+.#{$prefix}object-right-bottom {
+  object-position: right bottom;
+}
+.#{$prefix}object-right-top {
+  object-position: right top;
+}
+.#{$prefix}object-top {
+  object-position: top;
+}
+
+// Z-Index
+.#{$prefix}z-auto {
+  z-index: auto;
+}
+/* #endif */
+
+@for $i from 0 through 16 {
+  .#{$prefix}z-#{$i} {
+    z-index: $i !important;
+  }
+}

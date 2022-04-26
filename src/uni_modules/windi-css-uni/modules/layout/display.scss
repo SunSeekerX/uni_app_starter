@@ -1,0 +1,29 @@
+/* #ifndef APP-NVUE */
+// 块级元素
+.#{$prefix}block {
+  display: block;
+}
+// 行内块级元素
+.#{$prefix}inline-block {
+  display: inline-block;
+}
+// 行内元素
+.#{$prefix}inline {
+  display: inline;
+}
+// 内容
+.#{$prefix}contents {
+  display: contents;
+}
+// 隐藏
+.#{$prefix}hidden {
+  display: none;
+}
+// Visibility
+.#{$prefix}visible {
+  visibility: visible;
+}
+.#{$prefix}invisible {
+  visibility: hidden;
+}
+/* #endif */
