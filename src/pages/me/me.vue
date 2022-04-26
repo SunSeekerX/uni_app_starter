@@ -1,9 +1,9 @@
 <template>
   <view class="content">
     <!-- 环境切换 -->
-    <u-button @click="state.isShowEnvActionSheet = true">
+    <!-- <u-button @click="state.isShowEnvActionSheet = true">
       {{ `环境切换，当前环境：${debug_env}` }}
-    </u-button>
+    </u-button> -->
 
     <u-modal
       v-model="state.isShowEnvChangeModal"
