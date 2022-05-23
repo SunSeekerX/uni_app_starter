@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss">
 @import '../packages/markrgba-css/src/index.scss'; /* Some magic css */
-@import '../packages/windi-css-uni/src/index.scss'; 
+@import '../packages/windi-css-uni/src/index.scss';
 @import '@/common/scss/index.scss'; /* 全局通用样式 */
 
 // uni-app 抽风不能定义到 @/common/scss/index.scss 条件编译不生效
