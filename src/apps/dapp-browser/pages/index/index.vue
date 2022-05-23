@@ -10,7 +10,7 @@
 </template>
 <script>
 import detectEthereumProvider from '@metamask/detect-provider'
-import Web3 from 'web3/dist/web3.min.js'
+// import Web3 from 'web3/dist/web3.min.js'
 
 export default {
   name: 'DappBrowserIndex',
