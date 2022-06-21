@@ -18,7 +18,6 @@
     order: $i * -1;
   }
 }
-
 /* #endif */
 
 // Justify Content
@@ -34,7 +33,6 @@
 .#{$prefix}justify-between {
   justify-content: space-between !important;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}justify-around {
   justify-content: space-around;
@@ -96,7 +94,6 @@
 .#{$prefix}content-evenly {
   align-content: space-evenly;
 }
-
 /* #endif */
 
 // Align Items
@@ -109,12 +106,10 @@
 .#{$prefix}items-center {
   align-items: center !important;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}items-baseline {
   align-items: baseline;
 }
-
 /* #endif */
 .#{$prefix}items-stretch {
   align-items: stretch !important;
@@ -194,16 +189,13 @@
 .#{$prefix}place-self-stretch {
   place-self: stretch;
 }
-
 /* #endif */
 
 // Position
-
 /* #ifndef APP-NVUE */
 .#{$prefix}static {
   position: static;
 }
-
 /* #endif */
 .#{$prefix}fixed {
   position: fixed !important;
@@ -221,10 +213,10 @@
 // Top / Right / Bottom / Left
 // Inset
 .#{$prefix}inset-0 {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 .#{$prefix}inset-px {
   top: 1px;
@@ -232,7 +224,6 @@
   bottom: 1px;
   left: 1px;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}inset-auto {
   top: auto;
@@ -240,7 +231,6 @@
   bottom: auto;
   left: auto;
 }
-
 /* #endif */
 .#{$prefix}inset-full {
   top: 100%;
@@ -253,17 +243,14 @@
   .#{$prefix}top-#{$i} {
     top: $i + px;
   }
-
   // right: {0-50}px;
   .#{$prefix}right-#{$i} {
     right: $i + px;
   }
-
   // bottom: {0-50}px;
   .#{$prefix}bottom-#{$i} {
     bottom: $i + px;
   }
-
   // left: {0-50}px;
   .#{$prefix}left-#{$i} {
     left: $i + px;
@@ -274,17 +261,14 @@
   .#{$prefix}top-#{$i}r {
     top: $i + rpx;
   }
-
   // right: {0-100}rpx;
   .#{$prefix}right-#{$i}r {
     right: $i + rpx;
   }
-
   // bottom: {0-100}rpx;
   .#{$prefix}bottom-#{$i}r {
     bottom: $i + rpx;
   }
-
   // left: {0-100}rpx;
   .#{$prefix}left-#{$i}r {
     left: $i + rpx;
@@ -367,7 +351,6 @@
 .#{$prefix}z-auto {
   z-index: auto;
 }
-
 /* #endif */
 
 @for $i from 0 through 16 {

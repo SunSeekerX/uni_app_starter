@@ -20,19 +20,16 @@
 .#{$prefix}bg-clip-content {
   background-clip: content-box;
 }
-
 /* #endif */
 
 // 背景颜色
 .#{$prefix}bg-transparent {
   background-color: transparent;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}bg-current {
-  background-color: currentcolor;
+  background-color: currentColor;
 }
-
 /* #endif */
 .#{$prefix}bg-000,
 .#{$prefix}bg-black {
@@ -44,7 +41,7 @@
 }
 @for $i from 1 through 9 {
   .#{$prefix}bg-#{$i * 111} {
-    background-color: string.unquote('##{$i * 111}');
+    background-color: unquote('##{$i * 111}');
   }
 }
 
@@ -118,5 +115,4 @@
 .#{$prefix}bg-origin-content {
   background-origin: content-box;
 }
-
 /* #endif */

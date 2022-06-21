@@ -50,5 +50,7 @@ module.exports = {
     'no-empty-source': null,
     // nvue 字体设置
     'font-family-no-missing-generic-family-keyword': null,
+    // 禁用类似直接使用 unquote 不行 而要改为 string.unquote 这种的错误
+    'scss/no-global-function-names': null,
   },
 }

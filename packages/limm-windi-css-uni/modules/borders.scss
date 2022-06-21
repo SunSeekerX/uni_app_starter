@@ -1,6 +1,6 @@
 // 边框圆角
 .#{$prefix}rounded-none {
-  border-radius: 0;
+  border-radius: 0px;
 }
 .#{$prefix}rounded-full {
   border-radius: 9999px;
@@ -30,22 +30,18 @@
   .#{$prefix}border-#{$i} {
     border-width: $i + px;
   }
-
   // border-top-width: {0~10}px;
   .#{$prefix}border-top-#{$i} {
     border-top-width: $i + px;
   }
-
   // border-right-width: {0~10}px;
   .#{$prefix}border-right-#{$i} {
     border-right-width: $i + px;
   }
-
   // border-bottom-width: {0~10}px;
   .#{$prefix}border-bottom-#{$i} {
     border-bottom-width: $i + px;
   }
-
   // border-left-width: {0~10}px;
   .#{$prefix}border-left-#{$i} {
     border-left-width: $i + px;
@@ -56,22 +52,18 @@
   .#{$prefix}border-#{$i}r {
     border-width: $i + rpx;
   }
-
   // border-top-width: {0~20}rpx;
   .#{$prefix}border-top-#{$i}r {
     border-top-width: $i + rpx;
   }
-
   // border-right-width: {0~20}rpx;
   .#{$prefix}border-right-#{$i}r {
     border-right-width: $i + rpx;
   }
-
   // border-bottom-width: {0~20}rpx;
   .#{$prefix}border-bottom-#{$i}r {
     border-bottom-width: $i + rpx;
   }
-
   // border-left-width: {0~20}rpx;
   .#{$prefix}border-left-#{$i}r {
     border-left-width: $i + rpx;
@@ -82,12 +74,10 @@
 .#{$prefix}border-transparent {
   border-color: transparent;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}border-current {
-  border-color: currentcolor;
+  border-color: currentColor;
 }
-
 /* #endif */
 .#{$prefix}border-fff,
 .#{$prefix}border-white {
@@ -99,7 +89,7 @@
 }
 @for $i from 1 through 9 {
   .#{$prefix}border-#{$i * 111} {
-    border-color: string.unquote('##{$i * 111}');
+    border-color: unquote('##{$i * 111}');
   }
 }
 
@@ -113,7 +103,6 @@
 .#{$prefix}border-dotted {
   border-style: dotted;
 }
-
 /* #ifndef APP-NVUE */
 .#{$prefix}border-double {
   border-style: double;
@@ -121,5 +110,4 @@
 .#{$prefix}border-none {
   border-style: none;
 }
-
 /* #endif */

@@ -15,10 +15,9 @@ src/common/scss/markrgba-css/
 # Cnode 需要
 feng-parse
 
-# windi-css-uni
-packages/windi-css-uni
-
 # packages
+packages/limm-markrgba-css
+packages/limm-windi-css-uni
 packages/limm-utools
 src/components/c-icon
 

@@ -3,7 +3,6 @@
   .#{$prefix}w-#{$i}r {
     width: $i + rpx;
   }
-
   // min-width: {0~750}rpx;
   // .#{$prefix}min-w-#{$i}r {
   //   min-width: $i + rpx;
@@ -17,7 +16,6 @@
   .#{$prefix}h-#{$i}r {
     height: $i + rpx;
   }
-
   // min-height: {0~750}rpx;
   // .#{$prefix}min-h-#{$i}r {
   //   min-height: $i + rpx;
@@ -33,7 +31,6 @@
   .#{$prefix}w-#{$i} {
     width: $i + px;
   }
-
   // min-width: {0~500}px;
   // .#{$prefix}min-w-#{$i} {
   //   min-width: $i + px;
@@ -47,7 +44,6 @@
   .#{$prefix}h-#{$i} {
     height: $i + px;
   }
-
   // min-height: {0~500}px;
   // .#{$prefix}min-h-#{$i} {
   //   min-height: $i + px;
@@ -78,5 +74,4 @@
 .#{$prefix}box-content {
   box-sizing: content-box;
 }
-
 /* #endif */

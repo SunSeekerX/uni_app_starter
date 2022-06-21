@@ -2,18 +2,15 @@
 .#{$prefix}flex {
   /* #ifndef APP-NVUE */
   display: flex !important;
-
   /* #endif */
 }
 .#{$prefix}flex-center {
   /* #ifndef APP-NVUE */
   display: flex !important;
-  align-items: center !important;
-
   /* #endif */
   justify-content: center !important;
+  align-items: center !important;
 }
-
 // Flex Basis
 
 // 行内 Flex
@@ -57,7 +54,6 @@
 .#{$prefix}flex-none {
   flex: none;
 }
-
 /* #endif */
 
 // flex: {1~16} !important;
@@ -83,5 +79,4 @@
 .#{$prefix}flex-shrink {
   flex-shrink: 1;
 }
-
 /* #endif */
