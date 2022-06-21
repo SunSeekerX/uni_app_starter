@@ -1,19 +1,11 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-05-23 13:31:18
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 20:19:04
--->
-
 <template>
   <view class="content wd-flex wd-justify-center wd-items-center">
-    <uni-transition :duration="800" ref="ani" :mode-class="['fade', 'slide-bottom']" :show="state.isShowSplash">
+    <u-transition mode="fade-up" :duration="800" :show="state.isShowSplash">
       <view class="wd-flex wd-flex-col">
         <image class="wd-w-120 wd-h-120 wd-rounded-6" src="/static/images/projects/pionex/logo.jpg"></image>
         <text class="wd-text-666 wd-text-14 wd-mt-12">全国首家量化交易所</text>
       </view>
-    </uni-transition>
+    </u-transition>
   </view>
 </template>
 

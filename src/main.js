@@ -10,7 +10,7 @@
  * @name 引入依赖库
  */
 import Vue from 'vue'
-import uView from 'uview-ui'
+import uView from '@/uni_modules/uview-ui'
 
 /**
  * @name 依赖设置
@@ -22,7 +22,7 @@ Vue.config.productionTip = false
  */
 import App from './App'
 import store from './store/index'
-import utools from '@root/packages/utools' // utools
+import utools from '@root/packages/limm-utools' // utools
 import * as util from './utils/index' // 工具包
 import * as constant from './constant' // 常量
 import * as api from './apis' // Api

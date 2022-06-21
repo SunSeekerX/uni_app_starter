@@ -22,7 +22,28 @@ iconfont-svg.js
 # Cnode 需要
 feng-parse
 
-# Temp
-packages/uni-pushy-client
-src/utools
+# 忽略 uni-app 官方的组件库
+src/components/uni-*
+# 忽略 nvue 组件库
+src/components-nvue/
+# 忽略原生插件
+nativeplugins/
+# 忽略打包的文件
+src/unpackage/
+# 忽略静态文件
+src/static/
+# 忽略第三方库文件
+src/utils/libs/
+# uni_modules
+uni_modules
+
+# 忽略 mypui 组件库
+src/mypUI/**
+
+# Cnode 需要
+feng-parse
+
+# packages
+packages/limm-utools
+packages/limm-uni-pushy-client
 src/components/c-icon

@@ -6,8 +6,7 @@
  * @LastEditTime: 2021-09-17 21:31:01
  */
 
-// import { ValidateUtil, LogUtil } from '@root/packages/utools'
-import { ValidateUtil, LogUtil } from '../../packages/utools'
+import { ValidateUtil, LogUtil } from '@root/packages/limm-utools'
 import { appName } from '@/constant'
 LogUtil.setName(appName)
 

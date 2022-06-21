@@ -13,8 +13,6 @@ function resolve(dir) {
 }
 
 module.exports = {
-  // uview-ui 2.0
-  transpileDependencies: ['uview-ui'],
   configureWebpack: {
     resolve: {
       alias: {

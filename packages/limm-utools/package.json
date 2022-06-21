@@ -1,0 +1,53 @@
+{
+  "name": "@limm/utools",
+  "version": "0.0.12",
+  "description": "uni-app 开发工具包。",
+  "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/master/packages/limm-utools",
+  "bugs": {
+    "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunSeekerX/uni-app-starter.git"
+  },
+  "license": "MIT",
+  "author": "SunSeekerX",
+  "main": "dist/bundle.esm.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist/",
+    "types/"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:types": "tsc --project tsconfig-def.json",
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "pb": "npm publish --access=public",
+    "pkg:sort": "npx sort-package-json",
+    "serve": "rollup -c --watch"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "*",
+    "@limm/jsencrypt-mp": "3.2.2-0",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/crypto-js": "3.1.47",
+    "@types/node": "^18.0.0",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "crypto-js": "3.3.0",
+    "dayjs": "^1.11.3",
+    "eslint": "^8.18.0",
+    "js-base64": "^3.7.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-filesize": "^9.1.2",
+    "typescript": "^4.7.4",
+    "uuid": "^8.3.2",
+    "vuepress": "^1.9.7",
+    "vuepress-theme-antdocs": "^1.4.3"
+  }
+}

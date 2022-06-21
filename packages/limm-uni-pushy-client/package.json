@@ -1,0 +1,35 @@
+{
+  "name": "@limm/uni-pushy-client",
+  "version": "0.5.2",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/limm-uni-pushy-client",
+  "bugs": {
+    "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunSeekerX/uni-app-starter.git"
+  },
+  "license": "MIT",
+  "author": "SunSeekerX",
+  "main": "bin/bundle.esm.js",
+  "files": [
+    "bin/",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "scripts": {
+    "pb": "npm publish --access public",
+    "sort-package-json": "npx sort-package-json",
+    "serve": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rollup": "^2.60.2",
+    "rollup-plugin-filesize": "^9.1.1"
+  }
+}

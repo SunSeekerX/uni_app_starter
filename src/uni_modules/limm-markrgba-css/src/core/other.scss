@@ -1,0 +1,100 @@
+/**
+ * @name: 
+ * @author: SunSeekerX
+ * @Date: 2020-11-09 21:06:43
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2020-11-10 09:57:32
+ */
+
+/* #ifndef APP-NVUE */
+.cu-p {
+  cursor: pointer;
+}
+
+.cu-d {
+  cursor: default;
+}
+
+.oy-s {
+  overflow-y: scroll;
+}
+
+.ox-s {
+  overflow-x: scroll;
+}
+
+.lh-n {
+  line-height: normal;
+}
+
+/* #endif */
+
+.o-h {
+  overflow: hidden;
+}
+
+/* 省略 */
+.c-e {
+  /* #ifndef APP-NVUE */
+
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+
+  /* #endif */
+
+  /* #ifdef APP-NVUE */
+  lines: 1;
+
+  /* #endif */
+}
+
+.c-e-2 {
+  /* #ifndef APP-NVUE */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  /* #endif */
+
+  /* #ifdef APP-NVUE */
+  lines: 2;
+
+  /* #endif */
+}
+
+.c-e-3 {
+  /* #ifndef APP-NVUE */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+
+  /* #endif */
+
+  /* #ifdef APP-NVUE */
+  lines: 3;
+
+  /* #endif */
+}
+
+/* z-index（1~100） */
+@for $i from 1 through 100 {
+  .z-#{$i} {
+    z-index: $i;
+  }
+}
+
+/* #ifdef APP-NVUE */
+
+/* lines（1~100） */
+@for $i from 0 through 100 {
+  .line-#{$i} {
+    lines: $i;
+  }
+}
+
+/* #endif */

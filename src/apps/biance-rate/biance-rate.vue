@@ -30,7 +30,7 @@
 
     <view class="content">
       <view class="menu">
-        <uni-transition :duration="800" ref="ani" :mode-class="['fade', 'slide-bottom']" :show="state.isShow">
+        <u-transition mode="fade-up" :duration="800" :show="state.isShow">
           <view v-if="searchList.length">
             <view
               v-for="item of searchList"
@@ -44,7 +44,7 @@
           </view>
 
           <c-empty v-else />
-        </uni-transition>
+        </u-transition>
       </view>
     </view>
   </view>

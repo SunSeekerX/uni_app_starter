@@ -18,6 +18,7 @@ feng-parse
 # windi-css-uni
 packages/windi-css-uni
 
-# Temp
-src/utools
+# packages
+packages/limm-utools
 src/components/c-icon
+

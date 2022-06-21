@@ -1,0 +1,169 @@
+/* ========== flex布局相关 ========== */
+.dp-f {
+  /* #ifndef APP-NVUE */
+  display: flex !important;
+
+  /* #endif */
+}
+
+.dp-fc {
+  /* #ifndef APP-NVUE */
+  display: flex !important;
+
+  /* #endif */
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* #ifndef APP-NVUE */
+.dp-ib {
+  display: inline-block !important;
+}
+
+.bs-bx {
+  box-sizing: border-box;
+}
+
+/* #endif */
+
+.fd-r {
+  flex-direction: row !important;
+}
+
+.fd-rr {
+  flex-direction: row-reverse !important;
+}
+
+.fd-c {
+  flex-direction: column !important;
+}
+
+.fd-cr {
+  flex-direction: column-reverse !important;
+}
+
+.fw-w {
+  flex-wrap: wrap !important;
+}
+
+.fw-wr {
+  flex-wrap: wrap-reverse !important;
+}
+
+.jc-fs {
+  justify-content: flex-start !important;
+}
+
+.jc-fe {
+  justify-content: flex-end !important;
+}
+
+.jc-c {
+  justify-content: center !important;
+}
+
+.jc-sb {
+  justify-content: space-between !important;
+}
+
+.jc-sa {
+  justify-content: space-around !important;
+}
+
+.ai-fs {
+  align-items: flex-start !important;
+}
+
+.ai-fe {
+  align-items: flex-end !important;
+}
+
+.ai-c {
+  align-items: center !important;
+}
+
+/* #ifndef APP-NVUE */
+.ai-bl {
+  align-items: baseline !important;
+}
+
+.ac-fs {
+  align-content: flex-start !important;
+}
+
+.ac-fe {
+  align-content: flex-end !important;
+}
+
+.ac-c {
+  align-content: center !important;
+}
+
+.ac-sb {
+  align-content: space-between !important;
+}
+
+.ac-sa {
+  align-content: space-around !important;
+}
+
+.as-fs {
+  align-self: flex-start !important;
+}
+
+.as-fe {
+  align-self: flex-end !important;
+}
+
+.as-c {
+  align-self: center !important;
+}
+
+.as-bl {
+  align-self: baseline !important;
+}
+
+/* #endif */
+
+/* flex (1~10) */
+@for $i from 1 through 100 {
+  .f-#{$i} {
+    flex: $i !important;
+  }
+}
+
+/* 定位相关 */
+.pt-f {
+  position: fixed !important;
+}
+
+.pt-r {
+  position: relative !important;
+}
+
+.pt-a {
+  position: absolute !important;
+}
+
+.t-0 {
+  top: 0;
+}
+
+.l-0 {
+  left: 0;
+}
+
+.r-0 {
+  right: 0;
+}
+
+.bot-0 {
+  bottom: 0;
+}
+
+.all-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

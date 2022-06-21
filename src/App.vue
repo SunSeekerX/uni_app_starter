@@ -72,14 +72,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../packages/markrgba-css/src/index.scss'; /* Some magic css */
-@import '../packages/windi-css-uni/src/index.scss';
+@import '@root/packages/limm-markrgba-css/src/index.scss'; /* Some magic css */
+@import '@root/packages/limm-windi-css-uni/src/index.scss';
 @import '@/common/scss/index.scss'; /* 全局通用样式 */
 
 /* #ifndef APP-NVUE */
 
 /* uview */
-@import 'uview-ui/index.scss';
+@import '@/uni_modules/uview-ui/index.scss';
 
 /* CNode 需要 */
 @import '~@/apps/cnode/components/feng-parse/parse.css';

@@ -19,8 +19,7 @@ src/mypUI/**
 # Cnode 需要
 feng-parse
 
-# Temp
-packages/utools
-packages/uni-pushy-client
+# packages
+packages/limm-utools
+packages/limm-uni-pushy-client
 src/components/c-icon
-
