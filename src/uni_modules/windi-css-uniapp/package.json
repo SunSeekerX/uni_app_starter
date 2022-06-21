@@ -1,44 +1,13 @@
 {
-  "name": "@limm/windi-css-uni",
-  "displayName": "windi-css-uni",
-  "version": "0.1.0",
-  "description": "wind-css 风格的 css 库。专为 uni-app 打造。",
-  "keywords": [
-    "css",
-    "windicss",
-    "uni-app"
-],
-  "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi-css-uni",
+  "author": "SunSeekerX",
   "bugs": {
     "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
-  },
-  "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi-css-uni",
-  "license": "UNLICENSED",
-  "author": "SunSeekerX",
-  "main": "src/index.scss",
-  "scripts": {
-    "build": "sass --no-source-map --no-charset --style=compressed src/index.scss:dist/output.css",
-    "dev": "sass --no-source-map --no-charset --watch src/index.scss:dist/output.css",
-    "gc": "git add -A && git-cz && git pull && git push",
-    "pkg:sort": "npx sort-package-json",
-    "pub": "npm publish --access public"
-  },
-  "engines": {
-    "HBuilderX": "^3.1.12"
   },
   "dcloudext": {
     "category": [
       "前端组件",
       "通用组件"
     ],
-    "sale": {
-      "regular": {
-        "price": "0.00"
-      },
-      "sourcecode": {
-        "price": "0.00"
-      }
-    },
     "contact": {
       "qq": "1647800606"
     },
@@ -47,51 +16,82 @@
       "data": "插件不采集任何数据",
       "permissions": "无"
     },
-    "npmurl": "https://www.npmjs.com/package/@limm/windi-css-uni"
+    "npmurl": "https://www.npmjs.com/package/@limm/windi-css-uni",
+    "sale": {
+      "regular": {
+        "price": "0.00"
+      },
+      "sourcecode": {
+        "price": "0.00"
+      }
+    }
   },
+  "description": "wind-css 风格的 css 库。专为 uni-app 打造。",
+  "displayName": "windi-css-uni",
+  "engines": {
+    "HBuilderX": "^3.1.12"
+  },
+  "homepage": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi-css-uni",
   "id": "windi-css-uniapp",
+  "keywords": [
+    "css",
+    "windicss",
+    "uni-app"
+  ],
+  "license": "UNLICENSED",
+  "main": "src/index.scss",
+  "name": "@limm/windi-css-uni",
+  "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi-css-uni",
+  "scripts": {
+    "build": "sass --no-source-map --no-charset --style=compressed src/index.scss:dist/output.css",
+    "dev": "sass --no-source-map --no-charset --watch src/index.scss:dist/output.css",
+    "gc": "git add -A && git-cz && git pull && git push",
+    "pkg:sort": "npx sort-package-json",
+    "pub": "npm publish --access public"
+  },
   "uni_modules": {
     "dependencies": [],
     "encrypt": [],
     "platforms": {
-      "cloud": {
-        "tcb": "y",
-        "aliyun": "y"
-      },
       "client": {
+        "App": {
+          "app-nvue": "y",
+          "app-vue": "y"
+        },
+        "H5-mobile": {
+          "Android Browser": "y",
+          "QQ浏览器(Android)": "y",
+          "Safari": "y",
+          "微信浏览器(Android)": "y"
+        },
+        "H5-pc": {
+          "Chrome": "y",
+          "Edge": "y",
+          "Firefox": "y",
+          "IE": "y",
+          "Safari": "y"
+        },
         "Vue": {
           "vue2": "y",
           "vue3": "y"
         },
-        "App": {
-          "app-vue": "y",
-          "app-nvue": "y"
-        },
-        "H5-mobile": {
-          "Safari": "y",
-          "Android Browser": "y",
-          "微信浏览器(Android)": "y",
-          "QQ浏览器(Android)": "y"
-        },
-        "H5-pc": {
-          "Chrome": "y",
-          "IE": "y",
-          "Edge": "y",
-          "Firefox": "y",
-          "Safari": "y"
-        },
         "小程序": {
-          "微信": "y",
-          "阿里": "y",
-          "百度": "y",
+          "QQ": "y",
           "字节跳动": "y",
-          "QQ": "y"
+          "微信": "y",
+          "百度": "y",
+          "阿里": "y"
         },
         "快应用": {
           "华为": "y",
           "联盟": "y"
         }
+      },
+      "cloud": {
+        "aliyun": "y",
+        "tcb": "y"
       }
     }
-  }
+  },
+  "version": "0.1.0"
 }
