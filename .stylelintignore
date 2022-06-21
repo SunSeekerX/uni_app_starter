@@ -1,6 +1,8 @@
-# 忽略uni-app官方的组件库错误和警告，官方的竟然通不过...
+# 忽略 uni-app 官方的组件库
 src/components/uni-*
+# 忽略 nvue 组件库
 src/components-nvue/
+# 忽略原生插件
 nativeplugins/
 src/res/
 src/static/
@@ -8,16 +10,18 @@ uni_modules
 
 # 忽略打包的文件
 src/unpackage/
+# 忽略静态文件
+src/static/
+# 忽略第三方库文件
 src/utils/libs/
-src/mypUI/
-src/common/scss/markrgba-css/
+
+# uni_modules
+uni_modules
 
 # Cnode 需要
 feng-parse
 
 # packages
-packages/limm-markrgba-css
-packages/limm-windi-css-uni
-packages/limm-utools
+packages/limm-*
 src/components/c-icon
 

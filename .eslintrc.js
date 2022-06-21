@@ -10,6 +10,7 @@ module.exports = {
     plus: 'readonly',
     wx: 'readonly',
     getApp: 'readonly',
+    weex: 'readonly',
   },
   extends: ['eslint:recommended', 'plugin:vue/essential', '@vue/prettier'],
   parserOptions: {

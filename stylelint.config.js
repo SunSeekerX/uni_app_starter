@@ -17,18 +17,21 @@ module.exports = {
   rules: {
     'scss/at-import-partial-extension': 'always',
     'selector-class-pattern': null,
+    // uni-ap 特有的 rpx upx 单位
     'unit-no-unknown': [
       true,
       {
         ignoreUnits: ['rpx', 'upx'],
       },
     ],
+    // uni-app nvue 属性
     'property-no-unknown': [
       true,
       {
         ignoreProperties: ['lines'],
       },
     ],
+    // uni-app 特有的选择器
     'selector-type-no-unknown': [
       true,
       {
@@ -50,6 +53,10 @@ module.exports = {
     'no-empty-source': null,
     // nvue 字体设置
     'font-family-no-missing-generic-family-keyword': null,
+    // scss @ 规则
+    'at-rule-no-unknown': null,
+    // 这个是不然把类似 “rgba(25, 24, 30, 1)” 格式化成 "rgb(25 24 30 / 100%)" 这种形式 sass 还不支持这种语法
+    'color-function-notation': null,
     // 禁用类似直接使用 unquote 不行 而要改为 string.unquote 这种的错误
     'scss/no-global-function-names': null,
   },

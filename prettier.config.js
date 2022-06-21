@@ -46,4 +46,13 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   // 末尾换行符 default:"lf"
   endOfLine: 'auto',
+  // 覆写配置指定 nvue 解析为 vue
+  overrides: [
+    {
+      files: ['*.nvue'],
+      options: {
+        parser: 'vue',
+      },
+    },
+  ],
 }

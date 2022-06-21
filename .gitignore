@@ -21,15 +21,6 @@ yarn-error.log*
 *.sln
 *.sw*
 
-# Another files
-package-lock.json
-yarn.lock
-unpackage/release/
-unpackage/debug/
-unpackage/resources/
-unpackage/cache/
-nativeplugins/*.zip
-
 # IDE - VSCode
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -44,3 +35,12 @@ nativeplugins/*.zip
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Another files
+yarn.lock
+package-lock.json
+unpackage/release/
+unpackage/debug/
+unpackage/resources/
+unpackage/cache/
+nativeplugins/*.zip

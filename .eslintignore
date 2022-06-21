@@ -20,6 +20,5 @@ src/mypUI/**
 feng-parse
 
 # packages
-packages/limm-utools
-packages/limm-uni-pushy-client
+packages/limm-*
 src/components/c-icon

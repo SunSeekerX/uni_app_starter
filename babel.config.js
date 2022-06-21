@@ -28,8 +28,9 @@ if (
         },
       },
     ])
-    // eslint-disable-next-line no-empty
-  } catch (e) {}
+  } catch (e) {
+    console.error(e)
+  }
 }
 
 process.UNI_LIBRARIES = process.UNI_LIBRARIES || ['@dcloudio/uni-ui']
