@@ -1,7 +1,8 @@
 {
   "name": "@limm/windi-css-uni",
-  "version": "0.0.7",
-  "description": "windi-css like tools for uni-app.",
+  "displayName": "windi-css-uni",
+  "version": "0.1.0",
+  "description": "wind-css 风格的 css 库。专为 uni-app 打造",
   "keywords": [
     "css",
     "windicss",
@@ -11,10 +12,7 @@
   "bugs": {
     "url": "https://github.com/SunSeekerX/uni-app-starter/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SunSeekerX/uni-app-starter.git"
-  },
+  "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/windi-css-uni",
   "license": "UNLICENSED",
   "author": "SunSeekerX",
   "main": "src/index.scss",
@@ -22,8 +20,8 @@
     "src/"
   ],
   "scripts": {
-    "dev": "sass --no-source-map --no-charset --watch src/index.scss:dist/output.css",
     "build": "sass --no-source-map --no-charset --style=compressed src/index.scss:dist/output.css",
+    "dev": "sass --no-source-map --no-charset --watch src/index.scss:dist/output.css",
     "gc": "git add -A && git-cz && git pull && git push",
     "pkg:sort": "npx sort-package-json",
     "pub": "npm publish --access public"

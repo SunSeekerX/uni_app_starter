@@ -45,22 +45,22 @@
         operation-name="请输入 AES 加密 iv (填充向量)"
         v-model="aesEncryptionIv"
       />
-      <view class="pt-5">
-        <text class="fs-12 lh-30">请选择 AES 加密模式</text>
+      <view class="wd-pt-5">
+        <text class="wd-text-12 wd-leading-30">请选择 AES 加密模式</text>
         <radio-group @change="(e) => onEncryAESModeChange(e, 'aesEncryptionModeIndex')">
           <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
             <radio :value="String(index)" :checked="index === aesEncryptionModeIndex" />
-            <text class="mr-5">{{ item.name }}</text>
+            <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>
 
-      <view class="pt-5">
-        <text class="fs-12 lh-30">请选择 AES 加密填充模式</text>
+      <view class="wd-pt-5">
+        <text class="wd-text-12 wd-leading-30">请选择 AES 加密填充模式</text>
         <radio-group @change="(e) => onEncryAESPadChange(e, 'aesEncryptionPadIndex')">
           <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
             <radio :value="String(index)" :checked="index === aesEncryptionPadIndex" />
-            <text class="mr-5">{{ item.name }}</text>
+            <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>
@@ -76,22 +76,22 @@
       <!-- AES 解密 -->
       <AppOperationInput operation-name="请输入需要 AES 解密的内容" v-model="aesDecryptionText" />
 
-      <view class="pt-5">
-        <text class="fs-12 lh-30">请选择 AES 解密模式</text>
+      <view class="wd-pt-5">
+        <text class="wd-text-12 wd-leading-30">请选择 AES 解密模式</text>
         <radio-group @change="(e) => onEncryAESModeChange(e, 'aesDecryptionModeIndex')">
           <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
             <radio :value="String(index)" :checked="index === aesDecryptionModeIndex" />
-            <text class="mr-5">{{ item.name }}</text>
+            <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>
 
-      <view class="pt-5">
-        <text class="fs-12 lh-30">请选择 AES 解密填充模式</text>
+      <view class="wd-pt-5">
+        <text class="wd-text-12 wd-leading-30">请选择 AES 解密填充模式</text>
         <radio-group @change="(e) => onEncryAESPadChange(e, 'aesDecryptionPadIndex')">
           <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
             <radio :value="String(index)" :checked="index === aesDecryptionPadIndex" />
-            <text class="mr-5">{{ item.name }}</text>
+            <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>

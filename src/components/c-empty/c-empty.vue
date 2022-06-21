@@ -10,7 +10,7 @@
   <view>
     <!-- #ifndef APP-NVUE -->
     <c-provider
-      class="dp-f fd-c ai-c jc-c"
+      class="wd-flex wd-flex-col wd-items-center wd-justify-center"
       :style="{
         height: `${comHeight}px`,
         'background-color': backgroundColor,
@@ -18,7 +18,7 @@
       :page-height="false"
     >
       <c-icon :name="icon" size="66" :color="color" :svg="isUseSvg"></c-icon>
-      <text class="fs-12 mt-5" :style="{ color: color }">空空如也</text>
+      <text class="wd-text-12 wd-mt-5" :style="{ color: color }">空空如也</text>
     </c-provider>
     <!-- #endif -->
 
@@ -30,7 +30,9 @@
     >
       <c-icon :name="icon" size="66" :color="color || themeVal('colorInfoDisabled')"></c-icon>
 
-      <text :style="`font-size: 12px; color: ${color || themeVal('colorInfoDisabled')};`" class="c-9">空空如也</text>
+      <text :style="`font-size: 12px; color: ${color || themeVal('colorInfoDisabled')};`" class="wd-text-999"
+        >空空如也</text
+      >
     </view>
     <!-- #endif -->
   </view>

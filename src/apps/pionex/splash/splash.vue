@@ -7,11 +7,11 @@
 -->
 
 <template>
-  <view class="content dp-f jc-c ai-c">
+  <view class="content wd-flex wd-justify-center wd-items-center">
     <uni-transition :duration="800" ref="ani" :mode-class="['fade', 'slide-bottom']" :show="state.isShowSplash">
-      <view class="dp-f fd-c">
-        <image class="w-120 h-120 br-6" src="/static/images/projects/pionex/logo.jpg"></image>
-        <text class="c-6 fs-14 mt-12">全国首家量化交易所</text>
+      <view class="wd-flex wd-flex-col">
+        <image class="wd-w-120 wd-h-120 wd-rounded-6" src="/static/images/projects/pionex/logo.jpg"></image>
+        <text class="wd-text-666 wd-text-14 wd-mt-12">全国首家量化交易所</text>
       </view>
     </uni-transition>
   </view>

@@ -19,7 +19,7 @@
         right: addUnit(right, rpx),
         backgroundColor: background,
       }"
-      class="pt-f dp-fc z-1"
+      class="wd-fixed wd-flex wd-z-1"
     >
       <slot />
     </view>

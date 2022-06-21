@@ -1,0 +1,113 @@
+// 边框圆角
+.#{$prefix}rounded-none {
+  border-radius: 0px;
+}
+.#{$prefix}rounded-full {
+  border-radius: 9999px;
+}
+@for $i from 0 through 32 {
+  // border-radius: {0~32}px;
+  .#{$prefix}rounded-#{$i} {
+    border-radius: $i + px;
+  }
+}
+@for $i from 0 through 64 {
+  // border-radius: {0~64}rpx;
+  .#{$prefix}rounded-#{$i}r {
+    border-radius: $i + rpx;
+  }
+}
+@for $i from 0 through 100 {
+  // border-radius: {0~100}%;
+  .#{$prefix}rounded-#{$i}p {
+    border-radius: $i * 1%;
+  }
+}
+
+// 边框宽度 {0~10} px || rpx
+@for $i from 0 through 10 {
+  // border-width: {0~10}px;
+  .#{$prefix}border-#{$i} {
+    border-width: $i + px;
+  }
+  // border-top-width: {0~10}px;
+  .#{$prefix}border-top-#{$i} {
+    border-top-width: $i + px;
+  }
+  // border-right-width: {0~10}px;
+  .#{$prefix}border-right-#{$i} {
+    border-right-width: $i + px;
+  }
+  // border-bottom-width: {0~10}px;
+  .#{$prefix}border-bottom-#{$i} {
+    border-bottom-width: $i + px;
+  }
+  // border-left-width: {0~10}px;
+  .#{$prefix}border-left-#{$i} {
+    border-left-width: $i + px;
+  }
+}
+@for $i from 0 through 20 {
+  // border-width: {0~20}rpx;
+  .#{$prefix}border-#{$i}r {
+    border-width: $i + rpx;
+  }
+  // border-top-width: {0~20}rpx;
+  .#{$prefix}border-top-#{$i}r {
+    border-top-width: $i + rpx;
+  }
+  // border-right-width: {0~20}rpx;
+  .#{$prefix}border-right-#{$i}r {
+    border-right-width: $i + rpx;
+  }
+  // border-bottom-width: {0~20}rpx;
+  .#{$prefix}border-bottom-#{$i}r {
+    border-bottom-width: $i + rpx;
+  }
+  // border-left-width: {0~20}rpx;
+  .#{$prefix}border-left-#{$i}r {
+    border-left-width: $i + rpx;
+  }
+}
+
+// 边框颜色
+.#{$prefix}border-transparent {
+  border-color: transparent;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}border-current {
+  border-color: currentColor;
+}
+/* #endif */
+.#{$prefix}border-fff,
+.#{$prefix}border-white {
+  border-color: #fff;
+}
+.#{$prefix}border-000,
+.#{$prefix}border-black {
+  border-color: #000;
+}
+@for $i from 1 through 9 {
+  .#{$prefix}border-#{$i * 111} {
+    border-color: unquote("##{$i * 111}");
+  }
+}
+
+// 边框样式
+.#{$prefix}border-solid {
+  border-style: solid;
+}
+.#{$prefix}border-dashed {
+  border-style: dashed;
+}
+.#{$prefix}border-dotted {
+  border-style: dotted;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}border-double {
+  border-style: double;
+}
+.#{$prefix}border-none {
+  border-style: none;
+}
+/* #endif */

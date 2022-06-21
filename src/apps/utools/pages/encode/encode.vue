@@ -18,10 +18,10 @@
       <!-- urlDecode -->
       <AppOperationInput operation-name="请输入需要 URL 解码的内容" v-model="decodeText" />
       <template>
-        <text class="fs-12">解码为 ios 可识别的 url 链接</text>
-        <radio-group class="fs-12" @change="onRadioChange">
+        <text class="wd-text-12">解码为 ios 可识别的 url 链接</text>
+        <radio-group class="wd-text-12" @change="onRadioChange">
           <radio value="true" :checked="isUrl">true</radio>
-          <radio class="ml-12" value="false" :checked="!isUrl">false</radio>
+          <radio class="wd-ml-12" value="false" :checked="!isUrl">false</radio>
         </radio-group>
       </template>
       <AppOperationButton buttonText="URL 解码 - urlDecode(val: string, [url: boolean = true])" @onTap="onDecode" />

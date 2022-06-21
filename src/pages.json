@@ -106,13 +106,6 @@
     /*-------------cnode end-------------*/
     /*-------------jd-ck start-------------*/
     {
-      "path": "apps/pionex/index/index",
-      "style": {
-        "navigationBarTitleText": "Pionex",
-        "enablePullDownRefresh": false
-      }
-    },
-    {
       "path": "apps/jd-ck/index/index",
       "style": {
         "navigationBarTitleText": "Jd-ck",
@@ -168,9 +161,12 @@
       "style": {
         "navigationBarTitleText": "random"
       }
-    },
+    }
     /*-------------utools end-------------*/
+    // #ifdef H5 
     /*-------------Dapp Browser start-------------*/
+    /*-------------web only-------------*/
+    ,
     {
       "path": "apps/dapp-browser/pages/index/index",
       "style": {
@@ -178,6 +174,7 @@
       }
     }
     /*-------------Dapp Browser end-------------*/
+    // #endif
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",

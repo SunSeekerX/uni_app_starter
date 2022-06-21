@@ -76,8 +76,6 @@ export default {
 @import '../packages/windi-css-uni/src/index.scss';
 @import '@/common/scss/index.scss'; /* 全局通用样式 */
 
-// uni-app 抽风不能定义到 @/common/scss/index.scss 条件编译不生效
-
 /* #ifndef APP-NVUE */
 
 /* uview */

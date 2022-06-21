@@ -1,6 +1,6 @@
 <template>
 	<div class='tablebox'>
-		<rich-text :nodes="nodes" :class="node.classStr" :style="'user-select:' + parseSelect"></rich-text>
+		<rich-text :nodes="nodes" :class="node.classStr" :style="'user-select:' + parseSelect" />
 	</div>
 </template>
 <script>

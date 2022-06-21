@@ -3,9 +3,9 @@
     <!-- 轮播图 -->
     <view class="wd-relative wd-pt-10 wd-w-750r">
       <!-- 背景色 -->
-      <view class="swiper-background wd-w-750r" :style="{ backgroundColor: swiperBackground }"></view>
+      <view class="swiper-background wd-w-750r" :style="{ backgroundColor: swiperBackground }" />
       <swiper
-        class="swiper wd-w-750r"
+        class="wd-w-750r"
         style="height: 393.75rpx"
         circular
         autoplay
@@ -14,7 +14,7 @@
         @change="onSwiperChange"
       >
         <swiper-item v-for="item of bannerList" :key="item.url">
-          <image style="height: 393.75rpx" class="w-700r ml-25r mr-25r br-6" :src="item.url"></image>
+          <image style="height: 393.75rpx" class="wd-w-700r wd-ml-25r 25r wd-rounded-6" :src="item.url"></image>
         </swiper-item>
       </swiper>
 
@@ -22,9 +22,17 @@
       <view
         class="wd-absolute wd-left-60r wd-bottom-15r wd-h-36r wd-flex wd-flex-row wd-items-center wd-text-12 wd-text-fff"
       >
-        <text class="num">{{ swiperCurrent + 1 }}</text>
-        <text class="sign c-f fs-11">&#47;</text>
-        <text class="num">{{ bannerList.length }}</text>
+        <text
+          style="background-color: rgba(0, 0, 0, 0.3)"
+          class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-flex-center"
+          >{{ swiperCurrent + 1 }}</text
+        >
+        <text class="sign wd-text-fff wd-text-11">&#47;</text>
+        <text
+          style="background-color: rgba(0, 0, 0, 0.3)"
+          class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-flex-center"
+          >{{ bannerList.length }}</text
+        >
       </view>
     </view>
 
@@ -32,15 +40,13 @@
       <!-- 项目菜单 -->
       <view class="menu">
         <view
+          @tap="onClickMenuItem(item.url)"
           v-for="item of menuList"
           :key="item.name"
-          @tap="
-            globalData.$utools.route({
-              url: item.url,
-            })
-          "
           class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
-          :style="`background-image: ${item.backgroundImage};`"
+          :style="{
+            'background-image': item.backgroundImage,
+          }"
         >
           <view class="wd-flex wd-flex-col wd-flex-1">
             <view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">
@@ -53,18 +59,20 @@
             </view>
           </view>
 
-          <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
+          <c-icon color="#ffffff" name="icon-gengduo" size="16" />
         </view>
       </view>
     </view>
   </view>
 </template>
 <script>
-import { nvueGetGlobalData } from '@/utils/mixin'
+getApp({allowDefault: true}).globalData
 export default {
-  mixins: [nvueGetGlobalData],
+  name: 'PageHome',
   data() {
     return {
+      // GlobalData
+      // globalData: getApp({ allowDefault: true }).globalData,
       // 轮播图背景色
       swiperBackground: 'rgb(12,12,12)',
       // 轮播图指针
@@ -95,13 +103,13 @@ export default {
           name: 'Pionex',
           description: '想开发静态页面的项目',
           url: '/apps/pionex/index/index',
-          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455);',
+          backgroundImage: 'linear-gradient( to right, #FEB692, #EA5455)',
         },
         {
           name: 'Cnode',
           description: '刚刚接触 uni-app 不久的开发的项目，整合进来了。',
           url: '/apps/cnode/pages/index/index',
-          backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F);',
+          backgroundImage: 'linear-gradient( to right, #81FBB8, #28C76F)',
         },
         // {
         //   name: 'Dapp 浏览器',
@@ -124,6 +132,13 @@ export default {
       this.swiperCurrent = index
       this.swiperBackground = this.bannerList[index].background
     },
+    // 点击菜单
+    onClickMenuItem(url) {
+      const globalData = getApp({allowDefault: true}).globalData
+      globalData.$utools.route({
+        url,
+      })
+    },
   },
 }
 </script>
@@ -138,15 +153,5 @@ export default {
   transition-duration: 0.3s;
   transition-delay: 0s;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.num {
-  width: 36upx;
-  height: 36upx;
-  border-radius: 50px;
-  font-size: 24upx;
-  color: #fff;
-  text-align: center;
-  line-height: 36upx;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 </style>

@@ -1,0 +1,118 @@
+/* #ifndef APP-NVUE */
+// 背景固定
+.#{$prefix}bg-fixed {
+  background-attachment: fixed;
+}
+.#{$prefix}bg-local {
+  background-attachment: local;
+}
+.#{$prefix}bg-scroll {
+  background-attachment: scroll;
+}
+
+// 背景裁剪
+.#{$prefix}bg-clip-border {
+  background-clip: border-box;
+}
+.#{$prefix}bg-clip-padding {
+  background-clip: padding-box;
+}
+.#{$prefix}bg-clip-content {
+  background-clip: content-box;
+}
+/* #endif */
+
+// 背景颜色
+.#{$prefix}bg-transparent {
+  background-color: transparent;
+}
+/* #ifndef APP-NVUE */
+.#{$prefix}bg-current {
+  background-color: currentColor;
+}
+/* #endif */
+.#{$prefix}bg-000,
+.#{$prefix}bg-black {
+  background-color: #000;
+}
+.#{$prefix}bg-fff,
+.#{$prefix}bg-white {
+  background-color: #fff;
+}
+@for $i from 1 through 9 {
+  .#{$prefix}bg-#{$i * 111} {
+    background-color: unquote("##{$i * 111}");
+  }
+}
+
+/* #ifndef APP-NVUE */
+// 背景颜色不透明度
+
+// 背景图像位置
+.#{$prefix}bg-bottom {
+  background-position: bottom;
+}
+.#{$prefix}bg-center {
+  background-position: center;
+}
+.#{$prefix}bg-left {
+  background-position: left;
+}
+.#{$prefix}bg-left-bottom {
+  background-position: left bottom;
+}
+.#{$prefix}bg-left-top {
+  background-position: left top;
+}
+.#{$prefix}bg-right {
+  background-position: right;
+}
+.#{$prefix}bg-right-bottom {
+  background-position: right bottom;
+}
+.#{$prefix}bg-right-top {
+  background-position: right top;
+}
+.#{$prefix}bg-top {
+  background-position: top;
+}
+
+// 背景图像重复
+.#{$prefix}bg-repeat {
+  background-repeat: repeat;
+}
+.#{$prefix}bg-repeat-x {
+  background-repeat: repeat-x;
+}
+.#{$prefix}bg-repeat-y {
+  background-repeat: repeat-y;
+}
+.#{$prefix}bg-repeat-round {
+  background-repeat: round;
+}
+.#{$prefix}bg-repeat-space {
+  background-repeat: space;
+}
+
+// 背景图像大小
+.#{$prefix}bg-auto {
+  background-size: auto;
+}
+.#{$prefix}bg-cover {
+  background-size: cover;
+}
+.#{$prefix}bg-contain {
+  background-size: contain;
+}
+
+// 背景图像原点
+.#{$prefix}bg-origin-border {
+  background-origin: border-box;
+}
+.#{$prefix}bg-origin-padding {
+  background-origin: padding-box;
+}
+.#{$prefix}bg-origin-content {
+  background-origin: content-box;
+}
+/* #endif */

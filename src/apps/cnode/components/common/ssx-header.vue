@@ -25,6 +25,7 @@
   /* #ifndef H5 */
   margin-bottom: 50rpx;
   padding: 25rpx 0;
+  padding-bottom: 20rpx;
 
   /* #endif */
   background-color: #444;

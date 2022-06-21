@@ -8,13 +8,15 @@
 <template>
   <!-- 输入区 -->
   <label>
-    <text class="fs-12">{{ operationName }}</text>
+    <text class="wd-text-12">{{ operationName }}</text>
     <textarea
       @input="$emit('change', $event.target.value)"
       :value="value"
       :placeholder="placeholder"
       class="content-input"
-      :style="`height: ${inputHeight}px;`"
+      :style="{
+        height: `${inputHeight}px`,
+      }"
       maxlength="-1"
       type="text"
     />

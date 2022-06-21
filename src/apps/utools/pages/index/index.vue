@@ -1,11 +1,3 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-09-06 14:22:51
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:44:25
--->
-
 <template>
   <view>
     <view class="content">
@@ -19,16 +11,18 @@
               url: item.url,
             })
           "
-          class="dp-f fd-r jc-sb ai-c br-6 mb-12 p-all-12"
-          :style="`background-image: ${item.backgroundImage};`"
+          class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
+          :style="{
+            'background-image': item.backgroundImage,
+          }"
         >
-          <view class="dp-f fd-c f-1">
-            <view class="item fd-r jc-sb ai-c lh-34">
-              <text class="c-f fs-16 fw-b">{{ item.name }}</text>
+          <view class="wd-flex wd-flex-col wd-flex-1">
+            <view class="item wd-flex-row wd-justify-between wd-items-center wd-leading-34">
+              <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
             </view>
 
             <!-- 描述 -->
-            <view class="description mt-6">
+            <view class="description wd-mt-6">
               <text class="description-text">{{ item.description }}</text>
             </view>
           </view>
@@ -66,25 +60,25 @@ export default {
           name: 'encrypt',
           description: '加密解密相关',
           url: '/apps/utools/pages/encrypt/encrypt',
-          backgroundImage: 'linear-gradient( to left, #FFAA85, #B3315F;',
+          backgroundImage: 'linear-gradient( to left, #FFAA85, #B3315F)',
         },
         {
           name: 'validate',
           description: '正则验证相关',
           url: '/apps/utools/pages/validate/validate',
-          backgroundImage: 'linear-gradient( to left, #97ABFF, #123597);',
+          backgroundImage: 'linear-gradient( to left, #97ABFF, #123597)',
         },
         {
           name: 'log',
           description: '日志工具',
           url: '/apps/utools/pages/log/log',
-          backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C);',
+          backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C)',
         },
         {
           name: 'random',
           description: '随机工具',
           url: '/apps/utools/pages/random/random',
-          backgroundImage: 'linear-gradient( to left, #3B2667, #BC78EC);',
+          backgroundImage: 'linear-gradient( to left, #3B2667, #BC78EC)',
         },
       ],
     }

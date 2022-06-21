@@ -1,0 +1,6 @@
+// Opacity
+@for $i from 0 through 20 {
+  .#{$prefix}opacity-#{$i * 5} {
+    opacity: 0.05 * $i;
+  }
+}

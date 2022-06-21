@@ -32,7 +32,9 @@ export default {
   z-index: 1;
   top: calc(var(--window-top) + 6px);
   max-height: 200px;
-  padding: 6px;
+  padding: 12rpx;
+
+  // padding: 6px;
   overflow-y: scroll;
   border-width: 1px;
   border-style: solid;
