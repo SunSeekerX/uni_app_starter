@@ -27,9 +27,16 @@
     "pkg:sort": "npx sort-package-json",
     "serve": "rollup -c --watch"
   },
+  "dependencies": {
+    "@limm/jsencrypt-mp": "3.2.2-0",
+    "crypto-js": "3.3.0",
+    "dayjs": "^1.11.3",
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2"
+  },
   "devDependencies": {
     "@dcloudio/types": "*",
-    "@limm/jsencrypt-mp": "3.2.2-0",
+    "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
@@ -39,14 +46,10 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
-    "crypto-js": "3.3.0",
-    "dayjs": "^1.11.3",
     "eslint": "^8.18.0",
-    "js-base64": "^3.7.2",
     "rollup": "^2.75.7",
     "rollup-plugin-filesize": "^9.1.2",
     "typescript": "^4.7.4",
-    "uuid": "^8.3.2",
     "vuepress": "^1.9.7",
     "vuepress-theme-antdocs": "^1.4.3"
   }

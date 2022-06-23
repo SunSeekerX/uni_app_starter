@@ -7,22 +7,17 @@
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "types": [
-      "@dcloudio/types",
-    ],
+    "types": ["@dcloudio/types"],
+    "paths": {
+      "@/*": ["./*"]
+    },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "test"
-  ],
+  "include": ["src"],
+  "exclude": ["test"],
   "typeAcquisition": {
-    "exclude": [
-      "@dcloudio/types"
-    ]
+    "exclude": ["@dcloudio/types"]
   }
 }

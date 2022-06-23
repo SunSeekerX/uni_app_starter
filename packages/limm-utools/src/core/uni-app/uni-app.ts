@@ -6,6 +6,8 @@
  * @LastEditTime: 2021-09-17 19:57:30
  */
 
+import { isNil } from 'lodash'
+
 import type { UniRouteOptions, UniCopyOptions, UniOpenUrlOptions } from './interface'
 
 /**
@@ -66,6 +68,7 @@ const navigateBackAnimationTypes = [
   'zoom-fade-in',
   'pop-out',
 ]
+
 /**
  * uni-app 路由封装
  * @param { Object } options - 参数配置
@@ -249,6 +252,7 @@ export function route(options: UniRouteOptions): void {
 
 /**
  * uni-app 复制文字方法
+ * @deprecated since version 0.0.12
  * @param { string } value - 需要复制的内容
  * @param { Object } [options] - 参数配置
  * @param { string } [options.msg=''] - 复制完成提示文字
@@ -304,6 +308,19 @@ export function copy(value: string | number, options: UniCopyOptions): void {
   }
   s.remove()
   // #endif
+}
+
+/**
+ * 设置系统剪贴板的内容, 默认不显示 toast
+ */
+export async function setClipboardData(options?: UniApp.SetClipboardDataOptions) {
+  if (isNil(options)) {
+    return
+  }
+  if (isNil(options?.showToast)) {
+    options.showToast = false
+  }
+  return await uni.setClipboardData(options)
 }
 
 /**

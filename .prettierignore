@@ -25,4 +25,7 @@ feng-parse
 
 # packages
 packages/limm-*
+packages/**/dist # 忽略打包文件
+packages/**/bin #  忽略打包文件
+!packages/limm-utools
 
