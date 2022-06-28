@@ -34,6 +34,10 @@ export default {
           name: 'icon',
           url: '/pages/module/icon/icon',
         },
+        {
+          name: 'font-weight 测试',
+          url: '/pages/module/font-weight/font-weight',
+        },
       ],
     }
   },

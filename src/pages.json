@@ -40,6 +40,13 @@
       }
     },
     {
+      "path": "pages/module/font-weight/font-weight",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
       "path": "apps/biance-rate/biance-rate",
       "style": {
         "navigationBarTitleText": "币安资金费率",

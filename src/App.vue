@@ -72,8 +72,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@root/packages/limm-markrgba-css/src/index.scss'; /* Some magic css */
-@import '@root/packages/limm-windi-css-uni/src/index.scss';
+@import '../packages/limm-markrgba-css/src/index.scss'; /* Some magic css */
+@import '../packages/limm-windi-css-uni/src/index.scss';
 @import '@/common/scss/index.scss'; /* 全局通用样式 */
 
 /* #ifndef APP-NVUE */
