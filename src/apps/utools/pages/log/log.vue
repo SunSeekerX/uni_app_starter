@@ -1,14 +1,5 @@
-<!--
- * 日志工具
- * @author: SunSeekerX
- * @Date: 2021-09-17 21:36:14
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:48:09
--->
-
 <template>
-  <view class="page">
-    <!-- <AppOutput :output="consoleText" /> -->
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOperationContent name="日志工具">
       <AppOperationInput operation-name="请输入标签名" v-model="tagName" />
 
@@ -19,10 +10,13 @@
       <AppOperationButton buttonText="warn" @onTap="onLogWarn" />
       <AppOperationButton buttonText="error" @onTap="onLogError" />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
+/**
+ * LogUtil 实用性不强，待废弃
+ */
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
 import AppOperationButton from '../../components/app-operation-button/app-operation-button'
@@ -67,7 +61,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

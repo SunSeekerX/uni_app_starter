@@ -6,7 +6,6 @@
  * @LastEditTime: 2021-09-17 20:15:04
  */
 
-import { LogUtil } from './index'
 import { toast } from '@root/packages/limm-utools'
 import errCode from './err-code'
 
@@ -17,7 +16,7 @@ import errCode from './err-code'
  * @returns void
  */
 function handleApiRequestException(res) {
-  LogUtil.warn('Capture request exception >>>', res)
+  console.warn('Capture request exception >>>', res)
 
   if (Object.keys(errCode).includes(res.code)) {
     toast(errCode[res.code])
@@ -33,7 +32,7 @@ function handleApiRequestException(res) {
  * @returns void
  */
 function handleWebSocketException(e) {
-  LogUtil.error(e)
+  console.error(e)
 }
 
 /**
@@ -43,7 +42,7 @@ function handleWebSocketException(e) {
  * @returns void
  */
 function handleApplicationException(e) {
-  LogUtil.error(e)
+  console.error(e)
 }
 
 /**
@@ -51,7 +50,7 @@ function handleApplicationException(e) {
  * @param { String } msg tips message
  */
 function handleRequestFail(res) {
-  LogUtil.warn('Capture request fail >>>', res)
+  console.warn('Capture request fail >>>', res)
   if (Object.keys(errCode).includes(res.code)) {
     toast(errCode[res.code])
   } else {

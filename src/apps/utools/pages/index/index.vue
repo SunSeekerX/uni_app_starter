@@ -1,6 +1,6 @@
 <template>
-  <view>
-    <view class="content">
+  <c-page backgroundColor="#f6f6f6">
+    <view class="wd-p-25r">
       <!-- 项目菜单 -->
       <view class="menu">
         <view
@@ -31,7 +31,7 @@
         </view>
       </view>
     </view>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -68,12 +68,12 @@ export default {
           url: '/apps/utools/pages/validate/validate',
           backgroundImage: 'linear-gradient( to left, #97ABFF, #123597)',
         },
-        {
-          name: 'log',
-          description: '日志工具',
-          url: '/apps/utools/pages/log/log',
-          backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C)',
-        },
+        // {
+        //   name: 'log',
+        //   description: '日志工具',
+        //   url: '/apps/utools/pages/log/log',
+        //   backgroundImage: 'linear-gradient( to left, #FFF6B7, #F6416C)',
+        // },
         {
           name: 'random',
           description: '随机工具',

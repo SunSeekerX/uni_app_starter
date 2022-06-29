@@ -7,7 +7,6 @@
  */
 
 import { Request } from '@root/packages/limm-utools'
-import { LogUtil } from '@/utils/index'
 
 /**
  * 创建请求函数对象
@@ -82,13 +81,13 @@ export default function createRequest(options, packErr = true) {
     } catch (res) {
       let packRes = null
       if (res instanceof Error) {
-        LogUtil.error('捕捉到前端代码错误>>>', res)
+        console.error('捕捉到前端代码错误>>>', res)
         packRes = {
           success: false,
           msg: '系统错误',
         }
       } else {
-        LogUtil.error('捕捉到后端服务错误>>>', res)
+        console.error('捕捉到后端服务错误>>>', res)
         packRes = {
           success: false,
           msg: '内部服务器错误',

@@ -1,13 +1,5 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-09-06 14:22:51
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:37:37
--->
-
 <template>
-  <view class="page">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="正则验证">
@@ -27,7 +19,7 @@
       <AppOperationInput operation-name="请输入需要验证 url 地址的内容" v-model="isUrlText" />
       <AppOperationButton buttonText="验证 url 地址: isUrl(val: string): boolean" @onTap="isUrl" />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -95,7 +87,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

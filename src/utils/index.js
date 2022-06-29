@@ -1,16 +1,4 @@
-/**
- * @name:
- * @author: SunSeekerX
- * @Date: 2020-11-05 20:22:23
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:31:01
- */
-
-import { ValidateUtil, LogUtil } from '@root/packages/limm-utools'
-import { appName } from '@/constant'
-LogUtil.setName(appName)
-
-export { LogUtil }
+import { ValidateUtil } from '../../packages/limm-utools'
 
 // 生成从minNum到maxNum的随机数
 export function randomNum(minNum, maxNum) {

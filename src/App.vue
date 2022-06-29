@@ -26,7 +26,7 @@ export default {
     $utools: null,
   },
   onLaunch() {
-    this.$util.LogUtil.log('App Launch')
+    console.log('App Launch')
     // 更新 App info
     this.UPDATE_SYSTEM_INFO()
 
@@ -39,10 +39,10 @@ export default {
     // #endif
   },
   onShow() {
-    this.$util.LogUtil.log('App Show')
+    console.log('App Show')
   },
   onHide() {
-    this.$util.LogUtil.log('App Hide')
+    console.log('App Hide')
   },
   methods: {
     ...mapMutations(['UPDATE_SYSTEM_INFO']),

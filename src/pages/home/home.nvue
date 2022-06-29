@@ -1,78 +1,78 @@
 <template>
-  <view>
-    <!-- 轮播图 -->
-    <view class="wd-relative wd-pt-10 wd-w-750r">
-      <!-- 背景色 -->
-      <view class="swiper-background wd-w-750r" :style="{ backgroundColor: swiperBackground }" />
-      <swiper
-        class="wd-w-750r"
-        style="height: 393.75rpx"
-        circular
-        autoplay
-        :interval="5000"
-        :indicator-dots="false"
-        @change="onSwiperChange"
-      >
-        <swiper-item v-for="item of bannerList" :key="item.url">
-          <image style="height: 393.75rpx" class="wd-w-700r wd-ml-25r 25r wd-rounded-6" :src="item.url"></image>
-        </swiper-item>
-      </swiper>
-
-      <!-- 自定义swiper指示器 -->
-      <view
-        class="wd-absolute wd-left-60r wd-bottom-15r wd-h-36r wd-flex wd-flex-row wd-items-center wd-text-12 wd-text-fff"
-      >
-        <text
-          style="background-color: rgba(0, 0, 0, 0.3)"
-          class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-flex-center"
-          >{{ swiperCurrent + 1 }}</text
+  <c-page backgroundColor="#f6f6f6">
+    <view>
+      <!-- 轮播图 -->
+      <view class="wd-relative wd-pt-10 wd-w-750r">
+        <!-- 背景色 -->
+        <view class="swiper-background wd-w-750r" :style="{ backgroundColor: swiperBackground }" />
+        <swiper
+          class="wd-w-750r"
+          style="height: 393.75rpx"
+          circular
+          autoplay
+          :interval="5000"
+          :indicator-dots="false"
+          @change="onSwiperChange"
         >
-        <text class="sign wd-text-fff wd-text-11">&#47;</text>
-        <text
-          style="background-color: rgba(0, 0, 0, 0.3)"
-          class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-flex-center"
-          >{{ bannerList.length }}</text
-        >
-      </view>
-    </view>
+          <swiper-item v-for="item of bannerList" :key="item.url">
+            <image style="height: 393.75rpx" class="wd-w-700r wd-ml-25r 25r wd-rounded-6" :src="item.url" />
+          </swiper-item>
+        </swiper>
 
-    <view class="content">
-      <!-- 项目菜单 -->
-      <view class="menu">
+        <!-- 自定义swiper指示器 -->
         <view
-          @tap="onClickMenuItem(item.url)"
-          v-for="item of menuList"
-          :key="item.name"
-          class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
-          :style="{
-            'background-image': item.backgroundImage,
-          }"
+          class="wd-absolute wd-left-60r wd-bottom-15r wd-h-36r wd-flex wd-flex-row wd-items-center wd-text-12 wd-text-fff"
         >
-          <view class="wd-flex wd-flex-col wd-flex-1">
-            <view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">
-              <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
+          <text
+            style="background-color: rgba(0, 0, 0, 0.3)"
+            class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-text-center"
+            >{{ swiperCurrent + 1 }}</text
+          >
+          <text class="sign wd-text-fff wd-text-11">&#47;</text>
+          <text
+            style="background-color: rgba(0, 0, 0, 0.3)"
+            class="wd-w-36r wd-h-36r wd-rounded-full wd-text-24r wd-text-fff wd-text-center"
+            >{{ bannerList.length }}</text
+          >
+        </view>
+      </view>
+
+      <view class="wd-p-25r">
+        <!-- 项目菜单 -->
+        <view class="menu">
+          <view
+            @tap="onClickMenuItem(item.url)"
+            v-for="item of menuList"
+            :key="item.name"
+            class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
+            :style="{
+              'background-image': item.backgroundImage,
+            }"
+          >
+            <view class="wd-flex wd-flex-col wd-flex-1">
+              <view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">
+                <text class="wd-text-fff wd-text-16 wd-font-bold">{{ item.name }}</text>
+              </view>
+
+              <!-- 描述 -->
+              <view class="wd-mt-6">
+                <text class="wd-text-12 wd-text-fff">{{ item.description }}</text>
+              </view>
             </view>
 
-            <!-- 描述 -->
-            <view class="wd-mt-6">
-              <text class="wd-text-12 wd-text-fff">{{ item.description }}</text>
-            </view>
+            <c-icon color="#ffffff" name="icon-gengduo" size="16" />
           </view>
-
-          <c-icon color="#ffffff" name="icon-gengduo" size="16" />
         </view>
       </view>
     </view>
-  </view>
+  </c-page>
 </template>
+
 <script>
-getApp({allowDefault: true}).globalData
 export default {
   name: 'PageHome',
   data() {
     return {
-      // GlobalData
-      // globalData: getApp({ allowDefault: true }).globalData,
       // 轮播图背景色
       swiperBackground: 'rgb(12,12,12)',
       // 轮播图指针
@@ -80,11 +80,11 @@ export default {
       // 轮播图
       bannerList: [
         {
-          url: '/static/images/home/1.jpg',
+          url: '/static/images/home/1.webp',
           background: 'rgb(87,100,112)',
         },
         {
-          url: '/static/images/home/2.jpg',
+          url: '/static/images/home/2.webp',
           background: 'rgb(158,94,90)',
         },
       ],
@@ -134,7 +134,7 @@ export default {
     },
     // 点击菜单
     onClickMenuItem(url) {
-      const globalData = getApp({allowDefault: true}).globalData
+      const globalData = getApp({ allowDefault: true }).globalData
       globalData.$utools.route({
         url,
       })
@@ -142,6 +142,7 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
 .swiper-background {
   position: absolute;

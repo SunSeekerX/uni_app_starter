@@ -1,12 +1,5 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-05-23 14:05:56
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-23 14:11:10
--->
 <template>
-  <view>
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <view>
       <view>Svg</view>
       <c-icon name="icon-kong" size="66" :svg="true"></c-icon>
@@ -19,16 +12,19 @@
       <c-icon name="icon-shouye" size="66" :svg="false"></c-icon>
       <c-icon name="icon-shouye" color="#00ff00" size="66" :svg="false"></c-icon>
     </view>
-  </view>
+    <view>
+      <view>unIcon</view>
+      <unIcon name="kefu" />
+    </view>
+  </c-page>
 </template>
 
 <script>
+import unIcon from '@/components/un-icon/un-icon'
 export default {
   name: 'ModuleIcon',
-  data() {
-    return {}
+  components: {
+    unIcon,
   },
 }
 </script>
-
-<style lang="scss" scoped></style>

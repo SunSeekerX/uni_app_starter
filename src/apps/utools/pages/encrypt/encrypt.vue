@@ -1,13 +1,5 @@
-<!--
- * 加密
- * @author: SunSeekerX
- * @Date: 2021-07-01 23:39:11
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 14:26:19
--->
-
 <template>
-  <view class="page">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="md5 加密">
@@ -163,7 +155,7 @@
         buttonText="RSA 解密: 使用本地存储的解密器，用封装方法解密"
       />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -566,7 +558,3 @@ fhe0p/VKfqSYgA==
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

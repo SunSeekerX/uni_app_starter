@@ -1,5 +1,5 @@
 <template>
-  <view class="content">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <!-- 环境切换 -->
     <!-- <u-button @click="state.isShowEnvActionSheet = true">
       {{ `环境切换，当前环境：${debug_env}` }}
@@ -18,7 +18,7 @@
     <view class="menu">
       <view
         @tap="onGetUpdate"
-        class="item wd-flex wd-justify-between wd-items-center wd-h-44 wd-mt-12 wd-pl-12 wd-pr-12 wd-rounded-6"
+        class="wd-bg-fff wd-flex wd-justify-between wd-items-center wd-h-44 wd-mt-12 wd-pl-12 wd-pr-12 wd-rounded-6"
         style="border: solid 1px #eee; box-shadow: 0 2px 5px rgb(0 0 0 / 10%)"
       >
         <text class="wd-text-666 wd-text-14">检查更新</text>
@@ -44,7 +44,7 @@
       <view>{{ debug_env }}:{{ appInfo.wgtVersionCode }}</view>
     </view>
     <!-- #endif -->
-  </view>
+  </c-page>
 </template>
 
 <script>

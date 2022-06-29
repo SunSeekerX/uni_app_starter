@@ -1,13 +1,5 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-03-27 23:41:33
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:52:42
--->
-
 <template>
-  <view>
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <view>部分设备字体默认就是等宽所以看不出来差别！</view>
     <view>普通字体</view>
     <view class="wd-text-40">012340123401234</view>
@@ -16,7 +8,7 @@
     <view>等宽字体</view>
     <view><c-mono-font class="wd-text-40" text="012340123401234" /> </view>
     <view><c-mono-font class="wd-text-40" text="567895678956789" /> </view>
-  </view>
+  </c-page>
 </template>
 
 <script>

@@ -1,11 +1,3 @@
-<!--
- * navigateTo
- * @author: SunSeekerX
- * @Date: 2021-09-17 14:28:27
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 14:57:27
--->
-
 <template>
   <view
     class="page wd-flex wd-flex-col"
@@ -49,7 +41,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

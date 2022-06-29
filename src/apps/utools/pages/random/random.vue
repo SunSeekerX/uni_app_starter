@@ -1,18 +1,10 @@
-<!--
- * 随机工具
- * @author: SunSeekerX
- * @Date: 2021-09-17 21:36:14
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:48:09
--->
-
 <template>
-  <view class="page">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
     <AppOperationContent name="随机工具">
       <AppOperationButton buttonText="uuidv1()" @onTap="onUUIDV1" />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -40,7 +32,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

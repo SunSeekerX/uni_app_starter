@@ -1,13 +1,5 @@
-<!--
- * uni-app 相关
- * @author: SunSeekerX
- * @Date: 2021-09-06 14:22:51
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 19:45:28
--->
-
 <template>
-  <view class="page">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="uni-app api 二次封装">
@@ -73,7 +65,7 @@
       <AppOperationButton buttonText="网络请求 - DELETE: route(options: Object): void" @onTap="onDelete" />
       <AppOperationButton buttonText="网络请求 - UPLOAD: route(options: Object): void" @onTap="onUpload" />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -162,7 +154,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

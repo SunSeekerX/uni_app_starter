@@ -12,9 +12,9 @@
       }
     },
     {
-      "path": "pages/module/module",
+      "path": "pages/find/find",
       "style": {
-        "navigationBarTitleText": "组件",
+        "navigationBarTitleText": "发现",
         "enablePullDownRefresh": false
       }
     },
@@ -33,14 +33,21 @@
       }
     },
     {
-      "path": "pages/module/mono-font/mono-font",
+      "path": "pages/find/mono-font/mono-font",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
       }
     },
     {
-      "path": "pages/module/font-weight/font-weight",
+      "path": "pages/find/font-weight/font-weight",
+      "style": {
+        "navigationBarTitleText": "",
+        "enablePullDownRefresh": false
+      }
+    },
+    {
+      "path": "pages/find/icon/icon",
       "style": {
         "navigationBarTitleText": "",
         "enablePullDownRefresh": false
@@ -70,13 +77,6 @@
       }
     },
     /*-------------Pionex end-------------*/
-    {
-      "path": "pages/module/icon/icon",
-      "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
-      }
-    },
     /*-------------cnode start-------------*/
     // 首页
     {
@@ -186,8 +186,8 @@
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app-starter",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F6F6F6",
     "pageOrientation": "portrait",
     "app-plus": {
       "bounce": "none"
@@ -197,30 +197,30 @@
     "color": "#8894AB",
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tab-bar/home.png",
-        "selectedIconPath": "static/images/tab-bar/home_selected.png",
+        "selectedIconPath": "static/images/tab-bar/home-selected.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/module/module",
-        "iconPath": "static/images/tab-bar/module.png",
-        "selectedIconPath": "static/images/tab-bar/module_selected.png",
-        "text": "组件"
+        "pagePath": "pages/find/find",
+        "iconPath": "static/images/tab-bar/find.png",
+        "selectedIconPath": "static/images/tab-bar/find-selected.png",
+        "text": "发现"
       },
       {
         "pagePath": "pages/tools/tools",
         "iconPath": "static/images/tab-bar/tools.png",
-        "selectedIconPath": "static/images/tab-bar/tools_selected.png",
+        "selectedIconPath": "static/images/tab-bar/tools-selected.png",
         "text": "工具"
       },
       {
         "pagePath": "pages/me/me",
         "iconPath": "static/images/tab-bar/me.png",
-        "selectedIconPath": "static/images/tab-bar/me_selected.png",
+        "selectedIconPath": "static/images/tab-bar/me-selected.png",
         "text": "我的"
       }
     ]

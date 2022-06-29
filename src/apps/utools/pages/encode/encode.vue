@@ -1,13 +1,5 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-07-01 23:39:11
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:35:33
--->
-
 <template>
-  <view class="page">
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleObj.res" />
 
     <AppOperationContent name="URL 编码">
@@ -36,7 +28,7 @@
       <AppOperationInput operation-name="请输入需要 base64 解码的内容" v-model="decodeTextBase64" />
       <AppOperationButton buttonText="base64 解码: base64Decode(val: string)" @onTap="onDecodeBase64" />
     </AppOperationContent>
-  </view>
+  </c-page>
 </template>
 
 <script>
@@ -132,7 +124,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-@import '../../common/styles/index.scss';
-</style>

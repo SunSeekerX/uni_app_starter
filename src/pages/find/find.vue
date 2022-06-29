@@ -1,13 +1,7 @@
-<!--
- * 
- * @author: SunSeekerX
- * @Date: 2021-03-27 23:41:33
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 20:19:15
--->
 <template>
-  <view>
-    <button
+  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+    <u-button
+      class="mb-6"
       v-for="item of list"
       :key="item.url"
       @click="
@@ -15,28 +9,28 @@
           url: item.url,
         })
       "
-      >{{ item.name }}</button
     >
-  </view>
+      {{ item.name }}
+    </u-button>
+  </c-page>
 </template>
-
 <script>
 export default {
-  name: 'PageModule',
+  name: 'PageFind',
   data() {
     return {
       list: [
         {
           name: '等宽字体',
-          url: '/pages/module/mono-font/mono-font',
+          url: '/pages/find/mono-font/mono-font',
         },
         {
           name: 'icon',
-          url: '/pages/module/icon/icon',
+          url: '/pages/find/icon/icon',
         },
         {
           name: 'font-weight 测试',
-          url: '/pages/module/font-weight/font-weight',
+          url: '/pages/find/font-weight/font-weight',
         },
       ],
     }
@@ -44,4 +38,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+// page {
+//   background-color: #f6f6f6;
+// }
+</style>
