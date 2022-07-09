@@ -59,5 +59,11 @@ module.exports = {
     'color-function-notation': null,
     // 禁用类似直接使用 unquote 不行 而要改为 string.unquote 这种的错误
     'scss/no-global-function-names': null,
+    'selector-pseudo-element-no-unknown': [
+      true,
+      {
+        ignorePseudoElements: ['v-deep'],
+      },
+    ],
   },
 }

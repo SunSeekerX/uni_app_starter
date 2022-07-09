@@ -17,7 +17,9 @@
       "stable",
       "source-map",
       "defer-to-connect",
-      "ismobilejs"
+      "ismobilejs",
+      "@dcloudio/types"
     ]
-  }
+  },
+  "vueCompilerOptions": { "experimentalCompatMode": 2 }
 }

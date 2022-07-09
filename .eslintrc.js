@@ -11,6 +11,7 @@ module.exports = {
     wx: 'readonly',
     getApp: 'readonly',
     weex: 'readonly',
+    getCurrentPages: 'readonly',
   },
   extends: ['eslint:recommended', 'plugin:vue/essential', '@vue/prettier'],
   parserOptions: {
