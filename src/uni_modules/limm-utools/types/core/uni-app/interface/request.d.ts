@@ -28,7 +28,7 @@ export interface ValidateStatus {
  * 请求拦截器
  */
 export interface ReqInterceptor {
-    (config: RequestConfig | UniApp.UploadFileOption): Promise<RequestConfig | UniApp.UploadFileOption> | RequestConfig | UniApp.UploadFileOption;
+    (config: RequestConfig | UniApp.UploadFileOption, ...others: any[]): Promise<RequestConfig | UniApp.UploadFileOption> | RequestConfig | UniApp.UploadFileOption;
 }
 /**
  * 响应拦截器
@@ -43,7 +43,7 @@ export interface ResFailInterceptor {
     (response: UniApp.RequestSuccessCallbackResult | UniApp.UploadFileSuccessCallbackResult | UniApp.GeneralCallbackResult): Promise<unknown> | unknown;
 }
 export interface RequestConfig {
-    header?: unknown;
+    header: {};
     url: string;
     /**
      * 默认为 GET

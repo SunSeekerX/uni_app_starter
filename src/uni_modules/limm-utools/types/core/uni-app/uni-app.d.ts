@@ -34,12 +34,17 @@ export declare function toast(msg: string, options?: UniApp.ShowToastOptions): v
 export declare function route(options: UniRouteOptions): void;
 /**
  * uni-app 复制文字方法
+ * @deprecated since version 0.0.12
  * @param { string } value - 需要复制的内容
  * @param { Object } [options] - 参数配置
  * @param { string } [options.msg=''] - 复制完成提示文字
  * @returns { void }
  */
 export declare function copy(value: string | number, options: UniCopyOptions): void;
+/**
+ * 设置系统剪贴板的内容, 默认不显示 toast
+ */
+export declare function setClipboardData(options?: UniApp.SetClipboardDataOptions): Promise<void>;
 /**
  * uni-app 打开链接
  * @param { string } url - 要跳转的地址

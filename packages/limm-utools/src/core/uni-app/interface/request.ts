@@ -31,7 +31,7 @@ export interface ValidateStatus {
  * 请求拦截器
  */
 export interface ReqInterceptor {
-  (config: RequestConfig | UniApp.UploadFileOption):
+  (config: RequestConfig | UniApp.UploadFileOption, ...others: any[]):
     | Promise<RequestConfig | UniApp.UploadFileOption>
     | RequestConfig
     | UniApp.UploadFileOption

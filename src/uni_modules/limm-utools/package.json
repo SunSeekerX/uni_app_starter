@@ -1,6 +1,6 @@
 {
   "displayName": "limm-utools",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "uni-app 开发工具包。",
   "keywords": [
     "utools"
@@ -11,7 +11,7 @@
   "main": "bin/bundle.esm.js",
   "types": "types/index.d.ts",
   "engines": {
-    "HBuilderX": "^3.1.12"
+    "HBuilderX": "^3.2.0"
   },
   "dcloudext": {
     "category": [

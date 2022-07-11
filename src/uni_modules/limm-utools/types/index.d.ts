@@ -27,13 +27,14 @@ declare const _default: {
     EncryptUtil: typeof EncryptUtil;
     PerformanceUtil: typeof PerformanceUtil;
     RandomUtil: typeof RandomUtil;
-    Request: typeof UniAppUtil.Request;
-    LogUtil: UniAppUtil.Log;
-    Log: typeof UniAppUtil.Log;
     getUIStyle(): string;
     toast(msg: string, options?: UniApp.ShowToastOptions): void;
     route(options: import("./core/uni-app/interface").UniRouteOptions): void;
     copy(value: string | number, options: import("./core/uni-app/interface").UniCopyOptions): void;
+    setClipboardData(options?: UniApp.SetClipboardDataOptions): Promise<void>;
     openUrl(url: string, options?: import("./core/uni-app/interface").UniOpenUrlOptions): void;
+    Request: typeof UniAppUtil.Request;
+    Log: typeof UniAppUtil.Log;
+    LogUtil: UniAppUtil.Log;
 };
 export default _default;

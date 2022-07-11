@@ -6,17 +6,24 @@
  * @LastEditTime: 2021-09-17 19:47:28
  */
 
-import { expressRequest } from '@/utils/request/index'
+import { expressRequest } from '@/utils/request'
 
 export default {
   get() {
-    return expressRequest({
-      url: '/get',
-      method: 'GET',
-      header: {
-        headerParam1: 'headerParam1',
+    return expressRequest(
+      {
+        url: '/get',
+        method: 'GET',
+        header: {
+          headerParam1: 'headerParam1',
+        },
       },
-    })
+      {
+        a: 1,
+        b: 2,
+      },
+      3
+    )
   },
 
   post() {

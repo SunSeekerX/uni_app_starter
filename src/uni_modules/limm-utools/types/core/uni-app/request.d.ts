@@ -45,9 +45,9 @@ export declare class Request {
      * @param { Object } options 请求配置
      * @returns { Promise }
      */
-    request(options: RequestConfig): Promise<unknown>;
+    request(options: RequestConfig, ...others: any[]): Promise<unknown>;
     /**
      * 上传文件
      */
-    upload(options: UploadConfig): Promise<unknown>;
+    upload(options: UploadConfig, ...others: any[]): Promise<unknown>;
 }

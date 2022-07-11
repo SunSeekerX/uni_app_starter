@@ -79,7 +79,7 @@ export class Request {
    * @param { Object } options 请求配置
    * @returns { Promise }
    */
-  request(options: RequestConfig): Promise<unknown> {
+  request(options: RequestConfig, ...others: any[]): Promise<unknown> {
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve, reject) => {
       const { sslVerify } = this.config
@@ -88,7 +88,7 @@ export class Request {
         options.sslVerify = sslVerify as boolean
       }
       // 请求之前处理参数
-      const handleRe = (await this.reqInterceptor(options)) as UniApp.RequestOptions
+      const handleRe = (await this.reqInterceptor(options, ...others)) as UniApp.RequestOptions
       // 请求参数
       const _config: UniApp.RequestOptions = {
         url: `${this.config.baseUrl}${handleRe.url}`,
@@ -124,7 +124,7 @@ export class Request {
   /**
    * 上传文件
    */
-  async upload(options: UploadConfig): Promise<unknown> {
+  async upload(options: UploadConfig, ...others: any[]): Promise<unknown> {
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async (resolve, reject) => {
       options.header = Object.assign(options.header || {}, this.config.header)
@@ -133,7 +133,7 @@ export class Request {
       delete options.header['Content-Type']
       delete options.header['Content-type']
       // 请求之前处理参数
-      const handleRe = this.reqInterceptor(options) as UniApp.UploadFileOption
+      const handleRe = this.reqInterceptor(options, ...others) as UniApp.UploadFileOption
       // 请求参数
       const _config: UniApp.UploadFileOption = {
         url: `${this.config.baseUrl}${handleRe.url}`,

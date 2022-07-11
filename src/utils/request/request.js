@@ -68,15 +68,15 @@ export default function createRequest(options, packErr = true) {
    * 导出请求方法函数,项目中所有请求应该走此方法，不存在例外
    * @return {Promise}
    */
-  return async function request(config) {
+  return async function request(config, ...others) {
     try {
       if (config.method.toUpperCase() === 'UPLOAD') {
         // 文件上传
-        const res = await http.upload(config)
+        const res = await http.upload(config, ...others)
         return Promise.resolve(res)
       } else {
         // 网络请求
-        return Promise.resolve(await http.request(config))
+        return Promise.resolve(await http.request(config, ...others))
       }
     } catch (res) {
       let packRes = null
