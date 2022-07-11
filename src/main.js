@@ -22,7 +22,7 @@ Vue.config.productionTip = false
  */
 import App from './App'
 import store from './store'
-import utools from '../packages/limm-utools' // utools
+import utools from '@root/packages/limm-utools' // utools
 import * as util from './utils' // 工具包
 import * as constant from './constant' // 常量
 import * as api from './apis' // Api

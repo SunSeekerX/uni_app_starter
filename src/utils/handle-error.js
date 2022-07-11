@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-09-17 20:15:04
  */
 
-import { toast } from '../../packages/limm-utools'
+import { toast } from '@root/packages/limm-utools'
 import errCode from './err-code'
 
 /**
