@@ -6,6 +6,8 @@
 >
 > 用来记录使用 uni-app 之中出现的问题、踩过的坑、解决业务的写法、工具函数、通用组件。
 
+[![OSCS Status](https://www.oscs1024.com/platform/badge/SunSeekerX/uni-app-starter.svg?size=large)](https://www.oscs1024.com/project/SunSeekerX/uni-app-starter?ref=badge_large)
+
 ## 📌 快速上手
 
 ### 开发
