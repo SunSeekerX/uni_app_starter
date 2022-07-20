@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <view class="icon iconfont icon-wushuju"></view>
+    <view class="icon iconfont icon-wushuju" />
     <view class="name">暂无数据</view>
   </view>
 </template>

@@ -26,7 +26,7 @@
           </view>
         </view>
 
-        <c-icon color="#ffffff" name="icon-gengduo" size="16"></c-icon>
+        <c-icon color="#ffffff" name="icon-gengduo" size="16" />
       </view>
     </view>
   </c-page>

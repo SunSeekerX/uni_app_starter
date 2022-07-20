@@ -3,10 +3,10 @@
     <!-- 头部 -->
     <view class="header">
       <!-- logo -->
-      <image class="cnode-logo" src="@/static/images/projects/cnode/cnodejs_light.svg"></image>
+      <image class="cnode-logo" src="@/static/images/projects/cnode/cnodejs_light.svg" />
       <!-- 搜索 -->
       <view class="header-search">
-        <view class="search-icon iconfont icon-search"></view>
+        <view class="search-icon iconfont icon-search" />
         <view class="search-input"><input type="text" /></view>
       </view>
     </view>

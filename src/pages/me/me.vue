@@ -11,8 +11,8 @@
       :show-cancel-button="true"
       @cancel="state.isShowEnvChangeModal = false"
       @confirm="onConfirmEnvChange"
-    ></u-modal>
-    <u-action-sheet @click="onConfirmSelectEnv" :list="envList" v-model="state.isShowEnvActionSheet"></u-action-sheet>
+    />
+    <u-action-sheet @click="onConfirmSelectEnv" :list="envList" v-model="state.isShowEnvActionSheet" />
 
     <!-- 项目菜单 -->
     <view class="menu">
@@ -22,7 +22,7 @@
         style="border: solid 1px #eee; box-shadow: 0 2px 5px rgb(0 0 0 / 10%)"
       >
         <text class="wd-text-666 wd-text-14">检查更新</text>
-        <c-icon color="#666666" name="icon-gengduo" size="16"></c-icon>
+        <c-icon color="#666666" name="icon-gengduo" size="16" />
       </view>
     </view>
 

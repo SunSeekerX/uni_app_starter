@@ -9,7 +9,7 @@
 <template>
   <view>
     <!-- 头部 -->
-    <ssx-header></ssx-header>
+    <ssx-header />
 
     <!-- 话题详情 -->
     <view class="topic-detail">
@@ -34,7 +34,7 @@
             <block v-for="(reply, replyIndex) of topic.replies" :key="reply.id">
               <view class="reply">
                 <view class="reply-header">
-                  <view class="reply-author-avatar"> <image :src="reply.author.avatar_url"></image> </view>
+                  <view class="reply-author-avatar"> <image :src="reply.author.avatar_url" /> </view>
                   <view class="reply-info">
                     <text class="reply-author">{{ reply.author.loginname }}</text>
                     <text class="reply-time">{{ replyIndex + 1 }}楼•{{ reply.create_at }}</text>
@@ -48,11 +48,11 @@
       </view>
 
       <!-- No data -->
-      <ssx-no-data v-if="!topic.id"></ssx-no-data>
+      <ssx-no-data v-if="!topic.id" />
     </view>
 
     <!-- 返回按钮 -->
-    <ssx-fix-button></ssx-fix-button>
+    <ssx-fix-button />
   </view>
 </template>
 

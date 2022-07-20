@@ -2,7 +2,7 @@
   <view class="content wd-flex wd-justify-center wd-items-center">
     <u-transition mode="fade-up" :duration="800" :show="state.isShowSplash">
       <view class="wd-flex wd-flex-col">
-        <image class="wd-w-120 wd-h-120 wd-rounded-6" src="/static/images/projects/pionex/logo.jpg"></image>
+        <image class="wd-w-120 wd-h-120 wd-rounded-6" src="/static/images/projects/pionex/logo.jpg" />
         <text class="wd-text-666 wd-text-14 wd-mt-12">全国首家量化交易所</text>
       </view>
     </u-transition>

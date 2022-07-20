@@ -46,6 +46,7 @@ module.exports = {
           'uni-textarea',
           'uni-page-body',
           'uni-input',
+          'uni-slider',
         ],
       },
     ],

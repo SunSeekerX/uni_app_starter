@@ -7,7 +7,7 @@
         backgroundColor: background,
       }"
       class="content-placing"
-    ></view>
+    />
 
     <!-- 内容显示区域 -->
     <view

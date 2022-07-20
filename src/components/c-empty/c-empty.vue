@@ -17,7 +17,7 @@
       }"
       :page-height="false"
     >
-      <c-icon :name="icon" size="66" :color="color" :svg="isUseSvg"></c-icon>
+      <c-icon :name="icon" size="66" :color="color" :svg="isUseSvg" />
       <text class="wd-text-12 wd-mt-5" :style="{ color: color }">空空如也</text>
     </c-provider>
     <!-- #endif -->
@@ -28,7 +28,7 @@
         backgroundColor || themeVal('colorContentBg')
       };`"
     >
-      <c-icon :name="icon" size="66" :color="color || themeVal('colorInfoDisabled')"></c-icon>
+      <c-icon :name="icon" size="66" :color="color || themeVal('colorInfoDisabled')" />
 
       <text :style="`font-size: 12px; color: ${color || themeVal('colorInfoDisabled')};`" class="wd-text-999"
         >空空如也</text

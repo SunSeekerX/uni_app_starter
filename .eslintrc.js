@@ -34,5 +34,8 @@ module.exports = {
     'prettier/prettier': 0,
     // nvue
     'vue/comment-directive': 0,
+    'vue/no-v-text-v-html-on-component': 1,
+    // 空内容标签需要自闭合
+    'vue/html-self-closing': 1,
   },
 }

@@ -9,7 +9,7 @@
 <template>
   <view>
     <!-- 头部 -->
-    <ssx-header></ssx-header>
+    <ssx-header />
 
     <!-- 话题 -->
     <view class="topic-wrap">
@@ -32,7 +32,7 @@
         <block v-for="topic of topicList" :key="topic.id">
           <view @tap="navigator(`../topic-details/topic-details?id=${topic.id}`)" class="topic">
             <view class="topic-author-avatar">
-              <image class="author-avatar-url" :src="topic.author.avatar_url" lazy-load></image>
+              <image class="author-avatar-url" :src="topic.author.avatar_url" lazy-load />
             </view>
             <view v-if="currentClassIfy === 1" class="topic-type type-good">精华</view>
             <view v-else class="topic-type">{{ topic.tab }}</view>
@@ -58,7 +58,7 @@
         </view>
       </view>
       <!-- No data -->
-      <ssx-no-data v-if="!topicList.length"></ssx-no-data>
+      <ssx-no-data v-if="!topicList.length" />
     </view>
   </view>
 </template>
