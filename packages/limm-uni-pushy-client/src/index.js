@@ -708,7 +708,7 @@ export default class Pushy {
       })
 
       uni.request({
-        url: `${updateUrl}/api/update`,
+        url: updateUrl,
         method: 'POST',
         data: {
           projectId,
