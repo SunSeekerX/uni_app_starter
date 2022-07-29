@@ -1,6 +1,6 @@
 {
   "displayName": "limm-upushy-client",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "upushy 的客户端 sdk。零依赖实现热更新。非常容易集成。",
   "keywords": [
     "upushy"
@@ -10,13 +10,9 @@
   "author": "SunSeekerX",
   "main": "src/index.js",
   "engines": {
-    "HBuilderX": "^3.1.20"
+    "HBuilderX": "^3.2.2"
   },
-  "dcloudext": {
-    "category": [
-      "前端组件",
-      "通用组件"
-    ],
+"dcloudext": {
     "contact": {
       "qq": "1647800606"
     },
@@ -33,7 +29,8 @@
       "sourcecode": {
         "price": "0.00"
       }
-    }
+    },
+    "type": "component-vue"
   },
   "id": "limm-upushy-client",
   "uni_modules": {
