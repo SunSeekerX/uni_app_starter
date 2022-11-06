@@ -168,12 +168,11 @@
       "style": {
         "navigationBarTitleText": "random"
       }
-    }
+    },
     /*-------------utools end-------------*/
-    // #ifdef H5 
+    // #ifdef H5
     /*-------------Dapp Browser start-------------*/
     /*-------------web only-------------*/
-    ,
     {
       "path": "apps/dapp-browser/pages/index/index",
       "style": {

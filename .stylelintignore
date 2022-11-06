@@ -14,7 +14,6 @@ src/unpackage/
 src/static/
 # 忽略第三方库文件
 src/utils/libs/
-
 # uni_modules
 uni_modules
 

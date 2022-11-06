@@ -7,15 +7,25 @@
  */
 
 module.exports = {
+  // v13
+  root: true,
   plugins: ['stylelint-order'],
+  // v13
   extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-recommended-vue',
-    'stylelint-config-property-sort-order-smacss',
+    'stylelint-config-standard',
     'stylelint-config-prettier',
+    // 'stylelint-config-standard-scss',
+    // 'stylelint-config-prettier-scss',
   ],
+  // v14
+  // extends: [
+  //   'stylelint-config-standard-scss',
+  //   'stylelint-config-recommended-vue',
+  //   'stylelint-config-property-sort-order-smacss',
+  //   'stylelint-config-prettier',
+  // ],
   rules: {
-    'scss/at-import-partial-extension': 'always',
+    // 'scss/at-import-partial-extension': 'always',
     'selector-class-pattern': null,
     // uni-ap 特有的 rpx upx 单位
     'unit-no-unknown': [
@@ -59,11 +69,23 @@ module.exports = {
     // 这个是不然把类似 “rgba(25, 24, 30, 1)” 格式化成 "rgb(25 24 30 / 100%)" 这种形式 sass 还不支持这种语法
     'color-function-notation': null,
     // 禁用类似直接使用 unquote 不行 而要改为 string.unquote 这种的错误
-    'scss/no-global-function-names': null,
+    // 'scss/no-global-function-names': null,
     'selector-pseudo-element-no-unknown': [
       true,
       {
         ignorePseudoElements: ['v-deep'],
+      },
+    ],
+    // 'annotation-no-unknown': [
+    //   true,
+    //   {
+    //     ignoreAnnotations: ['default'],
+    //   },
+    // ],
+    'value-no-vendor-prefix': [
+      true,
+      {
+        ignoreValues: ['box'],
       },
     ],
   },
