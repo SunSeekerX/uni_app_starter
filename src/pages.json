@@ -1,9 +1,4 @@
 {
-  "easycom": {
-    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue",
-    "^cn-(.*)": "@/components-nvue/cn-$1/cn-$1.vue",
-    "^c-(.*)": "@/components/c-$1/c-$1.vue"
-  },
   "pages": [
     {
       "path": "pages/home/home",
@@ -11,6 +6,7 @@
         "navigationBarTitleText": "首页"
       }
     },
+    /*-------------find start-------------*/
     {
       "path": "pages/find/find",
       "style": {
@@ -18,6 +14,19 @@
         "enablePullDownRefresh": false
       }
     },
+    {
+      "path": "pages/find/uni-app/uni-app",
+      "style": {
+        "navigationBarTitleText": "Uni-app"
+      }
+    },
+    {
+      "path": "pages/find/uni-app/uni-app-component",
+      "style": {
+        "navigationBarTitleText": "Uni-app 组件测试"
+      }
+    },
+    /*-------------find end-------------*/
     {
       "path": "pages/tools/tools",
       "style": {
@@ -183,11 +192,13 @@
     // #endif
   ],
   "globalStyle": {
-    "navigationBarTextStyle": "black",
+    "pageOrientation": "portrait",
     "navigationBarTitleText": "uni-app-starter",
+    "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#F6F6F6",
-    "pageOrientation": "portrait",
+		"backgroundColorTop": "#F6F6F6",
+		"backgroundColorBottom": "#F6F6F6",
     "app-plus": {
       "bounce": "none"
     }

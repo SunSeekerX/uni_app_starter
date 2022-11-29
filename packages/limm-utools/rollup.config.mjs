@@ -1,11 +1,3 @@
-/**
- * rollup 打包配置
- * @author: SunSeekerX
- * @Date: 2021-06-02 18:42:23
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 00:17:14
- */
-
 import typescript from '@rollup/plugin-typescript'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'

@@ -1,7 +1,7 @@
 <template>
   <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
     <u-button
-      class="mb-6"
+      class="wd-mb-6"
       v-for="item of list"
       :key="item.url"
       @click="
@@ -31,6 +31,14 @@ export default {
         {
           name: 'font-weight 测试',
           url: '/pages/find/font-weight/font-weight',
+        },
+        // {
+        //   name: 'Uni-app',
+        //   url: '/pages/find/uni-app/uni-app',
+        // },
+        {
+          name: 'Uni-app 组件测试',
+          url: '/pages/find/uni-app/uni-app-component',
         },
       ],
     }

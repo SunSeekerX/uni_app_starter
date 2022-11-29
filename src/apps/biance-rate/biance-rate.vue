@@ -1,6 +1,7 @@
 <template>
   <view>
-    <c-fixed-box :rpx="false" :height="120" :top="systemInfo.windowTop">
+    <!-- 固定高度 fixed 组件 -->
+    <c-fixed-box :rpx="false" :height="120" :top="systemInfo.windowTop + 44">
       <view
         class="wd-flex wd-flex-col wd-justify-center wd-h-120 wd-w-750r wd-pl-25r wd-pr-25r"
         style="border-bottom: solid #eee 1px"
@@ -28,32 +29,26 @@
       </view>
     </c-fixed-box>
 
-    <view class="content">
-      <view class="menu">
-        <u-transition mode="fade-up" :duration="800" :show="state.isShow">
-          <view v-if="searchList.length">
-            <view
-              v-for="item of searchList"
-              :key="item.symbol"
-              class="item wd-flex wd-justify-between wd-items-center wd-h-34"
-              style="border-bottom: solid 1px #eee"
-            >
-              <text class="wd-font-bold wd-text-16">{{ item.symbol }}</text>
-              <text class="wd-text-16">{{ item.lastFundingRate }}%</text>
-            </view>
+    <u-transition mode="fade-up" :duration="800" :show="state.isShow">
+      <view class="wd-px-12">
+        <view v-if="searchList.length">
+          <view
+            v-for="item of searchList"
+            :key="item.symbol"
+            class="item wd-flex wd-justify-between wd-items-center wd-h-34"
+            style="border-bottom: solid 1px #eee"
+          >
+            <text class="wd-font-bold wd-text-16">{{ item.symbol }}</text>
+            <text class="wd-text-16">{{ item.lastFundingRate }}%</text>
           </view>
-
-          <c-empty v-else />
-        </u-transition>
+        </view>
       </view>
-    </view>
+    </u-transition>
   </view>
 </template>
 
 <script>
-import { systemInfo } from '@/utils/mixin/index'
 export default {
-  mixins: [systemInfo],
   data() {
     return {
       state: {
@@ -69,7 +64,6 @@ export default {
       sort: 'desc',
     }
   },
-
   methods: {
     // 获取资金费率
     async onGetPremiumIndex() {
@@ -96,7 +90,6 @@ export default {
         uni.stopPullDownRefresh()
       }
     },
-
     // 排序资金费率
     handleSortRate(arr) {
       return arr.sort((a, b) => {
@@ -109,7 +102,6 @@ export default {
         }
       })
     },
-
     // 手动排序
     onSort() {
       if (this.sort === 'desc') {
@@ -129,7 +121,6 @@ export default {
         duration: 100,
       })
     },
-
     // 搜索币种
     handleSearch(arr) {
       const { keyword } = this
@@ -145,7 +136,6 @@ export default {
         return arr
       }
     },
-
     // 手动搜索
     onSearchChange() {
       // 搜索
@@ -162,3 +152,5 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped></style>

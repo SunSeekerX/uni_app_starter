@@ -1,11 +1,3 @@
-<!--
- * 根组件
- * @author: SunSeekerX
- * @Date: 2021-03-27 14:11:53
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:30:11
--->
-
 <script>
 import { mapMutations } from 'vuex'
 
@@ -28,7 +20,7 @@ export default {
   onLaunch() {
     console.log('App Launch')
     // 更新 App info
-    this.UPDATE_SYSTEM_INFO()
+    this.onUpdateSystemInfo()
 
     // 挂载属性到 globalData
     this.handleMountGlobalDataProperty()
@@ -45,7 +37,7 @@ export default {
     console.log('App Hide')
   },
   methods: {
-    ...mapMutations(['UPDATE_SYSTEM_INFO']),
+    ...mapMutations(['onUpdateSystemInfo']),
 
     // 挂载属性到 globalData
     handleMountGlobalDataProperty() {
@@ -72,9 +64,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../packages/limm-markrgba-css/src/index.scss'; /* Some magic css */
+// @import '../packages/limm-markrgba-css/src/index.scss'; /* Some magic css */
 @import '../packages/limm-windi-css-uni/src/index.scss';
-@import '@/common/scss/index.scss'; /* 全局通用样式 */
 
 /* #ifndef APP-NVUE */
 

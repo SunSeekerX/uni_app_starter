@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 // 默认颜色
 const defaultColor = '#DC316C'
@@ -99,9 +99,6 @@ export default {
       themeVal: 'themeVal',
     }),
     // #endif
-    ...mapState({
-      systemInfo: (state) => state.systemInfo,
-    }),
 
     comHeight() {
       const { windowHeight, safeArea } = this.systemInfo
