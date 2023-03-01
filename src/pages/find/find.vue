@@ -40,6 +40,14 @@ export default {
           name: 'Uni-app 组件测试',
           url: '/pages/find/uni-app/uni-app-component',
         },
+        {
+          name: 'Uni-app 页面高度测试',
+          url: '/pages/find/uni-app/page-height',
+        },
+        {
+          name: 'Uni-app 页面高度测试 - nvue',
+          url: '/pages/find/uni-app/page-height-nvue',
+        },
       ],
     }
   },

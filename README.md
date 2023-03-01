@@ -48,6 +48,19 @@ yarn build
 yarn serve
 ```
 
+**更新 uni-app 依赖**
+
+```shell
+# 更新到最新正式版
+npx @dcloudio/uvm
+# 更新到最新 alpha 版
+npx @dcloudio/uvm alpha
+# 更新到正式版指定版本
+npx @dcloudio/uvm 3.2.0
+# 更新到 alpha 版指定版本
+npx @dcloudio/uvm 3.2.0-alpha
+```
+
 ## 📌 项目亮点
 
 - 代码风格统一：使用 `eslint + stylelint + prettier + lint-stage + husky`集成代码提交格式化检测，避免团队代码风格不一致。
@@ -100,6 +113,8 @@ yarn serve
 
 ## 📌 发布信息
 
+### Android
+
 **发布**
 
 应用名：`UAS`
@@ -112,14 +127,12 @@ yarn serve
 
 包名：`cn.yoouu.uni.app.starter.dev`
 
-android
-
 ```shell
 # Just a tips 👻
 password: key1
 ```
 
-ios
+### Ios
 
 没有证书。
 

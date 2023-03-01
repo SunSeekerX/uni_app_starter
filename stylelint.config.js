@@ -26,6 +26,7 @@ module.exports = {
   // ],
   rules: {
     // 'scss/at-import-partial-extension': 'always',
+    'no-descending-specificity': null,
     'selector-class-pattern': null,
     // uni-ap 特有的 rpx upx 单位
     'unit-no-unknown': [
@@ -88,5 +89,6 @@ module.exports = {
         ignoreValues: ['box'],
       },
     ],
+    'no-invalid-position-at-import-rule': null,
   },
 }

@@ -23,3 +23,5 @@ feng-parse
 packages/limm-*
 src/components/c-icon
 un-icon
+
+*.d.ts

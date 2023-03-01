@@ -1,6 +1,5 @@
 {
-  "pages": [
-    {
+  "pages": [{
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
@@ -24,6 +23,20 @@
       "path": "pages/find/uni-app/uni-app-component",
       "style": {
         "navigationBarTitleText": "Uni-app 组件测试"
+      }
+    },
+    {
+      "path": "pages/find/uni-app/page-height",
+      "style": {
+        "navigationBarTitleText": "Uni-app 页面高度测试",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/find/uni-app/page-height-nvue",
+      "style": {
+        "navigationBarTitleText": "Uni-app 页面高度测试 - nvue",
+        "navigationStyle": "custom"
       }
     },
     /*-------------find end-------------*/
@@ -197,8 +210,8 @@
     "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#FFFFFF",
     "backgroundColor": "#F6F6F6",
-		"backgroundColorTop": "#F6F6F6",
-		"backgroundColorBottom": "#F6F6F6",
+    "backgroundColorTop": "#F6F6F6",
+    "backgroundColorBottom": "#F6F6F6",
     "app-plus": {
       "bounce": "none"
     }
@@ -208,8 +221,7 @@
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tab-bar/home.png",
         "selectedIconPath": "static/images/tab-bar/home-selected.png",
