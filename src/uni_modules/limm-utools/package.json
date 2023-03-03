@@ -1,6 +1,6 @@
 {
   "displayName": "limm-utools",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "uni-app 开发工具包。",
   "keywords": [
     "utools"
@@ -11,13 +11,9 @@
   "main": "bin/bundle.esm.js",
   "types": "types/index.d.ts",
   "engines": {
-    "HBuilderX": "^3.2.0"
+    "HBuilderX": "^3.3.11"
   },
-  "dcloudext": {
-    "category": [
-      "前端组件",
-      "通用组件"
-    ],
+"dcloudext": {
     "contact": {
       "qq": "1647800606"
     },
@@ -34,7 +30,8 @@
       "sourcecode": {
         "price": "0.00"
       }
-    }
+    },
+    "type": "component-vue"
   },
   "id": "limm-utools",
   "uni_modules": {

@@ -40,7 +40,9 @@ export interface ReqInterceptor {
  * 响应拦截器
  */
 export interface ResInterceptor {
-  (response: UniApp.RequestSuccessCallbackResult | UniApp.UploadFileSuccessCallbackResult): Promise<unknown> | unknown
+  (response: UniApp.RequestSuccessCallbackResult | UniApp.UploadFileSuccessCallbackResult, ...others: any[]):
+    | Promise<unknown>
+    | unknown
 }
 
 /**
@@ -51,7 +53,8 @@ export interface ResFailInterceptor {
     response:
       | UniApp.RequestSuccessCallbackResult
       | UniApp.UploadFileSuccessCallbackResult
-      | UniApp.GeneralCallbackResult
+      | UniApp.GeneralCallbackResult,
+    ...others: any[]
   ): Promise<unknown> | unknown
 }
 

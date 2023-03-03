@@ -104,15 +104,15 @@ export class Request {
         success: async (response) => {
           // 验证statusCode是否成功
           if (this.validateStatus(response.statusCode)) {
-            const res = await this.resInterceptor(response)
+            const res = await this.resInterceptor(response, ...others)
             resolve(res)
           } else {
-            const res = await this.resFailInterceptor(response)
+            const res = await this.resFailInterceptor(response, ...others)
             reject(res)
           }
         },
         fail: async (e) => {
-          const res = await this.resFailInterceptor(e)
+          const res = await this.resFailInterceptor(e, ...others)
           reject(res)
         },
       }
@@ -163,15 +163,15 @@ export class Request {
           }
           // 验证statusCode是否成功
           if (this.validateStatus(response.statusCode)) {
-            const res = await this.resInterceptor(response)
+            const res = await this.resInterceptor(response, ...others)
             resolve(res)
           } else {
-            const res = await this.resFailInterceptor(response)
+            const res = await this.resFailInterceptor(response, ...others)
             reject(res)
           }
         },
         fail: async (e) => {
-          const res = await this.resFailInterceptor(e)
+          const res = await this.resFailInterceptor(e, ...others)
           reject(res)
         },
       }
