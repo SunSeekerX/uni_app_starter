@@ -19,6 +19,7 @@ src/mypUI/**
 # 临时忽略
 iconfont-svg.js
 src/components/c-icon
+.npmrc
 
 # Cnode 需要
 feng-parse
