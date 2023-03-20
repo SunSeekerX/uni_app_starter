@@ -1,5 +1,6 @@
 {
-  "pages": [{
+  "pages": [
+    {
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
@@ -221,7 +222,8 @@
     "selectedColor": "#2979ff",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/home/home",
         "iconPath": "static/images/tab-bar/home.png",
         "selectedIconPath": "static/images/tab-bar/home-selected.png",

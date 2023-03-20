@@ -27,7 +27,7 @@ cd uni-app-starter
 **安装依赖**
 
 ```bash
-yarn
+pnpm i
 ```
 
 **构建 utools**
