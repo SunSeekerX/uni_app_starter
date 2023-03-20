@@ -1,5 +1,5 @@
 <template>
-  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" class="wd-p-25r">
     <view>
       <view>Svg</view>
       <c-icon name="icon-kong" size="66" :svg="true" />

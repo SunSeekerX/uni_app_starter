@@ -2,7 +2,7 @@
   <view class="content">
     <view class="prev">《</view>
     <view class="page-list">
-      <view @tap="handlePageChange()" class="page current">1</view>
+      <view class="page current" @tap="handlePageChange()">1</view>
       <view class="page">2</view>
       <view class="page">3</view>
       <view class="page">4</view>

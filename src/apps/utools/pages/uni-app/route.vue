@@ -10,7 +10,7 @@
       <button
         type="primary"
         @tap="
-          $utools.route({
+          onRoute({
             url: '/pages/tools/tools',
             type: 'switchTab',
           })
@@ -26,18 +26,23 @@
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
+
 export default {
   name: 'UtoolsUniAppRouteNavigateTo',
-
   data() {
     return {
       routeType: '',
     }
   },
-
   onLoad(options) {
     const { type } = options
     this.routeType = type
+  },
+  methods: {
+    onRoute(options) {
+      utools.route(options)
+    },
   },
 }
 </script>

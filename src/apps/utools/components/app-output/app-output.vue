@@ -8,18 +8,24 @@
 
 <template>
   <!-- 内容输出区域 -->
-  <view class="console" @tap="$utools.copy(output, { msg: '复制成功' })">
+  <view class="console" @tap="onCopy">
     <text class="output">{{ output }}</text>
   </view>
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
 export default {
   name: 'AppOutput',
   props: {
     output: {
       type: [String, Boolean, Object, null, undefined],
       required: true,
+    },
+  },
+  methods: {
+    onCopy() {
+      utools.copy(this.output, { msg: '复制成功' })
     },
   },
 }

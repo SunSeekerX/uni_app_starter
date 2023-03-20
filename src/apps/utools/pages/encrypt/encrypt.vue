@@ -1,46 +1,46 @@
 <template>
-  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="md5 加密">
       <!-- encryptMD5 -->
-      <AppOperationInput operation-name="请输入需要 md5 加密的内容" v-model="md5EncryptionText" />
-      <AppOperationButton buttonText="md5 加密: encryptMD5ToString(val: string): string" @onTap="onMd5Encrypt" />
+      <AppOperationInput v-model="md5EncryptionText" operation-name="请输入需要 md5 加密的内容" />
+      <AppOperationButton button-text="md5 加密: encryptMD5ToString(val: string): string" @onTap="onMd5Encrypt" />
     </AppOperationContent>
 
     <AppOperationContent name="SHA 加密">
       <!-- encryptSHA1ToString -->
-      <AppOperationInput operation-name="请输入需要 SHA1 加密的内容" v-model="sha1EncryptionText" />
-      <AppOperationButton buttonText="SHA1 加密: encryptSHA1ToString(val: string): string" @onTap="onEncryptSHA1" />
+      <AppOperationInput v-model="sha1EncryptionText" operation-name="请输入需要 SHA1 加密的内容" />
+      <AppOperationButton button-text="SHA1 加密: encryptSHA1ToString(val: string): string" @onTap="onEncryptSHA1" />
 
       <!-- encryptSHA256ToString -->
-      <AppOperationInput operation-name="请输入需要 SHA256 加密的内容" v-model="sha256EncryptionText" />
+      <AppOperationInput v-model="sha256EncryptionText" operation-name="请输入需要 SHA256 加密的内容" />
       <AppOperationButton
-        buttonText="SHA256 加密: encryptSHA256ToString(val: string): string"
+        button-text="SHA256 加密: encryptSHA256ToString(val: string): string"
         @onTap="onEncryptSHA256"
       />
 
       <!-- encryptSHA51ToString -->
-      <AppOperationInput operation-name="请输入需要 SHA512 加密的内容" v-model="sha512EncryptionText" />
+      <AppOperationInput v-model="sha512EncryptionText" operation-name="请输入需要 SHA512 加密的内容" />
       <AppOperationButton
-        buttonText="SHA512 加密: encryptSHA512ToString(val: string): string"
+        button-text="SHA512 加密: encryptSHA512ToString(val: string): string"
         @onTap="onEncryptSHA512"
       />
     </AppOperationContent>
 
     <!-- AES 加密 -->
     <AppOperationContent name="AES 加密">
-      <AppOperationInput operation-name="请输入需要 AES 加密的内容" v-model="aesEncryptionText" />
-      <AppOperationInput operation-name="请输入 AES 加密的密码" v-model="aesEncryptionCipher" />
+      <AppOperationInput v-model="aesEncryptionText" operation-name="请输入需要 AES 加密的内容" />
+      <AppOperationInput v-model="aesEncryptionCipher" operation-name="请输入 AES 加密的密码" />
       <AppOperationInput
         v-if="aesEncryptionModeIndex !== 0"
-        operation-name="请输入 AES 加密 iv (填充向量)"
         v-model="aesEncryptionIv"
+        operation-name="请输入 AES 加密 iv (填充向量)"
       />
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 加密模式</text>
         <radio-group @change="(e) => onEncryAESModeChange(e, 'aesEncryptionModeIndex')">
-          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
+          <label v-for="(item, index) in aesEncryptionModes" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesEncryptionModeIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
@@ -50,28 +50,28 @@
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 加密填充模式</text>
         <radio-group @change="(e) => onEncryAESPadChange(e, 'aesEncryptionPadIndex')">
-          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
+          <label v-for="(item, index) in aesEncryptionPads" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesEncryptionPadIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>
       <AppOperationButton
-        buttonText="AES 加密: encryptAES2Base64(val: string,key: string [,config]): string"
+        button-text="AES 加密: encryptAES2Base64(val: string,key: string [,config]): string"
         @onTap="onEncryptAES('encryptAES2Base64')"
       />
       <AppOperationButton
-        buttonText="AES 加密: encryptAES2HexString(val: string,key: string [,config]): string"
+        button-text="AES 加密: encryptAES2HexString(val: string,key: string [,config]): string"
         @onTap="onEncryptAES('encryptAES2HexString')"
       />
 
       <!-- AES 解密 -->
-      <AppOperationInput operation-name="请输入需要 AES 解密的内容" v-model="aesDecryptionText" />
+      <AppOperationInput v-model="aesDecryptionText" operation-name="请输入需要 AES 解密的内容" />
 
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 解密模式</text>
         <radio-group @change="(e) => onEncryAESModeChange(e, 'aesDecryptionModeIndex')">
-          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionModes" :key="item.name">
+          <label v-for="(item, index) in aesEncryptionModes" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesDecryptionModeIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
@@ -81,84 +81,85 @@
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 解密填充模式</text>
         <radio-group @change="(e) => onEncryAESPadChange(e, 'aesDecryptionPadIndex')">
-          <label class="uni-list-cell uni-list-cell-pd" v-for="(item, index) in aesEncryptionPads" :key="item.name">
+          <label v-for="(item, index) in aesEncryptionPads" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesDecryptionPadIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
         </radio-group>
       </view>
 
-      <AppOperationInput operation-name="请输入 AES 解密的密码" v-model="aesDecryptionCipher" />
+      <AppOperationInput v-model="aesDecryptionCipher" operation-name="请输入 AES 解密的密码" />
       <AppOperationInput
         v-if="aesDecryptionModeIndex !== 0"
-        operation-name="请输入 AES 解密 iv (填充向量)"
         v-model="aesDecryptionIv"
+        operation-name="请输入 AES 解密 iv (填充向量)"
       />
       <AppOperationButton
-        buttonText="AES 解密: decryptBase64AES2String(val: string,key: string [,config]): string"
+        button-text="AES 解密: decryptBase64AES2String(val: string,key: string [,config]): string"
         @onTap="onDecryptAES('decryptBase64AES2String')"
       />
       <AppOperationButton
-        buttonText="AES 解密: decryptHexAES2String(val: string,key: string [,config]): string"
+        button-text="AES 解密: decryptHexAES2String(val: string,key: string [,config]): string"
         @onTap="onDecryptAES('decryptHexAES2String')"
       />
     </AppOperationContent>
 
     <AppOperationContent name="RSA 加密">
       <!-- encryptRSA2Base64 -->
-      <AppOperationInput operation-name="请输入需要 RSA 加密的内容" v-model="rsaEncryptionText" />
-      <AppOperationInput input-height="88" operation-name="请输入需要 RSA 加密公钥" v-model="rsaEncryptionPublicKey" />
+      <AppOperationInput v-model="rsaEncryptionText" operation-name="请输入需要 RSA 加密的内容" />
+      <AppOperationInput v-model="rsaEncryptionPublicKey" input-height="88" operation-name="请输入需要 RSA 加密公钥" />
       <AppOperationButton
+        button-text="RSA 加密: encryptRSA2Base64(data: string, publicKey: string): string | boolean"
         @onTap="onEncryptRSA2Base64"
-        buttonText="RSA 加密: encryptRSA2Base64(data: string, publicKey: string): string | boolean"
       />
       <!-- encryptRSA2Base64Plain -->
       <AppOperationButton
+        button-text="RSA 加密: encryptRSA2Base64Plain(data: string, encryptor: JSEncrypt): string | boolean"
         @onTap="onEncryptRSA2Base64Plain"
-        buttonText="RSA 加密: encryptRSA2Base64Plain(data: string, encryptor: JSEncrypt): string | boolean"
       />
       <AppOperationButton
+        button-text="RSA 加密: 使用存储在 data 的加密器，直接加密"
         @onTap="onEncryptRSA2Base64Plain(false, true)"
-        buttonText="RSA 加密: 使用存储在 data 的加密器，直接加密"
       />
       <AppOperationButton
+        button-text="RSA 加密: 使用本地存储的加密器，直接加密"
         @onTap="onEncryptRSA2Base64Plain(true, true)"
-        buttonText="RSA 加密: 使用本地存储的加密器，直接加密"
       />
       <AppOperationButton
+        button-text="RSA 加密: 使用本地存储的加密器，用封装方法加密"
         @onTap="onEncryptRSA2Base64Plain(true, false)"
-        buttonText="RSA 加密: 使用本地存储的加密器，用封装方法加密"
       />
 
       <!-- decryptRSABase64 -->
-      <AppOperationInput operation-name="请输入需要 RSA 解密的内容" v-model="rsaDecryptionText" />
-      <AppOperationInput input-height="88" operation-name="请输入需要 RSA 解密私钥" v-model="rsaEncryptionPrivateKey" />
+      <AppOperationInput v-model="rsaDecryptionText" operation-name="请输入需要 RSA 解密的内容" />
+      <AppOperationInput v-model="rsaEncryptionPrivateKey" input-height="88" operation-name="请输入需要 RSA 解密私钥" />
       <AppOperationButton
+        button-text="RSA 解密: decryptRSABase64(data: string, privateKey: string): string | boolean"
         @onTap="onDecryptRSABase64RSA"
-        buttonText="RSA 解密: decryptRSABase64(data: string, privateKey: string): string | boolean"
       />
       <!-- decryptRSABase64Plain -->
       <AppOperationButton
+        button-text="RSA 解密: decryptRSABase64Plain(data: string, encryptor: JSEncrypt): string | boolean"
         @onTap="onDecryptRSABase64RSAPlain"
-        buttonText="RSA 解密: decryptRSABase64Plain(data: string, encryptor: JSEncrypt): string | boolean"
       />
       <AppOperationButton
+        button-text="RSA 解密: 使用存储在 data 的解密器，直接解密"
         @onTap="onDecryptRSABase64RSAPlain(false, true)"
-        buttonText="RSA 解密: 使用存储在 data 的解密器，直接解密"
       />
       <AppOperationButton
+        button-text="RSA 解密: 使用本地存储的解密器，直接解密"
         @onTap="onDecryptRSABase64RSAPlain(true, true)"
-        buttonText="RSA 解密: 使用本地存储的解密器，直接解密"
       />
       <AppOperationButton
+        button-text="RSA 解密: 使用本地存储的解密器，用封装方法解密"
         @onTap="onDecryptRSABase64RSAPlain(true, false)"
-        buttonText="RSA 解密: 使用本地存储的解密器，用封装方法解密"
       />
     </AppOperationContent>
   </c-page>
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
@@ -173,70 +174,7 @@ let rsaDeCryptor = null
 
 export default {
   name: 'UtoolsEncryptUtil',
-
   components: { AppOutput, AppOperationContent, AppOperationInput, AppOperationButton },
-
-  computed: {
-    aesEncryptionModes() {
-      const { $utools } = this
-      return [
-        {
-          name: 'ECB',
-          value: $utools.EncryptUtil.AesModes.ECB,
-        },
-        {
-          name: 'CBC',
-          value: $utools.EncryptUtil.AesModes.CBC,
-        },
-        {
-          name: 'CFB',
-          value: $utools.EncryptUtil.AesModes.CFB,
-        },
-        {
-          name: 'CTR',
-          value: $utools.EncryptUtil.AesModes.CTR,
-        },
-        {
-          name: 'CTRGladman',
-          value: $utools.EncryptUtil.AesModes.CTRGladman,
-        },
-        {
-          name: 'OFB',
-          value: $utools.EncryptUtil.AesModes.OFB,
-        },
-      ]
-    },
-    aesEncryptionPads() {
-      const { $utools } = this
-      return [
-        {
-          name: 'Pkcs7',
-          value: $utools.EncryptUtil.AesPads.Pkcs7,
-        },
-        {
-          name: 'AnsiX923',
-          value: $utools.EncryptUtil.AesPads.AnsiX923,
-        },
-        {
-          name: 'Iso10126',
-          value: $utools.EncryptUtil.AesPads.Iso10126,
-        },
-        {
-          name: 'Iso97971',
-          value: $utools.EncryptUtil.AesPads.Iso97971,
-        },
-        {
-          name: 'ZeroPadding',
-          value: $utools.EncryptUtil.AesPads.ZeroPadding,
-        },
-        {
-          name: 'NoPadding',
-          value: $utools.EncryptUtil.AesPads.NoPadding,
-        },
-      ]
-    },
-  },
-
   data() {
     return {
       consoleText: '输出区(可点击复制)',
@@ -292,44 +230,103 @@ fhe0p/VKfqSYgA==
     }
   },
 
+  computed: {
+    aesEncryptionModes() {
+      return [
+        {
+          name: 'ECB',
+          value: utools.EncryptUtil.AesModes.ECB,
+        },
+        {
+          name: 'CBC',
+          value: utools.EncryptUtil.AesModes.CBC,
+        },
+        {
+          name: 'CFB',
+          value: utools.EncryptUtil.AesModes.CFB,
+        },
+        {
+          name: 'CTR',
+          value: utools.EncryptUtil.AesModes.CTR,
+        },
+        {
+          name: 'CTRGladman',
+          value: utools.EncryptUtil.AesModes.CTRGladman,
+        },
+        {
+          name: 'OFB',
+          value: utools.EncryptUtil.AesModes.OFB,
+        },
+      ]
+    },
+    aesEncryptionPads() {
+      return [
+        {
+          name: 'Pkcs7',
+          value: utools.EncryptUtil.AesPads.Pkcs7,
+        },
+        {
+          name: 'AnsiX923',
+          value: utools.EncryptUtil.AesPads.AnsiX923,
+        },
+        {
+          name: 'Iso10126',
+          value: utools.EncryptUtil.AesPads.Iso10126,
+        },
+        {
+          name: 'Iso97971',
+          value: utools.EncryptUtil.AesPads.Iso97971,
+        },
+        {
+          name: 'ZeroPadding',
+          value: utools.EncryptUtil.AesPads.ZeroPadding,
+        },
+        {
+          name: 'NoPadding',
+          value: utools.EncryptUtil.AesPads.NoPadding,
+        },
+      ]
+    },
+  },
+
   methods: {
     onMd5Encrypt() {
-      const { md5EncryptionText, $utools } = this
+      const { md5EncryptionText } = this
       if (md5EncryptionText) {
-        this.consoleText = $utools.EncryptUtil.encryptMD5ToString(md5EncryptionText)
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = utools.EncryptUtil.encryptMD5ToString(md5EncryptionText)
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容!')
+        utools.toast('请输入内容!')
       }
     },
 
     onEncryptSHA1() {
-      const { sha1EncryptionText, $utools } = this
+      const { sha1EncryptionText } = this
       if (sha1EncryptionText) {
-        this.consoleText = $utools.EncryptUtil.encryptSHA1ToString(sha1EncryptionText)
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = utools.EncryptUtil.encryptSHA1ToString(sha1EncryptionText)
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容!')
+        utools.toast('请输入内容!')
       }
     },
 
     onEncryptSHA256() {
-      const { sha256EncryptionText, $utools } = this
+      const { sha256EncryptionText } = this
       if (sha256EncryptionText) {
-        this.consoleText = $utools.EncryptUtil.encryptSHA256ToString(sha256EncryptionText)
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = utools.EncryptUtil.encryptSHA256ToString(sha256EncryptionText)
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容!')
+        utools.toast('请输入内容!')
       }
     },
 
     onEncryptSHA512() {
-      const { sha512EncryptionText, $utools } = this
+      const { sha512EncryptionText } = this
       if (sha512EncryptionText) {
-        this.consoleText = $utools.EncryptUtil.encryptSHA512ToString(sha512EncryptionText)
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = utools.EncryptUtil.encryptSHA512ToString(sha512EncryptionText)
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容!')
+        utools.toast('请输入内容!')
       }
     },
 
@@ -337,7 +334,7 @@ fhe0p/VKfqSYgA==
       const {
         aesEncryptionText,
         aesEncryptionCipher,
-        $utools,
+
         aesEncryptionModes,
         aesEncryptionModeIndex,
         aesEncryptionPads,
@@ -345,41 +342,41 @@ fhe0p/VKfqSYgA==
         aesEncryptionIv,
       } = this
       if (!aesEncryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       }
       if (!aesEncryptionCipher) {
-        return $utools.toast('请输入密码!')
+        return utools.toast('请输入密码!')
       }
-      if (aesEncryptionModeIndex !== 0 && $utools.CommonUtil.isNil(aesEncryptionIv)) {
-        return $utools.toast('请输入 aes iv(填充向量)!')
+      if (aesEncryptionModeIndex !== 0 && utools.CommonUtil.isNil(aesEncryptionIv)) {
+        return utools.toast('请输入 aes iv(填充向量)!')
       }
 
       const mode = aesEncryptionModes[aesEncryptionModeIndex].value
       const padding = aesEncryptionPads[aesEncryptionPadIndex].value
 
       try {
-        const start = $utools.PerformanceUtil.getNow()
-        this.consoleText = $utools.EncryptUtil[fun](
+        const start = utools.PerformanceUtil.getNow()
+        this.consoleText = utools.EncryptUtil[fun](
           aesEncryptionText,
-          $utools.EncryptUtil.encryptMD5ToString(aesEncryptionCipher),
+          utools.EncryptUtil.encryptMD5ToString(aesEncryptionCipher),
           {
             iv: aesEncryptionIv,
             mode,
             padding,
           }
         )
-        const end = $utools.PerformanceUtil.getNow()
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+        const end = utools.PerformanceUtil.getNow()
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
         console.error(error)
-        $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
     onDecryptAES(fun) {
       const {
         aesDecryptionText,
         aesDecryptionCipher,
-        $utools,
+
         aesEncryptionModes,
         aesDecryptionModeIndex,
         aesEncryptionPads,
@@ -387,32 +384,32 @@ fhe0p/VKfqSYgA==
         aesDecryptionIv,
       } = this
       if (!aesDecryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       }
       if (!aesDecryptionCipher) {
-        return $utools.toast('请输入密码!')
+        return utools.toast('请输入密码!')
       }
-      if (aesDecryptionModeIndex !== 0 && $utools.CommonUtil.isNil(aesDecryptionIv)) {
-        return $utools.toast('请输入 AES iv(填充向量)!')
+      if (aesDecryptionModeIndex !== 0 && utools.CommonUtil.isNil(aesDecryptionIv)) {
+        return utools.toast('请输入 AES iv(填充向量)!')
       }
       const mode = aesEncryptionModes[aesDecryptionModeIndex].value
       const padding = aesEncryptionPads[aesDecryptionPadIndex].value
       try {
-        const start = $utools.PerformanceUtil.getNow()
-        this.consoleText = $utools.EncryptUtil[fun](
+        const start = utools.PerformanceUtil.getNow()
+        this.consoleText = utools.EncryptUtil[fun](
           aesDecryptionText,
-          $utools.EncryptUtil.encryptMD5ToString(aesDecryptionCipher),
+          utools.EncryptUtil.encryptMD5ToString(aesDecryptionCipher),
           {
             iv: aesDecryptionIv,
             mode,
             padding,
           }
         )
-        const end = $utools.PerformanceUtil.getNow()
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+        const end = utools.PerformanceUtil.getNow()
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
         console.error(error)
-        $utools.toast(`失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
     onEncryAESModeChange(e, key) {
@@ -423,37 +420,37 @@ fhe0p/VKfqSYgA==
     },
 
     onEncryptRSA2Base64() {
-      const { rsaEncryptionText, rsaEncryptionPublicKey, $utools } = this
+      const { rsaEncryptionText, rsaEncryptionPublicKey } = this
       if (!rsaEncryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       } else if (!rsaEncryptionPublicKey) {
-        return $utools.toast('请输入RSA加密公钥!')
+        return utools.toast('请输入RSA加密公钥!')
       }
-      const start = $utools.PerformanceUtil.getNow()
-      const res = $utools.EncryptUtil.encryptRSA2Base64(rsaEncryptionText, rsaEncryptionPublicKey)
-      const end = $utools.PerformanceUtil.getNow()
+      const start = utools.PerformanceUtil.getNow()
+      const res = utools.EncryptUtil.encryptRSA2Base64(rsaEncryptionText, rsaEncryptionPublicKey)
+      const end = utools.PerformanceUtil.getNow()
       if (!res) {
-        $utools.toast(`公钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`公钥设置失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
       this.consoleText = res
-      $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+      utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
     },
 
     onEncryptRSA2Base64Plain(isUseLocalCryptor, direct) {
-      const { rsaEncryptionText, rsaEncryptionPublicKey, $utools } = this
+      const { rsaEncryptionText, rsaEncryptionPublicKey } = this
       if (!rsaEncryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       } else if (!rsaEncryptionPublicKey) {
-        return $utools.toast('请输入RSA加密公钥!')
+        return utools.toast('请输入RSA加密公钥!')
       }
       if (isUseLocalCryptor) {
         if (!rsaEnCryptor) {
-          rsaEnCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          rsaEnCryptor = utools.EncryptUtil.getRSAEnCryptor()
           rsaEnCryptor.setPublicKey(rsaEncryptionPublicKey)
         }
       } else {
         if (!this.rsaEnCryptor) {
-          this.rsaEnCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          this.rsaEnCryptor = utools.EncryptUtil.getRSAEnCryptor()
           this.rsaEnCryptor.setPublicKey(rsaEncryptionPublicKey)
         }
       }
@@ -468,60 +465,60 @@ fhe0p/VKfqSYgA==
           this.rsaEnCryptor.setPublicKey(rsaEncryptionPublicKey)
         }
 
-        const start = $utools.PerformanceUtil.getNow()
+        const start = utools.PerformanceUtil.getNow()
         if (isUseLocalCryptor) {
           if (direct) {
             this.consoleText = rsaEnCryptor.encrypt(rsaEncryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.encryptRSA2Base64Plain(rsaEncryptionText, rsaEnCryptor)
+            this.consoleText = utools.EncryptUtil.encryptRSA2Base64Plain(rsaEncryptionText, rsaEnCryptor)
           }
         } else {
           if (direct) {
             this.consoleText = this.rsaEnCryptor.encrypt(rsaEncryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.encryptRSA2Base64Plain(rsaEncryptionText, this.rsaEnCryptor)
+            this.consoleText = utools.EncryptUtil.encryptRSA2Base64Plain(rsaEncryptionText, this.rsaEnCryptor)
           }
         }
-        const end = $utools.PerformanceUtil.getNow()
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+        const end = utools.PerformanceUtil.getNow()
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
-        $utools.toast(`公钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`公钥设置失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
 
     onDecryptRSABase64RSA() {
-      const { rsaDecryptionText, rsaEncryptionPrivateKey, $utools } = this
+      const { rsaDecryptionText, rsaEncryptionPrivateKey } = this
       if (!rsaDecryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       } else if (!rsaEncryptionPrivateKey) {
-        return $utools.toast('请输入RSA解密私钥!')
+        return utools.toast('请输入RSA解密私钥!')
       }
       try {
-        const start = $utools.PerformanceUtil.getNow()
-        const res = $utools.EncryptUtil.decryptRSABase64(rsaDecryptionText, rsaEncryptionPrivateKey)
-        const end = $utools.PerformanceUtil.getNow()
+        const start = utools.PerformanceUtil.getNow()
+        const res = utools.EncryptUtil.decryptRSABase64(rsaDecryptionText, rsaEncryptionPrivateKey)
+        const end = utools.PerformanceUtil.getNow()
         this.consoleText = res
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
-        $utools.toast(`私钥解密失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`私钥解密失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
 
     onDecryptRSABase64RSAPlain(isUseLocalCryptor, direct) {
-      const { rsaDecryptionText, rsaEncryptionPrivateKey, $utools } = this
+      const { rsaDecryptionText, rsaEncryptionPrivateKey } = this
       if (!rsaDecryptionText) {
-        return $utools.toast('请输入内容!')
+        return utools.toast('请输入内容!')
       } else if (!rsaEncryptionPrivateKey) {
-        return $utools.toast('请输入RSA解密私钥!')
+        return utools.toast('请输入RSA解密私钥!')
       }
       if (isUseLocalCryptor) {
         if (!rsaDeCryptor) {
-          rsaDeCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          rsaDeCryptor = utools.EncryptUtil.getRSAEnCryptor()
           rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
       } else {
         if (!this.rsaDeCryptor) {
-          this.rsaDeCryptor = $utools.EncryptUtil.getRSAEnCryptor()
+          this.rsaDeCryptor = utools.EncryptUtil.getRSAEnCryptor()
           this.rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
       }
@@ -535,24 +532,24 @@ fhe0p/VKfqSYgA==
         } else {
           this.rsaDeCryptor.setPrivateKey(rsaEncryptionPrivateKey)
         }
-        const start = $utools.PerformanceUtil.getNow()
+        const start = utools.PerformanceUtil.getNow()
         if (isUseLocalCryptor) {
           if (direct) {
             this.consoleText = rsaDeCryptor.decrypt(rsaDecryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, rsaDeCryptor)
+            this.consoleText = utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, rsaDeCryptor)
           }
         } else {
           if (direct) {
             this.consoleText = this.rsaDeCryptor.decrypt(rsaDecryptionText)
           } else {
-            this.consoleText = $utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, this.rsaDeCryptor)
+            this.consoleText = utools.EncryptUtil.decryptRSABase64Plain(rsaDecryptionText, this.rsaDeCryptor)
           }
         }
-        const end = $utools.PerformanceUtil.getNow()
-        $utools.toast(`成功! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
+        const end = utools.PerformanceUtil.getNow()
+        utools.toast(`成功! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}, 用时 ${(end - start).toFixed(3)}ms`)
       } catch (error) {
-        $utools.toast(`私钥设置失败! ${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`私钥设置失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
   },

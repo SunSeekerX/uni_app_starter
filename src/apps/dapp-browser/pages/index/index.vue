@@ -5,7 +5,7 @@
       <text>metaMask是否已连接：</text>
       <text>{{ state.isMetaMaskConnected ? '是' : '否' }}</text>
     </view>
-    <u-button @tap="onConnectMetamask" type="primary" text="连接 metamask" />
+    <u-button type="primary" text="连接 metamask" @tap="onConnectMetamask" />
   </view>
 </template>
 <script>

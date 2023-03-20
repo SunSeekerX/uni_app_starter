@@ -8,7 +8,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@root': resolve('/'),
+        '@root': resolve('./'),
       },
     },
   },

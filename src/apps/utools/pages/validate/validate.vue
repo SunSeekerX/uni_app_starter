@@ -1,28 +1,30 @@
 <template>
-  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="正则验证">
       <!-- isMobilePhone -->
-      <AppOperationInput operation-name="请输入需要校验手机号码的内容" v-model="isMobilePhoneText" />
-      <AppOperationButton buttonText="校验手机号码: isMobilePhone(val: string): boolean" @onTap="isMobilePhone" />
+      <AppOperationInput v-model="isMobilePhoneText" operation-name="请输入需要校验手机号码的内容" />
+      <AppOperationButton button-text="校验手机号码: isMobilePhone(val: string): boolean" @onTap="isMobilePhone" />
 
       <!-- isIDCard -->
-      <AppOperationInput operation-name="请输入需要校验身份证号码的内容" v-model="isIDCardText" />
-      <AppOperationButton buttonText="校验身份证号码: isIDCard(val: string): boolean" @onTap="isIDCard" />
+      <AppOperationInput v-model="isIDCardText" operation-name="请输入需要校验身份证号码的内容" />
+      <AppOperationButton button-text="校验身份证号码: isIDCard(val: string): boolean" @onTap="isIDCard" />
 
       <!-- isEmail -->
-      <AppOperationInput operation-name="请输入需要验证电子邮箱的内容" v-model="isEmailText" />
-      <AppOperationButton buttonText="验证电子邮箱: isEmail(val: string): boolean" @onTap="isEmail" />
+      <AppOperationInput v-model="isEmailText" operation-name="请输入需要验证电子邮箱的内容" />
+      <AppOperationButton button-text="验证电子邮箱: isEmail(val: string): boolean" @onTap="isEmail" />
 
       <!-- isUrl -->
-      <AppOperationInput operation-name="请输入需要验证 url 地址的内容" v-model="isUrlText" />
-      <AppOperationButton buttonText="验证 url 地址: isUrl(val: string): boolean" @onTap="isUrl" />
+      <AppOperationInput v-model="isUrlText" operation-name="请输入需要验证 url 地址的内容" />
+      <AppOperationButton button-text="验证 url 地址: isUrl(val: string): boolean" @onTap="isUrl" />
     </AppOperationContent>
   </c-page>
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
+
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
@@ -46,42 +48,42 @@ export default {
 
   methods: {
     isMobilePhone() {
-      const { isMobilePhoneText, $utools } = this
+      const { isMobilePhoneText } = this
       if (isMobilePhoneText) {
-        this.consoleText = String($utools.ValidateUtil.isMobilePhone(isMobilePhoneText))
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = String(utools.ValidateUtil.isMobilePhone(isMobilePhoneText))
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容！')
+        utools.toast('请输入内容！')
       }
     },
 
     isIDCard() {
-      const { isIDCardText, $utools } = this
+      const { isIDCardText } = this
       if (isIDCardText) {
-        this.consoleText = String($utools.ValidateUtil.isIDCard(isIDCardText))
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = String(utools.ValidateUtil.isIDCard(isIDCardText))
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容！')
+        utools.toast('请输入内容！')
       }
     },
 
     isEmail() {
-      const { isEmailText, $utools } = this
+      const { isEmailText } = this
       if (isEmailText) {
-        this.consoleText = String($utools.ValidateUtil.isEmail(isEmailText))
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = String(utools.ValidateUtil.isEmail(isEmailText))
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容！')
+        utools.toast('请输入内容！')
       }
     },
 
     isUrl() {
-      const { isUrlText, $utools } = this
+      const { isUrlText } = this
       if (isUrlText) {
-        this.consoleText = String($utools.ValidateUtil.isUrl(isUrlText))
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        this.consoleText = String(utools.ValidateUtil.isUrl(isUrlText))
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        $utools.toast('请输入内容！')
+        utools.toast('请输入内容！')
       }
     },
   },

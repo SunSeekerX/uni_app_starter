@@ -6,7 +6,7 @@ import { mapState } from 'vuex'
 // 引入文件
 import App from './App'
 import store from './store'
-import utools from '@root/packages/limm-utools' // utools
+import utools from '@/uni_modules/limm-utools' // utools
 import * as util from './utils' // 工具包
 import * as constant from './constant' // 常量
 import * as api from './apis' // Api

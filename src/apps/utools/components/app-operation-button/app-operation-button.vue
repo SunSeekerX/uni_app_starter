@@ -8,7 +8,7 @@
 
 <template>
   <!-- 确认 -->
-  <button type="primary" @tap="$emit('onTap')" class="content-button wd-flex-center">{{ buttonText }}</button>
+  <button type="primary" class="content-button wd-flex-center" @tap="$emit('onTap')">{{ buttonText }}</button>
 </template>
 
 <script>

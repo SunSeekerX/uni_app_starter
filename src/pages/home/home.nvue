@@ -1,5 +1,5 @@
 <template>
-  <c-page backgroundColor="#f6f6f6">
+  <c-page background-color="#f6f6f6">
     <view>
       <!-- 轮播图 -->
       <view class="wd-relative wd-pt-10 wd-w-750r">
@@ -41,13 +41,13 @@
         <!-- 项目菜单 -->
         <view class="menu">
           <view
-            @tap="onClickMenuItem(item.url)"
             v-for="item of menuList"
             :key="item.name"
             class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
             :style="{
               'background-image': item.backgroundImage,
             }"
+            @tap="onClickMenuItem(item.url)"
           >
             <view class="wd-flex wd-flex-col wd-flex-1">
               <view class="wd-flex-row wd-justify-between wd-items-center wd-leading-34">

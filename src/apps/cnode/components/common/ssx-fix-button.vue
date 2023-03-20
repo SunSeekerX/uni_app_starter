@@ -1,5 +1,5 @@
 <template>
-  <view @tap="tab()" class="prev">prev</view>
+  <view class="prev" @tap="tab()">prev</view>
 </template>
 
 <script>

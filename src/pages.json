@@ -191,9 +191,10 @@
       "style": {
         "navigationBarTitleText": "random"
       }
-    },
+    }
     /*-------------utools end-------------*/
     // #ifdef H5
+    ,
     /*-------------Dapp Browser start-------------*/
     /*-------------web only-------------*/
     {

@@ -1,14 +1,14 @@
 <template>
-  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" class="wd-p-25r">
     <AppOutput :output="consoleObj.res" />
 
     <AppOperationContent name="URL 编码">
       <!-- urlEncode -->
-      <AppOperationInput operation-name="请输入需要 URL 编码的内容" v-model="encodeText" />
-      <AppOperationButton buttonText="URL 编码: urlEncode(val: string)" @onTap="onEncode" />
+      <AppOperationInput v-model="encodeText" operation-name="请输入需要 URL 编码的内容" />
+      <AppOperationButton button-text="URL 编码: urlEncode(val: string)" @onTap="onEncode" />
 
       <!-- urlDecode -->
-      <AppOperationInput operation-name="请输入需要 URL 解码的内容" v-model="decodeText" />
+      <AppOperationInput v-model="decodeText" operation-name="请输入需要 URL 解码的内容" />
       <template>
         <text class="wd-text-12">解码为 ios 可识别的 url 链接</text>
         <radio-group class="wd-text-12" @change="onRadioChange">
@@ -16,22 +16,23 @@
           <radio class="wd-ml-12" value="false" :checked="!isUrl">false</radio>
         </radio-group>
       </template>
-      <AppOperationButton buttonText="URL 解码 - urlDecode(val: string, [url: boolean = true])" @onTap="onDecode" />
+      <AppOperationButton button-text="URL 解码 - urlDecode(val: string, [url: boolean = true])" @onTap="onDecode" />
     </AppOperationContent>
 
     <AppOperationContent name="base64 编码">
       <!-- base64Encode2String -->
-      <AppOperationInput operation-name="请输入需要 base64 编码的内容" v-model="encodeTextBase64" />
-      <AppOperationButton buttonText="base64 编码: base64Encode2String(val: string)" @onTap="onEncodeBase64" />
+      <AppOperationInput v-model="encodeTextBase64" operation-name="请输入需要 base64 编码的内容" />
+      <AppOperationButton button-text="base64 编码: base64Encode2String(val: string)" @onTap="onEncodeBase64" />
 
       <!-- base64Decode -->
-      <AppOperationInput operation-name="请输入需要 base64 解码的内容" v-model="decodeTextBase64" />
-      <AppOperationButton buttonText="base64 解码: base64Decode(val: string)" @onTap="onDecodeBase64" />
+      <AppOperationInput v-model="decodeTextBase64" operation-name="请输入需要 base64 解码的内容" />
+      <AppOperationButton button-text="base64 解码: base64Decode(val: string)" @onTap="onDecodeBase64" />
     </AppOperationContent>
   </c-page>
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
@@ -60,57 +61,57 @@ export default {
 
   methods: {
     onEncode() {
-      const { encodeText, $utools } = this
+      const { encodeText } = this
       if (encodeText) {
         this.consoleObj = {
           time: new Date().getTime(),
-          res: this.$utools.EncodeUtil.urlEncode(encodeText),
+          res: utools.EncodeUtil.urlEncode(encodeText),
         }
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('请输入需要编码的内容！')
+        utools.toast('请输入需要编码的内容！')
       }
     },
 
     onDecode() {
-      const { decodeText, $utools } = this
+      const { decodeText } = this
       if (decodeText) {
-        const decodeTextStr = this.$utools.EncodeUtil.urlDecode(decodeText, this.isUrl)
+        const decodeTextStr = utools.EncodeUtil.urlDecode(decodeText, this.isUrl)
         this.consoleObj = {
           time: new Date().getTime(),
           res: decodeTextStr,
         }
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('解码的内容为空！')
+        utools.toast('解码的内容为空！')
       }
     },
 
     onEncodeBase64() {
-      const { encodeTextBase64, $utools } = this
+      const { encodeTextBase64 } = this
       if (encodeTextBase64) {
-        const encodeTextStr = this.$utools.EncodeUtil.base64Encode2String(encodeTextBase64)
+        const encodeTextStr = utools.EncodeUtil.base64Encode2String(encodeTextBase64)
         this.consoleObj = {
           time: new Date().getTime(),
           res: encodeTextStr,
         }
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('请输入需要编码的内容！')
+        utools.toast('请输入需要编码的内容！')
       }
     },
 
     onDecodeBase64() {
-      const { decodeTextBase64, $utools } = this
+      const { decodeTextBase64 } = this
       if (decodeTextBase64) {
-        const decodeTextStr = this.$utools.EncodeUtil.base64Decode(decodeTextBase64)
+        const decodeTextStr = utools.EncodeUtil.base64Decode(decodeTextBase64)
         this.consoleObj = {
           time: new Date().getTime(),
           res: decodeTextStr,
         }
-        $utools.toast(`成功！${$utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
+        utools.toast(`成功！${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       } else {
-        this.$utools.toast('解码的内容为空！')
+        utools.toast('解码的内容为空！')
       }
     },
 

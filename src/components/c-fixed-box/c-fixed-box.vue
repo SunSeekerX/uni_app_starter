@@ -29,7 +29,7 @@
 <script>
 import { addUnit } from '@/utils/index'
 export default {
-  name: 'c-fixed-box',
+  name: 'CFixedBox',
   props: {
     // 内容高度
     height: {

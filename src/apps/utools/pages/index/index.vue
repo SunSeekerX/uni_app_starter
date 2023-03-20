@@ -1,20 +1,16 @@
 <template>
-  <c-page backgroundColor="#f6f6f6">
+  <c-page background-color="#f6f6f6">
     <view class="wd-p-25r">
       <!-- 项目菜单 -->
       <view class="menu">
         <view
           v-for="item of menuList"
           :key="item.name"
-          @tap="
-            $utools.route({
-              url: item.url,
-            })
-          "
           class="wd-flex wd-flex-row wd-justify-between wd-items-center wd-rounded-6 wd-mb-12 wd-p-12"
           :style="{
             'background-image': item.backgroundImage,
           }"
+          @tap="onRoute(item.url)"
         >
           <view class="wd-flex wd-flex-col wd-flex-1">
             <view class="item wd-flex-row wd-justify-between wd-items-center wd-leading-34">
@@ -35,6 +31,8 @@
 </template>
 
 <script>
+import utools from '@root/packages/limm-utools'
+
 export default {
   name: 'UtoolsPageIndex',
   data() {
@@ -82,6 +80,13 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    onRoute(url) {
+      utools.route({
+        url,
+      })
+    },
   },
 }
 </script>

@@ -6,7 +6,7 @@
         class="wd-flex wd-flex-col wd-justify-center wd-h-120 wd-w-750r wd-pl-25r wd-pr-25r"
         style="border-bottom: solid #eee 1px"
       >
-        <u-search placeholder="请输入交易对" v-model="keyword" @change="onSearchChange" :show-action="false" />
+        <u-search v-model="keyword" placeholder="请输入交易对" :show-action="false" @change="onSearchChange" />
         <view class="wd-flex wd-justify-between wd-items-center wd-h-34">
           <text class="wd-font-bold wd-text-16">下次资金费率时间</text>
           <text class="wd-text-16">{{
@@ -18,11 +18,11 @@
         <view class="wd-flex wd-justify-between wd-items-center wd-h-34">
           <text class="wd-font-bold wd-text-16">交易对</text>
           <text
-            @tap="onSort"
             :style="{
               'background-color': sort === 'desc' ? '#28C76F' : '#EA5455',
             }"
             class="wd-text-16 wd-p-10r wd-rounded-6 wd-text-fff"
+            @tap="onSort"
             >排序: {{ sort === 'desc' ? '降序' : '升序' }}</text
           >
         </view>

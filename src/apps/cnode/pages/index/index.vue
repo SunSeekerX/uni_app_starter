@@ -17,9 +17,9 @@
       <view class="topic-classify">
         <block v-for="classIfy of classIfyList" :key="classIfy.id">
           <view
-            @tap="handleClassIfyChange(classIfy.id)"
             class="classify-item"
             :class="{ selected: currentClassIfy === classIfy.id }"
+            @tap="handleClassIfyChange(classIfy.id)"
           >
             {{ classIfy.name }}
           </view>
@@ -30,7 +30,7 @@
       <view v-if="topicList.length" class="topic-list">
         <!-- 话题项 -->
         <block v-for="topic of topicList" :key="topic.id">
-          <view @tap="navigator(`../topic-details/topic-details?id=${topic.id}`)" class="topic">
+          <view class="topic" @tap="navigator(`../topic-details/topic-details?id=${topic.id}`)">
             <view class="topic-author-avatar">
               <image class="author-avatar-url" :src="topic.author.avatar_url" lazy-load />
             </view>
@@ -51,8 +51,8 @@
         <!-- 分页器 -->
         <view class="pagination">
           <view class="pagination-action">
-            <view @tap="handlePageChange('prev')" class="prev">prev</view>
-            <view @tap="handlePageChange('next')" class="next">next</view>
+            <view class="prev" @tap="handlePageChange('prev')">prev</view>
+            <view class="next" @tap="handlePageChange('next')">next</view>
           </view>
           <view class="current-page">当前是第{{ page }}页</view>
         </view>

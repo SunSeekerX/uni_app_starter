@@ -1,9 +1,9 @@
 <template>
-  <c-page backgroundColor="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" class="wd-p-25r">
     <u-button
-      class="wd-mb-6"
       v-for="item of list"
       :key="item.url"
+      class="wd-mb-6"
       @click="
         $utools.route({
           url: item.url,
