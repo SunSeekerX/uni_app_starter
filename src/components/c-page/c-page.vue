@@ -1,6 +1,15 @@
 <template>
-  <view class="page" :style="`background-color: ${backgroundColor};`"> <slot /> </view>
+  <view
+    class="page"
+    :style="{
+      'background-color': backgroundColor,
+    }"
+    :class="boxClass"
+  >
+    <slot />
+  </view>
 </template>
+
 <script>
 export default {
   name: 'CustomPage',
@@ -10,9 +19,15 @@ export default {
       required: false,
       default: 'transparent',
     },
+    boxClass: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
 }
 </script>
+
 <style lang="scss" scoped>
 .page {
   flex: 1;

@@ -79,7 +79,9 @@ image {
   will-change: transform;
 }
 
-* {
+// 不加 view 微信小程序不会生效
+*,
+view {
   box-sizing: border-box;
 }
 

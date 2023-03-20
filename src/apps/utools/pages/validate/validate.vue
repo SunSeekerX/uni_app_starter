@@ -1,5 +1,5 @@
 <template>
-  <c-page background-color="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" box-class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="正则验证">

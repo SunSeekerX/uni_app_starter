@@ -1,17 +1,16 @@
 <template>
-  <c-page background-color="#f6f6f6" class="wd-p-25r">
-    <u-button
-      v-for="item of list"
-      :key="item.url"
-      class="wd-mb-6"
-      @click="
-        $utools.route({
-          url: item.url,
-        })
-      "
-    >
-      {{ item.name }}
-    </u-button>
+  <c-page background-color="#f6f6f6" box-class="wd-p-25r">
+    <view v-for="item of list" :key="item.url" class="wd-mb-6">
+      <u-button
+        @click="
+          $utools.route({
+            url: item.url,
+          })
+        "
+      >
+        {{ item.name }}
+      </u-button>
+    </view>
   </c-page>
 </template>
 <script>

@@ -8,7 +8,7 @@
 
 <template>
   <!-- 内容输出区域 -->
-  <view class="console" @tap="onCopy">
+  <view class="console" @click="onCopy">
     <text class="output">{{ output }}</text>
   </view>
 </template>
@@ -35,7 +35,7 @@ export default {
 // 内容输出区域
 .console {
   position: sticky;
-  z-index: 1;
+  z-index: 99;
   top: calc(var(--window-top) + 6px);
   max-height: 200px;
   padding: 12rpx;

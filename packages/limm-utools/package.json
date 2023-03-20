@@ -30,27 +30,27 @@
   "dependencies": {
     "@limm/jsencrypt-mp": "3.2.2-0",
     "crypto-js": "3.3.0",
-    "dayjs": "^1.11.6",
+    "dayjs": "^1.11.7",
     "lodash": "^4.17.21",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@dcloudio/types": "*",
-    "@rollup/plugin-alias": "^4.0.2",
-    "@rollup/plugin-commonjs": "^23.0.3",
-    "@rollup/plugin-json": "^5.0.2",
+    "@rollup/plugin-alias": "^4.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^10.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@types/crypto-js": "3.1.47",
     "@types/node": "^18.11.9",
-    "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "eslint": "^8.28.0",
-    "rollup": "^3.5.0",
-    "rollup-plugin-filesize": "^9.1.2",
-    "typescript": "^4.9.3",
-    "vuepress": "^1.9.7",
-    "vuepress-theme-antdocs": "^1.4.4"
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "eslint": "^8.36.0",
+    "rollup": "^3.20.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "typescript": "^5.0.2",
+    "vuepress": "^1.9.9",
+    "vuepress-theme-antdocs": "^1.4.6"
   }
 }

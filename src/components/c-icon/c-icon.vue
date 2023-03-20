@@ -8,22 +8,29 @@
 
 <template>
   <!-- #ifdef APP-NVUE -->
-  <text @click="onClick" class="c-icon" :style="iconStyle">{{
-    icons[name]
-  }}</text>
+  <text @click="onClick" class="c-icon" :style="iconStyle">{{ icons[name] }}</text>
   <!-- #endif -->
 
-  <!-- #ifndef APP-NVUE -->
+  <!-- #ifdef H5 -->
   <svg v-if="isUseSvg" :style="iconStyle" class="c-icon-svg" aria-hidden="true">
     <use :xlink:href="`#${name}`"></use>
   </svg>
+  <text v-else @click="onClick" class="c-icon" :class="name" :style="iconStyle" />
+  <!-- #endif -->
+
+  <!-- #ifdef MP -->
   <text
-    v-else
     @click="onClick"
     class="c-icon"
     :class="name"
-    :style="iconStyle"
-  ></text>
+    :style="{
+      color: color,
+      fontSize: size === 'inherit' ? 'inherit' : addUnit(size, rpx),
+      width: addUnit(width, rpx),
+      height: addUnit(height, rpx),
+      'line-height': addUnit(height, rpx),
+    }"
+  />
   <!-- #endif -->
 </template>
 
@@ -45,7 +52,6 @@ export default {
       type: [Number, String],
       default: 'inherit',
     },
-
     width: {
       type: [Number, String],
       default: 'auto',
@@ -54,36 +60,30 @@ export default {
       type: [Number, String],
       default: 'auto',
     },
-
     color: {
       type: String,
       default: '#333333',
     },
-
     name: {
       type: String,
       required: true,
     },
-
     rpx: {
       type: Boolean,
       required: false,
       default: false,
     },
-
     bubble: {
       type: Boolean,
       required: false,
       default: true,
     },
-
     svg: {
       type: Boolean,
       required: false,
       default: false,
     },
   },
-
   computed: {
     iconStyle() {
       if (this.isUseSvg) {
@@ -105,8 +105,7 @@ export default {
       } else {
         return {
           color: this.color,
-          fontSize:
-            this.size === 'inherit' ? 'inherit' : addUnit(this.size, this.rpx),
+          fontSize: this.size === 'inherit' ? 'inherit' : addUnit(this.size, this.rpx),
           width: addUnit(this.width, this.rpx),
           height: addUnit(this.height, this.rpx),
           'line-height': addUnit(this.height, this.rpx),
@@ -125,7 +124,6 @@ export default {
       // #endif
     },
   },
-
   methods: {
     onClick(e) {
       this.$emit('click')
@@ -134,14 +132,17 @@ export default {
       }
     },
   },
-
-  // #ifdef APP-NVUE
   data() {
     return {
+      // #ifdef APP-NVUE
       icons: icons,
+      // #endif
+      // #ifdef MP
+      addUnit,
+      // #endif
     }
   },
-
+  // #ifdef APP-NVUE
   beforeCreate() {
     /**
      * iconfont 需要用ttf转base64

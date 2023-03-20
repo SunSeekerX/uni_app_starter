@@ -1,5 +1,5 @@
 <template>
-  <c-page background-color="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" box-class="wd-p-25r">
     <AppOutput :output="consoleText" />
 
     <AppOperationContent name="md5 加密">
@@ -9,18 +9,15 @@
     </AppOperationContent>
 
     <AppOperationContent name="SHA 加密">
-      <!-- encryptSHA1ToString -->
       <AppOperationInput v-model="sha1EncryptionText" operation-name="请输入需要 SHA1 加密的内容" />
       <AppOperationButton button-text="SHA1 加密: encryptSHA1ToString(val: string): string" @onTap="onEncryptSHA1" />
 
-      <!-- encryptSHA256ToString -->
       <AppOperationInput v-model="sha256EncryptionText" operation-name="请输入需要 SHA256 加密的内容" />
       <AppOperationButton
         button-text="SHA256 加密: encryptSHA256ToString(val: string): string"
         @onTap="onEncryptSHA256"
       />
 
-      <!-- encryptSHA51ToString -->
       <AppOperationInput v-model="sha512EncryptionText" operation-name="请输入需要 SHA512 加密的内容" />
       <AppOperationButton
         button-text="SHA512 加密: encryptSHA512ToString(val: string): string"
@@ -28,7 +25,7 @@
       />
     </AppOperationContent>
 
-    <!-- AES 加密 -->
+    <!-- #ifndef MP -->
     <AppOperationContent name="AES 加密">
       <AppOperationInput v-model="aesEncryptionText" operation-name="请输入需要 AES 加密的内容" />
       <AppOperationInput v-model="aesEncryptionCipher" operation-name="请输入 AES 加密的密码" />
@@ -39,8 +36,8 @@
       />
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 加密模式</text>
-        <radio-group @change="(e) => onEncryAESModeChange(e, 'aesEncryptionModeIndex')">
-          <label v-for="(item, index) in aesEncryptionModes" :key="item.name" class="uni-list-cell uni-list-cell-pd">
+        <radio-group @change="(e) => onEncryptAESModeChange(e, 'aesEncryptionModeIndex')">
+          <label v-for="(item, index) of aesEncryptionModes" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesEncryptionModeIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
@@ -49,8 +46,8 @@
 
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 加密填充模式</text>
-        <radio-group @change="(e) => onEncryAESPadChange(e, 'aesEncryptionPadIndex')">
-          <label v-for="(item, index) in aesEncryptionPads" :key="item.name" class="uni-list-cell uni-list-cell-pd">
+        <radio-group @change="(e) => onEncryptAESPadChange(e, 'aesEncryptionPadIndex')">
+          <label v-for="(item, index) of aesEncryptionPads" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesEncryptionPadIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
           </label>
@@ -65,12 +62,11 @@
         @onTap="onEncryptAES('encryptAES2HexString')"
       />
 
-      <!-- AES 解密 -->
       <AppOperationInput v-model="aesDecryptionText" operation-name="请输入需要 AES 解密的内容" />
 
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 解密模式</text>
-        <radio-group @change="(e) => onEncryAESModeChange(e, 'aesDecryptionModeIndex')">
+        <radio-group @change="(e) => onEncryptAESModeChange(e, 'aesDecryptionModeIndex')">
           <label v-for="(item, index) in aesEncryptionModes" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesDecryptionModeIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
@@ -80,7 +76,7 @@
 
       <view class="wd-pt-5">
         <text class="wd-text-12 wd-leading-30">请选择 AES 解密填充模式</text>
-        <radio-group @change="(e) => onEncryAESPadChange(e, 'aesDecryptionPadIndex')">
+        <radio-group @change="(e) => onEncryptAESPadChange(e, 'aesDecryptionPadIndex')">
           <label v-for="(item, index) in aesEncryptionPads" :key="item.name" class="uni-list-cell uni-list-cell-pd">
             <radio :value="String(index)" :checked="index === aesDecryptionPadIndex" />
             <text class="wd-mr-5">{{ item.name }}</text>
@@ -103,6 +99,7 @@
         @onTap="onDecryptAES('decryptHexAES2String')"
       />
     </AppOperationContent>
+    <!-- #endif -->
 
     <AppOperationContent name="RSA 加密">
       <!-- encryptRSA2Base64 -->
@@ -229,7 +226,7 @@ fhe0p/VKfqSYgA==
 `,
     }
   },
-
+  // #ifndef MP
   computed: {
     aesEncryptionModes() {
       return [
@@ -288,7 +285,7 @@ fhe0p/VKfqSYgA==
       ]
     },
   },
-
+  // #endif
   methods: {
     onMd5Encrypt() {
       const { md5EncryptionText } = this
@@ -412,10 +409,10 @@ fhe0p/VKfqSYgA==
         utools.toast(`失败! ${utools.dayjs().format('YYYY-MM-DD HH:mm:ss:SSS')}`)
       }
     },
-    onEncryAESModeChange(e, key) {
+    onEncryptAESModeChange(e, key) {
       this[key] = Number(e.detail.value)
     },
-    onEncryAESPadChange(e, key) {
+    onEncryptAESPadChange(e, key) {
       this[key] = Number(e.detail.value)
     },
 
@@ -555,3 +552,5 @@ fhe0p/VKfqSYgA==
   },
 }
 </script>
+
+<style lang="scss" scoped></style>

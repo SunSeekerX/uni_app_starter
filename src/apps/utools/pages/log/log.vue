@@ -1,5 +1,5 @@
 <template>
-  <c-page background-color="#f6f6f6" class="wd-p-25r">
+  <c-page background-color="#f6f6f6" box-class="wd-p-25r">
     <AppOperationContent name="日志工具">
       <AppOperationInput v-model="tagName" operation-name="请输入标签名" />
 
