@@ -13,15 +13,12 @@ src/utils/libs/
 # uni_modules
 uni_modules
 
-# 忽略 mypui 组件库
+# 项目相关
+.npmrc
 src/mypUI/**
-
-# Cnode 需要
 feng-parse
-
 # packages
 packages/limm-*
 src/components/c-icon
 un-icon
-
 *.d.ts

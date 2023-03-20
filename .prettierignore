@@ -13,14 +13,11 @@ src/utils/libs/
 # uni_modules
 uni_modules
 
-# 忽略 mypui 组件库
+# 项目相关
+.npmrc
 src/mypUI/**
-
-# 临时忽略
 iconfont-svg.js
 src/components/c-icon
-
-# Cnode 需要
 feng-parse
 
 # packages

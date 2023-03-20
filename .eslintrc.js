@@ -13,17 +13,18 @@ module.exports = {
     weex: 'readonly',
     getCurrentPages: 'readonly',
   },
-  extends: ['eslint:recommended', 'plugin:vue/essential', '@vue/prettier'],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false,
-    babelOptions: {
-      rootMode: 'upward',
-    },
-  },
-  plugins: ['vue'],
+  extends: ['eslint:recommended', 'plugin:vue/recommended', '@vue/eslint-config-prettier'],
+  // parser: "vue-eslint-parser",
+  // parserOptions: {
+  //   ecmaVersion: 'latest',
+  //   sourceType: 'module',
+  //   // parser: '@babel/eslint-parser',
+  //   requireConfigFile: false,
+  //   babelOptions: {
+  //     rootMode: 'upward',
+  //   },
+  // },
+  // plugins: ['vue'],
   rules: {
     'no-console': [
       'warn',

@@ -8,19 +8,5 @@
     },
     "allowJs": true,
     "types": ["@dcloudio/types", "miniprogram-api-typings", "mini-types"]
-  },
-  "exclude": ["node_modules", "dist"],
-  // "include": ["src/**/*"],
-  // "typeAcquisition": {
-  //   "exclude": [
-  //     "agent-base",
-  //     "https-proxy-agent",
-  //     "mdast-util-from-markdown/**",
-  //     "stable",
-  //     "source-map",
-  //     "defer-to-connect",
-  //     "ismobilejs",
-  //     "@dcloudio/types"
-  //   ]
-  // }
+  } 
 }

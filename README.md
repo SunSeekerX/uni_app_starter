@@ -2,9 +2,9 @@
 
 **一切伟大的行动和思想,都有一个微不足道的开始。**
 
-> uni-app 业务解决集成方案。
->
-> 用来记录使用 uni-app 之中出现的问题、踩过的坑、解决业务的写法、工具函数、通用组件。
+uni-app 业务解决集成方案。
+
+用来记录使用 uni-app 之中出现的问题、踩过的坑、解决业务的写法、工具函数、通用组件。
 
 [![OSCS Status](https://www.oscs1024.com/platform/badge/SunSeekerX/uni-app-starter.svg?size=large)](https://www.oscs1024.com/project/SunSeekerX/uni-app-starter?ref=badge_large)
 

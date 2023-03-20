@@ -1,29 +1,21 @@
-/**
- * CSS 样式格式化
- * @author: SunSeekerX
- * @Date: 2022-03-23 17:49:16
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-26 18:08:09
- */
-
 module.exports = {
-  // v13
   root: true,
   plugins: ['stylelint-order'],
-  // v13
-  extends: [
-    'stylelint-config-standard',
-    'stylelint-config-prettier',
-    // 'stylelint-config-standard-scss',
-    // 'stylelint-config-prettier-scss',
+  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  overrides: [
+    {
+      customSyntax: 'postcss-scss',
+      files: ['**/*.css', '**/*.scss'],
+    },
+    {
+      customSyntax: 'postcss-less',
+      files: ['**/*.less'],
+    },
+    {
+      customSyntax: 'postcss-html',
+      files: ['**/*.html', '**/*.vue', '**/*.nvue'],
+    },
   ],
-  // v14
-  // extends: [
-  //   'stylelint-config-standard-scss',
-  //   'stylelint-config-recommended-vue',
-  //   'stylelint-config-property-sort-order-smacss',
-  //   'stylelint-config-prettier',
-  // ],
   rules: {
     // 'scss/at-import-partial-extension': 'always',
     'no-descending-specificity': null,
@@ -69,6 +61,8 @@ module.exports = {
     'at-rule-no-unknown': null,
     // 这个是不然把类似 “rgba(25, 24, 30, 1)” 格式化成 "rgb(25 24 30 / 100%)" 这种形式 sass 还不支持这种语法
     'color-function-notation': null,
+    // 禁止无效的十六进制颜色
+    'color-no-invalid-hex': true,
     // 禁用类似直接使用 unquote 不行 而要改为 string.unquote 这种的错误
     // 'scss/no-global-function-names': null,
     'selector-pseudo-element-no-unknown': [
@@ -77,12 +71,6 @@ module.exports = {
         ignorePseudoElements: ['v-deep'],
       },
     ],
-    // 'annotation-no-unknown': [
-    //   true,
-    //   {
-    //     ignoreAnnotations: ['default'],
-    //   },
-    // ],
     'value-no-vendor-prefix': [
       true,
       {
