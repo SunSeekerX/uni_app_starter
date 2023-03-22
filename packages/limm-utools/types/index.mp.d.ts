@@ -1,5 +1,5 @@
 /**
- * Utools 入口
+ * Utools 小程序版本入口
  * @author: SunSeekerX
  * @Date: 2021-06-03 00:00:14
  * @LastEditors: SunSeekerX
@@ -12,9 +12,26 @@ import * as CommonUtil from './core/common'
 import * as UniAppUtil from './core/uni-app'
 import * as ValidateUtil from './core/validate'
 import * as EncodeUtil from './core/encode'
-import * as EncryptUtil from './core/encrypt'
 import * as PerformanceUtil from './core/performance'
 import * as RandomUtil from './core/random'
+import {
+  encryptMD5,
+  encryptMD5ToString,
+  getRSAEnCryptor,
+  encryptRSA2Base64,
+  encryptRSA2Base64Plain,
+  decryptRSABase64,
+  decryptRSABase64Plain,
+} from './core/encrypt'
+declare const EncryptUtil: {
+  encryptMD5: typeof encryptMD5
+  encryptMD5ToString: typeof encryptMD5ToString
+  getRSAEnCryptor: typeof getRSAEnCryptor
+  encryptRSA2Base64: typeof encryptRSA2Base64
+  encryptRSA2Base64Plain: typeof encryptRSA2Base64Plain
+  decryptRSABase64: typeof decryptRSABase64
+  decryptRSABase64Plain: typeof decryptRSABase64Plain
+}
 export * from './core/uni-app'
 export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
 declare const _default: {
@@ -24,7 +41,15 @@ declare const _default: {
   uuid: typeof uuid
   ValidateUtil: typeof ValidateUtil
   EncodeUtil: typeof EncodeUtil
-  EncryptUtil: typeof EncryptUtil
+  EncryptUtil: {
+    encryptMD5: typeof encryptMD5
+    encryptMD5ToString: typeof encryptMD5ToString
+    getRSAEnCryptor: typeof getRSAEnCryptor
+    encryptRSA2Base64: typeof encryptRSA2Base64
+    encryptRSA2Base64Plain: typeof encryptRSA2Base64Plain
+    decryptRSABase64: typeof decryptRSABase64
+    decryptRSABase64Plain: typeof decryptRSABase64Plain
+  }
   PerformanceUtil: typeof PerformanceUtil
   RandomUtil: typeof RandomUtil
   getUIStyle(): string

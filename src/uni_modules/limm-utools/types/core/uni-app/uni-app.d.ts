@@ -44,7 +44,7 @@ export declare function copy(value: string | number, options: UniCopyOptions): v
 /**
  * 设置系统剪贴板的内容, 默认不显示 toast
  */
-export declare function setClipboardData(options?: UniApp.SetClipboardDataOptions): Promise<void>;
+export declare function setClipboardData(options?: UniApp.SetClipboardDataOptions): Promise<any>;
 /**
  * uni-app 打开链接
  * @param { string } url - 要跳转的地址

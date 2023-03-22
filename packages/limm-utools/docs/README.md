@@ -8,6 +8,8 @@ title: 简介
 
 ## 📌 快速上手
 
+### npm 安装
+
 ```shell
 yarn add @limm/utools
 ```
@@ -21,6 +23,20 @@ console.log(EncryptUtil.encryptAES2Base64('我是需要 AES 加密的数据'))
 // 或
 import utools from '@limm/utools'
 console.log(utools.EncryptUtil.encryptAES2Base64('我是需要 AES 加密的数据'))
+```
+
+### uni_modules
+
+```javascript
+// 如果你是 npm 下载的，还是保持一样的
+import utools from '@limm/utools'
+// 导入小程序版本
+import utools from '@limm/utools/esm/bundle.esm.mp'
+
+// 如果你是 uni_modules 版本，导入全量
+import utools from '@/uni_modules/limm-utools' // utools
+// 如果你是 uni_modules 版本，导入小程序版本
+import utools from '@/uni_modules/limm-utools/esm/bundle.esm.mp' // utools
 ```
 
 ## 📌 依赖库

@@ -27,13 +27,14 @@ yarn-error.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Another files
+# Project
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 unpackage/release/
 unpackage/debug/
 .DS_Store
+esm/
 
 # yarn 2.0+
 .pnp.*

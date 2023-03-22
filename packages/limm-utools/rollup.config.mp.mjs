@@ -6,10 +6,10 @@ import fileSize from 'rollup-plugin-filesize'
 import alias from '@rollup/plugin-alias'
 
 export default {
-  input: 'src/index.ts',
+  input: 'src/index.mp.ts',
   output: [
     {
-      file: 'esm/bundle.esm.js',
+      file: 'esm/bundle.esm.mp.js',
       format: 'es',
     },
   ],

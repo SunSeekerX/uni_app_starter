@@ -1,6 +1,6 @@
 {
   "displayName": "limm-utools",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "uni-app 开发工具包。",
   "keywords": [
     "utools"
@@ -8,12 +8,12 @@
   "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/master/packages/limm-utools",
   "license": "UNLICENSED",
   "author": "SunSeekerX",
-  "main": "bin/bundle.esm.js",
+  "main": "esm/bundle.esm.js",
   "types": "types/index.d.ts",
   "engines": {
-    "HBuilderX": "^3.3.11"
+    "HBuilderX": "^3.3.12"
   },
-"dcloudext": {
+  "dcloudext": {
     "contact": {
       "qq": "1647800606"
     },
@@ -22,7 +22,7 @@
       "data": "插件不采集任何数据",
       "permissions": "无"
     },
-    "npmurl": "https://www.npmjs.com/package/@limm/windi-css-uni",
+    "npmurl": "https://www.npmjs.com/package/@limm/utools",
     "sale": {
       "regular": {
         "price": "0.00"

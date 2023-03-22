@@ -6,6 +6,9 @@
  * @LastEditTime: 2021-09-17 17:11:32
  */
 /// <reference types="@dcloudio/types" />
+/// <reference types="@dcloudio/types" />
+/// <reference types="@dcloudio/types" />
+/// <reference types="@dcloudio/types" />
 export interface AnyObject {
   [key: string]: unknown
 }
@@ -37,7 +40,9 @@ export interface ReqInterceptor {
  * 响应拦截器
  */
 export interface ResInterceptor {
-  (response: UniApp.RequestSuccessCallbackResult | UniApp.UploadFileSuccessCallbackResult): Promise<unknown> | unknown
+  (response: UniApp.RequestSuccessCallbackResult | UniApp.UploadFileSuccessCallbackResult, ...others: any[]):
+    | Promise<unknown>
+    | unknown
 }
 /**
  * 请求失败拦截器
@@ -47,7 +52,8 @@ export interface ResFailInterceptor {
     response:
       | UniApp.RequestSuccessCallbackResult
       | UniApp.UploadFileSuccessCallbackResult
-      | UniApp.GeneralCallbackResult
+      | UniApp.GeneralCallbackResult,
+    ...others: any[]
   ): Promise<unknown> | unknown
 }
 export interface RequestConfig {
