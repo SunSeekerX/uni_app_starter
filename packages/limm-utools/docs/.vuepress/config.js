@@ -28,7 +28,7 @@ module.exports = {
     },
     sidebarDepth: 3,
     lastUpdated: '上次更新',
-    repo: 'https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/utools',
+    repo: 'https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/limm-utools',
     editLinks: false,
   },
 }
