@@ -2,11 +2,14 @@ module.exports = {
   title: 'utools',
   theme: 'antdocs',
   description: '适合 uni-app 开发者的工具包。',
-  plugins: {
-    sitemap: {
-      hostname: 'https://utools.yoouu.cn/',
-    },
-  },
+  plugins: [
+    [
+      'sitemap',
+      {
+        hostname: 'https://utools.yoouu.cn/',
+      },
+    ],
+  ],
   markdown: {
     lineNumbers: false,
     anchor: {
