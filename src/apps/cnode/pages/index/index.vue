@@ -64,6 +64,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 import SsxNoData from '../../components/common/ssx-no-data'
 import SsxHeader from '../../components/common/ssx-header'
 import { CNode } from '../../apis/index'
@@ -120,10 +122,10 @@ export default {
           const topicList = res.data
           this.topicList = this.handleTopicDataFilter(topicList)
         } else {
-          this.$utools.toast('request api error')
+          combined.utools.toast('request api error')
         }
       } catch (e) {
-        this.$utools.toast(e.message)
+        combined.utools.toast(e.message)
       } finally {
         // Stop pull down refresh
         uni.stopPullDownRefresh()
@@ -174,18 +176,18 @@ export default {
             }
           }
           // 过滤最近回复时间
-          data[i].last_reply_at = this.$utools.dayjs(data[i].last_reply_at).format('YYYY-MM-DD HH:mm:ss')
+          data[i].last_reply_at = combined.utools.dayjs(data[i].last_reply_at).format('YYYY-MM-DD HH:mm:ss')
         }
         return data
       } else {
-        this.$utools.toast('不是有效的数据')
+        combined.utools.toast('不是有效的数据')
       }
     },
     // 上下一页
     handlePageChange(action) {
       if (action === 'prev') {
         if (this.page === 1) {
-          this.$utools.toast('这是第一页鸭')
+          combined.utools.toast('这是第一页鸭')
         } else {
           const params = {
             page: --this.page,

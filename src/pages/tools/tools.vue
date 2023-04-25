@@ -7,11 +7,7 @@
       :style="{
         'background-image': item.backgroundImage,
       }"
-      @tap="
-        $utools.route({
-          url: item.url,
-        })
-      "
+      @tap="onRoute(item.url)"
     >
       <view class="wd-flex wd-flex-col wd-flex-1">
         <view class="item wd-flex-row wd-justify-between wd-items-center wd-leading-34">
@@ -30,6 +26,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 export default {
   name: 'PageTools',
   data() {
@@ -47,6 +45,13 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    onRoute(url) {
+      combined.utools.route({
+        url,
+      })
+    },
   },
 }
 </script>

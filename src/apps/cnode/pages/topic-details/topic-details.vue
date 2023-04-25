@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 import uParse from '../../components/feng-parse/parse'
 import SsxHeader from '../../components/common/ssx-header'
 import SsxNoData from '../../components/common/ssx-no-data'
@@ -99,8 +101,8 @@ export default {
   },
   methods: {
     navigate(href) {
-      if (this.$utools.ValidateUtil.isUrl(href)) {
-        this.$utools.openUrl(href)
+      if (combined.utools.ValidateUtil.isUrl(href)) {
+        combined.utools.openUrl(href)
       }
     },
     // 获取话题详情
@@ -110,11 +112,11 @@ export default {
         if (res.success) {
           this.topic = this.handleTopicDetailFilter(res.data)
         } else {
-          this.$utools.toast('request api error')
+          combined.utools.toast('request api error')
         }
       } catch (e) {
         console.warn(e)
-        this.$utools.toast(e.message)
+        combined.utools.toast(e.message)
       } finally {
         // Stop pull down refresh
         uni.stopPullDownRefresh()
@@ -139,7 +141,7 @@ export default {
         default:
           break
       }
-      topic.create_at = this.$utools.dayjs(topic.create_at).format('YYYY-MM-DD HH:mm:ss')
+      topic.create_at = combined.utools.dayjs(topic.create_at).format('YYYY-MM-DD HH:mm:ss')
       // 设置标题
       uni.setNavigationBarTitle({
         title: topic.title,

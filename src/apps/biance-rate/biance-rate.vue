@@ -1,7 +1,7 @@
 <template>
   <view>
     <!-- 固定高度 fixed 组件 -->
-    <c-fixed-box :rpx="false" :height="120" :top="systemInfo.windowTop + 44">
+    <c-fixed-box :rpx="false" :height="120" :top="appSystemInfo.windowTop + 44">
       <view
         class="wd-flex wd-flex-col wd-justify-center wd-h-120 wd-w-750r wd-pl-25r wd-pr-25r"
         style="border-bottom: solid #eee 1px"
@@ -9,11 +9,7 @@
         <u-search v-model="keyword" placeholder="请输入交易对" :show-action="false" @change="onSearchChange" />
         <view class="wd-flex wd-justify-between wd-items-center wd-h-34">
           <text class="wd-font-bold wd-text-16">下次资金费率时间</text>
-          <text class="wd-text-16">{{
-            premiumList.length
-              ? $utools.dayjs(premiumList[0].nextFundingTime).format($constant.dayjsFormat)
-              : '更新中...'
-          }}</text>
+          <text class="wd-text-16">{{ handleFormatTime(premiumList) }}</text>
         </view>
         <view class="wd-flex wd-justify-between wd-items-center wd-h-34">
           <text class="wd-font-bold wd-text-16">交易对</text>
@@ -48,6 +44,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 export default {
   data() {
     return {
@@ -68,8 +66,7 @@ export default {
     // 获取资金费率
     async onGetPremiumIndex() {
       try {
-        // this.state.isShow = false
-        const res = await this.$api.Biance.premiumIndex()
+        const res = await combined.api.Biance.premiumIndex()
         if (res.length) {
           for (const item of res) {
             item.lastFundingRate = (parseFloat(item.lastFundingRate) * 100).toFixed(3)
@@ -79,12 +76,13 @@ export default {
           const searchList = this.handleSearch(res)
           // 排序
           this.searchList = this.handleSortRate(searchList)
-          this.$utools.toast('更新成功')
+
+          combined.utools.toast('更新成功')
         } else {
-          this.$utools.toast('数据为空')
+          combined.utools.toast('数据为空')
         }
       } catch (error) {
-        this.$handleError.handleApiRequestException(error)
+        combined.handleError.handleApiRequestException(error)
       } finally {
         // this.state.isShow = true
         uni.stopPullDownRefresh()
@@ -142,6 +140,12 @@ export default {
       const searchList = this.handleSearch(this.premiumList)
       // 排序
       this.searchList = this.handleSortRate(searchList)
+    },
+    // 格式化时间
+    handleFormatTime(premiumList) {
+      return premiumList.length
+        ? combined.utools.dayjs(premiumList[0].nextFundingTime).format(combined.constant.dayjsFormat)
+        : '更新中...'
     },
   },
   onLoad() {

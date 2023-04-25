@@ -101,7 +101,7 @@ export default {
     // #endif
 
     comHeight() {
-      const { windowHeight, safeArea } = this.systemInfo
+      const { windowHeight, safeArea } = this.appSystemInfo
       if (this.height === 200 && windowHeight) {
         // #ifdef H5
         return windowHeight - 44

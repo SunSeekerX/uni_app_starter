@@ -1,11 +1,3 @@
-/**
- * Theme module
- * @author: SunSeekerX
- * @Date: 2021-01-06 17:26:49
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 20:12:54
- */
-
 import dark from '@/common/js/theme/dark'
 import light from '@/common/js/theme/light'
 import { THEMES, STORAGE_APP_THEME, STORAGE_APP_THEME_MODEL } from '@/constant'

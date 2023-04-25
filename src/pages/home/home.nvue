@@ -69,6 +69,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 export default {
   name: 'PageHome',
   data() {
@@ -134,8 +136,7 @@ export default {
     },
     // 点击菜单
     onClickMenuItem(url) {
-      const globalData = getApp({ allowDefault: true }).globalData
-      globalData.$utools.route({
+      combined.utools.route({
         url,
       })
     },

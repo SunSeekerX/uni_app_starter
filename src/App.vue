@@ -1,29 +1,12 @@
 <script>
-import { mapMutations } from 'vuex'
-
+import { defineComponent } from '@vue/composition-api'
 // #ifdef APP-PLUS
 import pushy from '@/utils/pushy/index'
 // #endif
 
-export default {
-  /**
-   * nvue 界面全局数据，非nvue 使用 this
-   */
-  globalData: {
-    $util: null,
-    $constant: null,
-    $api: null,
-    $getEnv: null,
-    $handleError: null,
-    $utools: null,
-  },
+export default defineComponent({
   onLaunch() {
     console.log('App Launch')
-    // 更新 App info
-    this.onUpdateSystemInfo()
-
-    // 挂载属性到 globalData
-    this.handleMountGlobalDataProperty()
 
     // #ifdef APP-PLUS
     // App 端启动需要的操作
@@ -37,18 +20,6 @@ export default {
     console.log('App Hide')
   },
   methods: {
-    ...mapMutations(['onUpdateSystemInfo']),
-
-    // 挂载属性到 globalData
-    handleMountGlobalDataProperty() {
-      this.globalData.$util = this.$util
-      this.globalData.$constant = this.$constant
-      this.globalData.$api = this.$api
-      this.globalData.$getEnv = this.$getEnv
-      this.globalData.$handleError = this.$handleError
-      this.globalData.$utools = this.$utools
-    },
-
     // App 端启动需要的操作
     handleAppPlus() {
       // 锁定屏幕
@@ -60,7 +31,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style lang="scss">

@@ -50,6 +50,7 @@ import pushy from '@/utils/pushy/index'
 // #endif
 import { envs } from '@/config/index'
 import { ENV as debug_env } from '@/config/index'
+import combined from '@/utils/combined'
 
 const envList = []
 for (const env of Object.keys(envs)) {
@@ -90,7 +91,7 @@ export default {
     // 环境切换
     onConfirmEnvChange() {
       uni.clearStorageSync()
-      uni.setStorageSync(this.$constant.appEnv, this.selectedEnv)
+      uni.setStorageSync(combined.constant.appEnv, this.selectedEnv)
       // #ifdef H5
       location.reload()
       // #endif
@@ -101,16 +102,16 @@ export default {
     // 检查更新
     async onGetUpdate() {
       // #ifndef APP-PLUS
-      this.$utools.toast('请在App端检查更新哦~')
+      combined.utools.toast('请在App端检查更新哦~')
       // #endif
       // #ifdef APP-PLUS
       if (plus.runtime.appid !== 'HBuilder') {
         // 真机运行不需要检查更新，真机运行时appid固定为'HBuilder'，这是调试基座的appid
         // 检查更新
         const res = await pushy.getUpdate()
-        this.$utools.toast(res.message)
+        combined.utools.toast(res.message)
       } else {
-        this.$utools.toast('自定义基座才能检查更新哦~')
+        combined.utools.toast('自定义基座才能检查更新哦~')
       }
       // #endif
     },

@@ -1,24 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import getters from './getters'
+import appSystemInfo from './modules/app-system-info'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
   modules: {
-    // theme,
+    appSystemInfo,
   },
-  state: {
-    // App 系统信息
-    systemInfo: {},
-  },
-  mutations: {
-    onUpdateSystemInfo(state) {
-      state.systemInfo = uni.getSystemInfoSync()
-    },
-  },
+  state: {},
+  mutations: {},
   actions: {},
-  getters,
+  getters: {},
 })

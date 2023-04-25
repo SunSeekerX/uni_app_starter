@@ -4,7 +4,7 @@
       class="wd-w-750r"
       style="background-color: red"
       :style="{
-        height: `${systemInfo.statusBarHeight}px`,
+        height: `${appSystemInfo.statusBarHeight}px`,
       }"
     />
     <view class="wd-w-750r wd-flex-center" style="background-color: green; height: 44px">
@@ -14,26 +14,22 @@
       class="wd-w-750r wd-flex-center wd-flex-col"
       style="background-color: blue; transition: all 2s"
       :style="{
-        height: `${systemInfo.screenHeight - systemInfo.statusBarHeight - 44}px`,
+        height: `${appSystemInfo.screenHeight - appSystemInfo.statusBarHeight - 44}px`,
       }"
     >
       <view>
-        <text class="wd-text-fff wd-text-18">windowHeight: {{ systemInfo.windowHeight }}</text>
+        <text class="wd-text-fff wd-text-18">windowHeight: {{ appSystemInfo.windowHeight }}</text>
       </view>
       <view>
-        <text class="wd-text-fff wd-text-18">screenHeight: {{ systemInfo.screenHeight }}</text>
+        <text class="wd-text-fff wd-text-18">screenHeight: {{ appSystemInfo.screenHeight }}</text>
       </view>
     </view>
   </view>
 </template>
 
 <script>
-import { mapState } from 'vuex'
 export default {
   name: 'PageUniAppPageHeight',
-  computed: {
-    ...mapState(['systemInfo']),
-  },
 }
 </script>
 

@@ -10,6 +10,7 @@
 </template>
 <script>
 import detectEthereumProvider from '@metamask/detect-provider'
+import combined from '@/utils/combined'
 // import Web3 from 'web3/dist/web3.min.js'
 
 export default {
@@ -41,7 +42,7 @@ export default {
       if (provider) {
         this.ethereumProvider = provider
       } else {
-        this.$utools.toast('未发现以太坊提供者')
+        combined.utools.toast('未发现以太坊提供者')
       }
     },
     // 连接到 metamask
@@ -50,15 +51,15 @@ export default {
         .request({ method: 'eth_requestAccounts' })
         .then((res) => {
           console.log(res)
-          this.$utools.toast('获取账号成功')
+          combined.utools.toast('获取账号成功')
         })
         .catch((error) => {
           if (error.code === 4001) {
-            this.$utools.toast('用户拒绝请求')
+            combined.utools.toast('用户拒绝请求')
           } else if (error.code === -32002) {
-            this.$utools.toast('请解锁钱包')
+            combined.utools.toast('请解锁钱包')
           } else {
-            this.$utools.toast(error.message)
+            combined.utools.toast(error.message)
           }
           console.error(error)
         })

@@ -181,12 +181,6 @@
       }
     },
     {
-      "path": "apps/utools/pages/log/log",
-      "style": {
-        "navigationBarTitleText": "log"
-      }
-    },
-    {
       "path": "apps/utools/pages/random/random",
       "style": {
         "navigationBarTitleText": "random"

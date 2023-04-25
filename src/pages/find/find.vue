@@ -1,20 +1,17 @@
 <template>
   <c-page background-color="#f6f6f6" box-class="wd-p-25r">
     <view v-for="item of list" :key="item.url" class="wd-mb-6">
-      <u-button
-        @click="
-          $utools.route({
-            url: item.url,
-          })
-        "
-      >
+      <u-button @click="onRoute(item.url)">
         {{ item.name }}
       </u-button>
     </view>
   </c-page>
 </template>
 <script>
-export default {
+import { defineComponent } from '@vue/composition-api'
+import combined from '@/utils/combined'
+
+export default defineComponent({
   name: 'PageFind',
   data() {
     return {
@@ -50,7 +47,14 @@ export default {
       ],
     }
   },
-}
+  methods: {
+    onRoute(url) {
+      combined.utools.route({
+        url,
+      })
+    },
+  },
+})
 </script>
 
 <style lang="scss" scoped>

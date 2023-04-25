@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import combined from '@/utils/combined'
+
 export default {
   name: 'PionexSplash',
   data() {
@@ -21,9 +23,9 @@ export default {
   },
   methods: {
     onTransitionFinish() {
-      const key = `${this.$constant.appName}/pionex/start`
+      const key = `${combined.constant.appName}/pionex/start`
       const toIndex = () => {
-        this.$utools.route({
+        combined.utools.route({
           url: '/pages/projects/pionex/index/index',
           type: 'redirectTo',
         })

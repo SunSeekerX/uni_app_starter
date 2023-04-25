@@ -7,6 +7,7 @@
       "@root/*": ["./*"]
     },
     "allowJs": true,
-    "types": ["@dcloudio/types", "miniprogram-api-typings", "mini-types"]
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "@dcloudio/types", "miniprogram-api-typings", "mini-types"]
   } 
 }

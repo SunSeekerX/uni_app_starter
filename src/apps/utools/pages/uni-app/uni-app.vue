@@ -71,6 +71,8 @@
 <script>
 import utools from '@root/packages/limm-utools'
 
+import combined from '@/utils/combined'
+
 import AppOutput from '../../components/app-output/app-output'
 import AppOperationContent from '../../components/app-operation-content/app-operation-content'
 import AppOperationInput from '../../components/app-operation-input/app-operation-input'
@@ -111,22 +113,22 @@ export default {
       }
     },
     async onGet() {
-      this.consoleText = await this.$api.Express.get()
+      this.consoleText = await combined.api.Express.getApi()
     },
     async onPost() {
-      this.consoleText = await this.$api.Express.post()
+      this.consoleText = await combined.api.Express.postApi()
     },
     async onPut() {
-      this.consoleText = await this.$api.Express.put()
+      this.consoleText = await combined.api.Express.putApi()
     },
     async onDelete() {
-      this.consoleText = await this.$api.Express.delete()
+      this.consoleText = await combined.api.Express.deleteApi()
     },
     async onUpload() {
       uni.chooseImage({
         success: async (chooseImageRes) => {
           const tempFilePaths = chooseImageRes.tempFilePaths
-          this.consoleText = await this.$api.Express.upload({
+          this.consoleText = await combined.api.Express.uploadApi({
             filePath: tempFilePaths[0],
             name: 'file',
             formData: {

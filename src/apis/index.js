@@ -6,7 +6,7 @@
  * @LastEditTime: 2021-09-17 17:44:24
  */
 
-import Biance from './biance'
-import Express from './express'
+import * as Biance from './biance'
+import * as Express from './express'
 
 export { Biance, Express }
