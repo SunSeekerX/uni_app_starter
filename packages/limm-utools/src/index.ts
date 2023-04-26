@@ -7,6 +7,7 @@
  */
 
 import dayjs from 'dayjs'
+import CryptoJS from 'crypto-js'
 import * as uuid from 'uuid'
 
 import * as CommonUtil from './core/common'
@@ -16,10 +17,22 @@ import * as EncodeUtil from './core/encode'
 import * as EncryptUtil from './core/encrypt'
 import * as PerformanceUtil from './core/performance'
 import * as RandomUtil from './core/random'
+import { SnowFlake } from './core/snowflake'
 
 export * from './core/uni-app'
 
-export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
+export {
+  dayjs,
+  uuid,
+  CommonUtil,
+  ValidateUtil,
+  EncodeUtil,
+  EncryptUtil,
+  PerformanceUtil,
+  RandomUtil,
+  CryptoJS,
+  SnowFlake,
+}
 
 export default {
   ...UniAppUtil,
@@ -32,4 +45,6 @@ export default {
   EncryptUtil,
   PerformanceUtil,
   RandomUtil,
+  CryptoJS,
+  SnowFlake,
 }

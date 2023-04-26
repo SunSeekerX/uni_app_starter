@@ -7,6 +7,7 @@
  */
 /// <reference types="@dcloudio/types" />
 import dayjs from 'dayjs'
+import CryptoJS from 'crypto-js'
 import * as uuid from 'uuid'
 import * as CommonUtil from './core/common'
 import * as UniAppUtil from './core/uni-app'
@@ -15,8 +16,20 @@ import * as EncodeUtil from './core/encode'
 import * as EncryptUtil from './core/encrypt'
 import * as PerformanceUtil from './core/performance'
 import * as RandomUtil from './core/random'
+import { SnowFlake } from './core/snowflake'
 export * from './core/uni-app'
-export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
+export {
+  dayjs,
+  uuid,
+  CommonUtil,
+  ValidateUtil,
+  EncodeUtil,
+  EncryptUtil,
+  PerformanceUtil,
+  RandomUtil,
+  CryptoJS,
+  SnowFlake,
+}
 declare const _default: {
   CommonUtil: typeof CommonUtil
   UniAppUtil: typeof UniAppUtil
@@ -27,6 +40,8 @@ declare const _default: {
   EncryptUtil: typeof EncryptUtil
   PerformanceUtil: typeof PerformanceUtil
   RandomUtil: typeof RandomUtil
+  CryptoJS: CryptoJS.Hashes
+  SnowFlake: typeof SnowFlake
   getUIStyle(): string
   toast(msg: string, options?: UniApp.ShowToastOptions): void
   route(options: import('./core/uni-app/interface').UniRouteOptions): void

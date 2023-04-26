@@ -7,6 +7,7 @@
  */
 
 import dayjs from 'dayjs'
+import CryptoJS from 'crypto-js'
 import * as uuid from 'uuid'
 
 import * as CommonUtil from './core/common'
@@ -38,7 +39,7 @@ const EncryptUtil = {
 
 export * from './core/uni-app'
 
-export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil }
+export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil, CryptoJS }
 
 export default {
   ...UniAppUtil,
@@ -51,4 +52,5 @@ export default {
   EncryptUtil,
   PerformanceUtil,
   RandomUtil,
+  CryptoJS,
 }
