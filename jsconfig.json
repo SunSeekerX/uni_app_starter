@@ -8,6 +8,6 @@
     },
     "allowJs": true,
     "typeRoots": ["./node_modules/@types"],
-    "types": ["node", "@dcloudio/types", "miniprogram-api-typings", "mini-types"]
-  } 
+    "types": ["node", "@dcloudio/types", "miniprogram-api-typings"]
+  }
 }

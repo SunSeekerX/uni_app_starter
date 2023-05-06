@@ -1,12 +1,7 @@
 /**
  * Utools 小程序版本入口
- * @author: SunSeekerX
- * @Date: 2021-06-03 00:00:14
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:22:15
  */
 
-import dayjs from 'dayjs'
 import CryptoJS from 'crypto-js'
 import * as uuid from 'uuid'
 
@@ -17,6 +12,8 @@ import * as EncodeUtil from './core/encode'
 // import * as EncryptUtil from './core/encrypt'
 import * as PerformanceUtil from './core/performance'
 import * as RandomUtil from './core/random'
+import * as ImageUtil from './core/image'
+import { SnowFlake } from './core/snowflake'
 import {
   encryptMD5,
   encryptMD5ToString,
@@ -39,18 +36,31 @@ const EncryptUtil = {
 
 export * from './core/uni-app'
 
-export { dayjs, uuid, CommonUtil, ValidateUtil, EncodeUtil, EncryptUtil, PerformanceUtil, RandomUtil, CryptoJS }
-
-export default {
-  ...UniAppUtil,
-  CommonUtil,
-  UniAppUtil,
-  dayjs,
+export {
   uuid,
+  UniAppUtil,
+  CommonUtil,
   ValidateUtil,
   EncodeUtil,
   EncryptUtil,
   PerformanceUtil,
   RandomUtil,
   CryptoJS,
+  SnowFlake,
+  ImageUtil,
+}
+
+export default {
+  uuid,
+  ...UniAppUtil,
+  UniAppUtil,
+  CommonUtil,
+  ValidateUtil,
+  EncodeUtil,
+  EncryptUtil,
+  PerformanceUtil,
+  RandomUtil,
+  CryptoJS,
+  SnowFlake,
+  ImageUtil,
 }

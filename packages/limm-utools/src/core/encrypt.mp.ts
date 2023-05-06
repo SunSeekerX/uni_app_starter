@@ -1,9 +1,5 @@
 /**
  * 加密解密相关
- * @author: SunSeekerX
- * @Date: 2021-06-02 19:13:24
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 13:13:30
  */
 
 import CryptoJS from 'crypto-js'

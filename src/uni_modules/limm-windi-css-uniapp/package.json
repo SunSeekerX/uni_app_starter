@@ -7,7 +7,7 @@
     "windicss",
     "uni-app"
 ],
-  "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/limm-windi-css-uniapp",
+  "repository": "https://github.com/SunSeekerX/uni-app-starter/tree/main/packages/limm-windi-css-uni",
   "license": "UNLICENSED",
   "author": "SunSeekerX",
   "main": "src/index.scss",

@@ -1,9 +1,5 @@
 /**
  * 校验相关
- * @author: SunSeekerX
- * @Date: 2020-05-26 16:15:24
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 20:16:28
  */
 
 /**

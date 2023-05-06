@@ -1,9 +1,5 @@
 /**
  * 雪花 id 算法
- * @author: SunSeekerX
- * @Date: 2021-11-27 19:29:04
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-11-27 20:56:28
  */
 
 // import bigInt from 'big-integer';
@@ -141,7 +137,7 @@ export class SnowFlake {
    * @param {bigint} lastTimestamp 上次生成ID的时间截
    * @return {bigint} 当前时间戳
    */
-  tilNextMillis(lastTimestamp: bigint) {
+  tilNextMillis(lastTimestamp: bigint): bigint {
     let timestamp = this.timeGen()
     while (timestamp <= lastTimestamp) {
       timestamp = this.timeGen()
@@ -153,7 +149,7 @@ export class SnowFlake {
    * 返回以毫秒为单位的当前时间
    * @return {bigint} 当前时间(毫秒)
    */
-  timeGen() {
+  timeGen(): bigint {
     return BigInt(+new Date())
   }
 }

@@ -4,7 +4,7 @@
       class="wd-w-750r"
       style="background-color: red"
       :style="{
-        height: `${appSystemInfo.statusBarHeight}px`,
+        height: `${appSystemInfo.statusBarHeightGetter}px`,
       }"
     />
     <view class="wd-w-750r wd-flex-center" style="background-color: green; height: 44px">
@@ -14,7 +14,7 @@
       class="wd-w-750r wd-flex-center wd-flex-col"
       style="background-color: blue; transition: all 2s"
       :style="{
-        height: `${appSystemInfo.screenHeight - appSystemInfo.statusBarHeight - 44}px`,
+        height: `${appSystemInfo.screenHeight - appSystemInfo.statusBarHeightGetter - 44}px`,
       }"
     >
       <view>

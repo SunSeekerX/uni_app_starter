@@ -1,9 +1,5 @@
 /**
  * 编码解码相关
- * @author: SunSeekerX
- * @Date: 2021-06-02 17:52:15
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 17:17:21
  */
 
 import CryptoJS from 'crypto-js'
@@ -34,9 +30,7 @@ export function urlDecode(val = '', url = true): string {
  */
 export function base64Encode2String(val: string): string {
   const wordArray = CryptoJS.enc.Utf8.parse(val)
-  // const base64 =
   return CryptoJS.enc.Base64.stringify(wordArray)
-  // return encode(val)
 }
 
 /**
@@ -46,7 +40,5 @@ export function base64Encode2String(val: string): string {
  */
 export function base64Decode(val: string): string {
   const parsedWordArray = CryptoJS.enc.Base64.parse(val)
-  // var parsedStr = parsedWordArray.toString(CryptoJS.enc.Utf8)
   return parsedWordArray.toString(CryptoJS.enc.Utf8)
-  // return decode(val)
 }

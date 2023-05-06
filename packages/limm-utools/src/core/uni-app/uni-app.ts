@@ -1,9 +1,5 @@
 /**
  * uni-app api 二次封装
- * @author: SunSeekerX
- * @Date: 2021-06-03 00:14:50
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 19:57:30
  */
 
 import { isNil } from 'lodash'
@@ -26,7 +22,7 @@ export function getUIStyle(): string {
  * @param { Object } options 参数配置,同uni-app官网
  * @returns { null }
  */
-export function toast(msg: string, options?: UniApp.ShowToastOptions): void {
+export function toast(msg: string, options?: UniApp.ShowToastOptions, complete?: (result: any) => void): void {
   options?.title && delete options.title
   uni.showToast(
     Object.assign(
@@ -34,6 +30,7 @@ export function toast(msg: string, options?: UniApp.ShowToastOptions): void {
         icon: 'none',
         title: msg,
         duration: 2000,
+        complete,
       },
       options
     )

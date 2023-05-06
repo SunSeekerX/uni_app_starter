@@ -7,9 +7,9 @@
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "types": ["@dcloudio/types"],
+    "types": ["node", "@dcloudio/types", "miniprogram-api-typings", "mini-types"],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,

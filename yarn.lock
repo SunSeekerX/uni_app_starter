@@ -1524,7 +1524,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dcloudio/types@npm:*, @dcloudio/types@npm:^3.3.2":
+"@dcloudio/types@npm:3.3.3":
+  version: 3.3.3
+  resolution: "@dcloudio/types@npm:3.3.3"
+  checksum: 808236b3c7ec8d197a6985850abb1865ef99d660d73d9477a6f25d0da8700457bf3e7da33a44b6e926a69bbf97ecf7a3622a20b5816d51a153524bbf606f2f37
+  languageName: node
+  linkType: hard
+
+"@dcloudio/types@npm:^3.3.2":
   version: 3.3.2
   resolution: "@dcloudio/types@npm:3.3.2"
   checksum: 64e8aa11e217e16a026426c11673e27927efcaa3e63e8abac288adad2b682ec3d1390df216f77ba7b1174ed72a323b8a8bfcc93af2501dab956908d83e52aca0
@@ -2656,7 +2663,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@limm/utools@workspace:packages/limm-utools"
   dependencies:
-    "@dcloudio/types": "*"
+    "@dcloudio/types": 3.3.3
     "@limm/jsencrypt-mp": 3.2.2-0
     "@rollup/plugin-alias": ^4.0.3
     "@rollup/plugin-commonjs": ^24.0.1

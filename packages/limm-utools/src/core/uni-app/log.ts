@@ -1,10 +1,6 @@
 /* eslint-disable no-console */
 /**
  * 日志工具
- * @author: SunSeekerX
- * @Date: 2021-09-17 20:21:47
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 21:47:21
  */
 
 interface StyleOptions {

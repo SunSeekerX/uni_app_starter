@@ -1,9 +1,5 @@
 /**
  * uni-app 请求类
- * @author: SunSeekerX
- * @Date: 2021-05-17 21:08:55
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-17 17:27:35
  */
 
 import type {

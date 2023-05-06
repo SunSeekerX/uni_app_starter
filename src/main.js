@@ -11,13 +11,17 @@ Vue.config.productionTip = false
 Vue.use(uView)
 Vue.mixin({
   computed: {
+    // App system info
     ...mapState('appSystemInfo', [
       'appSystemInfo',
       // #ifdef APP || MP-WEIXIN || H5
       'appWindowInfo',
       // #endif
     ]),
-    ...mapGetters('appSystemInfo', ['statusBarHeight', 'navigationBarHeight', 'pageHeightC']),
+    ...mapGetters('appSystemInfo', ['statusBarHeightGetter', 'navBarHeightGetter', 'pageHeightGetter', 'isIosGetter']),
+    // App auth
+    ...mapState('appAuth', ['appTokens', 'appUserInfo', 'appMpUserInfo']),
+    ...mapGetters('appAuth', ['isAppAuthLogin']),
   },
 })
 
@@ -27,5 +31,4 @@ const app = new Vue({
   store,
   ...App,
 })
-// const app = new (typeof App === 'function' ? App : Vue.extend(Object.assign({ mpType: 'app' }, App)))()
 app.$mount()

@@ -20,7 +20,6 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "build:mp": "rollup -c rollup.config.mp.mjs",
     "build:types": "tsc --project tsconfig-def.json",
     "docs:build": "vuepress build docs",
     "docs:dev": "vuepress dev docs",
@@ -36,7 +35,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@dcloudio/types": "*",
+    "@dcloudio/types": "3.3.3",
     "@rollup/plugin-alias": "^4.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
