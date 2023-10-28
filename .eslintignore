@@ -13,7 +13,7 @@ src/utils/libs/
 # uni_modules
 uni_modules
 
-# 项目相关
+# App
 .npmrc
 src/mypUI/**
 feng-parse
@@ -22,3 +22,5 @@ packages/limm-*
 src/components/c-icon
 un-icon
 *.d.ts
+shims-uni.d.ts
+shims-vue.d.ts

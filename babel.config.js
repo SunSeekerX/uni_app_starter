@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const plugins = []
 
 if (process.env.UNI_OPT_TREESHAKINGNG) {
@@ -45,15 +46,34 @@ process.UNI_LIBRARIES.forEach((libraryName) => {
     },
   ])
 })
-module.exports = {
+
+if (process.env.UNI_PLATFORM !== 'h5') {
+  plugins.push('@babel/plugin-transform-runtime')
+}
+
+const config = {
   presets: [
     [
       '@vue/app',
       {
-        modules: 'commonjs',
+        modules: webpack.version[0] > 4 ? 'auto' : 'commonjs',
         useBuiltIns: process.env.UNI_PLATFORM === 'h5' ? 'usage' : 'entry',
       },
     ],
   ],
   plugins,
 }
+
+const UNI_H5_TEST = '**/@dcloudio/uni-h5/dist/index.umd.min.js'
+if (process.env.NODE_ENV === 'production') {
+  config.overrides = [
+    {
+      test: UNI_H5_TEST,
+      compact: true,
+    },
+  ]
+} else {
+  config.ignore = [UNI_H5_TEST]
+}
+
+module.exports = config

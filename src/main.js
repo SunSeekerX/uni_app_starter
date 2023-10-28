@@ -4,6 +4,7 @@ import { mapState, mapGetters } from 'vuex'
 
 import './composition-api'
 import App from './App'
+import './uni.promisify.adaptor'
 import store from './store'
 
 Vue.config.productionTip = false

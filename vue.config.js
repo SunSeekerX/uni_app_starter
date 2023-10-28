@@ -1,5 +1,4 @@
 const path = require('path')
-const ScriptSetup = require('unplugin-vue2-script-setup/webpack').default
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -8,11 +7,6 @@ function resolve(dir) {
 module.exports = {
   parallel: false,
   configureWebpack: {
-    plugins: [
-      ScriptSetup({
-        /* options */
-      }),
-    ],
     resolve: {
       alias: {
         '@root': resolve('./'),
